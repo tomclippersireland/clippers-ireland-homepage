@@ -4,7 +4,59 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Clippers Ireland</title>
-    <link rel="stylesheet" href="./styles.css?v=final-polish-pass-13" />
+    <link rel="stylesheet" href="./styles.css?v=final-polish-pass-20" />
+    <style>
+      .featured-products .product-image {
+        background: #ffffff !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2) {
+        background: #ffffff !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2),
+      .featured-products .product-card.clippers-hero {
+        overflow: hidden !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image,
+      .featured-products .product-card.clippers-hero .product-image {
+        background: #ffffff !important;
+        padding: 8px 10px 6px !important;
+        overflow: visible !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img,
+      .featured-products .product-card.clippers-hero .product-image img {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        transform: scale(1) !important;
+      }
+
+      @media (min-width: 1024px) {
+        .home-page .about-stats.trust-strip {
+          display: grid !important;
+          grid-auto-flow: column;
+          grid-template-columns: repeat(4, auto);
+          justify-content: center;
+          align-items: flex-start;
+          column-gap: clamp(24px, 3.5vw, 44px);
+          padding-inline: clamp(16px, 2vw, 26px);
+          row-gap: 0;
+        }
+
+        .home-page .about-stats.trust-strip .about-stat {
+          flex: 0 1 auto;
+        }
+      }
+    </style>
   </head>
   <body class="home-page">
     <header class="site-header">
@@ -68,15 +120,61 @@
       </div>
 
       <nav class="category-nav" id="category-nav" aria-label="Product categories">
-        <a data-category-link="clippers" href="/clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
-        <a href="#">Cattle Weighing <span aria-hidden="true">⌄</span></a>
-        <a href="#">Milking Machines <span aria-hidden="true">⌄</span></a>
-        <a href="#">Electric Fencing <span aria-hidden="true">⌄</span></a>
-        <a href="#">All Farming <span aria-hidden="true">⌄</span></a>
-        <a href="#">Apparel <span aria-hidden="true">⌄</span></a>
-        <a href="#">Parts &amp; Repairs <span aria-hidden="true">⌄</span></a>
-        <a href="#advice-title">Tips &amp; Guides</a>
-        <a href="#shows-title">Shows</a>
+        <div class="category-item category-item--clippers">
+          <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Clippers subcategories">
+            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
+            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
+            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
+            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
+            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+          </div>
+        </div>
+        <div class="category-item category-item--cattle-weighing">
+          <a href="./cattle-weighing.html">Cattle Weighing</a>
+</div>
+        <div class="category-item category-item--milking-machines">
+          <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Milking Machines links">
+            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
+            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
+            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+          
+          </div>
+
+        </div>
+        <div class="category-item category-item--electric-fencing">
+          <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Electric Fencing links">
+            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+          </div>
+
+
+        </div>
+        <div class="category-item category-item--all-farming">
+          <a href="./all-farming.html">All Farming <span aria-hidden="true">⌄</span></a>
+                    <div class="category-dropdown" aria-label="All Farming links">
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="./milking-machines.html">Milking Machines</a>
+            <a href="./parts-repairs.html">Dairy Products</a>
+            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
+            <a href="./electric-fencing.html">Blowers</a>
+          </div>
+
+
+        </div>
+        <a class="category-nav-link" href="./apparel.html">Apparel</a>
+        <div class="category-item category-item--parts-repairs">
+          <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+</div>
+        <a href="./tips-guides.html">Tips &amp; Guides</a>
+        <a href="./shows.html">Shows</a>
       </nav>
     </header>
 
@@ -101,7 +199,7 @@
       <div class="about-stats trust-strip" aria-label="Clippers Ireland trust highlights">
         <div class="about-stat">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.1 1.5 2.6-.1.9 2.5 2.1 1.5-.8 2.5.8 2.5-2.1 1.5-.9 2.5-2.6-.1L12 20.5l-2.1-1.5-2.6.1-.9-2.5-2.1-1.5.8-2.5-.8-2.5 2.1-1.5.9-2.5 2.6.1z" /><path d="M8.8 12.2l2.1 2.1 4.5-4.8" /></svg>
-          <span><strong>14+</strong><small><span class="desktop-line">Years in Business</span><span class="mobile-line">Years Trading</span></small></span>
+          <span><strong>14+</strong><small><span class="desktop-line">Years Trading</span><span class="mobile-line">Years Trading</span></small></span>
         </div>
         <div class="about-stat">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.2" r="3" /><path d="M3.8 20c.6-3.8 2.7-5.7 5.2-5.7s4.6 1.9 5.2 5.7" /><path d="M15 5.8a3 3 0 0 1 0 5.8" /><path d="M16.8 14.3c2 .6 3.3 2.5 3.8 5.7" /></svg>
@@ -109,39 +207,39 @@
         </div>
         <div class="about-stat">
           <svg class="delivery-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.8h11.2v8H3.5z" /><path d="M14.7 10.6h3.1l2.7 3.1v2.1h-5.8z" /><path d="M6 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /><path d="M15.5 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /></svg>
-          <span><strong>Free Delivery</strong><small><span class="desktop-line">On orders over &euro;100</span><span class="mobile-line">Orders over &euro;100</span></small></span>
+          <span><strong>Free Delivery</strong><small><span class="desktop-line">Orders over &euro;100</span><span class="mobile-line">Orders over &euro;100</span></small></span>
         </div>
         <div class="about-stat">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l6.5 2.8v5c0 4.1-2.6 7.7-6.5 9.2-3.9-1.5-6.5-5.1-6.5-9.2v-5z" /><path d="M8.9 12.1l2 2 4.2-4.4" /></svg>
-          <span><strong><span class="desktop-line">Secure Shopping</span><span class="mobile-line">Secure</span></strong><small><span class="desktop-line">Safe &amp; encrypted checkout</span><span class="mobile-line">Encrypted payments</span></small></span>
+          <span><strong><span class="desktop-line">Secure</span><span class="mobile-line">Secure</span></strong><small><span class="desktop-line">Encrypted payments</span><span class="mobile-line">Encrypted payments</span></small></span>
         </div>
       </div>
 
       <section class="shop-section" aria-labelledby="shop-by-animal-title">
         <h2 class="section-title" id="shop-by-animal-title">Shop by Animal</h2>
         <div class="animal-grid">
-          <a class="animal-card" href="#">
+          <a class="animal-card" href="./shop-by-cattle.html">
             <img src="./assets/shop/animal-cattle.jpg" alt="Cattle" />
             <span class="tile-copy">
               <strong>Cattle</strong>
               <small>Shop now -></small>
             </span>
           </a>
-          <a class="animal-card" href="#">
+          <a class="animal-card" href="./shop-by-sheep.html">
             <img src="./assets/shop/animal-sheep.jpg" alt="Sheep" />
             <span class="tile-copy">
               <strong>Sheep</strong>
               <small>Shop now -></small>
             </span>
           </a>
-          <a class="animal-card" href="#">
+          <a class="animal-card" href="./shop-by-horse.html">
             <img class="animal-card-image--horse" src="./assets/shop/animal-horse-clipping-jacket.png" alt="Horse being clipped" />
             <span class="tile-copy">
               <strong>Horse</strong>
               <small>Shop now -></small>
             </span>
           </a>
-          <a class="animal-card" href="#">
+          <a class="animal-card" href="./shop-by-dog.html">
             <img class="animal-card-image--dog" src="./assets/shop/animal-dog-clipping.png" alt="Dog being clipped" />
             <span class="tile-copy">
               <strong>Dog</strong>
@@ -154,32 +252,32 @@
       <section class="shop-section shop-section--category" aria-labelledby="shop-by-category-title">
         <h2 class="section-title" id="shop-by-category-title">Shop by Category</h2>
         <div class="category-tile-grid">
-          <a class="category-card" data-category-link="clippers" href="/clippers.html">
-            <img class="category-card-image--clippers" src="./assets/shop/caraclipper.jpg" alt="ErgoPro Cara clipper" />
+          <a class="category-card" href="./clippers.html">
+            <img src="./assets/shop/caraclipper.jpg" alt="Clippers" />
             <strong>Clippers</strong>
             <small>Shop now -></small>
           </a>
-          <a class="category-card" href="#">
+          <a class="category-card" href="./cattle-weighing.html">
             <img src="./assets/shop/newweighingpic.png" alt="Cattle weighing indicator in a crush" />
             <strong>Cattle Weighing</strong>
             <small>Shop now -></small>
           </a>
-          <a class="category-card" href="#">
+          <a class="category-card" href="./milking-machines.html">
             <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
             <strong>Milking Machines</strong>
             <small>Shop now -></small>
           </a>
-          <a class="category-card" href="#">
+          <a class="category-card" href="./electric-fencing.html">
             <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
             <strong>Electric Fencing</strong>
             <small>Shop now -></small>
           </a>
-          <a class="category-card" href="#">
-            <img src="./assets/shop/category-all-farming.jpg" alt="All farming" />
-            <strong>All Farming</strong>
-            <small>Shop now -></small>
-          </a>
-          <a class="category-card" href="#">
+      <a class="category-card" href="./all-farming.html">
+        <img src="./assets/shop/category-all-farming.jpg" alt="All farming" />
+        <strong>All Farming</strong>
+        <small>Shop now -></small>
+      </a>
+          <a class="category-card" href="./apparel.html">
             <img class="category-card-image--apparel" src="./assets/shop/category-apparel-bobble-dog.jpg" alt="Clippers Ireland bobble hat" />
             <strong>Apparel</strong>
             <small>Shop now -></small>
@@ -193,32 +291,34 @@
         </div>
 
         <div class="product-grid">
-          <article class="product-card">
-            <a class="product-image" href="#">
-              <img src="./assets/products/ovis.png" alt="ErgoPro Ovis Sheep Clipper" />
-            </a>
-            <div class="product-info">
-              <h3><a href="#">ErgoPro Ovis Sheep Clipper<br />(External Battery 300w)</a></h3>
-              <div class="product-meta">
-                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-                <span>(29 reviews)</span>
-                <span class="product-stock-text">In stock</span>
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-link-area" href="./ovis-clipper.html" style="display:block; color:inherit; text-decoration:none;">
+              <span class="product-image">
+                <img class="product-image--featured-blade" src="./assets/products/ovis.png" alt="ErgoPro Ovis Sheep Clipper" />
+              </span>
+              <div class="product-info">
+                <h3>ErgoPro Ovis Sheep Clipper<br />(External Battery 300w)</h3>
+                <div class="product-meta">
+                  <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                  <span>(29 reviews)</span>
+                  <span class="product-stock-text">In stock</span>
+                </div>
+                <p class="product-price">&euro;729.00</p>
               </div>
-              <p class="product-price">&euro;729.00</p>
-              <button class="add-cart" type="button">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-                  <circle cx="10" cy="21" r="1.5" />
-                  <circle cx="18" cy="21" r="1.5" />
-                </svg>
-                Add to Cart
-              </button>
-            </div>
+            </a>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
           </article>
 
-          <article class="product-card">
+          <article class="product-card clippers-hero clippers-white-bucket">
             <a class="product-image" href="#">
-              <img src="./assets/products/hush-horse.png" alt="ErgoPro Hush Horse Clipper" />
+              <img class="product-image--featured-blade" src="./assets/products/hush-horse.png" alt="ErgoPro Hush Horse Clipper" />
             </a>
             <div class="product-info">
               <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
@@ -328,7 +428,7 @@
               <li>Fast turnaround times</li>
             </ul>
 
-            <a class="repairs-band-cta" href="#">Learn More About Our Parts &amp; Repairs -></a>
+            <a class="repairs-band-cta" href="./parts-repairs.html">Learn More About Our Parts &amp; Repairs -></a>
           </div>
 
           <div class="support-panel advice-panel">
@@ -347,7 +447,7 @@
               <li>Product Manuals</li>
             </ul>
 
-            <a class="repairs-band-cta" href="#">View Tips &amp; Guides -></a>
+            <a class="repairs-band-cta" href="./tips-guides.html">View Tips &amp; Guides -></a>
           </div>
         </div>
       </section>
@@ -360,7 +460,7 @@
             <p>
               Come and meet the Clippers Ireland team at agricultural shows and events. See equipment up close, get practical advice and talk through what suits your animals and setup.
             </p>
-            <a class="shows-cta" href="/shows/">View 2026 Shows -></a>
+            <a class="shows-cta" href="./shows.html">View 2026 Shows -></a>
           </div>
           <div class="shows-media">
             <img src="./assets/shows/ploughing-shows.jpg" alt="Clippers Ireland stand at an agricultural show" />
@@ -629,44 +729,44 @@
         <div class="footer-links-row">
           <nav class="footer-links" aria-label="Shop by animal links">
             <p class="footer-subheading">Shop by animal</p>
-            <a href="#shop-by-animal-title">Cattle</a>
-            <a href="#shop-by-animal-title">Sheep</a>
-            <a href="#shop-by-animal-title">Horse</a>
-            <a href="#shop-by-animal-title">Dog</a>
+            <a href="./index.html#shop-by-animal-title">Cattle</a>
+            <a href="./index.html#shop-by-animal-title">Sheep</a>
+            <a href="./index.html#shop-by-animal-title">Horse</a>
+            <a href="./index.html#shop-by-animal-title">Dog</a>
           </nav>
 
           <nav class="footer-links footer-links--browse" aria-label="Browse categories links">
             <p class="footer-subheading">Browse Categories</p>
-            <a href="#shop-by-category-title">Clippers</a>
-            <a href="#shop-by-category-title">Cattle Weighing</a>
-            <a href="#shop-by-category-title">Milking Machines</a>
-            <a href="#shop-by-category-title">Electric Fencing</a>
-            <a href="#shop-by-category-title">All Farming</a>
-            <a href="#shop-by-category-title">Apparel</a>
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="clipper-sheep-cattle">Milking Machines</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./all-farming.html">All Farming</a>
+            <a href="./apparel.html">Apparel</a>
           </nav>
 
           <nav class="footer-links footer-links--read" aria-label="Read links">
             <p class="footer-subheading">Read</p>
-            <a href="#">Endorsers</a>
-            <a href="#">Charities</a>
-            <a href="#">Tip &amp; Guides</a>
+            <a href="./index.html#endorsement-title">Endorsers</a>
+            <a href="./index.html#endorsement-title">Charities</a>
+            <a href="./tips-guides.html">Tip &amp; Guides</a>
           </nav>
 
           <nav class="footer-links footer-links--support" aria-label="Support links">
             <p class="footer-subheading">Support</p>
-            <a href="#">Parts &amp; Repairs</a>
-            <a href="#">Warranty</a>
-            <a href="#">Delivery &amp; Returns</a>
-            <a href="#">Contact us</a>
+            <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+            <a href="./clippers.html#warranty-title">Warranty</a>
+            <a href="mailto:sales@clippersireland.ie?subject=Delivery%20and%20Returns">Delivery &amp; Returns</a>
+            <a href="mailto:sales@clippersireland.ie">Contact us</a>
           </nav>
 
           <nav class="footer-links footer-links--pages" aria-label="Pages">
             <p class="footer-subheading">Pages</p>
-            <a href="#">WEEE Recycling</a>
-            <a href="#">About us</a>
-            <a href="#">Shows</a>
-            <a href="#">My Account</a>
-            <a href="#">Sitemap</a>
+            <a href="./index.html">WEEE Recycling</a>
+            <a href="./index.html#about-title">About us</a>
+            <a href="./shows.html">Shows</a>
+            <a href="./index.html">My Account</a>
+            <a href="./index.html">Sitemap</a>
           </nav>
         </div>
 
@@ -699,13 +799,13 @@
           </div>
 
           <div class="footer-social" aria-label="Social links">
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z" /></svg>
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1" /></svg>
             </a>
-            <a href="#" aria-label="YouTube">
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9c.1-2 1.5-3.4 3.5-3.5 3.5-.3 7.5-.3 11 0C19.5 5.6 20.9 7 21 9c.2 2 .2 4 0 6-.1 2-1.5 3.4-3.5 3.5-3.5.3-7.5.3-11 0C4.5 18.4 3.1 17 3 15c-.2-2-.2-4 0-6z" /><path d="M10 9l5 3-5 3z" /></svg>
             </a>
           </div>
@@ -718,8 +818,8 @@
       <div class="footer-bottom">
         <p>&copy; 2026 Clippers Ireland. All rights reserved.</p>
         <div>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms &amp; Conditions</a>
+          <a href="./index.html">Privacy Policy</a>
+          <a href="./index.html">Terms &amp; Conditions</a>
         </div>
       </div>
     </footer>

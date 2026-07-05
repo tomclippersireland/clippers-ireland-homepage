@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <title>Clippers Ireland</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .category-hero--clippers-latest {
+      position: relative !important;
+      overflow: hidden !important;
+      background: none !important;
+      min-height: clamp(230px, 20vw, 330px) !important;
+      padding: clamp(30px, 3.2vw, 56px) clamp(18px, 2.6vw, 54px) !important;
+    }
+
+    .category-hero--clippers-latest::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(12, 24, 16, 0.78) 0%, rgba(12, 24, 16, 0.58) 48%, rgba(12, 24, 16, 0.24) 100%);
+    }
+
+    .category-hero--clippers-latest .category-hero-media {
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .category-hero--clippers-latest .category-hero-media img {
+      position: static !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: center 58% !important;
+    }
+
+    .category-hero--clippers-latest .category-hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cattle-page-section,
+    .cattle-weighing-video,
+    .system-choice,
+    .cattle-comparison,
+    .system-advice,
+    .cattle-support-trust {
+      width: min(100%, 2020px);
+      margin: 0 auto;
+      padding: 26px clamp(18px, 2.6vw, 54px);
+    }
+
+    .cattle-content-shell {
+      width: min(100%, 1190px);
+      margin: 0 auto;
+    }
+
+    .cattle-section-intro {
+      margin: 0 auto 22px;
+      max-width: 76ch;
+      color: #2f3a34;
+      font-size: clamp(15px, 1vw, 19px);
+      line-height: 1.52;
+    }
+
+    .cattle-video-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      align-items: start;
+      gap: clamp(18px, 2vw, 30px);
+    }
+
+    .cattle-video-choice-wrap {
+      width: min(100%, 2020px);
+      margin: 0 auto;
+      display: block;
+    }
+
+    .cattle-video-text {
+      align-self: start;
+    }
+
+    .cattle-video-media {
+      min-width: 0 !important;
+      width: 100% !important;
+      justify-self: stretch !important;
+    }
+
+    .cattle-video-card {
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      border-radius: 6px !important;
+      aspect-ratio: 0.72 / 1 !important;
+      background:
+        linear-gradient(180deg, rgba(8, 19, 13, 0) 44%, rgba(8, 19, 13, 0.66) 100%),
+        linear-gradient(135deg, #3d464b 0%, #c8d4d2 46%, #1682a6 100%);
+      box-shadow: 0 12px 26px rgba(18, 35, 23, 0.08);
+    }
+
+    .cattle-video-card img {
+      width: 100%;
+      aspect-ratio: 0.72 / 1 !important;
+      min-height: 100% !important;
+      object-fit: cover !important;
+      object-position: center;
+      display: block;
+      background: transparent;
+    }
+
+    .cattle-video-card a {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(16, 29, 19, 0.06), rgba(16, 29, 19, 0.34));
+    }
+
+    .cattle-video-badge {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 0;
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--green);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+    }
+
+    .cattle-video-badge svg {
+      width: 16px;
+      height: 16px;
+      margin-left: 5px;
+      fill: var(--green);
+      stroke: none;
+    }
+
+    .cattle-video-caption {
+      margin: 8px 0 0;
+      color: #2f3a34;
+      font-size: clamp(13px, 0.82vw, 15px);
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .system-choice-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .system-choice-card {
+      display: grid;
+      align-content: start;
+      gap: 11px;
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .system-choice-card h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(23px, 1.55vw, 35px);
+      line-height: 1.1;
+    }
+
+    .system-choice-card-image {
+      width: 100%;
+      display: block;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    .system-choice-card-image img {
+      width: 100%;
+      display: block;
+      aspect-ratio: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 0;
+      outline: 0;
+      background: transparent;
+    }
+
+    .system-choice-card-image--cover {
+      object-fit: cover !important;
+      object-position: center top !important;
+    }
+
+    .system-choice-card-image--trim {
+      clip-path: inset(1px);
+    }
+
+    .system-choice-subtitle {
+      display: inline-block;
+      margin: 2px 0 4px;
+      color: var(--green);
+      font-size: clamp(13px, 0.82vw, 15px);
+      font-weight: 700;
+    }
+
+    .system-choice p {
+      margin: 0;
+      color: #2f3a34;
+      font-size: clamp(14px, 0.87vw, 16px);
+      line-height: 1.48;
+      max-width: 64ch;
+    }
+
+    .system-choice ul {
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .system-choice li {
+      position: relative;
+      margin: 0;
+      padding: 0 0 0 22px;
+      color: #2f3a34;
+      font-size: clamp(13px, 0.84vw, 15px);
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .system-choice li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0.55em;
+      width: 9px;
+      height: 5px;
+      border-left: 2px solid var(--green);
+      border-bottom: 2px solid var(--green);
+      transform: rotate(-45deg);
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .system-choice .repairs-band-cta {
+      margin-top: 18px;
+    }
+
+    .cattle-comparison {
+      background: #f3f8f1;
+    }
+
+    .comparison-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow-card);
+    }
+
+    .comparison-header,
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-column: 1 / -1;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .comparison-header {
+      background: rgba(18, 130, 54, 0.08);
+      color: #163324;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .comparison-grid :is(.comparison-header, .comparison-row) > span {
+      padding: 12px 13px;
+      font-size: clamp(13px, 0.8vw, 15px);
+      line-height: 1.35;
+    }
+
+    .comparison-header > span {
+      border-right: 1px solid rgba(18, 130, 54, 0.2);
+    }
+
+    .comparison-header > span:last-child,
+    .comparison-row > span:last-child {
+      border-right: 0;
+    }
+
+    .comparison-row {
+      border-top: 1px solid rgba(18, 130, 54, 0.12);
+    }
+
+    .comparison-row > span {
+      border-right: 1px solid rgba(18, 130, 54, 0.12);
+      color: #2d3a33;
+      font-size: clamp(13px, 0.78vw, 15px);
+      line-height: 1.45;
+    }
+
+    .comparison-row > span:last-child {
+      border-right: 0;
+    }
+
+    .system-advice p,
+    .cattle-support-trust p {
+      margin: 0;
+      color: #2f3a34;
+      max-width: 76ch;
+      font-size: clamp(14px, 0.88vw, 17px);
+      line-height: 1.52;
+    }
+
+    .system-advice .repairs-band-cta,
+    .cattle-support-trust .repairs-band-cta {
+      margin-top: 16px;
+    }
+
+    .product-group-label {
+      margin: 16px 0 14px;
+      color: var(--text);
+      font-size: clamp(16px, 1.18vw, 22px);
+      font-weight: 700;
+      letter-spacing: 0;
+      border-left: 3px solid var(--green);
+      padding-left: 10px;
+    }
+
+    .system-product-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(230px, 1fr));
+      gap: 22px;
+      width: min(100%, 1190px);
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .system-product-grid .product-card .product-info h3 {
+      padding-inline: 0;
+      font-size: clamp(12px, 0.78vw, 15px);
+      font-weight: 600;
+    }
+
+    .system-product-grid .product-info {
+      padding-inline: 10px;
+    }
+
+    .system-product-grid .product-card {
+      scroll-snap-align: start;
+    }
+
+    .cattle-support-trust {
+      padding-bottom: 48px;
+    }
+
+    .cattle-support-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .cattle-support-list li {
+      position: relative;
+      padding-left: 24px;
+      color: #2f3a34;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .cattle-support-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 1px;
+      top: 0.12em;
+      color: var(--green);
+      font-size: 0.95em;
+      line-height: 1;
+    }
+
+    @media (max-width: 940px) {
+      .system-choice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .cattle-video-choice-wrap {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr) !important;
+        align-items: start !important;
+        gap: clamp(20px, 2.2vw, 34px) !important;
+      }
+
+      .cattle-video-choice-wrap .cattle-page-section {
+        width: 100% !important;
+      }
+
+      .cattle-video-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        align-items: start !important;
+      }
+
+      .cattle-video-media {
+        width: 100% !important;
+        justify-self: stretch !important;
+      }
+
+      .cattle-video-card img {
+        aspect-ratio: 0.72 / 1 !important;
+        min-height: 100% !important;
+        object-fit: cover !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .cattle-page-section,
+      .cattle-weighing-video,
+      .system-choice,
+      .cattle-comparison,
+      .system-advice,
+      .cattle-support-trust {
+        padding-inline: 14px;
+      }
+
+      .cattle-video-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .cattle-video-card {
+        border-radius: 9px;
+      }
+
+      .cattle-video-card img {
+        aspect-ratio: 0.72 / 1;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .cattle-video-badge {
+        width: 38px;
+        height: 38px;
+      }
+
+      .cattle-video-caption {
+        font-size: 14px;
+      }
+
+      .system-product-grid,
+      .product-grid,
+      .category-product-grid {
+        grid-template-columns: repeat(2, minmax(225px, 1fr));
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+      }
+
+      .system-product-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .comparison-grid {
+        display: block;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        margin-top: 12px;
+        overflow: visible;
+      }
+
+      .comparison-header,
+      .comparison-row {
+        border-top: 1px solid rgba(18, 130, 54, 0.12);
+      }
+
+      .comparison-header {
+        display: none;
+      }
+
+      .comparison-row > span {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4px;
+        align-items: start;
+        padding: 10px 12px;
+        border-top: 1px solid rgba(18, 130, 54, 0.12);
+        border-right: 0;
+      }
+
+      .comparison-row > span::before {
+        display: inline-block;
+        margin-bottom: 4px;
+        color: #516559;
+        font-weight: 700;
+      }
+
+      .comparison-row > span:first-child::before {
+        content: "Feature: ";
+      }
+
+      .comparison-row {
+        border: 1px solid rgba(18, 130, 54, 0.16);
+        border-radius: 9px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        background: #fff;
+      }
+
+      .comparison-row > span:nth-child(2)::before {
+        content: "Standard Bundle: ";
+      }
+
+      .comparison-row > span:nth-child(3)::before {
+        content: "WeighRite System: ";
+      }
+
+      .comparison-row > span:first-child {
+        background: rgba(18, 130, 54, 0.08);
+        border-top: 0;
+        font-weight: 700;
+      }
+    }
+  </style>
+  </head>
+  <body class="home-page">
+    <header class="site-header">
+      <div class="main-header">
+        <div class="brand-lockup">
+          <a class="brand" href="./index.html" aria-label="Clippers Ireland home">
+            <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+          </a>
+          <span class="brand-divider" aria-hidden="true"></span>
+          <span class="ergopro-lockup">
+            <span>home of</span>
+            <img src="./assets/logo.png" alt="ErgoPro" />
+          </span>
+        </div>
+
+        <form class="search" role="search">
+          <label class="sr-only" for="site-search">Search products</label>
+          <input id="site-search" name="q" type="search" placeholder="Search the store" />
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M16.5 16.5L21 21" />
+            </svg>
+          </button>
+        </form>
+
+        <div class="header-actions" aria-label="Header actions">
+          <a class="phone-link" href="tel:+353214874441">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" />
+            </svg>
+            <span>
+              <small>Need help? Call us</small>
+              <strong>021 487 4441</strong>
+            </span>
+          </a>
+
+          <a class="icon-link" href="#" aria-label="Account">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c1.1-4.2 4-6.4 8-6.4s6.9 2.2 8 6.4" />
+            </svg>
+            <span>Account</span>
+          </a>
+
+          <a class="cart-link" href="#" aria-label="Cart with 0 items">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="category-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="category-nav" id="category-nav" aria-label="Product categories">
+        <div class="category-item category-item--clippers">
+          <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Clippers subcategories">
+            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
+            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
+            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
+            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
+            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+          </div>
+        </div>
+        <div class="category-item category-item--cattle-weighing">
+          <a href="./cattle-weighing.html">Cattle Weighing <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Cattle Weighing links">
+            <a href="./cattle-weighing.html#system-choice-title">Choose Your System</a>
+            <a href="./cattle-weighing.html#comparison-title">System Comparison</a>
+            <a href="./cattle-weighing.html#cattle-products-title">Browse Products</a>
+            <a href="./cattle-weighing.html#cattle-advice-title">Advice &amp; Aftercare</a>
+          </div>
+        </div>
+        <div class="category-item category-item--milking-machines">
+          <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Milking Machines links">
+            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
+            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
+            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+          
+          </div>
+        </div>
+        <div class="category-item category-item--electric-fencing">
+          <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Electric Fencing links">
+            <a href="./electric-fencing.html">Electric Fencing</a>
+          </div>
+        </div>
+        <div class="category-item category-item--all-farming">
+          <a href="./all-farming.html">All Farming <span aria-hidden="true">⌄</span></a>
+                    <div class="category-dropdown" aria-label="All Farming links">
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="./milking-machines.html">Milking Machines</a>
+            <a href="./parts-repairs.html">Dairy Products</a>
+            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
+            <a href="./electric-fencing.html">Blowers</a>
+          </div>
+        </div>
+        <a class="category-nav-link" href="./apparel.html">Apparel</a>
+        <div class="category-item category-item--parts-repairs">
+          <a href="./parts-repairs.html">Parts &amp; Repairs <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Parts & Repairs links">
+            <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+          </div>
+        </div>
+        <a href="./tips-guides.html">Tips &amp; Guides</a>
+        <a href="./shows.html">Shows</a>
+      </nav>
+    </header>
+
+    <main class="page-shell category-page">
+  <section class="category-hero category-hero--clippers-latest hero-text-template" aria-labelledby="category-title">
+    <div class="category-hero-media" aria-hidden="true">
+      <img src="./assets/shop/cattle-weighing-hero-hires.png" alt="" loading="eager" decoding="sync" width="1508" height="1350" />
+    </div>
+    <div class="category-hero-copy">
+      <nav class="category-breadcrumb" aria-label="Breadcrumb">
+        <a href="./index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <span>Cattle Weighing</span>
+      </nav>
+      <h1 id="category-title">Cattle Weighing</h1>
+      <p class="category-hero-description">
+        <span>Precision livestock weighing</span>
+        <span>for modern Irish farms and livestock teams,</span>
+        <span class="category-hero-description-accent">with reliable support from ordering to aftercare.</span>
+      </p>
+    </div>
+  </section>
+
+    <div class="cattle-video-choice-wrap">
+    <section class="cattle-page-section cattle-weighing-video" aria-labelledby="weighing-video-title">
+      <div class="cattle-content-shell">
+        <div class="cattle-video-layout">
+          <div class="cattle-video-text">
+            <h2 class="section-title" id="weighing-video-title">Con Explains the Two Cattle Weighing Systems We Have Available</h2>
+            <p class="cattle-section-intro">
+              Not sure which system is right for you? In this warehouse video, Con explains the difference between our two main cattle weighing options: the standard weigh bar and clock bundle, and the smart mobile-connected system that allows you to use your phone instead of a traditional kg reader.
+            </p>
+          </div>
+          <div class="cattle-video-media">
+            <div class="cattle-video-card">
+              <img src="./assets/instagram/con-weighing-equipment.png" alt="Cattle weighing systems shown in warehouse video preview" />
+              <a href="#" aria-label="Warehouse video: Standard vs Smart Cattle Weighing">
+                <span class="cattle-video-badge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 4v16l14-8L6 4z" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <p class="cattle-video-caption">Warehouse video: Standard vs Smart Cattle Weighing</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="cattle-page-section system-choice" aria-labelledby="system-choice-title">
+    <div class="cattle-content-shell">
+      <h2 class="section-title" id="system-choice-title">Choose Your Cattle Weighing Setup</h2>
+      <p class="cattle-section-intro">
+        We keep this section simple. Pick the system that matches your farm's workflow, infrastructure, and how much data you want to manage after weighing.
+      </p>
+
+      <div class="system-choice-grid">
+        <article class="system-choice-card">
+          <div class="system-choice-card-image">
+            <img class="system-choice-card-image--trim" src="./assets/ergoprocard.png" alt="ErgoPro weighing system setup" />
+          </div>
+          <h3>ErgoPro Standard Weighing Bundle</h3>
+          <p class="system-choice-subtitle">Weigh Bars + Basic Digital Clock</p>
+          <p>
+            A simple and reliable weighing setup using weigh bars and a basic digital clock/kg reader. Ideal if you want to weigh cattle and read the weight directly on the display without using apps or software.
+          </p>
+          <ul>
+            <li>Simple farm weighing</li>
+            <li>Direct weight reading</li>
+            <li>Easy plug-and-use setup</li>
+            <li>Lower budget setups</li>
+          </ul>
+          <a class="repairs-band-cta" href="#">View Standard Bundle</a>
+        </article>
+
+        <article class="system-choice-card">
+          <div class="system-choice-card-image">
+            <picture>
+              <img class="system-choice-card-image--cover" src="./assets/weighritelight.png" alt="WeighRite weighing setup" />
+            </picture>
+          </div>
+          <h3>WeighRite Weighing System</h3>
+          <p class="system-choice-subtitle">Weigh Bars + Mobile Box + Software</p>
+          <p>
+            A more advanced system that allows you to use your mobile phone instead of a standard kg reader. Ideal if you want software features, saved records and a more modern weighing setup.
+          </p>
+          <ul>
+            <li>Using your phone as the display</li>
+            <li>Saving and managing weight records</li>
+            <li>More advanced herd data</li>
+            <li>Future-proof weighing setup</li>
+          </ul>
+          <a class="repairs-band-cta" href="#">View Smart System</a>
+        </article>
+      </div>
+      </div>
+    </section>
+    </div>
+
+  <section class="cattle-page-section cattle-comparison" aria-labelledby="comparison-title">
+    <div class="cattle-content-shell">
+      <h2 class="section-title" id="comparison-title">Standard Clock System or Smart Mobile System?</h2>
+      <div class="comparison-grid" role="table" aria-label="System comparison">
+        <div class="comparison-header">
+          <span role="columnheader">Feature</span>
+          <span role="columnheader">Standard Bundle</span>
+          <span role="columnheader">Smart Mobile System</span>
+        </div>
+        <div class="comparison-row" role="row">
+          <span role="cell">Weigh bars included</span>
+          <span role="cell">Yes</span>
+          <span role="cell">Yes</span>
+        </div>
+        <div class="comparison-row" role="row">
+          <span role="cell">Weight display</span>
+          <span role="cell">Basic digital clock / kg reader</span>
+          <span role="cell">Mobile phone</span>
+        </div>
+        <div class="comparison-row" role="row">
+          <span role="cell">Software features</span>
+          <span role="cell">No</span>
+          <span role="cell">Yes</span>
+        </div>
+        <div class="comparison-row" role="row">
+          <span role="cell">Saved records</span>
+          <span role="cell">No / limited</span>
+          <span role="cell">Yes</span>
+        </div>
+        <div class="comparison-row" role="row">
+          <span role="cell">Ease of use</span>
+          <span role="cell">Very simple</span>
+          <span role="cell">More advanced</span>
+        </div>
+        <div class="comparison-row" role="row">
+          <span role="cell">Best for</span>
+          <span role="cell">Simple weighing</span>
+          <span role="cell">Weight tracking and records</span>
+        </div>
+        <div class="comparison-row" role="row">
+          <span role="cell">Budget</span>
+          <span role="cell">Lower</span>
+          <span role="cell">Higher</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cattle-page-section system-advice" aria-labelledby="advice-title">
+    <div class="cattle-content-shell">
+      <h2 class="section-title" id="advice-title">Not Sure Which System You Need?</h2>
+      <p>
+        If you simply need to weigh cattle and read the weight on the day, the standard bundle is usually enough. If you want to store records, track performance and use your phone as part of the weighing process, the smart mobile system may be the better long-term choice.
+      </p>
+      <p>
+        We are happy to talk you through the options and help you choose the right setup for your yard.
+      </p>
+      <a class="repairs-band-cta" href="tel:+353214874441">Contact Us for Advice</a>
+    </div>
+  </section>
+
+  <section class="featured-products" aria-labelledby="cattle-products-title">
+    <div class="featured-products-header">
+      <h2 class="section-title" id="cattle-products-title">Shop Cattle Weighing Products</h2>
+    </div>
+
+    <div class="cattle-content-shell">
+      <p class="cattle-section-intro">
+        Choose from complete weighing bundles or individual components if you already have part of your setup.
+      </p>
+
+      <p class="product-group-label">Complete Bundles</p>
+      <div class="system-product-grid">
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="ErgoPro Standard Weighing Bundle product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Standard Weigh Bar &amp; Clock Bundle</a></h3>
+            <p class="product-price">&euro;1,120.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="Smart Mobile Weighing Bundle product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Smart Mobile Weighing Bundle</a></h3>
+            <p class="product-price">&euro;1,650.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="Cattle weigh bars product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Cattle Weigh Bars</a></h3>
+            <p class="product-price">&euro;420.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="Weighing platform product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Weighing Platform</a></h3>
+            <p class="product-price">&euro;1,100.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <p class="product-group-label">Weighing Components</p>
+      <div class="system-product-grid">
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="Digital clock reader product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Basic Digital Clock / KG Reader</a></h3>
+            <p class="product-price">&euro;220.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="Mobile weighing box product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Smart Mobile Weighing Box</a></h3>
+            <p class="product-price">&euro;350.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="Cables for weighing system product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Cables</a></h3>
+            <p class="product-price">&euro;35.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="Charger for weighing system product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Chargers</a></h3>
+            <p class="product-price">&euro;49.99</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/shop/newweighingpic.png" alt="Mounting bracket product image" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Mounting Brackets</a></h3>
+            <p class="product-price">&euro;39.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <p class="product-group-label">Accessories &amp; Parts</p>
+      <div class="system-product-grid">
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/parts.png" alt="Replacement weighing parts and accessories" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Replacement Parts</a></h3>
+            <p class="product-price">&euro;28.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <a class="product-image" href="#">
+            <img src="./assets/clipperparts.png" alt="Additional replacement parts package" />
+          </a>
+          <div class="product-info">
+            <h3><a href="#">Accessories Pack</a></h3>
+            <p class="product-price">&euro;85.00</p>
+            <button class="add-cart" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                <circle cx="10" cy="21" r="1.5" />
+                <circle cx="18" cy="21" r="1.5" />
+              </svg>
+              Add to Cart
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cattle-page-section cattle-support-trust" aria-labelledby="cattle-advice-title">
+    <div class="cattle-content-shell">
+      <h2 class="section-title" id="cattle-advice-title">Advice, Setup &amp; Aftercare</h2>
+      <p>
+        Cattle weighing equipment can be difficult to choose if you are not sure what system you need. We can help you compare the options, explain what each part does and advise on the best setup for your yard.
+      </p>
+      <ul class="cattle-support-list">
+        <li>Expert Advice Before You Buy</li>
+        <li>Complete Bundles Available</li>
+        <li>Parts &amp; Support After Purchase</li>
+      </ul>
+      <a class="repairs-band-cta" href="tel:+353214874441">Contact Our Team</a>
+    </div>
+  </section>
+
+</main>
+
+
+
+
+
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-brand-lockup">
+            <a class="footer-logo" href="./index.html" aria-label="Clippers Ireland home">
+              <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+            </a>
+            <span class="footer-brand-divider" aria-hidden="true"></span>
+            <span class="footer-ergopro-lockup">
+              <span>home of</span>
+              <img src="./assets/logo.png" alt="ErgoPro" />
+            </span>
+          </div>
+          <p>Ireland's trusted supplier of professional clippers, agricultural equipment, parts, service and advice.</p>
+          <div class="footer-contact">
+            <a href="tel:+353214874441">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" /></svg>
+              021 487 4441
+            </a>
+            <a href="mailto:sales@clippersireland.ie">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" /><path d="M4 7l8 6 8-6" /></svg>
+              sales@clippersireland.ie
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-row">
+          <nav class="footer-links" aria-label="Shop by animal links">
+            <p class="footer-subheading">Shop by animal</p>
+            <a href="./index.html#shop-by-animal-title">Cattle</a>
+            <a href="./index.html#shop-by-animal-title">Sheep</a>
+            <a href="./index.html#shop-by-animal-title">Horse</a>
+            <a href="./index.html#shop-by-animal-title">Dog</a>
+          </nav>
+
+          <nav class="footer-links footer-links--browse" aria-label="Browse categories links">
+            <p class="footer-subheading">Browse Categories</p>
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="clipper-sheep-cattle">Milking Machines</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./all-farming.html">All Farming</a>
+            <a href="./apparel.html">Apparel</a>
+          </nav>
+
+          <nav class="footer-links footer-links--read" aria-label="Read links">
+            <p class="footer-subheading">Read</p>
+            <a href="./index.html#endorsement-title">Endorsers</a>
+            <a href="./index.html#endorsement-title">Charities</a>
+            <a href="./tips-guides.html">Tip &amp; Guides</a>
+          </nav>
+
+          <nav class="footer-links footer-links--support" aria-label="Support links">
+            <p class="footer-subheading">Support</p>
+            <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+            <a href="./clippers.html#warranty-title">Warranty</a>
+            <a href="mailto:sales@clippersireland.ie?subject=Delivery%20and%20Returns">Delivery &amp; Returns</a>
+            <a href="mailto:sales@clippersireland.ie">Contact us</a>
+          </nav>
+
+          <nav class="footer-links footer-links--pages" aria-label="Pages">
+            <p class="footer-subheading">Pages</p>
+            <a href="./index.html">WEEE Recycling</a>
+            <a href="./index.html#about-title">About us</a>
+            <a href="./shows.html">Shows</a>
+            <a href="./index.html">My Account</a>
+            <a href="./index.html">Sitemap</a>
+          </nav>
+        </div>
+
+        <div class="footer-newsletter-wrap">
+          <h2>Stay In The Loop</h2>
+          <div class="footer-newsletter">
+            <p class="footer-newsletter-text">
+              <span class="newsletter-text-desktop">Get product updates and offers from Clippers Ireland.</span>
+              <span class="newsletter-text-mobile">Get updates and offers from Clippers Ireland.</span>
+            </p>
+            <div class="newsletter-signup-row">
+              <div class="newsletter-signup">
+                <h3>Email Newsletter</h3>
+                <form class="footer-form footer-form--compact" data-newsletter-type="email">
+                  <label class="sr-only" for="footer-email">Email address</label>
+                  <input id="footer-email" name="email" type="email" autocomplete="email" required placeholder="Email address" />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+              <div class="newsletter-signup">
+                <h3>WhatsApp Offer Mailer</h3>
+                <form class="footer-form footer-form--compact" data-newsletter-type="whatsapp">
+                  <label class="sr-only" for="footer-whatsapp">Phone number</label>
+                  <input id="footer-whatsapp" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="Phone number" />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="footer-social" aria-label="Social links">
+            <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z" /></svg>
+            </a>
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1" /></svg>
+            </a>
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9c.1-2 1.5-3.4 3.5-3.5 3.5-.3 7.5-.3 11 0C19.5 5.6 20.9 7 21 9c.2 2 .2 4 0 6-.1 2-1.5 3.4-3.5 3.5-3.5.3-7.5.3-11 0C4.5 18.4 3.1 17 3 15c-.2-2-.2-4 0-6z" /><path d="M10 9l5 3-5 3z" /></svg>
+            </a>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Clippers Ireland. All rights reserved.</p>
+        <div>
+          <a href="./index.html">Privacy Policy</a>
+          <a href="./index.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <aside class="chat-widget" aria-label="Chat support preview">
+      <div class="chat-widget-card">
+        <div class="chat-widget-header">
+          <span class="chat-widget-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+          </span>
+          <span>
+            <strong>Need help?</strong>
+            <small>Chat with Clippers Ireland</small>
+          </span>
+        </div>
+        <p>Questions about clippers, parts or servicing? We are here to help.</p>
+        <div class="chat-widget-input">
+          <span>Type your message...</span>
+          <button type="button" aria-label="Send preview message">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-5 16-3-7z" /></svg>
+          </button>
+        </div>
+      </div>
+      <button class="chat-widget-button" type="button" aria-label="Open chat preview">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+      </button>
+    </aside>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

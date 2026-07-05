@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clippers Ireland - Family Tree Site Map</title>
+  <style>
+    :root {
+      --done: #1b8b57;
+      --done-bg: #e8f6ee;
+      --done-border: #a8d8bd;
+      --planned: #dc2626;
+      --planned-bg: #fee2e2;
+      --planned-border: #fca5a5;
+      --work: #d38a00;
+      --bucket-bg: #fff3d6;
+      --bucket-border: #f2b84b;
+      --note: #64748b;
+      --border: #d1d5db;
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --card: #ffffff;
+      --line: #c3cedb;
+      --tree-bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .page-wrap {
+      max-width: calc(297mm + 32px);
+      margin: 24px auto;
+      padding: 0 16px 28px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0 0 12px;
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .toolbar .btn {
+      border: 1px solid var(--border);
+      background: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: #111827;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 18px;
+      border: 0;
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    .legend-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      min-width: 0;
+      padding: 4px 0;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: left;
+      color: #1f2937;
+    }
+
+    .legend-swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      flex: 0 0 18px;
+      display: inline-block;
+    }
+
+    .legend-swatch--done {
+      background: var(--done-bg);
+      border: 1px solid var(--done-border);
+    }
+
+    .legend-swatch--bucket {
+      background: var(--bucket-bg);
+      border: 1px solid var(--bucket-border);
+    }
+
+    .legend-swatch--planned {
+      background: var(--planned-bg);
+      border: 1px solid var(--planned-border);
+    }
+
+    .map-key {
+      border: 1px solid var(--border);
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .map-key p {
+      margin: 0 0 4px;
+    }
+
+    .map-key p:last-child {
+      margin-bottom: 0;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border: 1px solid #111;
+      border-radius: 50%;
+      flex: 0 0 12px;
+      display: inline-block;
+    }
+
+    .done-dot {
+      background: var(--done);
+    }
+
+    .work-dot {
+      background: var(--work);
+    }
+
+    .planned-dot {
+      background: var(--planned);
+    }
+
+    .note-dot {
+      background: #ffffff;
+    }
+
+    .tree-shell {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      overflow-x: auto;
+    }
+
+    .print-sheet {
+      width: min(100%, 210mm);
+      aspect-ratio: 210 / 297;
+      min-height: 0;
+      margin: 0 auto 12mm;
+      padding: 8mm;
+      overflow: hidden;
+      break-after: page;
+      page-break-after: always;
+    }
+
+    .print-sheet .tree-section {
+      zoom: 0.84;
+    }
+
+    .top-menu-sheet .tree-section {
+      margin-left: -26px;
+    }
+
+    .top-menu-sheet .home-branch {
+      grid-template-columns: 128px max-content;
+      column-gap: 0;
+    }
+
+    .top-menu-sheet .home-branch > .node-row {
+      justify-content: center;
+      justify-self: start;
+      min-width: 112px;
+      padding-left: 9px;
+      padding-right: 9px;
+      font-size: 13px;
+      text-align: center;
+      gap: 0;
+    }
+
+    .top-menu-sheet .home-branch > .node-row::after {
+      width: 44px;
+    }
+
+    .top-menu-sheet .home-branch > .node-row .status {
+      display: none;
+    }
+
+    .top-menu-sheet .home-branch > .node-row .node-label {
+      width: 100%;
+      text-align: center;
+    }
+
+    .top-menu-sheet .home-branch > .node-row .stacked-label span {
+      white-space: nowrap;
+    }
+
+    .top-menu-sheet .tree li:has(> ul > li > .bucket-grid) {
+      grid-template-columns: 170px max-content;
+      column-gap: 10px;
+    }
+
+    .top-menu-sheet .tree li:has(> ul > li > .bucket-grid) > .node-row::after {
+      width: calc(180px - 100%);
+    }
+
+    .top-menu-sheet .tree li:has(> ul > li > .bucket-grid .node-row:nth-child(3):nth-last-child(3)) > .node-row::after,
+    .top-menu-sheet .tree li:has(> ul > li > .bucket-grid .node-row:nth-child(2):nth-last-child(2)) > .node-row::after {
+      width: calc(210px - 100%);
+    }
+
+    .tree-title {
+      margin-bottom: 10px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .sheet-header {
+      margin-bottom: 18px;
+    }
+
+    .note {
+      color: var(--note);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .tree {
+      --left: 14px;
+      --pad-x: 54px;
+      --pad-y: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tree ul {
+      margin: 0;
+      padding: 0 0 0 var(--pad-x);
+      list-style: none;
+      position: relative;
+    }
+
+    .tree li {
+      position: relative;
+      padding: var(--pad-y) 0 var(--pad-y) 24px;
+      min-height: 28px;
+    }
+
+    .tree li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      bottom: 0;
+      border-left: 1px solid var(--line);
+    }
+
+    .tree li:last-child::before {
+      bottom: 50%;
+    }
+
+    .tree li:first-child::before {
+      top: 50%;
+    }
+
+    .tree li::after {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 50%;
+      width: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .tree .node-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      max-width: 100%;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--tree-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 10px;
+    }
+
+    .tree .node-row:visited {
+      color: var(--text);
+    }
+
+    .tree .node-row:has(.status.done) {
+      background: var(--done-bg);
+      border-color: var(--done-border);
+      justify-content: center;
+      text-align: center;
+      gap: 0;
+    }
+
+    .tree .node-row:has(.status.planned) {
+      background: var(--planned-bg);
+      border-color: var(--planned-border);
+    }
+
+    .tree .node-label {
+      display: inline-block;
+      line-height: 1.2;
+    }
+
+    .tree .node-label.stacked-label {
+      text-align: center;
+    }
+
+    .tree .node-label.stacked-label span {
+      display: block;
+    }
+
+    .tree .node-row.leaf {
+      border-style: solid;
+      background: var(--bucket-bg);
+      border-color: var(--bucket-border);
+    }
+
+    .tree .node-row.planned-node {
+      background: var(--planned-bg);
+      border-color: var(--planned-border);
+      color: var(--text);
+    }
+
+    .tree .node-row.done-node {
+      background: var(--done-bg);
+      border-color: var(--done-border);
+      color: var(--text);
+      justify-content: center;
+      text-align: center;
+    }
+
+    .tree .node-row:has(.status.done) .status.done {
+      display: none;
+    }
+
+    .tree .node-row:has(.status.done) .node-label {
+      width: 100%;
+      text-align: center;
+    }
+
+    .home-branch {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      column-gap: 32px;
+      align-items: center;
+      padding-left: 0;
+    }
+
+    .home-branch::before,
+    .home-branch::after {
+      display: none;
+    }
+
+    .home-branch > .node-row {
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+    }
+
+    .home-branch > .node-row::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      width: 62px;
+      border-top: 1px solid var(--line);
+    }
+
+    .home-branch > ul {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .home-branch > ul > li:first-child::before {
+      top: 50%;
+    }
+
+    .menu-branch {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      column-gap: 44px;
+      align-items: center;
+    }
+
+    .menu-branch > .node-row {
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+    }
+
+    .menu-branch > .node-row::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      width: 70px;
+      border-top: 1px solid var(--line);
+    }
+
+    .menu-branch > ul {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .menu-branch > ul > li:first-child::before {
+      top: 50%;
+    }
+
+    .tree li:has(> ul > li > .bucket-grid) {
+      display: grid;
+      grid-template-columns: 170px max-content;
+      column-gap: 22px;
+      align-items: center;
+    }
+
+    .tree li:has(> ul > li > .bucket-grid)::after {
+      top: 50%;
+    }
+
+    .tree li:has(> ul > li > .bucket-grid) > .node-row {
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+      width: max-content;
+      min-width: 0;
+    }
+
+    .tree li:has(> ul > li > .bucket-grid) > .node-row::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      width: calc(192px - 100%);
+      border-top: 1px solid var(--line);
+    }
+
+    .tree li:has(> ul > li > .bucket-grid) > ul {
+      grid-column: 2;
+      grid-row: 1;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .tree li:has(> ul > li > .bucket-grid) > ul > li {
+      padding: 0;
+    }
+
+    .tree li:has(> ul > li > .bucket-grid) > ul > li::before,
+    .tree li:has(> ul > li > .bucket-grid) > ul > li::after {
+      display: none;
+    }
+
+    .status {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid #111;
+      flex: 0 0 10px;
+      margin-left: 2px;
+      display: inline-block;
+    }
+
+    .status.done {
+      background: transparent;
+      border-color: transparent;
+      width: 0;
+      height: 0;
+      margin: 0;
+      flex-basis: 0;
+    }
+
+    .status.work {
+      background: var(--work);
+    }
+
+    .status.planned {
+      background: transparent;
+      border-color: transparent;
+      width: 0;
+      height: 0;
+      margin: 0;
+      flex-basis: 0;
+    }
+
+    .status.note {
+      background: transparent;
+    }
+
+    .bucket-note {
+      color: var(--note);
+      margin-left: 4px;
+      font-size: 12px;
+    }
+
+    .tree-section {
+      margin-bottom: 18px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .tree-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .group-title {
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      color: #334155;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    .tree-note-caption {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    .bucket-grid {
+      display: grid;
+      grid-template-columns: max-content;
+      gap: 6px;
+      margin-top: 4px;
+      margin-left: 0;
+      justify-content: start;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .leaf-small {
+      font-size: 14px;
+    }
+
+    .bucket-grid::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      bottom: 16px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .bucket-grid .node-row {
+      font-size: 13px;
+      padding: 6px 8px;
+      width: max-content;
+      max-width: 100%;
+      justify-self: start;
+      position: relative;
+    }
+
+    .bucket-grid > .node-row::before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: calc(50% - 0.5px);
+      width: 30px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .tree li:has(> ul > li > .bucket-grid .node-row:nth-child(3):nth-last-child(3)) > .node-row::after {
+      width: calc(222px - 100%);
+    }
+
+    .tree li:has(> ul > li > .bucket-grid .node-row:nth-child(2):nth-last-child(2)) > .node-row::after {
+      width: calc(222px - 100%);
+    }
+
+    .bucket-grid > .node-row:nth-child(3):nth-last-child(3)::before {
+      display: none;
+    }
+
+    .bucket-grid > .node-row:nth-child(2):nth-last-child(2)::before {
+      display: none;
+    }
+
+    .bucket-grid--cattle-weighing::before {
+      bottom: 15px;
+    }
+
+    .bucket-grid--milking-machines::before {
+      top: 17px;
+    }
+
+    .bucket-branch-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      width: max-content;
+    }
+
+    .bucket-branch-row > .node-row::before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: calc(50% - 0.5px);
+      width: 30px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .sub-sub-list {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 28px;
+      position: relative;
+    }
+
+    .sub-sub-list::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 50%;
+      width: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sub-sub-list .node-row {
+      font-size: 12px;
+      padding: 5px 7px;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        background: white;
+      }
+
+      .page-wrap {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .topline,
+      .toolbar,
+      .note {
+        display: none;
+      }
+
+      .tree-shell.print-sheet {
+        width: 210mm;
+        height: 297mm;
+        min-height: 0;
+        margin: 0;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 8mm;
+        overflow: hidden;
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .sheet-header {
+        margin-bottom: 6mm;
+      }
+
+      .tree-title {
+        margin-bottom: 5mm;
+        font-size: 18pt;
+      }
+
+      .legend {
+        gap: 14mm;
+        margin-bottom: 6mm;
+      }
+
+      .legend-box {
+        font-size: 10pt;
+      }
+
+      .tree-section {
+        zoom: 0.84;
+      }
+
+      .tree-shell,
+      .tree li {
+        page-break-inside: avoid;
+      }
+
+      .node-row {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="topline">
+      <div>
+        <h1>Clippers Ireland - Visual Family Tree Map</h1>
+        <p>Green = Completed pages, Orange = Buckets/sections, Red = Planned pages</p>
+      </div>
+      <div class="toolbar">
+        <a class="btn" href="./index.html">Open Home</a>
+        <a class="btn" href="#" onclick="window.print();return false;">Print Site Map</a>
+      </div>
+    </div>
+
+    <div class="tree-shell print-sheet top-menu-sheet">
+      <div class="sheet-header">
+        <h2 class="tree-title">Site Tree / Top Menu Bar</h2>
+
+        <div class="legend">
+          <div class="legend-box"><span class="legend-swatch legend-swatch--done"></span>Completed</div>
+          <div class="legend-box"><span class="legend-swatch legend-swatch--bucket"></span>Category made, page not created yet</div>
+          <div class="legend-box"><span class="legend-swatch legend-swatch--planned"></span>Category / page not created yet</div>
+        </div>
+      </div>
+
+      <div class="tree-section">
+        <ul class="tree">
+          <li class="home-branch">
+            <a class="node-row" href="./index.html">
+              <span class="status done" aria-hidden="true"></span>
+              <span class="node-label stacked-label"><span>Home Page</span><span>Top Menu Bar</span></span>
+            </a>
+            <ul>
+                  <li>
+                    <a class="node-row" href="./clippers.html">
+                      <span class="status done"></span>
+                      <span class="node-label">Clippers</span>
+                    </a>
+                    <ul class="tree">
+                      <li>
+                        <div class="bucket-grid">
+                          <a class="node-row leaf leaf-small" href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
+                          <a class="node-row leaf leaf-small" href="./clippers.html#clipper-horse">Horse Clippers</a>
+                          <a class="node-row leaf leaf-small" href="./clippers.html#clipper-dog">Dog Clippers</a>
+                          <a class="node-row leaf leaf-small" href="./clippers.html#clipper-blades">Clipper Blades</a>
+                          <div class="bucket-branch-row">
+                            <a class="node-row leaf leaf-small" href="./clippers.html#clipper-parts">Clipper Parts</a>
+                            <span class="sub-sub-list" aria-label="Planned Clipper Parts pages">
+                              <span class="node-row leaf leaf-small planned-node">Cara</span>
+                              <span class="node-row leaf leaf-small planned-node">Master</span>
+                              <span class="node-row leaf leaf-small planned-node">Hush</span>
+                              <span class="node-row leaf leaf-small planned-node">Ovis</span>
+                              <span class="node-row leaf leaf-small planned-node">Handy II</span>
+                              <span class="node-row leaf leaf-small planned-node">Older Models</span>
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="node-row" href="./cattle-weighing.html">
+                      <span class="status done"></span>
+                      <span class="node-label">Cattle Weighing</span>
+                    </a>
+                    <ul class="tree">
+                      <li>
+                        <div class="bucket-grid bucket-grid--cattle-weighing">
+                          <a class="node-row leaf leaf-small" href="./cattle-weighing.html">Standard</a>
+                          <a class="node-row leaf leaf-small" href="./weighrite-smart-weighing-system.html">WeighRite</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="node-row" href="./milking-machines.html">
+                      <span class="status done"></span>
+                      <span class="node-label">Milking Machines</span>
+                    </a>
+                    <ul class="tree">
+                      <li>
+                        <div class="bucket-grid bucket-grid--milking-machines">
+                          <a class="node-row leaf leaf-small" href="./milking-machines.html#cow-milkers">Cow Milkers</a>
+                          <a class="node-row leaf leaf-small" href="./milking-machines.html#goat-milkers">Goat Milkers</a>
+                          <a class="node-row leaf leaf-small" href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="node-row" href="./electric-fencing.html">
+                      <span class="status done"></span>
+                      <span class="node-label">Electric Fencing</span>
+                    </a>
+                    <ul class="tree">
+                      <li>
+                        <div class="bucket-grid">
+                          <a class="node-row leaf leaf-small" href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
+                          <a class="node-row leaf leaf-small" href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
+                          <a class="node-row leaf leaf-small" href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
+                          <a class="node-row leaf leaf-small" href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="node-row" href="./all-farming.html">
+                      <span class="status done"></span>
+                      <span class="node-label">All Farming</span>
+                    </a>
+                    <ul class="tree">
+                      <li>
+                        <div class="bucket-grid">
+                          <a class="node-row leaf leaf-small" href="./clippers.html">Clippers</a>
+                          <a class="node-row leaf leaf-small" href="./cattle-weighing.html">Cattle Weighing</a>
+                          <a class="node-row leaf leaf-small" href="./milking-machines.html">Milking Machines</a>
+                          <a class="node-row leaf leaf-small" href="./parts-repairs.html">Dairy Products</a>
+                          <a class="node-row leaf leaf-small" href="./all-farming.html#all-farming-featured-title">Brushes</a>
+                          <a class="node-row leaf leaf-small" href="./electric-fencing.html">Electric Fencing</a>
+                          <a class="node-row leaf leaf-small" href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
+                          <a class="node-row leaf leaf-small" href="./electric-fencing.html">Blowers</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="node-row" href="./apparel.html">
+                      <span class="status done"></span>
+                      <span class="node-label">Apparel</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="node-row" href="./parts-repairs.html">
+                      <span class="status done"></span>
+                      <span class="node-label">Parts &amp; Repairs</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="node-row" href="./tips-guides.html">
+                      <span class="status done"></span>
+                      <span class="node-label">Tips &amp; Guides</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="node-row" href="./shows.html">
+                      <span class="status done"></span>
+                      <span class="node-label">Shows</span>
+                    </a>
+                  </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tree-shell print-sheet">
+      <div class="sheet-header">
+        <h2 class="tree-title">Site Tree / Shop by Animal Categories</h2>
+
+        <div class="legend">
+          <div class="legend-box"><span class="legend-swatch legend-swatch--done"></span>Completed</div>
+          <div class="legend-box"><span class="legend-swatch legend-swatch--bucket"></span>Category made, page not created yet</div>
+          <div class="legend-box"><span class="legend-swatch legend-swatch--planned"></span>Category / page not created yet</div>
+        </div>
+      </div>
+
+      <div class="tree-section">
+        <h3 class="group-title">Shop by Animal Categories</h3>
+        <ul class="tree">
+          <li>
+            <span class="node-row">Shop-by category pages</span>
+            <ul>
+              <li>
+                <a class="node-row" href="./shop-by-cattle.html">
+                  <span class="status done"></span>
+                  <span class="node-label">Shop by Cattle</span>
+                  <span class="bucket-note">(all-farming style buckets)</span>
+                </a>
+                <ul class="tree">
+                  <li>
+                    <div class="bucket-grid">
+                      <a class="node-row leaf leaf-small" href="./clippers.html">Clippers</a>
+                      <a class="node-row leaf leaf-small" href="./cattle-weighing.html">Cattle Weighing</a>
+                      <a class="node-row leaf leaf-small" href="./milking-machines.html">Milking Machines</a>
+                      <a class="node-row leaf leaf-small" href="./parts-repairs.html">Dairy Products</a>
+                      <a class="node-row leaf leaf-small" href="./all-farming.html#all-farming-featured-title">Brushes</a>
+                      <a class="node-row leaf leaf-small" href="./electric-fencing.html">Electric Fencing</a>
+                      <a class="node-row leaf leaf-small" href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
+                      <a class="node-row leaf leaf-small" href="./electric-fencing.html">Blowers</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="node-row" href="./shop-by-horse.html">
+                  <span class="status done"></span>
+                  <span class="node-label">Shop by Horse</span>
+                </a>
+                <ul class="tree">
+                  <li>
+                    <div class="bucket-grid">
+                      <span class="node-row leaf leaf-small">Horse Clippers</span>
+                      <span class="node-row leaf leaf-small">Clipper Blades</span>
+                      <span class="node-row leaf leaf-small">Clipper Parts</span>
+                      <span class="node-row leaf leaf-small">Electric Fencing</span>
+                      <span class="node-row leaf leaf-small">Blowers</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="node-row" href="./shop-by-sheep.html">
+                  <span class="status done"></span>
+                  <span class="node-label">Shop by Sheep</span>
+                </a>
+                <ul class="tree">
+                  <li>
+                    <div class="bucket-grid">
+                      <span class="node-row leaf leaf-small">Sheep &amp; Cattle Clippers</span>
+                      <span class="node-row leaf leaf-small">Clipper Blades</span>
+                      <span class="node-row leaf leaf-small">Clipper Parts</span>
+                      <span class="node-row leaf leaf-small">Milking Machines</span>
+                      <span class="node-row leaf leaf-small">Electric Fencing</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="node-row" href="./shop-by-dog.html">
+                  <span class="status done"></span>
+                  <span class="node-label">Shop by Dog</span>
+                </a>
+                <ul class="tree">
+                  <li>
+                    <div class="bucket-grid">
+                      <span class="node-row leaf leaf-small">Dog Clippers</span>
+                      <span class="node-row leaf leaf-small">Clipper Blades</span>
+                      <span class="node-row leaf leaf-small">Clipper Parts</span>
+                      <span class="node-row leaf leaf-small">Blowers</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tree-shell print-sheet">
+      <div class="sheet-header">
+        <h2 class="tree-title">Site Tree / Support &amp; Reference</h2>
+
+        <div class="legend">
+          <div class="legend-box"><span class="legend-swatch legend-swatch--done"></span>Completed</div>
+          <div class="legend-box"><span class="legend-swatch legend-swatch--bucket"></span>Category made, page not created yet</div>
+          <div class="legend-box"><span class="legend-swatch legend-swatch--planned"></span>Category / page not created yet</div>
+        </div>
+      </div>
+
+      <div class="tree-section">
+        <h3 class="group-title">Support / Reference</h3>
+        <ul class="tree">
+          <li>
+            <a class="node-row" href="./apparel.html">
+              <span class="status done"></span>
+              <span class="node-label">Apparel</span>
+            </a>
+          </li>
+          <li>
+            <a class="node-row" href="./tips-guides.html">
+              <span class="status done"></span>
+              <span class="node-label">Tips &amp; Guides</span>
+            </a>
+          </li>
+          <li>
+            <a class="node-row" href="./shows.html">
+              <span class="status done"></span>
+              <span class="node-label">Shows</span>
+            </a>
+          </li>
+          <li>
+            <a class="node-row" href="./weighrite-smart-weighing-system.html">
+              <span class="status done"></span>
+              <span class="node-label">WeighRite Smart Weighing System</span>
+            </a>
+          </li>
+          <li>
+            <a class="node-row" href="./ergopro-standard-weighing-system.html">
+              <span class="status done"></span>
+              <span class="node-label">ErgoPro Standard Weighing System</span>
+            </a>
+          </li>
+          <li>
+            <span class="node-row" style="border-style: dashed; background: #fbfdfb;">
+              <span class="status work"></span>
+              <span class="node-label">Clippers Latest</span>
+              <span class="bucket-note">(under construction)</span>
+            </span>
+          </li>
+          <li>
+            <a class="node-row" href="./TEMPLATE-approved-subpage-shell.html">
+              <span class="status note"></span>
+              <span class="node-label">Template Approved Subpage Shell</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

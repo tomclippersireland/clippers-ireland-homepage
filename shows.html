@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clippers Ireland | Shows</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .category-hero--shows {
+      position: relative !important;
+      overflow: hidden !important;
+      background: none !important;
+      min-height: clamp(230px, 20vw, 330px) !important;
+      padding: clamp(30px, 3.2vw, 56px) clamp(18px, 2.6vw, 54px) !important;
+    }
+
+    .category-hero--shows::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(12, 24, 16, 0.78) 0%, rgba(12, 24, 16, 0.58) 48%, rgba(12, 24, 16, 0.24) 100%);
+    }
+
+    .category-hero--shows .category-hero-media {
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .category-hero--shows .category-hero-media img {
+      position: static !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: center 52% !important;
+      transform: none !important;
+    }
+
+    .category-hero--shows .category-hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 100%;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-copy {
+      position: absolute !important;
+      left: clamp(24px, 4vw, 78px) !important;
+      top: 44% !important;
+      transform: translateY(-50%) !important;
+      width: min(42vw, 650px) !important;
+      max-width: 650px !important;
+      display: grid !important;
+      gap: 10px !important;
+      margin: 0 !important;
+    }
+
+    .category-hero--shows.hero-text-template h1 {
+      margin: 0 0 12px !important;
+      font-size: clamp(30px, 3.2vw, 66px) !important;
+      line-height: 1.03 !important;
+      font-weight: 350 !important;
+      letter-spacing: 0 !important;
+      color: #fff !important;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28) !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-description {
+      display: block !important;
+      gap: 0 !important;
+      margin: 0 !important;
+      max-width: 48ch !important;
+      color: rgba(255, 253, 248, 0.9) !important;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22) !important;
+      font-size: clamp(14px, 1.1vw, 22px) !important;
+      line-height: 1.36 !important;
+      font-weight: 400 !important;
+    }
+
+    .shows-card-logo {
+      display: grid;
+      place-items: center;
+      min-height: 120px;
+      padding: 18px;
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      background: linear-gradient(180deg, #fffdf8 0%, #f3f0e8 100%);
+    }
+
+    .shows-card-logo img {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      max-height: 76px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .shows-page-section {
+      width: min(100%, 2020px);
+      margin: 0 auto;
+      padding: 34px clamp(18px, 2.6vw, 54px) 18px;
+      background: var(--page);
+    }
+
+    .shows-section-intro {
+      max-width: 70ch;
+      margin: 0 0 18px;
+      color: #2f3a34;
+      font-size: clamp(15px, 1vw, 19px);
+      line-height: 1.47;
+    }
+
+    .shows-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .shows-logo-card {
+      display: grid;
+      align-content: start;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: var(--shadow-card);
+    }
+
+    .shows-logo-media {
+      display: grid;
+      place-items: center;
+      min-height: 120px;
+      padding: 18px;
+      background: linear-gradient(180deg, #fffdf8 0%, #f3f0e8 100%);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .shows-logo-media img {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      max-height: 74px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .shows-logo-copy {
+      padding: 14px 16px 18px;
+    }
+
+    .shows-logo-copy h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(17px, 1.1vw, 22px);
+      line-height: 1.18;
+    }
+
+    .shows-list-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .shows-card {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      background: var(--surface);
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .shows-card-logo {
+      display: grid;
+      place-items: center;
+      min-height: 108px;
+      padding: 16px;
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      background: linear-gradient(180deg, #fffdf8 0%, #f3f0e8 100%);
+    }
+
+    .shows-card-logo img {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      max-height: 70px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .shows-card h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(20px, 1.45vw, 28px);
+      line-height: 1.12;
+      letter-spacing: 0.01em;
+    }
+
+    .shows-card p {
+      margin: 0;
+      color: #2f3a34;
+      font-size: clamp(14px, 0.86vw, 16px);
+      line-height: 1.46;
+    }
+
+    .shows-cta {
+      justify-self: start;
+    }
+
+    .shows-support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .shows-band {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 18px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .shows-band strong {
+      display: inline-block;
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(16px, 1vw, 22px);
+      line-height: 1.1;
+    }
+
+    .shows-band p {
+      margin: 0;
+      color: #2f3a34;
+      font-size: clamp(14px, 0.86vw, 16px);
+      line-height: 1.45;
+    }
+
+    @media (max-width: 1100px) {
+      .shows-logo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .shows-list-grid,
+      .shows-support-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .shows-page-section {
+        padding-inline: 14px;
+      }
+
+      .shows-logo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+</style>
+<style>
+  @media (max-width: 760px) {
+    .category-hero--shows.hero-text-template {
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 0 !important;
+      min-height: 0 !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      overflow: hidden !important;
+    }
+
+    .category-hero--shows.hero-text-template::before {
+      display: none !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-copy {
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+      order: 1;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      padding: 10px 18px 22px !important;
+      gap: 6px !important;
+      margin: 0 !important;
+      background: var(--nav-charcoal) !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-breadcrumb {
+      margin: 0 0 8px !important;
+      max-width: 100% !important;
+    }
+
+    .category-hero--shows.hero-text-template h1 {
+      margin: 0 0 8px !important;
+      max-width: 100% !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-description {
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      line-height: 1.28 !important;
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-description span {
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-description br {
+      display: none !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-description span:first-child {
+      margin-bottom: 0 !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-media {
+      position: relative !important;
+      inset: auto !important;
+      z-index: auto !important;
+      order: 2;
+      display: block !important;
+      width: 100% !important;
+      height: clamp(230px, 62vw, 330px) !important;
+      min-height: clamp(230px, 62vw, 330px) !important;
+      flex: 0 0 auto !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .category-hero--shows.hero-text-template .category-hero-media img {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center 52% !important;
+    }
+  }
+</style>
+</head>
+<body class="home-page">
+  <header class="site-header">
+    <div class="main-header">
+      <div class="brand-lockup">
+        <a class="brand" href="./index.html" aria-label="Clippers Ireland home">
+          <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+        </a>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="ergopro-lockup">
+          <span>home of</span>
+          <img src="./assets/logo.png" alt="ErgoPro" />
+        </span>
+      </div>
+
+      <form class="search" role="search">
+        <label class="sr-only" for="site-search">Search products</label>
+        <input id="site-search" name="q" type="search" placeholder="Search the store" />
+        <button type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M16.5 16.5L21 21" />
+          </svg>
+        </button>
+      </form>
+
+      <div class="header-actions" aria-label="Header actions">
+        <a class="phone-link" href="tel:+353214874441">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" />
+          </svg>
+          <span>
+            <small>Need help? Call us</small>
+            <strong>021 487 4441</strong>
+          </span>
+        </a>
+
+        <a class="icon-link" href="#" aria-label="Account">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c1.1-4.2 4-6.4 8-6.4s6.9 2.2 8 6.4" />
+          </svg>
+          <span>Account</span>
+        </a>
+
+        <a class="cart-link" href="#" aria-label="Cart with 0 items">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H7" />
+            <circle cx="10" cy="21" r="1.5" />
+            <circle cx="18" cy="21" r="1.5" />
+          </svg>
+          <span class="cart-count">0</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="category-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="category-nav" id="category-nav" aria-label="Product categories">
+        <div class="category-item category-item--clippers">
+          <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Clippers subcategories">
+            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
+            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
+            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
+            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
+            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+          </div>
+        </div>
+        <div class="category-item category-item--cattle-weighing">
+          <a href="./cattle-weighing.html">Cattle Weighing</a>
+</div>
+        <div class="category-item category-item--milking-machines">
+          <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Milking Machines links">
+            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
+            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
+            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+          
+          </div>
+        </div>
+        <div class="category-item category-item--electric-fencing">
+          <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Electric Fencing links">
+            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+          </div>
+        </div>
+        <div class="category-item category-item--all-farming">
+          <a href="./all-farming.html">All Farming <span aria-hidden="true">⌄</span></a>
+                    <div class="category-dropdown" aria-label="All Farming links">
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="./milking-machines.html">Milking Machines</a>
+            <a href="./parts-repairs.html">Dairy Products</a>
+            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
+            <a href="./electric-fencing.html">Blowers</a>
+          </div>
+        </div>
+        <a class="category-nav-link" href="./apparel.html">Apparel</a>
+        <div class="category-item category-item--parts-repairs">
+          <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+</div>
+        <a href="./tips-guides.html">Tips &amp; Guides</a>
+        <a href="./shows.html" aria-current="page">Shows</a>
+      </nav>
+  </header>
+
+  <main class="page-shell category-page">
+    <section class="category-hero category-hero--shows hero-text-template" aria-labelledby="shows-page-title">
+      <div class="category-hero-media" aria-hidden="true">
+        <img src="./assets/shows/ploughing-shows.jpg" alt="" loading="eager" decoding="sync" width="1200" height="640" />
+      </div>
+      <div class="category-hero-copy">
+        <nav class="category-breadcrumb" aria-label="Breadcrumb">
+          <a href="./index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Shows</span>
+        </nav>
+        <h1 id="shows-page-title">Shows 2026</h1>
+        <p class="category-hero-description">
+          Find us at agricultural shows and events across Ireland.<br />
+          See equipment in action, ask questions and get practical advice.
+        </p>
+      </div>
+    </section>
+
+    <section class="shows-page-section" aria-labelledby="shows-list-title">
+      <h2 class="section-title" id="shows-list-title">Upcoming Shows and Events</h2>
+      <div class="shows-list-grid">
+        <article class="shows-card">
+          <div class="shows-card-logo">
+            <img src="./assets/shows/tullamorelogo.png" alt="Tullamore Show" loading="lazy" decoding="async" />
+          </div>
+          <h3>Tullamore Show</h3>
+          <p>Visit us at Tullamore Show to see equipment, ask questions and get practical product advice.</p>
+          <a class="shows-cta" href="./shows.html#shows-info">Plan your visit</a>
+        </article>
+        <article class="shows-card">
+          <div class="shows-card-logo">
+            <img src="./assets/shows/ploughinglogo.png" alt="National Ploughing Championships" loading="lazy" decoding="async" />
+          </div>
+          <h3>National Ploughing Championships</h3>
+          <p>Meet us at the Ploughing for clipping, weighing, fencing and farm equipment advice.</p>
+          <a class="shows-cta" href="./shows.html#shows-info">Plan your visit</a>
+        </article>
+        <article class="shows-card">
+          <div class="shows-card-logo">
+            <img src="./assets/shows/dairyshow.png" alt="National Dairy Show" loading="lazy" decoding="async" />
+          </div>
+          <h3>National Dairy Show</h3>
+          <p>Talk to us about dairy, milking, cattle equipment and farm setup options.</p>
+          <a class="shows-cta" href="./shows.html#shows-info">Plan your visit</a>
+        </article>
+        <article class="shows-card">
+          <div class="shows-card-logo">
+            <img src="./assets/shows/machineryshow.png" alt="Machinery Show" loading="lazy" decoding="async" />
+          </div>
+          <h3>Machinery Show</h3>
+          <p>See farming equipment ranges and get help choosing the right setup for your farm.</p>
+          <a class="shows-cta" href="./shows.html#shows-info">Plan your visit</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-brand-lockup">
+            <a class="footer-logo" href="./index.html" aria-label="Clippers Ireland home">
+              <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+            </a>
+            <span class="footer-brand-divider" aria-hidden="true"></span>
+            <span class="footer-ergopro-lockup">
+              <span>home of</span>
+              <img src="./assets/logo.png" alt="ErgoPro" />
+            </span>
+          </div>
+          <p>Ireland's trusted supplier of professional clippers, agricultural equipment, parts, service and advice.</p>
+          <div class="footer-contact">
+            <a href="tel:+353214874441">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" /></svg>
+              021 487 4441
+            </a>
+            <a href="mailto:sales@clippersireland.ie">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" /><path d="M4 7l8 6 8-6" /></svg>
+              sales@clippersireland.ie
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-row">
+          <nav class="footer-links" aria-label="Shop by animal links">
+            <p class="footer-subheading">Shop by animal</p>
+            <a href="./index.html#shop-by-animal-title">Cattle</a>
+            <a href="./index.html#shop-by-animal-title">Sheep</a>
+            <a href="./index.html#shop-by-animal-title">Horse</a>
+            <a href="./index.html#shop-by-animal-title">Dog</a>
+          </nav>
+
+          <nav class="footer-links footer-links--browse" aria-label="Browse categories links">
+            <p class="footer-subheading">Browse Categories</p>
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="clipper-sheep-cattle">Milking Machines</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./all-farming.html">All Farming</a>
+            <a href="./apparel.html">Apparel</a>
+          </nav>
+
+          <nav class="footer-links footer-links--read" aria-label="Read links">
+            <p class="footer-subheading">Read</p>
+            <a href="./index.html#endorsement-title">Endorsers</a>
+            <a href="./index.html#endorsement-title">Charities</a>
+            <a href="./tips-guides.html">Tip &amp; Guides</a>
+          </nav>
+
+          <nav class="footer-links footer-links--support" aria-label="Support links">
+            <p class="footer-subheading">Support</p>
+            <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+            <a href="./clippers.html#warranty-title">Warranty</a>
+            <a href="mailto:sales@clippersireland.ie?subject=Delivery%20and%20Returns">Delivery &amp; Returns</a>
+            <a href="mailto:sales@clippersireland.ie">Contact us</a>
+          </nav>
+
+          <nav class="footer-links footer-links--pages" aria-label="Pages">
+            <p class="footer-subheading">Pages</p>
+            <a href="./index.html">WEEE Recycling</a>
+            <a href="./index.html#about-title">About us</a>
+            <a href="./shows.html">Shows</a>
+            <a href="./index.html">My Account</a>
+            <a href="./index.html">Sitemap</a>
+          </nav>
+        </div>
+
+        <div class="footer-newsletter-wrap">
+          <h2>Stay In The Loop</h2>
+          <div class="footer-newsletter">
+            <p class="footer-newsletter-text">
+              <span class="newsletter-text-desktop">Get product updates and offers from Clippers Ireland.</span>
+              <span class="newsletter-text-mobile">Get updates and offers from Clippers Ireland.</span>
+            </p>
+            <div class="newsletter-signup-row">
+              <div class="newsletter-signup">
+                <h3>Email Newsletter</h3>
+                <form class="footer-form footer-form--compact" data-newsletter-type="email">
+                  <label class="sr-only" for="footer-email">Email address</label>
+                  <input id="footer-email" name="email" type="email" autocomplete="email" required placeholder="Email address" />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+              <div class="newsletter-signup">
+                <h3>WhatsApp Offer Mailer</h3>
+                <form class="footer-form footer-form--compact" data-newsletter-type="whatsapp">
+                  <label class="sr-only" for="footer-whatsapp">Phone number</label>
+                  <input id="footer-whatsapp" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="Phone number" />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="footer-social" aria-label="Social links">
+            <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z" /></svg>
+            </a>
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1" /></svg>
+            </a>
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9c.1-2 1.5-3.4 3.5-3.5 3.5-.3 7.5-.3 11 0C19.5 5.6 20.9 7 21 9c.2 2 .2 4 0 6-.1 2-1.5 3.4-3.5 3.5-3.5.3-7.5.3-11 0C4.5 18.4 3.1 17 3 15c-.2-2-.2-4 0-6z" /><path d="M10 9l5 3-5 3z" /></svg>
+            </a>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Clippers Ireland. All rights reserved.</p>
+        <div>
+          <a href="./index.html">Privacy Policy</a>
+          <a href="./index.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+  <aside class="chat-widget" aria-label="Chat support preview">
+    <div class="chat-widget-card">
+      <div class="chat-widget-header">
+        <span class="chat-widget-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+        </span>
+        <span>
+          <strong>Need help?</strong>
+          <small>Chat with Clippers Ireland</small>
+        </span>
+      </div>
+      <p>Questions about clippers, parts or servicing? We are here to help.</p>
+      <div class="chat-widget-input">
+        <span>Type your message...</span>
+        <button type="button" aria-label="Send preview message">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-5 16-3-7z" /></svg>
+        </button>
+      </div>
+    </div>
+    <button class="chat-widget-button" type="button" aria-label="Open chat preview">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+    </button>
+  </aside>
+
+  <script src="./script.js?v=final-polish-pass-9"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clippers Ireland</title>
-  <link rel="stylesheet" href="./styles.css?v=final-polish-pass-26" />
+  <link rel="stylesheet" href="./styles.css?v=final-polish-pass-28" />
   <style>
       #clipper-parts .category-bucket-image--contain,
       #clipper-blades .category-bucket-image--contain {
@@ -59,147 +59,11 @@
         object-position: 50% 70% !important;
       }
 
-      @media (max-width: 760px) {
-        .clippers-page .category-hero.hero-text-template .category-hero-copy {
-          gap: 3px;
-        }
-
-        .clippers-page .category-hero.hero-text-template .category-breadcrumb {
-          margin: 0 0 4px;
-        }
-
-        .clippers-page .category-hero.hero-text-template h1 {
-          margin: 0 0 4px !important;
-          line-height: 1.02;
-        }
-
-        .clippers-page .category-hero.hero-text-template .category-hero-description {
-          gap: 0;
-          line-height: 1.28;
-          max-width: none;
-        }
-
-        .clippers-page .category-hero.hero-text-template .category-hero-description span:first-child,
-        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
-          white-space: nowrap;
-        }
-
-        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
-          margin-top: 4px;
-        }
-
-        .clippers-page .trust-strip {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 16px 18px;
-        }
-
-        .clippers-page .trust-strip .about-stat {
-          display: grid;
-          grid-template-columns: 36px minmax(0, 1fr);
-          column-gap: 10px;
-          align-items: start;
-        }
-
-        .clippers-page .trust-strip .about-stat svg {
-          margin: 0;
-          justify-self: start;
-          align-self: start;
-        }
-
-        .clippers-page .trust-strip .about-stat > span {
-          margin: 0;
-          transform: none;
-          min-width: 0;
-        }
-
-        .clippers-page .clippers-trust-strip-inner {
-          display: contents;
-        }
-
-        .clippers-page .clippers-trust-strip .about-stat {
-          grid-template-columns: 36px minmax(0, 1fr);
-          column-gap: 10px;
-          align-items: center;
-        }
-
-        .clippers-page .clippers-trust-strip .about-stat svg {
-          width: 36px;
-          height: 36px;
-          justify-self: start;
-          align-self: center;
-        }
-
-        .clippers-page .clippers-trust-strip .about-stat strong {
-          font-size: clamp(16px, 4vw, 17px);
-          line-height: 1.12;
-        }
-
-        .clippers-page .clippers-trust-strip .about-stat small {
-          font-size: clamp(13px, 3.2vw, 14px);
-          line-height: 1.25;
-        }
-      }
-
-      .milking-why-choose-section {
-        width: min(1440px, calc(100% - 4px));
-        margin: 0 auto 40px;
-      }
-
-      .milking-why-choose-shell {
-        border: 1px solid var(--border-soft);
-        border-radius: 10px;
-        background: var(--surface);
-        box-shadow: var(--shadow-card);
-        padding: 14px 16px 16px;
-      }
-
-      .milking-why-choose-title {
-        margin: 0;
-        color: var(--text);
-        font-size: clamp(18px, 1.28vw, 24px);
-        line-height: 1.15;
-      }
-
-      .milking-why-choose-grid {
-        margin-top: 10px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .milking-why-choose-card {
-        min-height: 100%;
-        border: 1px solid #d9e4d8;
-        border-radius: 9px;
-        background: #f2f8f2;
-        padding: 12px 12px 13px;
-        box-sizing: border-box;
-      }
-
-      .milking-why-choose-card h3 {
-        margin: 0 0 6px;
-        color: var(--text);
-        font-size: clamp(14px, 0.95vw, 16px);
-        line-height: 1.15;
-      }
-
-      .milking-why-choose-card p {
-        margin: 0;
-        color: #2f3a34;
-        font-size: clamp(13px, 0.85vw, 15px);
-        line-height: 1.45;
-      }
-
-      @media (max-width: 1024px) {
-        .milking-why-choose-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 640px) {
-        .milking-why-choose-grid {
-          grid-template-columns: 1fr;
+      @media (min-width: 1024px) {
+        .milking-machines-page .category-hero {
+          background:
+            linear-gradient(90deg, rgba(12, 24, 16, 0.76) 0%, rgba(12, 24, 16, 0.56) 42%, rgba(12, 24, 16, 0.18) 100%),
+            url("./assets/milkerhero.png") 58% 66% / 100% auto no-repeat;
         }
       }
 
@@ -212,121 +76,273 @@
       }
 
     </style>
-  
-<style>
-@media (min-width: 1024px) {
-  .clippers-page .clippers-trust-strip {
-    display: block !important;
-    width: 100%;
-    max-width: none;
-    margin: 0 auto 8px;
-    padding: 14px 0;
-    border-radius: 0;
-    background: var(--surface);
-  }
-
-  .clippers-page .clippers-trust-strip-inner {
-    width: min(100%, calc(83.3333% - 3px));
-    margin-inline: auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    gap: 0;
-  }
-
-  .clippers-page .clippers-trust-strip-inner .about-stat {
-    flex: 0 1 auto;
-    transform: translateX(45px);
-  }
-
-  .clippers-page .clippers-trust-strip-inner .about-stat svg {
-    display: block;
-    margin: 0;
-    align-self: center;
-  }
-
-  .clippers-page .clippers-trust-strip-inner .about-stat:first-child {
-    gap: 8px;
-  }
-}
-</style>
-<style>
-  @media (max-width: 760px) {
-    .clippers-page .category-hero.hero-text-template {
-      display: flex !important;
-      flex-direction: column !important;
-      padding: 0 !important;
-      min-height: 0 !important;
-      height: auto !important;
-      aspect-ratio: auto !important;
-      overflow: hidden !important;
-    }
-
-    .clippers-page .category-hero.hero-text-template::before {
-      display: none !important;
-    }
-
-    .clippers-page .category-hero.hero-text-template .category-hero-copy {
+  <style>
+    .category-hero--apparel {
       position: relative !important;
-      left: auto !important;
-      top: auto !important;
-      transform: none !important;
-      order: 1;
-      width: 100% !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      box-sizing: border-box !important;
-      padding: 10px 18px 22px !important;
-      gap: 6px !important;
-      margin: 0 !important;
-      background: var(--nav-charcoal) !important;
+      overflow: hidden !important;
+      background: none !important;
+      min-height: clamp(230px, 20vw, 330px) !important;
+      padding: clamp(30px, 3.2vw, 56px) clamp(18px, 2.6vw, 54px) !important;
     }
 
-    .clippers-page .category-hero.hero-text-template .category-breadcrumb {
-      margin: 0 0 8px !important;
-      max-width: 100% !important;
+    .category-hero--apparel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(12, 24, 16, 0.62) 0%, rgba(12, 24, 16, 0.58) 48%, rgba(12, 24, 16, 0.24) 100%);
     }
 
-    .clippers-page .category-hero.hero-text-template h1 {
-      margin: 0 0 8px !important;
-      max-width: 100% !important;
-    }
-
-    .clippers-page .category-hero.hero-text-template .category-hero-description {
-      margin: 0 !important;
-      width: 100% !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      line-height: 1.28 !important;
-      white-space: normal !important;
-      overflow-wrap: anywhere !important;
-      word-break: normal !important;
-    }
-
-    .clippers-page .category-hero.hero-text-template .category-hero-description span,
-    .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
-      white-space: normal !important;
-      overflow-wrap: anywhere !important;
-      word-break: normal !important;
-    }
-
-    .clippers-page .category-hero.hero-text-template .category-hero-media.hero-mobile-visual {
-      order: 2;
+    .category-hero--apparel .category-hero-media {
       display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
       width: 100% !important;
-      height: clamp(230px, 62vw, 330px) !important;
-      min-height: clamp(230px, 62vw, 330px) !important;
-      flex: 0 0 auto !important;
+      height: 100% !important;
       margin: 0 !important;
-      background-image: url("./assets/hero-kevin-bohan-clipping.jpg") !important;
-      background-size: cover !important;
-      background-position: 58% 64% !important;
-      background-repeat: no-repeat !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
     }
-  }
-</style>
+
+    .category-hero--apparel .category-hero-media img {
+      position: static !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: 50% 50% !important;
+      filter: brightness(1.3) !important;
+    }
+
+    @media (min-width: 1024px) {
+      .category-hero--apparel .category-hero-media img {
+        object-position: 50% 50% !important;
+      }
+    }
+
+    .category-hero--apparel .category-hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-hero--apparel.hero-text-template .category-hero-copy {
+      position: absolute !important;
+      left: clamp(24px, 4vw, 78px) !important;
+      top: 45.8% !important;
+      transform: translateY(-50%) !important;
+      width: min(42vw, 650px) !important;
+      max-width: 650px !important;
+      display: grid !important;
+      gap: 10px !important;
+      margin: 0 !important;
+    }
+
+    .category-hero--apparel.hero-text-template h1 {
+      margin: 0 0 12px !important;
+      font-size: clamp(30px, 3.2vw, 66px) !important;
+      line-height: 1.03 !important;
+      font-weight: 350 !important;
+      letter-spacing: 0 !important;
+      color: #fff !important;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28) !important;
+    }
+
+    .category-hero--apparel.hero-text-template .category-hero-description {
+      display: block !important;
+      margin: 0 !important;
+      max-width: 48ch !important;
+      color: rgba(255, 253, 248, 0.9) !important;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22) !important;
+      font-size: clamp(14px, 1.1vw, 22px) !important;
+      line-height: 1.36 !important;
+      font-weight: 400 !important;
+    }
+
+    .category-hero--apparel.hero-text-template .category-hero-description span {
+      display: block !important;
+      margin: 0 !important;
+      font-weight: inherit !important;
+    }
+
+    .apparel-intro {
+      width: min(100%, 1220px);
+      margin: 0 auto;
+      padding: 28px clamp(18px, 2.6vw, 54px) 6px;
+    }
+
+    .apparel-grid .category-bucket-grid {
+      width: min(100%, 1180px);
+    }
+
+    .apparel-support .repairs-band-inner {
+      width: min(100%, 1220px);
+      margin: 0 auto;
+    }
+
+    .apparel-featured .featured-products-header .section-title {
+      text-align: center;
+    }
+
+    .apparel-filters {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      padding: 8px clamp(18px, 2.6vw, 54px) 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .apparel-filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(18, 130, 54, 0.62);
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: var(--text);
+      font-size: clamp(12px, 0.72vw, 14px);
+      font-weight: 800;
+      background: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .apparel-filter-chip:hover,
+    .apparel-filter-chip:focus-visible {
+      border-color: var(--green-hover);
+      background: rgba(18, 130, 54, 0.08);
+      color: var(--green-hover);
+    }
+  </style>
+  <style>
+    @media (max-width: 760px) {
+      .category-hero--apparel.hero-text-template {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 0 !important;
+        min-height: 0 !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        overflow: hidden !important;
+      }
+
+      .category-hero--apparel.hero-text-template::before {
+        display: none !important;
+      }
+
+      .category-hero--apparel.hero-text-template .category-hero-copy {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        order: 1;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding: 10px 18px 22px !important;
+        gap: 6px !important;
+        margin: 0 !important;
+        background: var(--nav-charcoal) !important;
+      }
+
+      .category-hero--apparel.hero-text-template .category-breadcrumb {
+        margin: 0 0 8px !important;
+        max-width: 100% !important;
+      }
+
+      .category-hero--apparel.hero-text-template h1 {
+        margin: 0 0 8px !important;
+        max-width: 100% !important;
+      }
+
+      .category-hero--apparel.hero-text-template .category-hero-description {
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        line-height: 1.28 !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+      }
+
+      .category-hero--apparel.hero-text-template .category-hero-description span {
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+      }
+
+      .category-hero--apparel.hero-text-template .category-hero-description br {
+        display: none !important;
+      }
+
+      .category-hero--apparel.hero-text-template .category-hero-description span:first-child {
+        margin-bottom: 0 !important;
+      }
+
+      .category-hero--apparel.hero-text-template .category-hero-media {
+        position: relative !important;
+        inset: auto !important;
+        z-index: auto !important;
+        order: 2;
+        display: block !important;
+        width: 100% !important;
+        height: clamp(230px, 62vw, 330px) !important;
+        min-height: clamp(230px, 62vw, 330px) !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+      }
+
+      .category-hero--apparel.hero-text-template .category-hero-media img {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: 72% 50% !important;
+      }
+    }
+  </style>
+  
+  <style>
+    .featured-products .product-grid > .product-card,
+    .featured-products .product-grid > .product-card .product-image,
+    .featured-products .product-grid > .product-card .product-info,
+    .featured-products .product-grid > .product-card.clippers-white-bucket,
+    .featured-products .product-grid > .product-card.clippers-white-bucket .product-image,
+    .featured-products .product-grid > .product-card.clippers-white-bucket .product-info {
+      background: #fbfaf5 !important;
+    }
+
+    @media (max-width: 760px) {
+      .apparel-page .featured-products {
+        overflow: visible !important;
+      }
+
+      .apparel-page .featured-products .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px 14px !important;
+        overflow: visible !important;
+        overflow-x: visible !important;
+        scroll-snap-type: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .apparel-page .featured-products .product-grid > .product-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        flex: none !important;
+        scroll-snap-align: unset !important;
+      }
+    }
+  </style>
 </head>
-  <body class="home-page clippers-page">
+  <body class="home-page apparel-page">
     <header class="site-header">
       <div class="main-header">
         <div class="brand-lockup">
@@ -389,7 +405,7 @@
 
       <nav class="category-nav" id="category-nav" aria-label="Product categories">
         <div class="category-item category-item--clippers">
-          <a data-category-link="clippers" href="./clippers.html" aria-current="page">Clippers <span aria-hidden="true">⌄</span></a>
+          <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
             <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
             <a href="./clippers.html#clipper-horse">Horse Clippers</a>
@@ -409,7 +425,6 @@
             <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
           
           </div>
-
         </div>
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
@@ -419,8 +434,6 @@
             <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
             <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
           </div>
-
-
         </div>
         <div class="category-item category-item--all-farming">
           <a href="./all-farming.html">All Farming <span aria-hidden="true">⌄</span></a>
@@ -434,10 +447,8 @@
             <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
             <a href="./electric-fencing.html">Blowers</a>
           </div>
-
-
         </div>
-        <a class="category-nav-link" href="./apparel.html">Apparel</a>
+        <a class="category-nav-link" href="./apparel.html" aria-current="page">Apparel</a>
         <div class="category-item category-item--parts-repairs">
           <a href="./parts-repairs.html">Parts &amp; Repairs</a>
 </div>
@@ -446,154 +457,149 @@
       </nav>
     </header>
 
-    <main class="page-shell category-page">
-  <section class="category-hero hero-text-template" aria-labelledby="category-title">
-    <div class="category-hero-media hero-mobile-visual" aria-hidden="true"></div>
-    <div class="category-hero-copy">
-      <nav class="category-breadcrumb" aria-label="Breadcrumb">
-        <a href="./index.html">Home</a>
-        <span aria-hidden="true">/</span>
-        <span>Clippers</span>
-      </nav>
-      <h1 id="category-title">Clippers</h1>
+  <main class="page-shell category-page apparel-page-main">
+    <section class="category-hero category-hero--apparel hero-text-template" aria-labelledby="category-title">
+      <div class="category-hero-media" aria-hidden="true">
+        <img src="./assets/shop/apparel-hero.png" alt="" loading="eager" decoding="sync" width="1600" height="1067" />
+      </div>
+      <div class="category-hero-copy">
+        <nav class="category-breadcrumb" aria-label="Breadcrumb">
+          <a href="./index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Apparel</span>
+        </nav>
+        <h1 id="category-title">Apparel</h1>
         <p class="category-hero-description">
-        <span>Our ErgoPro range includes powerful cordless and mains-powered clippers. For farmers, vets, groomers, competition yards and home users, we have the right clipper for you.</span>
-      </p>
-    </div>
-  </section>
-
-  <div class="about-stats trust-strip clippers-trust-strip" aria-label="Clippers Ireland trust highlights">
-    <div class="clippers-trust-strip-inner">
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-          <path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" stroke-width="1.8" />
-          <circle cx="12" cy="10" r="2.2" stroke-width="1.8" />
-        </svg>
-        <span><strong>Irish Company</strong><small><span class="desktop-line">Based in Cork</span><span class="mobile-line">Based in Cork</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 27px; height: 27px;"><image href="./assets/icons/cog1.png" x="0" y="0" width="24" height="24" preserveAspectRatio="xMidYMid meet" /></svg>
-        <span><strong>Parts Available</strong><small><span class="desktop-line">All spares in stock</span><span class="mobile-line">All spares in stock</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="width: 32px; height: 32px;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>
-        <span><strong>Service &amp; Repairs</strong><small><span class="desktop-line">In-house workshop</span><span class="mobile-line">In-house workshop</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg class="delivery-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.8h11.2v8H3.5z" /><path d="M14.7 10.6h3.1l2.7 3.1v2.1h-5.8z" /><path d="M6 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /><path d="M15.5 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /></svg>
-        <span><strong>Free Delivery</strong><small><span class="desktop-line">Orders over &euro;100</span><span class="mobile-line">Orders over &euro;100</span></small></span>
-      </div>
-    </div>
-  </div>
-
-  <section class="category-buckets" aria-label="Clipper category shortcuts">
-    <div class="category-bucket-grid">
-      <a id="clipper-sheep-cattle" class="category-bucket" href="#">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/cattleclipper.png" alt="Sheep and cattle clipping" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Sheep &amp; Cattle Clippers</strong>
-        </span>
-      </a>
-      <a id="clipper-horse" class="category-bucket" href="#">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-horse-clipping-jacket.png" alt="Horse being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Horse Clippers</strong>
-        </span>
-      </a>
-      <a id="clipper-dog" class="category-bucket" href="#">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-dog-clipping.png" alt="Dog being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Dog Clippers</strong>
-        </span>
-      </a>
-        <a id="clipper-blades" class="category-bucket" href="#" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
-        <span class="category-bucket-image category-bucket-image--contain category-blade-bucket">
-          <span class="blade-graphic-combo" aria-hidden="true">
-            <img class="blade-graphic-item blade-graphic-desktop"
-              src="./assets/bladebucketpic-hires-v3.png?v=bladebucket-hires-direct-4"
-              alt=""
-              loading="eager"
-              decoding="sync"
-              width="1254"
-              height="1254"
-            />
-          </span>
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Blades</strong>
-        </span>
-      </a>
-      <a id="clipper-parts" class="category-bucket" href="#">
-        <span class="category-bucket-image category-bucket-image--contain">
-          <img
-            src="./assets/parts5-hires-v3.png?v=parts5-direct-4"
-            alt="ErgoPro clipper parts and servicing"
-            loading="eager"
-            decoding="sync"
-            width="1658"
-            height="1654"
-          />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Parts</strong>
-        </span>
-      </a>
-    </div>
-  </section>
-
-    <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
-      <div class="milking-why-choose-shell">
-        <h2 class="milking-why-choose-title" id="milking-why-choose-title">Why Choose Clippers Ireland for Clippers?</h2>
-        <div class="milking-why-choose-grid">
-          <article class="milking-why-choose-card">
-            <h3>ErgoPro Clippers</h3>
-            <p>Whether you're an occasional home user<br> or a professional clipping all day, every day, ErgoPro clippers have stood the test of time.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>One-Year Warranty</h3>
-            <p>Our ErgoPro Clippers are supplied with a<br> one-year parts &amp; labour warranty for extra peace of mind.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>Parts Kept in Stock</h3>
-            <p>We carry all genuine spare parts needed to keep your machine working properly long after purchase.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>In-House Workshop Support</h3>
-            <p>Our workshop provides servicing, repairs, spare parts and practical advice whenever needed.</p>
-          </article>
-        </div>
+          <span>Wear the brand you know and love,<br>with Clippers Ireland polos, beanies, jackets and more.</span>
+        </p>
       </div>
     </section>
 
-
-  <section class="featured-products" aria-labelledby="featured-products-title">
-    <div class="featured-products-header">
-      <h2 class="section-title" id="featured-products-title">Featured Products</h2>
-    </div>
-
+  <section class="featured-products" aria-label="Apparel products">
     <div class="product-grid">
       <article class="product-card clippers-hero clippers-white-bucket">
         <a class="product-image" href="#">
           <img
             class="product-image--featured-blade"
-            src="./assets/products/ovis.png"
+            src="./assets/products/apparel-jacket-male.png"
             alt="ErgoPro Ovis Sheep Clipper"
+            style="max-width: 96% !important; max-height: 96% !important; transform: translateY(-8px) scale(0.96) !important; object-position: center top !important;"
           />
         </a>
         <div class="product-info">
-          <h3><a href="#">ErgoPro Ovis Sheep Clipper (External Battery 300w)</a></h3>
+          <h3><a href="#">Clippers Ireland Softshell Jacket<br>(Male)</a></h3>
           <div class="product-meta">
             <span class="product-stars" aria-label="4.9 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
             <span>(29 reviews)</span>
             <span class="product-stock-text">In stock</span>
           </div>
-          <p class="product-price">&euro;729.00</p>
+          <p class="product-price">&euro;29.99</p>
+          <button class="add-cart" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <a class="product-image" href="#">
+          <img class="product-image--milking-machine" src="./assets/products/apparel-bodywarmer-male.png" alt="Sezer Portable Mini Milking Machine" / style="max-width: 98% !important; max-height: 98% !important; transform: translateY(-7px) scale(0.98) !important; object-position: center top !important;" />
+        </a>
+        <div class="product-info">
+          <h3><a href="#">Clippers Ireland Softshell Bodywarmer (Male)</a></h3>
+          <div class="product-meta">
+            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span>(29 reviews)</span>
+            <span class="product-stock-text">In stock</span>
+          </div>
+          <p class="product-price">&euro;27.99</p>
+          <button class="add-cart" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+
+
+
+      <article class="product-card">
+        <a class="product-image" href="#">
+          <img src="./assets/products/apparel-polo.png" alt="Clippers Ireland Polo (Male)" />
+        </a>
+        <div class="product-info">
+          <h3><a href="#">Clippers Ireland Polo (Male)</a></h3>
+          <div class="product-meta">
+            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span>(16 reviews)</span>
+            <span class="product-stock-text">In stock</span>
+          </div>
+          <p class="product-price">&euro;12.99</p>
+          <button class="add-cart" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+
+
+
+
+
+      <article class="product-card">
+        <a class="product-image" href="#">
+          <img src="./assets/products/apparel-shirt-no-farmers.png" alt="Clippers Ireland No Farmers No Food Tshirt" />
+        </a>
+        <div class="product-info">
+          <h3><a href="#">Clippers Ireland No Farmers No Food Tshirt</a></h3>
+          <div class="product-meta">
+            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span>(16 reviews)</span>
+            <span class="product-stock-text">In stock</span>
+          </div>
+          <p class="product-price">&euro;12.99</p>
+          <button class="add-cart" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+
+
+
+      <article class="product-card">
+        <a class="product-image" href="#">
+          <img src="./assets/products/apparel-beany.png" alt="Clippers Ireland Benie" />
+        </a>
+        <div class="product-info">
+          <h3><a href="#">Clippers Ireland Benie</a></h3>
+          <div class="product-meta">
+            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span>(16 reviews)</span>
+            <span class="product-stock-text">In stock</span>
+          </div>
+          <p class="product-price">&euro;9.99</p>
           <button class="add-cart" type="button">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
@@ -609,18 +615,19 @@
         <a class="product-image" href="#">
           <img
             class="product-image--featured-blade"
-            src="./assets/products/hush-horse.png"
+            src="./assets/products/apparel-jacket-male.png"
             alt="ErgoPro Hush Horse Clipper"
+            style="max-width: 96% !important; max-height: 96% !important; transform: translateY(-8px) scale(0.96) !important; object-position: center top !important;"
           />
         </a>
         <div class="product-info">
-          <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
+          <h3><a href="#">Clippers Ireland Softshell Jacket (Female)</a></h3>
           <div class="product-meta">
             <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
             <span>(23 reviews)</span>
             <span class="product-stock-text">In stock</span>
           </div>
-          <p class="product-price">&euro;220.00</p>
+          <p class="product-price">&euro;29.99</p>
           <button class="add-cart" type="button">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
@@ -634,39 +641,72 @@
 
       <article class="product-card">
         <a class="product-image" href="#">
-          <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
+          <img src="./assets/products/apparel-bodywarmer-male.png" alt="ErgoPro Handy II Trimmer" / style="max-width: 98% !important; max-height: 98% !important; transform: translateY(-7px) scale(0.98) !important; object-position: center top !important;" />
         </a>
         <div class="product-info">
-          <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;899.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
+          <h3><a href="#">Clippers Ireland Softshell Bodywarmer (Female)</a></h3>
           <div class="product-meta">
             <span class="product-stars" aria-label="4.7 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
             <span>(18 reviews)</span>
             <span class="product-stock-text">In stock</span>
           </div>
-          <p class="product-price">&euro;69.99</p>
+          <p class="product-price">&euro;27.99</p>
+          <button class="add-cart" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+
+
+
+      <article class="product-card">
+        <a class="product-image" href="#">
+          <img src="./assets/products/apparel-polo-female-card-8.png" alt="Clippers Ireland Polo (Female)" />
+        </a>
+        <div class="product-info">
+          <h3><a href="#">Clippers Ireland Polo (Female)</a></h3>
+          <div class="product-meta">
+            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span>(16 reviews)</span>
+            <span class="product-stock-text">In stock</span>
+          </div>
+          <p class="product-price">&euro;12.99</p>
+          <button class="add-cart" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+
+
+
+
+
+      <article class="product-card">
+        <a class="product-image" href="#">
+          <img src="./assets/products/apparel-polo-female.png" alt="Clippers Ireland Polo Pink (Female)" />
+        </a>
+        <div class="product-info">
+          <h3><a href="#">Clippers Ireland Polo Pink (Female)</a></h3>
+          <div class="product-meta">
+            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span>(16 reviews)</span>
+            <span class="product-stock-text">In stock</span>
+          </div>
+          <p class="product-price">&euro;14.99</p>
           <button class="add-cart" type="button">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
@@ -680,16 +720,16 @@
 
       <article class="product-card">
         <a class="product-image" href="#">
-          <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
+          <img src="./assets/products/apparel-bobble.png" alt="Clippers Ireland Bobble" />
         </a>
         <div class="product-info">
-          <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
+          <h3><a href="#">Clippers Ireland Bobble</a></h3>
           <div class="product-meta">
             <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
             <span>(16 reviews)</span>
             <span class="product-stock-text">In stock</span>
           </div>
-          <p class="product-price">&euro;1,250.00</p>
+          <p class="product-price">&euro;9.99</p>
           <button class="add-cart" type="button">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
@@ -703,44 +743,7 @@
     </div>
   </section>
 
-  <section class="related-categories" aria-labelledby="related-clippers-title">
-    <h2 class="section-title" id="related-clippers-title">Browse related categories</h2>
-    <div class="category-tile-grid">
-      <a class="category-card" href="./cattle-weighing.html">
-        <img src="./assets/shop/newweighingpic.png" alt="Cattle weighing equipment" />
-        <strong>Cattle Weighing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
-        <strong>Milking Machines</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
-        <strong>Electric Fencing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./all-farming.html">
-        <img src="./assets/shop/category-all-farming.jpg" alt="All farming tools" />
-        <strong>All Farming</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./apparel.html">
-        <img src="./assets/shop/category-apparel-bobble-dog.jpg" alt="Workwear and apparel" />
-        <strong>Apparel</strong>
-        <small>Shop now -></small>
-      </a>
-    </div>
-  </section>
-
 </main>
-
-
-
-
-
-
     <footer class="site-footer">
       <div class="footer-main">
         <div class="footer-brand">
@@ -889,6 +892,6 @@
       </button>
     </aside>
 
-    <script src="./script.js?v=final-polish-pass-9"></script>
+    <script src="./script.js?v=final-polish-pass-28"></script>
   </body>
 </html>

@@ -3,219 +3,404 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clippers Ireland</title>
-  <link rel="stylesheet" href="./styles.css?v=final-polish-pass-26" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <title>Electric Fencing | Clippers Ireland</title>
+  <link rel="stylesheet" href="./styles.css" />
   <style>
-      #clipper-parts .category-bucket-image--contain,
-      #clipper-blades .category-bucket-image--contain {
+    .category-hero--electric-fencing {
+      position: relative !important;
+      overflow: hidden !important;
+      background: none !important;
+      min-height: clamp(230px, 20vw, 330px) !important;
+      padding: clamp(30px, 3.2vw, 56px) clamp(18px, 2.6vw, 54px) !important;
+    }
+
+    .category-hero--electric-fencing::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(11, 26, 15, 0.8) 0%, rgba(11, 26, 15, 0.58) 48%, rgba(11, 26, 15, 0.22) 100%);
+    }
+
+    .category-hero--electric-fencing .category-hero-media {
+      display: block !important;
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      margin: 0 !important;
+      z-index: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .category-hero--electric-fencing .category-hero-media img {
+      position: static !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: center 52% !important;
+      transform: scaleX(-1);
+    }
+
+    .category-hero--electric-fencing .category-hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .category-hero--electric-fencing.hero-text-template .category-hero-copy {
+      position: absolute !important;
+      left: clamp(24px, 4vw, 78px) !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      width: min(42vw, 650px) !important;
+      max-width: 650px !important;
+      display: grid !important;
+      gap: 10px !important;
+      margin: 0 !important;
+    }
+
+    .category-hero--electric-fencing.hero-text-template h1 {
+      margin: 0 0 12px !important;
+      font-size: clamp(30px, 3.2vw, 66px) !important;
+      line-height: 1.03 !important;
+      font-weight: 350 !important;
+      letter-spacing: 0 !important;
+      color: #fff !important;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28) !important;
+    }
+
+    .category-hero--electric-fencing.hero-text-template .category-hero-description {
+      display: block !important;
+      margin: 0 !important;
+      max-width: 48ch !important;
+      color: rgba(255, 253, 248, 0.9) !important;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22) !important;
+      font-size: clamp(14px, 1.1vw, 22px) !important;
+      line-height: 1.36 !important;
+      font-weight: 400 !important;
+    }
+
+    .category-hero--electric-fencing.hero-text-template .category-hero-description span {
+      display: block !important;
+      margin: 0 !important;
+      font-weight: inherit !important;
+    }
+
+    @media (max-width: 767px) {
+      .category-hero--electric-fencing.hero-text-template .category-hero-copy {
+        top: 48% !important;
+      }
+
+      .category-hero--electric-fencing .category-breadcrumb {
+        margin-bottom: 0.18rem !important;
+      }
+
+      .category-hero--electric-fencing #category-title {
+        margin-top: 0 !important;
+      }
+
+      .category-hero--electric-fencing .category-hero-description {
+        margin-top: -0.95rem !important;
+      }
+
+      .category-hero--electric-fencing .category-hero-description span:nth-child(2) {
         display: block !important;
-        padding: 0 !important;
-        background: #ffffff !important;
-        border-radius: 0 !important;
-        position: relative !important;
-        overflow: hidden !important;
+        margin-top: -0.55rem !important;
       }
+    }
 
-      #clipper-parts .category-bucket-image--contain img,
-      #clipper-blades .category-bucket-image--contain img,
-      #clipper-blades .blade-graphic-item {
-        position: static !important;
-        inset: auto !important;
-        top: auto !important;
-        left: auto !important;
-        width: 100% !important;
-        height: 100% !important;
-        max-width: none !important;
-        max-height: none !important;
-        object-fit: cover !important;
-        object-position: 50% 72% !important;
-        transform: none !important;
-        filter: none !important;
-        image-rendering: auto !important;
-      }
+    .category-bucket-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      width: min(100%, calc(66.6666% - 3px));
+      margin-inline: auto;
+      justify-content: center;
+    }
 
-      #clipper-blades .blade-graphic-combo {
-        height: 100% !important;
-        width: 100% !important;
-        display: block !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: #ffffff !important;
-      }
+    #electric-fencing-accessories .category-bucket-image--contain {
+      display: block !important;
+      padding: 0 !important;
+      background: #ffffff !important;
+      border-radius: 0 !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
 
-      #clipper-sheep-cattle .category-bucket-image img {
-        object-fit: cover !important;
-        object-position: 50% 38% !important;
-      }
+    #electric-fencing-accessories .category-bucket-image--contain img {
+      position: static !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      max-height: none !important;
+      display: block !important;
+      object-fit: cover !important;
+      object-position: 38% 50% !important;
+      transform: none !important;
+      filter: none !important;
+    }
 
-      #clipper-parts.category-bucket:hover .category-bucket-image img,
-      #clipper-parts.category-bucket:focus-visible .category-bucket-image img,
-      #clipper-blades.category-bucket:hover .category-bucket-image img,
-      #clipper-blades.category-bucket:focus-visible .category-bucket-image img {
-        transform: none !important;
-      }
+    .fencing-advice-section {
+      width: 100%;
+      margin: 0 auto;
+      padding: 44px clamp(18px, 2.6vw, 54px);
+      background: #f3f8f1;
+      border-bottom: 1px solid rgba(18, 130, 54, 0.12);
+    }
 
-      #clipper-parts .category-bucket-image--contain img {
-        object-position: 50% 70% !important;
-      }
+    .fencing-advice-heading {
+      max-width: 900px;
+      margin: 0 auto 22px;
+      text-align: center;
+    }
 
-      @media (max-width: 760px) {
-        .clippers-page .category-hero.hero-text-template .category-hero-copy {
-          gap: 3px;
-        }
+    .fencing-advice-heading p {
+      margin: 0 auto;
+      max-width: 840px;
+      color: #2f3832;
+      font-size: clamp(15px, 0.96vw, 18px);
+      line-height: 1.42;
+      font-weight: 650;
+    }
 
-        .clippers-page .category-hero.hero-text-template .category-breadcrumb {
-          margin: 0 0 4px;
-        }
+    .fencing-advice-heading h2 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: clamp(24px, 1.55vw, 34px);
+      line-height: 1.08;
+      font-weight: 900;
+    }
 
-        .clippers-page .category-hero.hero-text-template h1 {
-          margin: 0 0 4px !important;
-          line-height: 1.02;
-        }
+    .fencing-advice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      width: min(100%, 1280px);
+      margin: 0 auto 20px;
+    }
 
-        .clippers-page .category-hero.hero-text-template .category-hero-description {
-          gap: 0;
-          line-height: 1.28;
-          max-width: none;
-        }
+    .fencing-advice-card {
+      display: grid;
+      align-content: start;
+      min-height: 190px;
+      padding: 18px 20px 16px;
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: 0 12px 26px rgba(18, 35, 23, 0.06);
+      gap: 10px;
+    }
 
-        .clippers-page .category-hero.hero-text-template .category-hero-description span:first-child,
-        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
-          white-space: nowrap;
-        }
+    .fencing-advice-card .advice-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 2px;
+    }
 
-        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
-          margin-top: 4px;
-        }
+    .fencing-advice-card strong {
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: clamp(16px, 1vw, 21px);
+      line-height: 1.15;
+      font-weight: 900;
+    }
 
-        .clippers-page .trust-strip {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 16px 18px;
-        }
+    .fencing-advice-card p {
+      margin: 0 0 14px;
+      color: var(--text-muted);
+      font-size: clamp(13px, 0.86vw, 16px);
+      line-height: 1.38;
+      font-weight: 600;
+    }
 
-        .clippers-page .trust-strip .about-stat {
-          display: grid;
-          grid-template-columns: 36px minmax(0, 1fr);
-          column-gap: 10px;
-          align-items: start;
-        }
+    .fencing-advice-cta {
+      display: inline-flex;
+      align-self: end;
+      margin-top: auto;
+      color: var(--green);
+      font-size: clamp(12px, 0.76vw, 15px);
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: none;
+      width: fit-content;
+    }
 
-        .clippers-page .trust-strip .about-stat svg {
-          margin: 0;
-          justify-self: start;
-          align-self: start;
-        }
+    .fencing-advice-cta:hover,
+    .fencing-advice-cta:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-        .clippers-page .trust-strip .about-stat > span {
-          margin: 0;
-          transform: none;
-          min-width: 0;
-        }
+    .fencing-quick-help {
+      width: min(100%, 1280px);
+      margin: 0 auto;
+      padding: 20px 22px;
+      border: 1px solid rgba(18, 130, 54, 0.22);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.78);
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      box-shadow: 0 12px 26px rgba(18, 35, 23, 0.06);
+    }
 
-        .clippers-page .clippers-trust-strip-inner {
-          display: contents;
-        }
+    .fencing-quick-help h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(23px, 1.9vw, 32px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
 
-        .clippers-page .clippers-trust-strip .about-stat {
-          grid-template-columns: 36px minmax(0, 1fr);
-          column-gap: 10px;
-          align-items: center;
-        }
+    .fencing-quick-help p {
+      margin: 0;
+      max-width: 1080px;
+      color: #2f3832;
+      font-size: clamp(15px, 0.96vw, 18px);
+      line-height: 1.45;
+      font-weight: 650;
+    }
 
-        .clippers-page .clippers-trust-strip .about-stat svg {
-          width: 36px;
-          height: 36px;
-          justify-self: start;
-          align-self: center;
-        }
+    .fencing-quick-help .repairs-band-cta {
+      width: fit-content;
+      min-width: 210px;
+    }
 
-        .clippers-page .clippers-trust-strip .about-stat strong {
-          font-size: clamp(16px, 4vw, 17px);
-          line-height: 1.12;
-        }
+    .fencing-advice-section--coming-soon {
+      position: relative;
+      isolation: isolate;
+      background: linear-gradient(180deg, #f3f8f1 0%, #eef3eb 100%);
+      border-top: 1px solid rgba(18, 130, 54, 0.2);
+    }
 
-        .clippers-page .clippers-trust-strip .about-stat small {
-          font-size: clamp(13px, 3.2vw, 14px);
-          line-height: 1.25;
-        }
-      }
+    .fencing-advice-section--coming-soon::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(18, 130, 54, 0.03),
+        rgba(18, 130, 54, 0.03) 8px,
+        rgba(255, 255, 255, 0.22) 8px,
+        rgba(255, 255, 255, 0.22) 16px
+      );
+      z-index: -1;
+      pointer-events: none;
+    }
 
-      .milking-why-choose-section {
-        width: min(1440px, calc(100% - 4px));
-        margin: 0 auto 40px;
-      }
+    .fencing-advice-section--coming-soon .fencing-advice-cta,
+    .fencing-advice-section--coming-soon .repairs-band-cta {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 0.5;
+      text-decoration: none;
+      color: var(--green-muted, #8ea58d);
+    }
 
-      .milking-why-choose-shell {
-        border: 1px solid var(--border-soft);
-        border-radius: 10px;
-        background: var(--surface);
-        box-shadow: var(--shadow-card);
-        padding: 14px 16px 16px;
-      }
+    .fencing-advice-section--coming-soon .fencing-advice-cta:hover,
+    .fencing-advice-section--coming-soon .fencing-advice-cta:focus-visible,
+    .fencing-advice-section--coming-soon .repairs-band-cta:hover,
+    .fencing-advice-section--coming-soon .repairs-band-cta:focus-visible {
+      text-decoration: none;
+    }
 
-      .milking-why-choose-title {
-        margin: 0;
-        color: var(--text);
-        font-size: clamp(18px, 1.28vw, 24px);
-        line-height: 1.15;
-      }
+    .fencing-advice-coming-soon-label {
+      max-width: 900px;
+      margin: 0 auto 16px;
+      padding: 12px 16px;
+      border: 1px dashed rgba(18, 130, 54, 0.34);
+      border-radius: 8px;
+      background: rgba(18, 130, 54, 0.09);
+      text-align: center;
+      color: #1a5133;
+      font-size: clamp(13px, 0.9vw, 15px);
+      line-height: 1.35;
+      font-weight: 700;
+      text-transform: none;
+    }
 
-      .milking-why-choose-grid {
-        margin-top: 10px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+    .fencing-advice-coming-soon-label strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #184d2f;
+      font-size: clamp(16px, 1.05vw, 20px);
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 1023px) {
+      .category-buckets[aria-label="Electric fencing category shortcuts"] .category-bucket-grid {
+        width: min(100%, 680px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
+        margin-inline: auto;
       }
 
-      .milking-why-choose-card {
-        min-height: 100%;
-        border: 1px solid #d9e4d8;
-        border-radius: 9px;
-        background: #f2f8f2;
-        padding: 12px 12px 13px;
-        box-sizing: border-box;
+      .category-buckets[aria-label="Electric fencing category shortcuts"] .category-bucket {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        min-width: 0;
+        overflow: hidden;
       }
 
-      .milking-why-choose-card h3 {
-        margin: 0 0 6px;
-        color: var(--text);
-        font-size: clamp(14px, 0.95vw, 16px);
-        line-height: 1.15;
+      .category-buckets[aria-label="Electric fencing category shortcuts"] .category-bucket-image {
+        width: 100%;
+        aspect-ratio: 1.28 / 1;
+        min-height: 0;
       }
 
-      .milking-why-choose-card p {
-        margin: 0;
-        color: #2f3a34;
-        font-size: clamp(13px, 0.85vw, 15px);
-        line-height: 1.45;
+      .category-buckets[aria-label="Electric fencing category shortcuts"] .category-bucket-image img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: cover;
+        object-position: 50% 50%;
       }
 
-      @media (max-width: 1024px) {
-        .milking-why-choose-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+      .category-buckets[aria-label="Electric fencing category shortcuts"] .category-bucket-copy {
+        min-height: 58px;
+        padding: 12px 8px;
       }
 
-      @media (max-width: 640px) {
-        .milking-why-choose-grid {
-          grid-template-columns: 1fr;
-        }
+      .fencing-advice-section {
+        padding: 34px clamp(14px, 2.1vw, 18px);
       }
 
-      @media (min-width: 1024px) {
-        .category-buckets .category-bucket-grid {
-          width: min(100%, calc(83.3333% - 3px));
-          margin-inline: auto;
-          grid-template-columns: repeat(5, minmax(0, 1fr));
-        }
+      .fencing-advice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .category-buckets[aria-label="Electric fencing category shortcuts"] .category-bucket-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
       }
 
-    </style>
+      .category-buckets[aria-label="Electric fencing category shortcuts"] .category-bucket-copy strong {
+        font-size: 12px;
+        line-height: 1.12;
+      }
+
+      .fencing-advice-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .fencing-advice-card {
+        min-height: auto;
+      }
+    }
+  </style>
   
 <style>
 @media (min-width: 1024px) {
-  .clippers-page .clippers-trust-strip {
+  .home-page .electric-fencing-trust-strip {
     display: block !important;
     width: 100%;
     max-width: none;
@@ -225,7 +410,7 @@
     background: var(--surface);
   }
 
-  .clippers-page .clippers-trust-strip-inner {
+  .home-page .electric-fencing-trust-strip-inner {
     width: min(100%, calc(83.3333% - 3px));
     margin-inline: auto;
     display: flex;
@@ -234,25 +419,25 @@
     gap: 0;
   }
 
-  .clippers-page .clippers-trust-strip-inner .about-stat {
+  .home-page .electric-fencing-trust-strip-inner .about-stat {
     flex: 0 1 auto;
     transform: translateX(45px);
   }
 
-  .clippers-page .clippers-trust-strip-inner .about-stat svg {
+  .home-page .electric-fencing-trust-strip-inner .about-stat svg {
     display: block;
     margin: 0;
     align-self: center;
   }
 
-  .clippers-page .clippers-trust-strip-inner .about-stat:first-child {
+  .home-page .electric-fencing-trust-strip-inner .about-stat:first-child {
     gap: 8px;
   }
 }
 </style>
 <style>
   @media (max-width: 760px) {
-    .clippers-page .category-hero.hero-text-template {
+    .category-hero--electric-fencing.hero-text-template {
       display: flex !important;
       flex-direction: column !important;
       padding: 0 !important;
@@ -262,11 +447,11 @@
       overflow: hidden !important;
     }
 
-    .clippers-page .category-hero.hero-text-template::before {
+    .category-hero--electric-fencing.hero-text-template::before {
       display: none !important;
     }
 
-    .clippers-page .category-hero.hero-text-template .category-hero-copy {
+    .category-hero--electric-fencing.hero-text-template .category-hero-copy {
       position: relative !important;
       left: auto !important;
       top: auto !important;
@@ -282,17 +467,17 @@
       background: var(--nav-charcoal) !important;
     }
 
-    .clippers-page .category-hero.hero-text-template .category-breadcrumb {
+    .category-hero--electric-fencing.hero-text-template .category-breadcrumb {
       margin: 0 0 8px !important;
       max-width: 100% !important;
     }
 
-    .clippers-page .category-hero.hero-text-template h1 {
+    .category-hero--electric-fencing.hero-text-template h1 {
       margin: 0 0 8px !important;
       max-width: 100% !important;
     }
 
-    .clippers-page .category-hero.hero-text-template .category-hero-description {
+    .category-hero--electric-fencing.hero-text-template .category-hero-description {
       margin: 0 !important;
       width: 100% !important;
       max-width: none !important;
@@ -303,14 +488,32 @@
       word-break: normal !important;
     }
 
-    .clippers-page .category-hero.hero-text-template .category-hero-description span,
-    .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+    .category-hero--electric-fencing.hero-text-template .category-hero-description span {
       white-space: normal !important;
       overflow-wrap: anywhere !important;
       word-break: normal !important;
     }
 
-    .clippers-page .category-hero.hero-text-template .category-hero-media.hero-mobile-visual {
+    .category-hero--electric-fencing.hero-text-template .category-hero-description br {
+      display: none !important;
+    }
+
+    .category-hero--electric-fencing.hero-text-template .category-hero-description span:first-child {
+      margin-bottom: 0 !important;
+    }
+
+    .category-hero--electric-fencing .category-hero-description {
+      margin-top: 0 !important;
+    }
+
+    .category-hero--electric-fencing .category-hero-description span:nth-child(2) {
+      margin-top: 0 !important;
+    }
+
+    .category-hero--electric-fencing.hero-text-template .category-hero-media {
+      position: relative !important;
+      inset: auto !important;
+      z-index: auto !important;
       order: 2;
       display: block !important;
       width: 100% !important;
@@ -318,15 +521,72 @@
       min-height: clamp(230px, 62vw, 330px) !important;
       flex: 0 0 auto !important;
       margin: 0 !important;
-      background-image: url("./assets/hero-kevin-bohan-clipping.jpg") !important;
-      background-size: cover !important;
-      background-position: 58% 64% !important;
-      background-repeat: no-repeat !important;
+      overflow: hidden !important;
+    }
+
+    .category-hero--electric-fencing.hero-text-template .category-hero-media img {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center 52% !important;
+    }
+
+    .home-page .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 18px;
+    }
+
+    .home-page .trust-strip .about-stat {
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr);
+      column-gap: 10px;
+      align-items: start;
+    }
+
+    .home-page .trust-strip .about-stat svg {
+      margin: 0;
+      justify-self: start;
+      align-self: start;
+    }
+
+    .home-page .trust-strip .about-stat > span {
+      margin: 0;
+      transform: none;
+      min-width: 0;
+    }
+
+    .home-page .electric-fencing-trust-strip-inner {
+      display: contents;
+    }
+
+    .home-page .electric-fencing-trust-strip .about-stat {
+      grid-template-columns: 36px minmax(0, 1fr);
+      column-gap: 10px;
+      align-items: center;
+    }
+
+    .home-page .electric-fencing-trust-strip .about-stat svg {
+      width: 36px;
+      height: 36px;
+      justify-self: start;
+      align-self: center;
+    }
+
+    .home-page .electric-fencing-trust-strip .about-stat strong {
+      font-size: clamp(16px, 4vw, 17px);
+      line-height: 1.12;
+    }
+
+    .home-page .electric-fencing-trust-strip .about-stat small {
+      font-size: clamp(13px, 3.2vw, 14px);
+      line-height: 1.25;
     }
   }
 </style>
 </head>
-  <body class="home-page clippers-page">
+  <body class="home-page">
     <header class="site-header">
       <div class="main-header">
         <div class="brand-lockup">
@@ -389,7 +649,7 @@
 
       <nav class="category-nav" id="category-nav" aria-label="Product categories">
         <div class="category-item category-item--clippers">
-          <a data-category-link="clippers" href="./clippers.html" aria-current="page">Clippers <span aria-hidden="true">⌄</span></a>
+          <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
             <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
             <a href="./clippers.html#clipper-horse">Horse Clippers</a>
@@ -412,7 +672,7 @@
 
         </div>
         <div class="category-item category-item--electric-fencing">
-          <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
+          <a href="./electric-fencing.html" aria-current="page">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
             <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
             <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
@@ -447,23 +707,25 @@
     </header>
 
     <main class="page-shell category-page">
-  <section class="category-hero hero-text-template" aria-labelledby="category-title">
-    <div class="category-hero-media hero-mobile-visual" aria-hidden="true"></div>
+  <section class="category-hero category-hero--electric-fencing hero-text-template" aria-labelledby="category-title">
+    <div class="category-hero-media" aria-hidden="true">
+      <img src="./assets/shop/category-electric-fencing.jpg" alt="" loading="eager" decoding="sync" width="1600" height="1067" />
+    </div>
     <div class="category-hero-copy">
       <nav class="category-breadcrumb" aria-label="Breadcrumb">
         <a href="./index.html">Home</a>
         <span aria-hidden="true">/</span>
-        <span>Clippers</span>
+        <span>Electric Fencing</span>
       </nav>
-      <h1 id="category-title">Clippers</h1>
-        <p class="category-hero-description">
-        <span>Our ErgoPro range includes powerful cordless and mains-powered clippers. For farmers, vets, groomers, competition yards and home users, we have the right clipper for you.</span>
+      <h1 id="category-title">Electric Fencing</h1>
+      <p class="category-hero-description">
+        <span>Gallagher, and Cheetah electric fencing equipment,<br>from mains, battery and solar energisers to posts, reels, tape,<br>wire and accessories.</span>
       </p>
     </div>
   </section>
 
-  <div class="about-stats trust-strip clippers-trust-strip" aria-label="Clippers Ireland trust highlights">
-    <div class="clippers-trust-strip-inner">
+  <div class="about-stats trust-strip electric-fencing-trust-strip" aria-label="Clippers Ireland trust highlights">
+    <div class="electric-fencing-trust-strip-inner">
       <div class="about-stat">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
           <path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" stroke-width="1.8" />
@@ -486,91 +748,55 @@
     </div>
   </div>
 
-  <section class="category-buckets" aria-label="Clipper category shortcuts">
+  <section class="category-buckets" aria-label="Electric fencing category shortcuts">
     <div class="category-bucket-grid">
-      <a id="clipper-sheep-cattle" class="category-bucket" href="#">
+        <a id="electric-fencing-mains" class="category-bucket" href="./electric-fencing.html#electric-fencing-mains">
+          <span class="category-bucket-image">
+            <picture>
+            <source media="(min-width: 1024px)" srcset="./assets/shop/gallaghermainsenergiser.png" />
+            <img src="./assets/shop/gallaghermainsenergiser.png" alt="Mains fencers" />
+          </picture>
+        </span>
+        <span class="category-bucket-copy">
+          <strong>Mains Fencers</strong>
+        </span>
+      </a>
+      <a id="electric-fencing-battery" class="category-bucket" href="./electric-fencing.html#electric-fencing-battery">
         <span class="category-bucket-image">
-          <img src="./assets/shop/cattleclipper.png" alt="Sheep and cattle clipping" />
+          <img src="./assets/shop/batteryfencerfrs.png" alt="Battery Fencers" />
         </span>
         <span class="category-bucket-copy">
-          <strong>Sheep &amp; Cattle Clippers</strong>
+          <strong>Battery Fencers</strong>
         </span>
       </a>
-      <a id="clipper-horse" class="category-bucket" href="#">
+      <a id="electric-fencing-solar" class="category-bucket" href="./electric-fencing.html#electric-fencing-solar">
         <span class="category-bucket-image">
-          <img src="./assets/shop/animal-horse-clipping-jacket.png" alt="Horse being clipped" />
+          <picture>
+            <source media="(min-width: 1024px)" srcset="./assets/shop/solarfencer.png" />
+            <img src="./assets/shop/solarfencer.png" alt="Solar Fencers" />
+          </picture>
         </span>
         <span class="category-bucket-copy">
-          <strong>Horse Clippers</strong>
+          <strong>Solar Fencers</strong>
         </span>
       </a>
-      <a id="clipper-dog" class="category-bucket" href="#">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-dog-clipping.png" alt="Dog being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Dog Clippers</strong>
-        </span>
-      </a>
-        <a id="clipper-blades" class="category-bucket" href="#" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
-        <span class="category-bucket-image category-bucket-image--contain category-blade-bucket">
-          <span class="blade-graphic-combo" aria-hidden="true">
-            <img class="blade-graphic-item blade-graphic-desktop"
-              src="./assets/bladebucketpic-hires-v3.png?v=bladebucket-hires-direct-4"
-              alt=""
-              loading="eager"
-              decoding="sync"
-              width="1254"
-              height="1254"
-            />
-          </span>
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Blades</strong>
-        </span>
-      </a>
-      <a id="clipper-parts" class="category-bucket" href="#">
+      <a id="electric-fencing-accessories" class="category-bucket" href="./electric-fencing.html#electric-fencing-accessories" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
         <span class="category-bucket-image category-bucket-image--contain">
           <img
-            src="./assets/parts5-hires-v3.png?v=parts5-direct-4"
-            alt="ErgoPro clipper parts and servicing"
+            src="./assets/shop/electricfence.png"
+            alt="Fencing accessories"
             loading="eager"
             decoding="sync"
-            width="1658"
-            height="1654"
+            width="1600"
+            height="635"
           />
         </span>
         <span class="category-bucket-copy">
-          <strong>Clipper Parts</strong>
+          <strong>Accessories</strong>
         </span>
       </a>
     </div>
   </section>
-
-    <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
-      <div class="milking-why-choose-shell">
-        <h2 class="milking-why-choose-title" id="milking-why-choose-title">Why Choose Clippers Ireland for Clippers?</h2>
-        <div class="milking-why-choose-grid">
-          <article class="milking-why-choose-card">
-            <h3>ErgoPro Clippers</h3>
-            <p>Whether you're an occasional home user<br> or a professional clipping all day, every day, ErgoPro clippers have stood the test of time.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>One-Year Warranty</h3>
-            <p>Our ErgoPro Clippers are supplied with a<br> one-year parts &amp; labour warranty for extra peace of mind.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>Parts Kept in Stock</h3>
-            <p>We carry all genuine spare parts needed to keep your machine working properly long after purchase.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>In-House Workshop Support</h3>
-            <p>Our workshop provides servicing, repairs, spare parts and practical advice whenever needed.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
 
   <section class="featured-products" aria-labelledby="featured-products-title">
     <div class="featured-products-header">
@@ -734,6 +960,99 @@
     </div>
   </section>
 
+  <section class="fencing-advice-section fencing-advice-section--coming-soon" aria-labelledby="fencing-advice-title">
+    <div class="fencing-advice-coming-soon-label" role="note" aria-label="Advice section status">
+      <strong>Coming Soon</strong>
+      <span>We&rsquo;re preparing helpful fencing guides, troubleshooting tips and setup advice.</span>
+    </div>
+    <div class="fencing-advice-heading">
+      <p class="advice-kicker">Electric Fencing Advice &amp; Help</p>
+      <h2 id="fencing-advice-title">Electric Fencing Advice &amp; Help</h2>
+      <p>Choosing the right electric fencing setup depends on your animals, fence length, power source, earthing and how permanent the fence needs to be. Our practical guides help you choose the right energiser, set up your fence correctly and solve common problems like weak voltage or poor earthing.</p>
+    </div>
+    <div class="fencing-advice-grid">
+      <article class="fencing-advice-card">
+        <span class="advice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M13 2L11 8H14L12 16L16 22" />
+            <path d="M8 2H4C5 6.3 7 9 9 10" />
+          </svg>
+        </span>
+        <strong>Choose the Right Energiser</strong>
+        <p>Learn what size and type of energiser you need based on fence length, livestock type, vegetation and available power supply.</p>
+        <a class="fencing-advice-cta coming-soon-cta" href="#choose-energiser" aria-disabled="true" tabindex="-1" role="link">Read Guide</a>
+      </article>
+      <article class="fencing-advice-card">
+        <span class="advice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 4h8v4h4V4h2a2 2 0 0 1 0 4h-2" />
+            <path d="M4 16h3m3 0h7m3 0h3" />
+            <path d="M5 16l1.2-7.5M11 8.5L13 16M17 16l1-7.5" />
+          </svg>
+        </span>
+        <strong>Mains, Battery or Solar?</strong>
+        <p>Compare mains, battery and solar fencers and see which option suits your farm, out-farm or temporary grazing setup best.</p>
+        <a class="fencing-advice-cta coming-soon-cta" href="#compare-fencer-types" aria-disabled="true" tabindex="-1" role="link">Compare Options</a>
+      </article>
+      <article class="fencing-advice-card">
+        <span class="advice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22a4 4 0 0 1-4-4V8" />
+            <path d="M12 3l2 3h-4l2-3zM6.5 8h11M7 8l.7 5m9.3 0L17 8M4 14h16M5 14V12" />
+            <path d="M5 14v4h14v-4" />
+          </svg>
+        </span>
+        <strong>Electric Fence Earthing Explained</strong>
+        <p>Poor earthing is one of the most common reasons an electric fence feels weak. Learn where to place earth stakes and why good grounding matters.</p>
+        <a class="fencing-advice-cta coming-soon-cta" href="#electric-fence-earthing" aria-disabled="true" tabindex="-1" role="link">Earthing Tips</a>
+      </article>
+      <article class="fencing-advice-card">
+        <span class="advice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 9h3m10 0h3" />
+            <path d="M7 2v7M17 2v7M7 22v-9M17 22v-9" />
+            <path d="M12 4v16M10 2h4" />
+            <path d="M12 20h1" />
+          </svg>
+        </span>
+        <strong>Troubleshooting a Weak Fence</strong>
+        <p>Simple checks for poor earthing, low battery, damaged insulators, bad joins, broken wire and grass touching the fence line.</p>
+        <a class="fencing-advice-cta coming-soon-cta" href="#troubleshooting-electric-fence" aria-disabled="true" tabindex="-1" role="link">Fix Fence Problems</a>
+      </article>
+      <article class="fencing-advice-card">
+        <span class="advice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="11" cy="12" r="4" />
+            <path d="M15 8h2.5M15 12h2.5M15 16h2.5" />
+            <path d="M4 20h11v-2H4zM7 18V8a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v10" />
+          </svg>
+        </span>
+        <strong>Solar Fencer Setup Tips</strong>
+        <p>Practical advice on positioning the solar panel, choosing the right battery and keeping the system working reliably through the season.</p>
+        <a class="fencing-advice-cta coming-soon-cta" href="#solar-fencer-setup" aria-disabled="true" tabindex="-1" role="link">View Solar Tips</a>
+      </article>
+      <article class="fencing-advice-card">
+        <span class="advice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 18l16-7.8L4 2.4V12" />
+            <rect x="8" y="11" width="8" height="5" rx="0.6" />
+            <path d="M8 14h8" />
+            <path d="M9.4 4.5a.6.6 0 0 1 .6-.6h3.5a.6.6 0 0 1 .6.6 2.2 2.2 0 0 1-4.7 0z" />
+            <path d="M12 14v6" />
+          </svg>
+        </span>
+        <strong>Accessories Checklist</strong>
+        <p>Make sure you have the right posts, insulators, wire, tape, rope, earth stakes, gate handles, connectors, reels and fence tester for your setup.</p>
+        <a class="fencing-advice-cta coming-soon-cta" href="#electric-fence-accessories-checklist" aria-disabled="true" tabindex="-1" role="link">View Checklist</a>
+      </article>
+    </div>
+    <div class="fencing-quick-help">
+      <h3>Quick Buying Help</h3>
+      <p>For a permanent fence near a shed or yard, a mains energiser is usually the strongest and most reliable option. For out-farms, temporary grazing or areas without power, a battery or solar energiser may be more suitable. If you are unsure, contact us and we can help you choose the right fencer and accessories for your setup.</p>
+      <a class="repairs-band-cta coming-soon-cta" href="#contact-advice" aria-disabled="true" tabindex="-1" role="link">Ask Us for Advice</a>
+    </div>
+  </section>
+
 </main>
 
 
@@ -889,6 +1208,6 @@
       </button>
     </aside>
 
-    <script src="./script.js?v=final-polish-pass-9"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
