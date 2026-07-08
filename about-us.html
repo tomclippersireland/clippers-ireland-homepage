@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clippers Ireland</title>
+  <title>About Us | Clippers Ireland</title>
   <link rel="stylesheet" href="./styles.css?v=final-polish-pass-26" />
-  <style>
+<style>
       #clipper-parts .category-bucket-image--contain,
       #clipper-blades .category-bucket-image--contain {
         display: block !important;
@@ -141,68 +141,6 @@
         }
       }
 
-      .milking-why-choose-section {
-        width: min(1440px, calc(100% - 4px));
-        margin: 0 auto 40px;
-      }
-
-      .milking-why-choose-shell {
-        border: 1px solid var(--border-soft);
-        border-radius: 10px;
-        background: var(--surface);
-        box-shadow: var(--shadow-card);
-        padding: 14px 16px 16px;
-      }
-
-      .milking-why-choose-title {
-        margin: 0;
-        color: var(--text);
-        font-size: clamp(18px, 1.28vw, 24px);
-        line-height: 1.15;
-      }
-
-      .milking-why-choose-grid {
-        margin-top: 10px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .milking-why-choose-card {
-        min-height: 100%;
-        border: 1px solid #d9e4d8;
-        border-radius: 9px;
-        background: #f2f8f2;
-        padding: 12px 12px 13px;
-        box-sizing: border-box;
-      }
-
-      .milking-why-choose-card h3 {
-        margin: 0 0 6px;
-        color: var(--text);
-        font-size: clamp(14px, 0.95vw, 16px);
-        line-height: 1.15;
-      }
-
-      .milking-why-choose-card p {
-        margin: 0;
-        color: #2f3a34;
-        font-size: clamp(13px, 0.85vw, 15px);
-        line-height: 1.45;
-      }
-
-      @media (max-width: 1024px) {
-        .milking-why-choose-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 640px) {
-        .milking-why-choose-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
       @media (min-width: 1024px) {
         .category-buckets .category-bucket-grid {
           width: min(100%, calc(83.3333% - 3px));
@@ -211,7 +149,7 @@
         }
       }
 
-    </style>
+</style>
   
 <style>
 @media (min-width: 1024px) {
@@ -323,6 +261,293 @@
       background-position: 58% 64% !important;
       background-repeat: no-repeat !important;
     }
+
+    .template-shell-hero-copy-up {
+      transform: translateY(-28px);
+    }
+  }
+</style>
+
+<style>
+  .about-section {
+    margin-bottom: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  .about-section .about-image {
+    width: 88% !important;
+    justify-self: center;
+    transform: translate(18px, 12px);
+  }
+
+  .about-section img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  @media (max-width: 760px) {
+    .about-section .about-image {
+      width: 94% !important;
+      transform: translate(0, 0);
+    }
+  }
+
+  .team-section {
+    width: min(1320px, calc(100% - 32px));
+    margin: 0 auto 64px;
+    padding: clamp(28px, 4vw, 46px);
+    border: 1px solid rgba(28, 42, 32, 0.12);
+    border-radius: 16px;
+    background: #fffdf8;
+    box-shadow: 0 10px 24px rgba(19, 35, 23, 0.08);
+  }
+
+  .team-section-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 24px;
+  }
+
+  .team-kicker {
+    margin: 0 0 12px;
+    color: var(--green) !important;
+    font-size: clamp(16px, 1vw, 18px);
+    font-weight: 600 !important;
+    line-height: 1.2;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+
+  .team-section h2 {
+    margin: 0 0 16px;
+    max-width: 680px;
+    color: var(--text);
+    font-size: clamp(28px, 2.1vw, 46px) !important;
+    font-weight: 600 !important;
+    line-height: 1.08;
+    letter-spacing: 0;
+  }
+
+  .team-section-head p {
+    margin: 0;
+    max-width: 430px;
+    color: #435044;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .team-card {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+
+  .team-photo {
+    width: 100%;
+    aspect-ratio: 1 / 0.86;
+    border-radius: 0;
+    border: 1px solid rgba(28, 42, 32, 0.12);
+    background: #f6f9f2;
+    overflow: hidden;
+  }
+
+  .team-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .team-photo-placeholder {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #f3f5ef, #d8ddd4);
+    color: rgba(20, 33, 24, 0.34);
+    font-size: clamp(54px, 8vw, 92px);
+    font-weight: 600 !important;
+  }
+
+  .team-photo-placeholder--blank {
+    color: rgba(20, 33, 24, 0.22);
+    background: repeating-linear-gradient(135deg, #f6f9f2 0 12px, #eef3ea 12px 24px);
+  }
+
+  .team-card h3 {
+    margin: 0;
+    color: #1d2720;
+    font-size: clamp(15px, 1.05vw, 18px);
+    line-height: 1.2;
+  }
+
+  .team-role {
+    display: block;
+    margin-top: 4px;
+    color: #2d332f;
+    font-size: 10px;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .team-card p {
+    margin: 12px 0 0;
+    color: #26332b;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .team-card--blank h3,
+  .team-card--blank p {
+    color: rgba(38, 51, 43, 0.58);
+  }
+
+  @media (max-width: 980px) {
+    .team-section-head {
+      display: grid;
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .team-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 900px) {
+    .team-section {
+      width: min(1320px, calc(83.3333% - 3px));
+      max-width: calc(100% - 32px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .team-grid {
+      gap: 22px;
+    }
+
+    .team-photo {
+      aspect-ratio: 1 / 0.78;
+    }
+  }
+
+  .about-extra {
+    width: min(1320px, calc(83.3333% - 3px));
+    max-width: calc(100% - 32px);
+    margin: 0 auto 72px;
+    display: grid;
+    gap: 28px;
+  }
+
+  .about-extra-panel {
+    padding: clamp(26px, 4vw, 42px);
+    border: 1px solid rgba(28, 42, 32, 0.12);
+    border-radius: 16px;
+    background: #fffdf8;
+    box-shadow: 0 10px 24px rgba(19, 35, 23, 0.07);
+  }
+
+  .about-extra-kicker {
+    margin: 0 0 10px;
+    color: var(--green);
+    font-size: clamp(15px, 1vw, 18px);
+    font-weight: 600 !important;
+    line-height: 1.2;
+  }
+
+  .about-extra h2 {
+    margin: 0;
+    max-width: 720px;
+    color: var(--text);
+    font-size: clamp(28px, 2.1vw, 46px);
+    font-weight: 600 !important;
+    line-height: 1.08;
+    letter-spacing: 0;
+  }
+
+  .about-extra-intro {
+    margin: 18px 0 0;
+    max-width: 760px;
+    color: #26332b;
+    font-size: clamp(16px, 1.05vw, 18px);
+    line-height: 1.55;
+  }
+
+  .about-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .about-info-card {
+    padding: 22px;
+    border: 1px solid rgba(28, 42, 32, 0.1);
+    border-radius: 14px;
+    background: #f2f7ef;
+  }
+
+  .about-info-card h3 {
+    margin: 0 0 10px;
+    color: #142118;
+    font-size: clamp(18px, 1.2vw, 22px);
+    font-weight: 600 !important;
+    line-height: 1.2;
+  }
+
+  .about-info-card p {
+    margin: 0;
+    color: #26332b;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .about-cta-strip {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: center;
+    padding: clamp(26px, 4vw, 38px);
+    border-radius: 16px;
+    background: #e8f0e3;
+    border-left: 4px solid var(--green);
+  }
+
+  .about-cta-strip h2 {
+    font-size: clamp(24px, 1.9vw, 36px);
+  }
+
+  .about-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .about-cta-actions .btn {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 980px) {
+    .about-card-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-cta-strip {
+      display: grid;
+    }
   }
 </style>
     <style>
@@ -340,9 +565,139 @@
         }
       }
     </style>
+<style>
+  .contact-location-map-section {
+    width: min(100%, 1160px);
+    margin: 44px auto 58px;
+    padding: 0 clamp(18px, 2.6vw, 34px);
+  }
+
+  .contact-location-map-card {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(360px, 1.35fr);
+    gap: clamp(20px, 3vw, 34px);
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid rgba(19, 35, 23, 0.1);
+    border-radius: 16px;
+    background: #fffdf8;
+    box-shadow: 0 18px 38px rgba(19, 35, 23, 0.1);
+  }
+
+  .contact-location-copy {
+    padding: clamp(24px, 3vw, 38px);
+  }
+
+  .contact-location-kicker {
+    margin: 0 0 10px;
+    color: #128236;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .contact-location-copy h2 {
+    margin: 0;
+    color: #132018;
+    font-size: clamp(30px, 3vw, 48px);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+
+  .contact-location-copy address {
+    margin: 20px 0 0;
+    color: #2d3a31;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .contact-location-copy p {
+    margin: 18px 0 0;
+    color: #526057;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .contact-map-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .contact-map-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1px solid #128236;
+    border-radius: 8px;
+    color: #128236;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .contact-map-frame {
+    min-height: 390px;
+    background: #e8f2ea;
+  }
+
+  .contact-map-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 390px;
+    border: 0;
+  }
+
+  @media (max-width: 860px) {
+    .contact-location-map-section {
+      margin: 34px auto 44px;
+    }
+
+    .contact-location-map-card {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-map-frame,
+    .contact-map-frame iframe {
+      min-height: 320px;
+    }
+  }
+</style>
+
+<style id="about-team-nudge-up">
+  .team-section {
+    margin-top: -18px;
+  }
+
+  @media (max-width: 760px) {
+    .team-section {
+      margin-top: -12px;
+      margin-bottom: 34px;
+    }
+  }
+</style>
+
+<style id="about-mary-image-crop">
+  .team-photo img[src="./assets/about/mary.jpeg"] {
+    transform: scale(1.22);
+    transform-origin: 62% 30%;
+    object-position: 62% 30%;
+  }
+</style>
+<style id="about-aiko-image-crop">
+  .team-photo img[src="./assets/about/aiko-profile.png"] {
+    object-fit: contain;
+    object-position: 50% 50%;
+  }
+</style>
 </head>
   <body class="home-page clippers-page">
-    <header class="site-header">
+  <!-- LOCKED HEADER/MENU - DO NOT EDIT -->
+  <header class="site-header">
       <div class="main-header">
         <div class="brand-lockup">
           <a class="brand" href="./index.html" aria-label="Clippers Ireland home">
@@ -461,302 +816,114 @@
       </nav>
     </header>
 
-    <main class="page-shell category-page">
-  <section class="category-hero hero-text-template" aria-labelledby="category-title">
-    <div class="category-hero-media hero-mobile-visual" aria-hidden="true"></div>
-    <div class="category-hero-copy">
-      <nav class="category-breadcrumb" aria-label="Breadcrumb">
-        <a href="./index.html">Home</a>
-        <span aria-hidden="true">/</span>
-        <span>Clippers</span>
-      </nav>
-      <h1 id="category-title">Clippers</h1>
-        <p class="category-hero-description">
-        <span>Our ErgoPro range includes powerful cordless and mains-powered clippers. For farmers, vets, groomers, competition yards and home users, we have the right clipper for you.</span>
-      </p>
-    </div>
+      <!-- LOCKED HERO STRUCTURE - ONLY REPLACE TEXT PLACEHOLDERS -->
+  <main class="page-shell category-page">
+  <!-- MIDDLE CONTENT PLACEHOLDER - ADD PAGE CONTENT HERE LATER ONLY WHEN ASKED -->
+  <!-- /MIDDLE CONTENT PLACEHOLDER -->
+  <section class="about-section" aria-labelledby="about-title">
+        <div class="about-grid">
+          <div class="about-image">
+            <img src="./assets/about/thisgouldingcrop.png" alt="Clippers Ireland stand at Tullamore Show with prize-winning cattle" />
+          </div>
+
+          <div class="about-content">
+            <p class="about-kicker">About Clippers Ireland</p>
+            <h2 id="about-title">Professional clippers and agricultural equipment.</h2>
+            <p class="about-copy">Established in 2012, Clippers Ireland has grown from a specialist clipper supplier into one of Ireland&rsquo;s recognised suppliers of animal clippers and agricultural equipment.</p>
+            <p class="about-copy">In 2019, we expanded into manufacturing, adding our own range of cattle weigh bars and weigh platforms, built to provide practical, reliable weighing solutions for Irish farms.</p>
+            <p class="about-copy">Today, our customers include farmers, equine yards, groomers, agricultural shops and home users. We have also been recognised along the way, including being shortlisted for Agricultural Merchant of the Year at the Agribusiness Awards and the JCI Friendly Business Award.</p>
+            <p class="about-copy about-focus">Our focus remains simple: quality equipment, honest advice, dependable aftercare and competitive prices.</p>
+
+          </div>
+        </div>
+
   </section>
 
-  <div class="about-stats trust-strip clippers-trust-strip" aria-label="Clippers Ireland trust highlights">
-    <div class="clippers-trust-strip-inner">
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-          <path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" stroke-width="1.8" />
-          <circle cx="12" cy="10" r="2.2" stroke-width="1.8" />
-        </svg>
-        <span><strong>Irish Company</strong><small><span class="desktop-line">Based in Cork</span><span class="mobile-line">Based in Cork</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 27px; height: 27px;"><image href="./assets/icons/cog1.png" x="0" y="0" width="24" height="24" preserveAspectRatio="xMidYMid meet" /></svg>
-        <span><strong>Parts Available</strong><small><span class="desktop-line">All spares in stock</span><span class="mobile-line">All spares in stock</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="width: 32px; height: 32px;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>
-        <span><strong>Service &amp; Repairs</strong><small><span class="desktop-line">In-house workshop</span><span class="mobile-line">In-house workshop</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg class="delivery-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.8h11.2v8H3.5z" /><path d="M14.7 10.6h3.1l2.7 3.1v2.1h-5.8z" /><path d="M6 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /><path d="M15.5 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /></svg>
-        <span><strong>Free Delivery</strong><small><span class="desktop-line">Orders over &euro;100</span><span class="mobile-line">Orders over &euro;100</span></small></span>
+  <section class="team-section" aria-labelledby="team-title">
+    <div class="team-section-head">
+      <div>
+        <p class="team-kicker">Meet the Team</p>
+        <h2 id="team-title">The people behind Clippers Ireland.</h2>
       </div>
     </div>
-  </div>
-
-  <section class="category-buckets" aria-label="Clipper category shortcuts">
-    <div class="category-bucket-grid">
-      <a id="clipper-sheep-cattle" class="category-bucket" href="./sheep-cattle-clippers.html">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/cattleclipper.png" alt="Sheep and cattle clipping" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Sheep &amp; Cattle Clippers</strong>
-        </span>
-      </a>
-      <a id="clipper-horse" class="category-bucket" href="./horse-clippers.html">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-horse-clipping-jacket.png" alt="Horse being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Horse Clippers</strong>
-        </span>
-      </a>
-      <a id="clipper-dog" class="category-bucket" href="./dog-clippers.html">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-dog-clipping.png" alt="Dog being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Dog Clippers</strong>
-        </span>
-      </a>
-        <a id="clipper-blades" class="category-bucket" href="./clipper-blades.html" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
-        <span class="category-bucket-image category-bucket-image--contain category-blade-bucket">
-          <span class="blade-graphic-combo" aria-hidden="true">
-            <img class="blade-graphic-item blade-graphic-desktop"
-              src="./assets/bladebucketpic-hires-v3.png?v=bladebucket-hires-direct-4"
-              alt=""
-              loading="eager"
-              decoding="sync"
-              width="1254"
-              height="1254"
-            />
-          </span>
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Blades</strong>
-        </span>
-      </a>
-      <a id="clipper-parts" class="category-bucket" href="./clipper-parts.html">
-        <span class="category-bucket-image category-bucket-image--contain">
-          <img
-            src="./assets/parts5-hires-v3.png?v=parts5-direct-4"
-            alt="ErgoPro clipper parts and servicing"
-            loading="eager"
-            decoding="sync"
-            width="1658"
-            height="1654"
-          />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Parts</strong>
-        </span>
-      </a>
-    </div>
-  </section>
-
-    <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
-      <div class="milking-why-choose-shell">
-        <h2 class="milking-why-choose-title" id="milking-why-choose-title">Why Choose Clippers Ireland for Clippers?</h2>
-        <div class="milking-why-choose-grid">
-          <article class="milking-why-choose-card">
-            <h3>ErgoPro Clippers</h3>
-            <p>Whether you're an occasional home user<br> or a professional clipping all day, every day, ErgoPro clippers have stood the test of time.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>One-Year Warranty</h3>
-            <p>Our ErgoPro Clippers are supplied with a<br> one-year parts &amp; labour warranty for extra peace of mind.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>Parts Kept in Stock</h3>
-            <p>We carry all genuine spare parts needed to keep your machine working properly long after purchase.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>In-House Workshop Support</h3>
-            <p>Our workshop provides servicing, repairs, spare parts and practical advice whenever needed.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-
-  <section class="featured-products" aria-labelledby="featured-products-title">
-    <div class="featured-products-header">
-      <h2 class="section-title" id="featured-products-title">Featured Products</h2>
-    </div>
-
-    <div class="product-grid">
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/ovis.png"
-            alt="ErgoPro Ovis Sheep Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Ovis Sheep Clipper (External Battery 300w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.9 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;729.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="team-photo"><img src="./assets/about/tom-profile-cropped.jpg" alt="Tom Melby in a blue jumper at an agricultural show" /></div>
+        <div>
+          <h3>Tom Melby</h3>
+          <span class="team-role">Owner &amp; Director</span>
+          <p>After a long IT career ending with Microsoft, Tom founded Clippers Ireland in 2012. Swapping software for clippers, he learned the business from the ground up. Responsible for marketing and product development, he is always looking for new products to add to our ever expanding range.</p>
         </div>
       </article>
-
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/hush-horse.png"
-            alt="ErgoPro Hush Horse Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(23 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;220.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
+      <article class="team-card">
+        <div class="team-photo"><img src="./assets/about/con.png" alt="Con O&#39;Callaghan" /></div>
+        <div>
+          <h3>Con O'Callaghan</h3>
+          <span class="team-role">Technical Manager</span>
+          <p>With a degree in Technical Engineering and a farming background, Con brings engineering knowledge and farming experience to the team. Con was integral to the design and development of our livestock weighing system, and remains responsible for their ongoing manufacture.</p>
         </div>
       </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;899.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
+      <article class="team-card">
+        <div class="team-photo"><img src="./assets/about/mary.jpeg" alt="Mary Fenton" /></div>
+        <div>
+          <h3>Mary Fenton</h3>
+          <span class="team-role">Office Manager</span>
+          <p>Mary comes from a farming background and has her own smallholding. She eats, sleeps and breathes horses and cattle, and brings that practical knowledge to assist customers every day. Responsible for logistics and ensuring everything keeps moving behind the scenes, Mary is the nerve centre of Clippers Ireland</p>
         </div>
       </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.7 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(18 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;69.99</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
+      <article class="team-card">
+        <div class="team-photo"><img src="./assets/about/giannaprofile.png" alt="Gianna Bettiol" /></div>
+        <div>
+          <h3>Gianna Bettiol</h3>
+          <span class="team-role">Accounts</span>
+          <p>Gianna looks after accounts and customer support, as well as liaison with our endorsers, sponsored riders and charities. She plays an important role in supporting the people and organisations connected with Clippers Ireland.</p>
         </div>
       </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(16 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;1,250.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
+      <article class="team-card">
+        <div class="team-photo"><img src="./assets/about/kenprofile.png" alt="Ken Lomasney" /></div>
+        <div>
+          <h3>Ken Lomasney</h3>
+          <span class="team-role">Technical Engineer</span>
+          <p>Ken repairs everything from ErgoPro clippers to other clipper brands, milking machines and brushes. He also rears livestock and is hands-on during calving, so he understands the importance of reliable equipment when it is needed most. He has a proper fix-anything mindset — when he is not playing darts.</p>
+        </div>
+      </article>
+      <article class="team-card">
+        <div class="team-photo"><img src="./assets/about/aiko-profile.png" alt="Aiko the Clippers Ireland guard dog" /></div>
+        <div>
+          <h3>Aiko</h3>
+          <span class="team-role">Self appointed guard dog</span>
+          <p>Aiko appointed himself guard dog and takes the role very seriously. He likes barking at customers first, making friends later, and supervising the cows and horses from the office door.</p>
         </div>
       </article>
     </div>
   </section>
 
-  <section class="related-categories" aria-labelledby="related-clippers-title">
-    <h2 class="section-title" id="related-clippers-title">Browse related categories</h2>
-    <div class="category-tile-grid">
-      <a class="category-card" href="./cattle-weighing.html">
-        <img src="./assets/shop/newweighingpic.png" alt="Cattle weighing equipment" />
-        <strong>Cattle Weighing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
-        <strong>Milking Machines</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
-        <strong>Electric Fencing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./all-farming.html">
-        <img src="./assets/shop/category-all-farming.jpg" alt="All farming tools" />
-        <strong>All Farming</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./apparel.html">
-        <img src="./assets/shop/category-apparel-bobble-dog.jpg" alt="Workwear and apparel" />
-        <strong>Apparel</strong>
-        <small>Shop now -></small>
-      </a>
+    <section class="contact-location-map-section" aria-labelledby="contact-location-title">
+    <div class="contact-location-map-card">
+      <div class="contact-location-copy">
+        <p class="contact-location-kicker">Find Clippers Ireland</p>
+        <h2 id="contact-location-title">Visit us in Fermoy, Co Cork.</h2>
+        <address>
+          Clippers Ireland, The Little Farm,<br>
+          Knockananig, Fermoy,<br>
+          Co Cork, P61EP80
+        </address>
+        <p>Use the map to find us, or call ahead if you are visiting for parts, servicing or advice so we can make sure the right person is available.</p>
+        <div class="contact-map-actions">
+          <a href="https://www.google.com/maps/search/?api=1&query=Clippers%20Ireland%2C%20The%20Little%20Farm%2C%20Knockananig%2C%20Fermoy%2C%20Co%20Cork%2C%20P61EP80" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+        </div>
+      </div>
+      <div class="contact-map-frame" aria-label="Map showing Clippers Ireland near Fermoy, Co Cork">
+        <iframe
+          title="Map to Clippers Ireland, The Little Farm, Knockananig, Fermoy, Co Cork"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Clippers%20Ireland%2C%20The%20Little%20Farm%2C%20Knockananig%2C%20Fermoy%2C%20Co%20Cork%2C%20P61EP80&output=embed">
+        </iframe>
+      </div>
     </div>
   </section>
-
-</main>
-
-
-
-
-
-
-        <!-- Mobile-only approved Clippers footer -->
+    <!-- Mobile-only approved Clippers footer -->
 <footer class="site-footer site-footer--mobile-approved" aria-label="Mobile footer">
       <div class="footer-main">
         <div class="footer-brand">

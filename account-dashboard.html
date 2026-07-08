@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clippers Ireland</title>
+  <title>Clippers Ireland - Account Dashboard</title>
   <link rel="stylesheet" href="./styles.css?v=final-polish-pass-26" />
   <style>
       #clipper-parts .category-bucket-image--contain,
@@ -340,6 +340,423 @@
         }
       }
     </style>
+    <style>
+      .account-page {
+        display: grid;
+        gap: 0;
+      }
+
+      .account-intro {
+        width: min(100%, 990px);
+        margin: 0 auto;
+        padding: 42px 0 0;
+        text-align: center;
+      }
+
+      .account-intro h1 {
+        margin: 0;
+        color: #142118;
+        font-size: clamp(28px, 2.45vw, 42px);
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+
+      .account-intro p {
+        margin: 12px auto 0;
+        max-width: 580px;
+        color: #34433a;
+        font-size: clamp(15px, 1vw, 17px);
+        line-height: 1.5;
+      }
+
+      .account-auth-section {
+        width: min(100%, 990px);
+        margin: 0 auto 42px;
+        padding: 28px 0 4px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 52px;
+        align-items: stretch;
+      }
+
+      .account-signin,
+      .account-register {
+        border: 1px solid #d7e0d8;
+        border-radius: 10px;
+        background: #fff;
+        padding: 28px;
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+      }
+
+      .account-signin {
+        background: #f6f9f2 !important;
+      }
+
+      .account-register {
+        background: var(--surface);
+      }
+
+      .account-kicker {
+        margin: 0 0 6px;
+        color: #6b7280;
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .account-auth-section h2,
+      .account-register h3 {
+        margin: 0 0 16px;
+        color: #213326;
+        font-size: clamp(19px, 1.45vw, 23px);
+        font-weight: 400;
+        line-height: 1.12;
+      }
+
+      .account-form label,
+      .account-register p,
+      .account-register li,
+      .account-register a {
+        color: #34433a;
+        font-size: clamp(14px, 0.95vw, 16px);
+        line-height: 1.52;
+      }
+
+      .account-register p:not(.account-kicker),
+      .account-register ul {
+        margin: 0 0 10px;
+      }
+
+      .account-register ul {
+        margin-bottom: 18px;
+        padding: 0 0 0 18px;
+      }
+
+      .account-register li {
+        margin-bottom: 6px;
+      }
+
+      .account-register li:last-child {
+        margin-bottom: 0;
+      }
+
+      .account-register ul + .account-btn {
+        margin-top: 8px;
+      }
+
+      .account-form {
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        gap: 16px;
+        height: 100%;
+      }
+
+      .account-form label {
+        display: grid;
+        gap: 6px;
+        font-weight: 500;
+      }
+
+      .account-form input {
+        border: 1px solid #d7e0d8;
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 12px 13px;
+        font: inherit;
+      }
+
+      .account-form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        align-self: end;
+        margin-top: 4px;
+      }
+
+      .account-btn {
+        border: 1px solid rgba(18, 130, 54, 0.62);
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        max-width: 100%;
+        min-height: 38px;
+        padding: 0 18px;
+        background: transparent;
+        color: var(--green);
+        font-size: clamp(12px, 0.74vw, 14px);
+        line-height: 1;
+        font-weight: 500 !important;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .account-register > .account-btn {
+        align-self: end;
+      }
+
+      .account-btn:hover,
+      .account-btn:focus-visible {
+        border-color: var(--green-hover);
+        background: var(--green-hover);
+        color: #fff;
+      }
+
+      .account-link {
+        color: #2d5d36;
+        font-weight: 400;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .account-dashboard-section {
+        width: min(100%, 990px);
+        margin: 0 auto 42px;
+        padding: 28px 0 4px;
+        display: grid;
+        gap: 24px;
+      }
+
+      .account-dashboard-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .account-secondary-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .account-card {
+        border: 1px solid #d7e0d8;
+        border-radius: 10px;
+        background: var(--surface);
+        padding: 24px;
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+      }
+
+      .account-card--soft {
+        background: #f6f9f2 !important;
+      }
+
+      .account-card h2,
+      .account-card h3 {
+        margin: 0 0 14px;
+        color: #213326;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.16;
+        letter-spacing: 0;
+      }
+
+      .account-card h3 {
+        font-size: 19px;
+      }
+
+      .account-card p,
+      .account-card li,
+      .account-card dd,
+      .account-card dt,
+      .account-card td,
+      .account-card th {
+        color: #34433a;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .account-card p {
+        margin: 0 0 12px;
+      }
+
+      .account-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .account-status-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 6px 0 20px;
+      }
+
+      .account-status-item {
+        border: 1px solid #d7e0d8;
+        border-radius: 8px;
+        background: #fff;
+        padding: 12px;
+      }
+
+      .account-status-item strong {
+        display: block;
+        color: #142118;
+        font-size: 24px;
+        line-height: 1;
+        margin-bottom: 5px;
+      }
+
+      .account-status-item span {
+        display: block;
+        color: #5f6f64;
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .account-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 4px;
+      }
+
+      .account-table th {
+        color: #6b7280;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: left;
+        padding: 9px 8px 9px 0;
+      }
+
+      .account-table td {
+        border-top: 1px solid #d7e0d8;
+        padding: 10px 8px 10px 0;
+        vertical-align: top;
+      }
+
+      .account-table td:last-child,
+      .account-table th:last-child {
+        padding-right: 0;
+      }
+
+      .account-status-pill {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid rgba(18, 130, 54, 0.32);
+        border-radius: 999px;
+        padding: 3px 9px;
+        color: #2d5d36;
+        background: #edf7ee;
+        font-size: 13px;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      .account-detail-list {
+        display: grid;
+        gap: 11px;
+        margin: 0 0 16px;
+      }
+
+      .account-detail-row {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 14px;
+        border-top: 1px solid #d7e0d8;
+        padding-top: 11px;
+      }
+
+      .account-detail-row:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .account-detail-row dt {
+        color: #6b7280;
+        font-size: 13px;
+      }
+
+      .account-detail-row dd {
+        margin: 0;
+      }
+
+      .account-card-list {
+        margin: 0 0 16px 18px;
+        padding: 0;
+      }
+
+      .account-card-list li {
+        margin-bottom: 7px;
+      }
+
+      .account-card-list li:last-child {
+        margin-bottom: 0;
+      }
+
+      .account-plain-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      @media (max-width: 980px) {
+        .account-intro {
+          width: calc(100% - 4px);
+        }
+
+        .account-auth-section {
+          width: calc(100% - 4px);
+          grid-template-columns: 1fr;
+          margin-bottom: 36px;
+        }
+
+        .account-dashboard-section {
+          width: calc(100% - 4px);
+        }
+
+        .account-dashboard-top,
+        .account-secondary-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .account-intro {
+          padding-top: 26px;
+        }
+
+        .account-auth-section {
+          padding-top: 18px;
+          margin-bottom: 26px;
+        }
+
+        .account-signin,
+        .account-register {
+          padding: 18px;
+        }
+
+        .account-dashboard-section {
+          padding-top: 18px;
+          margin-bottom: 26px;
+          gap: 18px;
+        }
+
+        .account-card {
+          padding: 18px;
+        }
+
+        .account-status-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .account-detail-row {
+          grid-template-columns: 1fr;
+          gap: 3px;
+        }
+
+        .account-table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
 </head>
   <body class="home-page clippers-page">
     <header class="site-header">
@@ -461,299 +878,123 @@
       </nav>
     </header>
 
-    <main class="page-shell category-page">
-  <section class="category-hero hero-text-template" aria-labelledby="category-title">
-    <div class="category-hero-media hero-mobile-visual" aria-hidden="true"></div>
-    <div class="category-hero-copy">
-      <nav class="category-breadcrumb" aria-label="Breadcrumb">
-        <a href="./index.html">Home</a>
-        <span aria-hidden="true">/</span>
-        <span>Clippers</span>
-      </nav>
-      <h1 id="category-title">Clippers</h1>
-        <p class="category-hero-description">
-        <span>Our ErgoPro range includes powerful cordless and mains-powered clippers. For farmers, vets, groomers, competition yards and home users, we have the right clipper for you.</span>
-      </p>
-    </div>
-  </section>
+    <main class="page-shell category-page account-page">
+      <section class="account-intro" aria-labelledby="account-dashboard-title">
+        <h1 id="account-dashboard-title">Account Dashboard</h1>
+        <p>Welcome back, Customer Name. Here is your current account, orders and service support at a glance.</p>
+      </section>
 
-  <div class="about-stats trust-strip clippers-trust-strip" aria-label="Clippers Ireland trust highlights">
-    <div class="clippers-trust-strip-inner">
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-          <path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" stroke-width="1.8" />
-          <circle cx="12" cy="10" r="2.2" stroke-width="1.8" />
-        </svg>
-        <span><strong>Irish Company</strong><small><span class="desktop-line">Based in Cork</span><span class="mobile-line">Based in Cork</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 27px; height: 27px;"><image href="./assets/icons/cog1.png" x="0" y="0" width="24" height="24" preserveAspectRatio="xMidYMid meet" /></svg>
-        <span><strong>Parts Available</strong><small><span class="desktop-line">All spares in stock</span><span class="mobile-line">All spares in stock</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="width: 32px; height: 32px;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>
-        <span><strong>Service &amp; Repairs</strong><small><span class="desktop-line">In-house workshop</span><span class="mobile-line">In-house workshop</span></small></span>
-      </div>
-      <div class="about-stat">
-        <svg class="delivery-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.8h11.2v8H3.5z" /><path d="M14.7 10.6h3.1l2.7 3.1v2.1h-5.8z" /><path d="M6 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /><path d="M15.5 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /></svg>
-        <span><strong>Free Delivery</strong><small><span class="desktop-line">Orders over &euro;100</span><span class="mobile-line">Orders over &euro;100</span></small></span>
-      </div>
-    </div>
-  </div>
+      <section class="account-dashboard-section" aria-label="Account dashboard overview">
+        <div class="account-dashboard-top">
+          <article class="account-card account-card--soft">
+            <p class="account-kicker">Account overview</p>
+            <h2>Order &amp; service overview</h2>
+            <div class="account-status-grid" aria-label="Current account totals">
+              <div class="account-status-item">
+                <strong>2</strong>
+                <span>Recent orders</span>
+              </div>
+              <div class="account-status-item">
+                <strong>1</strong>
+                <span>Service job open</span>
+              </div>
+              <div class="account-status-item">
+                <strong>2</strong>
+                <span>Saved addresses</span>
+              </div>
+            </div>
+            <table class="account-table" aria-label="Recent orders and service activity">
+              <thead>
+                <tr>
+                  <th>Reference</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Order #CI-1042</td>
+                  <td>28 Jun 2026</td>
+                  <td><span class="account-status-pill">Processing</span></td>
+                  <td>&euro;729.00</td>
+                </tr>
+                <tr>
+                  <td>Service #SR-118</td>
+                  <td>24 Jun 2026</td>
+                  <td><span class="account-status-pill">In workshop</span></td>
+                  <td>Assessment pending</td>
+                </tr>
+                <tr>
+                  <td>Order #CI-1035</td>
+                  <td>13 Jun 2026</td>
+                  <td><span class="account-status-pill">Delivered</span></td>
+                  <td>&euro;69.99</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="account-plain-actions">
+              <a class="account-link" href="#">View all orders</a>
+              <a class="account-link" href="./parts-repairs.html">Service &amp; repairs</a>
+            </div>
+          </article>
 
-  <section class="category-buckets" aria-label="Clipper category shortcuts">
-    <div class="category-bucket-grid">
-      <a id="clipper-sheep-cattle" class="category-bucket" href="./sheep-cattle-clippers.html">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/cattleclipper.png" alt="Sheep and cattle clipping" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Sheep &amp; Cattle Clippers</strong>
-        </span>
-      </a>
-      <a id="clipper-horse" class="category-bucket" href="./horse-clippers.html">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-horse-clipping-jacket.png" alt="Horse being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Horse Clippers</strong>
-        </span>
-      </a>
-      <a id="clipper-dog" class="category-bucket" href="./dog-clippers.html">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-dog-clipping.png" alt="Dog being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Dog Clippers</strong>
-        </span>
-      </a>
-        <a id="clipper-blades" class="category-bucket" href="./clipper-blades.html" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
-        <span class="category-bucket-image category-bucket-image--contain category-blade-bucket">
-          <span class="blade-graphic-combo" aria-hidden="true">
-            <img class="blade-graphic-item blade-graphic-desktop"
-              src="./assets/bladebucketpic-hires-v3.png?v=bladebucket-hires-direct-4"
-              alt=""
-              loading="eager"
-              decoding="sync"
-              width="1254"
-              height="1254"
-            />
-          </span>
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Blades</strong>
-        </span>
-      </a>
-      <a id="clipper-parts" class="category-bucket" href="./clipper-parts.html">
-        <span class="category-bucket-image category-bucket-image--contain">
-          <img
-            src="./assets/parts5-hires-v3.png?v=parts5-direct-4"
-            alt="ErgoPro clipper parts and servicing"
-            loading="eager"
-            decoding="sync"
-            width="1658"
-            height="1654"
-          />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Parts</strong>
-        </span>
-      </a>
-    </div>
-  </section>
+          <aside class="account-card">
+            <p class="account-kicker">Customer details</p>
+            <h3>Customer Name</h3>
+            <dl class="account-detail-list">
+              <div class="account-detail-row">
+                <dt>Email</dt>
+                <dd>customer@example.com</dd>
+              </div>
+              <div class="account-detail-row">
+                <dt>Phone</dt>
+                <dd>087 000 0000</dd>
+              </div>
+              <div class="account-detail-row">
+                <dt>Address</dt>
+                <dd>The Farm<br>Fermoy<br>Co. Cork<br>P61 EP80</dd>
+              </div>
+            </dl>
+            <a class="account-link" href="./create-account.html">Edit account details</a>
+          </aside>
+        </div>
 
-    <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
-      <div class="milking-why-choose-shell">
-        <h2 class="milking-why-choose-title" id="milking-why-choose-title">Why Choose Clippers Ireland for Clippers?</h2>
-        <div class="milking-why-choose-grid">
-          <article class="milking-why-choose-card">
-            <h3>ErgoPro Clippers</h3>
-            <p>Whether you're an occasional home user<br> or a professional clipping all day, every day, ErgoPro clippers have stood the test of time.</p>
+        <div class="account-secondary-grid">
+          <article class="account-card">
+            <p class="account-kicker">Addresses</p>
+            <h3>Saved addresses</h3>
+            <ul class="account-card-list">
+              <li>Default delivery address: The Farm, Fermoy, Co. Cork.</li>
+              <li>Billing address: same as delivery address.</li>
+            </ul>
+            <a class="account-link" href="./create-account.html">Manage addresses</a>
           </article>
-          <article class="milking-why-choose-card">
-            <h3>One-Year Warranty</h3>
-            <p>Our ErgoPro Clippers are supplied with a<br> one-year parts &amp; labour warranty for extra peace of mind.</p>
+
+          <article class="account-card account-card--soft">
+            <p class="account-kicker">Workshop</p>
+            <h3>Service &amp; repairs</h3>
+            <ul class="account-card-list">
+              <li>Hush Horse Clipper: in workshop.</li>
+              <li>Blade sharpening: ready for collection.</li>
+              <li>Warranty support: no open warranty cases.</li>
+            </ul>
+            <a class="account-link" href="./parts-repairs.html">View service support</a>
           </article>
-          <article class="milking-why-choose-card">
-            <h3>Parts Kept in Stock</h3>
-            <p>We carry all genuine spare parts needed to keep your machine working properly long after purchase.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>In-House Workshop Support</h3>
-            <p>Our workshop provides servicing, repairs, spare parts and practical advice whenever needed.</p>
+
+          <article class="account-card">
+            <p class="account-kicker">Account</p>
+            <h3>Account actions</h3>
+            <ul class="account-card-list">
+              <li>Download invoices and receipts.</li>
+              <li>Update password and contact details.</li>
+              <li>Contact support for account help.</li>
+            </ul>
+            <a class="account-link" href="./contact-us.html">Contact support</a>
           </article>
         </div>
-      </div>
-    </section>
-
-
-  <section class="featured-products" aria-labelledby="featured-products-title">
-    <div class="featured-products-header">
-      <h2 class="section-title" id="featured-products-title">Featured Products</h2>
-    </div>
-
-    <div class="product-grid">
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/ovis.png"
-            alt="ErgoPro Ovis Sheep Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Ovis Sheep Clipper (External Battery 300w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.9 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;729.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/hush-horse.png"
-            alt="ErgoPro Hush Horse Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(23 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;220.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;899.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.7 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(18 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;69.99</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(16 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;1,250.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="related-categories" aria-labelledby="related-clippers-title">
-    <h2 class="section-title" id="related-clippers-title">Browse related categories</h2>
-    <div class="category-tile-grid">
-      <a class="category-card" href="./cattle-weighing.html">
-        <img src="./assets/shop/newweighingpic.png" alt="Cattle weighing equipment" />
-        <strong>Cattle Weighing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
-        <strong>Milking Machines</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
-        <strong>Electric Fencing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./all-farming.html">
-        <img src="./assets/shop/category-all-farming.jpg" alt="All farming tools" />
-        <strong>All Farming</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./apparel.html">
-        <img src="./assets/shop/category-apparel-bobble-dog.jpg" alt="Workwear and apparel" />
-        <strong>Apparel</strong>
-        <small>Shop now -></small>
-      </a>
-    </div>
-  </section>
-
-</main>
-
-
-
-
+      </section>
+    </main>
 
 
         <!-- Mobile-only approved Clippers footer -->

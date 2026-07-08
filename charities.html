@@ -3,394 +3,194 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clippers Ireland | Shows</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <style>
-    .category-hero--shows {
-      position: relative !important;
-      overflow: hidden !important;
-      background: none !important;
-      min-height: clamp(230px, 20vw, 330px) !important;
-      padding: clamp(30px, 3.2vw, 56px) clamp(18px, 2.6vw, 54px) !important;
-    }
-
-    .category-hero--shows::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(90deg, rgba(12, 24, 16, 0.78) 0%, rgba(12, 24, 16, 0.58) 48%, rgba(12, 24, 16, 0.24) 100%);
-    }
-
-    .category-hero--shows .category-hero-media {
-      display: block !important;
-      position: absolute !important;
-      inset: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      margin: 0 !important;
-      z-index: 0 !important;
-      pointer-events: none !important;
-    }
-
-    .category-hero--shows .category-hero-media img {
-      position: static !important;
-      width: 100% !important;
-      height: 100% !important;
-      display: block !important;
-      object-fit: cover !important;
-      object-position: center 52% !important;
-      transform: none !important;
-    }
-
-    .category-hero--shows .category-hero-copy {
-      position: relative;
-      z-index: 2;
-      max-width: 100%;
-    }
-
-    .category-hero--shows.hero-text-template .category-hero-copy {
-      position: absolute !important;
-      left: clamp(24px, 4vw, 78px) !important;
-      top: 44% !important;
-      transform: translateY(-50%) !important;
-      width: min(42vw, 650px) !important;
-      max-width: 650px !important;
-      display: grid !important;
-      gap: 10px !important;
-      margin: 0 !important;
-    }
-
-    .category-hero--shows.hero-text-template h1 {
-      margin: 0 0 12px !important;
-      font-size: clamp(30px, 3.2vw, 66px) !important;
-      line-height: 1.03 !important;
-      font-weight: 350 !important;
-      letter-spacing: 0 !important;
-      color: #fff !important;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28) !important;
-    }
-
-    .category-hero--shows.hero-text-template .category-hero-description {
-      display: block !important;
-      gap: 0 !important;
-      margin: 0 !important;
-      max-width: 48ch !important;
-      color: rgba(255, 253, 248, 0.9) !important;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22) !important;
-      font-size: clamp(14px, 1.1vw, 22px) !important;
-      line-height: 1.36 !important;
-      font-weight: 400 !important;
-    }
-
-    .shows-card-logo {
-      display: grid;
-      place-items: center;
-      min-height: 120px;
-      padding: 18px;
-      border: 1px solid var(--border-soft);
-      border-radius: 10px;
-      background: linear-gradient(180deg, #fffdf8 0%, #f3f0e8 100%);
-    }
-
-    .shows-card-logo img {
-      display: block;
-      width: 100%;
-      max-width: 200px;
-      max-height: 76px;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .shows-page-section {
-      width: min(100%, 2020px);
-      margin: 0 auto;
-      padding: 34px clamp(18px, 2.6vw, 54px) 18px;
-      background: var(--page);
-    }
-
-    .shows-section-intro {
-      max-width: 70ch;
-      margin: 0 0 18px;
-      color: #2f3a34;
-      font-size: clamp(15px, 1vw, 19px);
-      line-height: 1.47;
-    }
-
-    .shows-logo-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .shows-logo-card {
-      display: grid;
-      align-content: start;
-      text-decoration: none;
-      color: inherit;
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--surface);
-      box-shadow: var(--shadow-card);
-    }
-
-    .shows-logo-media {
-      display: grid;
-      place-items: center;
-      min-height: 120px;
-      padding: 18px;
-      background: linear-gradient(180deg, #fffdf8 0%, #f3f0e8 100%);
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .shows-logo-media img {
-      display: block;
-      width: 100%;
-      max-width: 200px;
-      max-height: 74px;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .shows-logo-copy {
-      padding: 14px 16px 18px;
-    }
-
-    .shows-logo-copy h3 {
-      margin: 0;
-      color: var(--text);
-      font-size: clamp(17px, 1.1vw, 22px);
-      line-height: 1.18;
-    }
-
-    .shows-list-grid {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .shows-card {
-      display: grid;
-      align-content: start;
-      gap: 12px;
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
-      background: var(--surface);
-      padding: 18px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .shows-card-logo {
-      display: grid;
-      place-items: center;
-      min-height: 108px;
-      padding: 16px;
-      border: 1px solid var(--border-soft);
-      border-radius: 10px;
-      background: linear-gradient(180deg, #fffdf8 0%, #f3f0e8 100%);
-    }
-
-    .shows-card-logo img {
-      display: block;
-      width: 100%;
-      max-width: 200px;
-      max-height: 70px;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .shows-card h3 {
-      margin: 0;
-      color: var(--text);
-      font-size: clamp(20px, 1.45vw, 28px);
-      line-height: 1.12;
-      letter-spacing: 0.01em;
-    }
-
-    .shows-card p {
-      margin: 0;
-      color: #2f3a34;
-      font-size: clamp(14px, 0.86vw, 16px);
-      line-height: 1.46;
-    }
-
-    .shows-cta {
-      justify-self: start;
-    }
-
-    .shows-support-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .shows-band {
-      display: grid;
-      gap: 10px;
-      align-content: start;
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
-      background: #ffffff;
-      padding: 18px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .shows-band strong {
-      display: inline-block;
-      margin: 0;
-      color: var(--text);
-      font-size: clamp(16px, 1vw, 22px);
-      line-height: 1.1;
-    }
-
-    .shows-band p {
-      margin: 0;
-      color: #2f3a34;
-      font-size: clamp(14px, 0.86vw, 16px);
-      line-height: 1.45;
-    }
-
-    @media (max-width: 1100px) {
-      .shows-logo-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 900px) {
-      .shows-list-grid,
-      .shows-support-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .shows-page-section {
-        padding-inline: 14px;
+  <title>Charities | Clippers Ireland</title>
+  <link rel="stylesheet" href="./styles.css?v=final-polish-pass-26" />
+<style>
+      #clipper-parts .category-bucket-image--contain,
+      #clipper-blades .category-bucket-image--contain {
+        display: block !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        border-radius: 0 !important;
+        position: relative !important;
+        overflow: hidden !important;
       }
 
-      .shows-logo-grid {
-        grid-template-columns: 1fr;
+      #clipper-parts .category-bucket-image--contain img,
+      #clipper-blades .category-bucket-image--contain img,
+      #clipper-blades .blade-graphic-item {
+        position: static !important;
+        inset: auto !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: cover !important;
+        object-position: 50% 72% !important;
+        transform: none !important;
+        filter: none !important;
+        image-rendering: auto !important;
       }
-    }
-</style>
-<style id="shows-card-redesign">
-  .shows-page-section {
-    padding-top: 40px;
-    padding-bottom: 42px;
-  }
 
-  .shows-page-section .section-title {
-    margin-bottom: 20px;
-  }
+      #clipper-blades .blade-graphic-combo {
+        height: 100% !important;
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+      }
 
-  .shows-list-grid {
-    margin-top: 0;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
-  }
+      #clipper-sheep-cattle .category-bucket-image img {
+        object-fit: cover !important;
+        object-position: 50% 38% !important;
+      }
 
-  .shows-card {
-    display: grid;
-    grid-template-rows: auto auto 1fr;
-    gap: 14px;
-    border: 1px solid rgba(28, 42, 32, 0.14);
-    border-radius: 16px;
-    background: #fffdf8;
-    padding: 16px;
-    box-shadow: 0 10px 24px rgba(19, 35, 23, 0.08);
-  }
+      #clipper-parts.category-bucket:hover .category-bucket-image img,
+      #clipper-parts.category-bucket:focus-visible .category-bucket-image img,
+      #clipper-blades.category-bucket:hover .category-bucket-image img,
+      #clipper-blades.category-bucket:focus-visible .category-bucket-image img {
+        transform: none !important;
+      }
 
-  .shows-card-logo {
-    min-height: 122px;
-    padding: 18px;
-    border: 0;
+      #clipper-parts .category-bucket-image--contain img {
+        object-position: 50% 70% !important;
+      }
+
+      @media (max-width: 760px) {
+        .clippers-page .category-hero.hero-text-template .category-hero-copy {
+          gap: 3px;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-breadcrumb {
+          margin: 0 0 4px;
+        }
+
+        .clippers-page .category-hero.hero-text-template h1 {
+          margin: 0 0 4px !important;
+          line-height: 1.02;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description {
+          gap: 0;
+          line-height: 1.28;
+          max-width: none;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description span:first-child,
+        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+          white-space: nowrap;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+          margin-top: 4px;
+        }
+
+        .clippers-page .trust-strip {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px 18px;
+        }
+
+        .clippers-page .trust-strip .about-stat {
+          display: grid;
+          grid-template-columns: 36px minmax(0, 1fr);
+          column-gap: 10px;
+          align-items: start;
+        }
+
+        .clippers-page .trust-strip .about-stat svg {
+          margin: 0;
+          justify-self: start;
+          align-self: start;
+        }
+
+        .clippers-page .trust-strip .about-stat > span {
+          margin: 0;
+          transform: none;
+          min-width: 0;
+        }
+
+        .clippers-page .clippers-trust-strip-inner {
+          display: contents;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat {
+          grid-template-columns: 36px minmax(0, 1fr);
+          column-gap: 10px;
+          align-items: center;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat svg {
+          width: 36px;
+          height: 36px;
+          justify-self: start;
+          align-self: center;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat strong {
+          font-size: clamp(16px, 4vw, 17px);
+          line-height: 1.12;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat small {
+          font-size: clamp(13px, 3.2vw, 14px);
+          line-height: 1.25;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .category-buckets .category-bucket-grid {
+          width: min(100%, calc(83.3333% - 3px));
+          margin-inline: auto;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+      }
+
+    </style>
+  
+<style>
+@media (min-width: 1024px) {
+  .clippers-page .clippers-trust-strip {
+    display: block !important;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto 8px;
+    padding: 14px 0;
     border-radius: 0;
-    background: transparent;
+    background: var(--surface);
   }
 
-  .shows-card-logo img {
-    max-width: 205px;
-    max-height: 78px;
+  .clippers-page .clippers-trust-strip-inner {
+    width: min(100%, calc(83.3333% - 3px));
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 0;
   }
 
-  .shows-card h3 {
-    min-height: 2.25em;
+  .clippers-page .clippers-trust-strip-inner .about-stat {
+    flex: 0 1 auto;
+    transform: translateX(45px);
+  }
+
+  .clippers-page .clippers-trust-strip-inner .about-stat svg {
+    display: block;
     margin: 0;
-    color: #16231a;
-    font-size: clamp(18px, 1.15vw, 23px);
-    font-weight: 650;
-    line-height: 1.12;
+    align-self: center;
   }
 
-  .shows-detail-list {
-    display: grid;
-    gap: 10px;
-    margin: 0;
+  .clippers-page .clippers-trust-strip-inner .about-stat:first-child {
+    gap: 8px;
   }
-
-  .shows-detail-row {
-    display: grid;
-    gap: 3px;
-    padding-top: 10px;
-    border-top: 1px solid rgba(28, 42, 32, 0.1);
-  }
-
-  .shows-detail-row:first-child {
-    padding-top: 0;
-    border-top: 0;
-  }
-
-  .shows-detail-label {
-    color: #687368;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .shows-detail-value,
-  .shows-detail-link {
-    color: #223126;
-    font-size: 14px;
-    font-weight: 560;
-    line-height: 1.28;
-  }
-
-  .shows-detail-link {
-    overflow-wrap: anywhere;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-  }
-
-  .shows-detail-link:hover,
-  .shows-detail-link:focus-visible {
-    color: var(--green);
-  }
-
-  @media (max-width: 1180px) {
-    .shows-list-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (max-width: 620px) {
-    .shows-list-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .shows-card h3 {
-      min-height: 0;
-    }
-  }
+}
 </style>
 <style>
   @media (max-width: 760px) {
-    .category-hero--shows.hero-text-template {
+    .clippers-page .category-hero.hero-text-template {
       display: flex !important;
       flex-direction: column !important;
       padding: 0 !important;
@@ -400,11 +200,11 @@
       overflow: hidden !important;
     }
 
-    .category-hero--shows.hero-text-template::before {
+    .clippers-page .category-hero.hero-text-template::before {
       display: none !important;
     }
 
-    .category-hero--shows.hero-text-template .category-hero-copy {
+    .clippers-page .category-hero.hero-text-template .category-hero-copy {
       position: relative !important;
       left: auto !important;
       top: auto !important;
@@ -420,17 +220,17 @@
       background: var(--nav-charcoal) !important;
     }
 
-    .category-hero--shows.hero-text-template .category-breadcrumb {
+    .clippers-page .category-hero.hero-text-template .category-breadcrumb {
       margin: 0 0 8px !important;
       max-width: 100% !important;
     }
 
-    .category-hero--shows.hero-text-template h1 {
+    .clippers-page .category-hero.hero-text-template h1 {
       margin: 0 0 8px !important;
       max-width: 100% !important;
     }
 
-    .category-hero--shows.hero-text-template .category-hero-description {
+    .clippers-page .category-hero.hero-text-template .category-hero-description {
       margin: 0 !important;
       width: 100% !important;
       max-width: none !important;
@@ -441,24 +241,14 @@
       word-break: normal !important;
     }
 
-    .category-hero--shows.hero-text-template .category-hero-description span {
+    .clippers-page .category-hero.hero-text-template .category-hero-description span,
+    .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
       white-space: normal !important;
       overflow-wrap: anywhere !important;
       word-break: normal !important;
     }
 
-    .category-hero--shows.hero-text-template .category-hero-description br {
-      display: none !important;
-    }
-
-    .category-hero--shows.hero-text-template .category-hero-description span:first-child {
-      margin-bottom: 0 !important;
-    }
-
-    .category-hero--shows.hero-text-template .category-hero-media {
-      position: relative !important;
-      inset: auto !important;
-      z-index: auto !important;
+    .clippers-page .category-hero.hero-text-template .category-hero-media.hero-mobile-visual {
       order: 2;
       display: block !important;
       width: 100% !important;
@@ -466,15 +256,14 @@
       min-height: clamp(230px, 62vw, 330px) !important;
       flex: 0 0 auto !important;
       margin: 0 !important;
-      overflow: hidden !important;
+      background-image: url("./assets/hero-kevin-bohan-clipping.jpg") !important;
+      background-size: cover !important;
+      background-position: 58% 64% !important;
+      background-repeat: no-repeat !important;
     }
 
-    .category-hero--shows.hero-text-template .category-hero-media img {
-      display: block !important;
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: cover !important;
-      object-position: center 52% !important;
+    .template-shell-hero-copy-up {
+      transform: translateY(-28px);
     }
   }
 </style>
@@ -493,71 +282,278 @@
         }
       }
     </style>
+
+  <style id="charities-page-redesign-style">
+    .charities-page-main {
+      background: #f4f1e9;
+      padding: 46px 0 62px;
+    }
+
+    .charities-page-wrap {
+      width: min(1120px, calc(100% - 64px));
+      margin: 0 auto;
+    }
+
+    .charities-intro-card,
+    .charities-support-card {
+      background: #fffef8;
+      border: 1px solid rgba(27, 58, 38, 0.16);
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(22, 38, 28, 0.08);
+    }
+
+    .charities-intro-card {
+      padding: 34px 38px 32px;
+    }
+
+    .charities-kicker {
+      margin: 0 0 8px;
+      color: #087a2f;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .charities-intro-card h1 {
+      margin: 0 0 18px;
+      color: #1d3225;
+      font-size: clamp(2.15rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    .charities-intro-card p,
+    .charities-support-card p {
+      max-width: 880px;
+      margin: 0 0 14px;
+      color: #26382d;
+      font-size: 1.04rem;
+      line-height: 1.7;
+    }
+
+    .charities-intro-card p:last-child,
+    .charities-support-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .charities-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .charity-card {
+      min-width: 0;
+      overflow: hidden;
+      background: #fffef8;
+      border: 1px solid rgba(27, 58, 38, 0.15);
+      border-radius: 16px;
+      box-shadow: 0 14px 28px rgba(22, 38, 28, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .charity-logo-frame {
+      min-height: 142px;
+      padding: 18px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .charity-logo-frame img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 104px;
+      object-fit: contain;
+    }
+
+    .charity-name {
+      margin: auto 0 0;
+      padding: 12px 12px 13px;
+      background: #f6f6f2;
+      color: #087a2f;
+      text-align: center;
+      font-size: 0.98rem;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    .charity-name a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .charity-name a:hover,
+    .charity-name a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .charities-support-card {
+      margin-top: 30px;
+      padding: 28px 32px;
+      border-left: 5px solid #087a2f;
+    }
+
+    .charities-support-card h2 {
+      margin: 0 0 12px;
+      color: #1d3225;
+      font-size: clamp(1.45rem, 2.4vw, 2rem);
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .charities-support-card a {
+      color: #087a2f;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .charities-support-card a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 701px) {
+      .charity-name--compact {
+        white-space: nowrap;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 0.86rem;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .charities-logo-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .charities-page-main {
+        padding: 28px 0 46px;
+      }
+
+      .charities-page-wrap {
+        width: min(100% - 32px, 560px);
+      }
+
+      .charities-intro-card,
+      .charities-support-card {
+        border-radius: 15px;
+      }
+
+      .charities-intro-card {
+        padding: 25px 22px 24px;
+      }
+
+      .charities-intro-card p,
+      .charities-support-card p {
+        font-size: 0.98rem;
+        line-height: 1.62;
+      }
+
+      .charities-logo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .charity-logo-frame {
+        min-height: 118px;
+        padding: 14px;
+      }
+
+      .charity-logo-frame img {
+        max-height: 82px;
+      }
+
+      .charity-name {
+        padding: 10px 8px 11px;
+        font-size: 0.88rem;
+      }
+
+      .charities-support-card {
+        margin-top: 22px;
+        padding: 22px 20px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .charities-logo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body class="home-page">
+  <body class="home-page clippers-page">
+  <!-- LOCKED HEADER/MENU - DO NOT EDIT -->
   <header class="site-header">
-    <div class="main-header">
-      <div class="brand-lockup">
-        <a class="brand" href="./index.html" aria-label="Clippers Ireland home">
-          <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
-        </a>
-        <span class="brand-divider" aria-hidden="true"></span>
-        <span class="ergopro-lockup">
-          <span>home of</span>
-          <img src="./assets/logo.png" alt="ErgoPro" />
-        </span>
-      </div>
-
-      <form class="search" role="search">
-        <label class="sr-only" for="site-search">Search products</label>
-        <input id="site-search" name="q" type="search" placeholder="Search the store" />
-        <button type="submit" aria-label="Search">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" />
-            <path d="M16.5 16.5L21 21" />
-          </svg>
-        </button>
-      </form>
-
-      <div class="header-actions" aria-label="Header actions">
-        <a class="phone-link" href="tel:+353214874441">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" />
-          </svg>
-          <span>
-            <small>Need help? Call us</small>
-            <strong>021 487 4441</strong>
+      <div class="main-header">
+        <div class="brand-lockup">
+          <a class="brand" href="./index.html" aria-label="Clippers Ireland home">
+            <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+          </a>
+          <span class="brand-divider" aria-hidden="true"></span>
+          <span class="ergopro-lockup">
+            <span>home of</span>
+            <img src="./assets/logo.png" alt="ErgoPro" />
           </span>
-        </a>
+        </div>
 
-        <a class="icon-link" href="./my-account.html" aria-label="Account">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="8" r="4" />
-            <path d="M4 21c1.1-4.2 4-6.4 8-6.4s6.9 2.2 8 6.4" />
-          </svg>
-          <span>Account</span>
-        </a>
+        <form class="search" role="search">
+          <label class="sr-only" for="site-search">Search products</label>
+          <input id="site-search" name="q" type="search" placeholder="Search the store" />
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M16.5 16.5L21 21" />
+            </svg>
+          </button>
+        </form>
 
-        <a class="cart-link" href="#" aria-label="Cart with 0 items">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H7" />
-            <circle cx="10" cy="21" r="1.5" />
-            <circle cx="18" cy="21" r="1.5" />
-          </svg>
-          <span class="cart-count">0</span>
-        </a>
+        <div class="header-actions" aria-label="Header actions">
+          <a class="phone-link" href="tel:+353214874441">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" />
+            </svg>
+            <span>
+              <small>Need help? Call us</small>
+              <strong>021 487 4441</strong>
+            </span>
+          </a>
 
-        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="category-nav">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <a class="icon-link" href="./my-account.html" aria-label="Account">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c1.1-4.2 4-6.4 8-6.4s6.9 2.2 8 6.4" />
+            </svg>
+            <span>Account</span>
+          </a>
+
+          <a class="cart-link" href="#" aria-label="Cart with 0 items">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="category-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <nav class="category-nav" id="category-nav" aria-label="Product categories">
+      <nav class="category-nav" id="category-nav" aria-label="Product categories">
         <div class="category-item category-item--clippers">
-          <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
+          <a data-category-link="clippers" href="./clippers.html" aria-current="page">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
             <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
             <a href="./clippers.html#clipper-horse">Horse Clippers</a>
@@ -577,6 +573,7 @@
             <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
           
           </div>
+
         </div>
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
@@ -586,6 +583,8 @@
             <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
             <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
           </div>
+
+
         </div>
         <div class="category-item category-item--all-farming">
           <a href="./all-farming.html">All Farming <span aria-hidden="true">⌄</span></a>
@@ -599,123 +598,96 @@
             <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
             <a href="./electric-fencing.html">Blowers</a>
           </div>
+
+
         </div>
         <a class="category-nav-link" href="./apparel.html">Apparel</a>
         <div class="category-item category-item--parts-repairs">
           <a href="./parts-repairs.html">Parts &amp; Repairs</a>
 </div>
         <a href="./tips-guides.html">Tips &amp; Guides</a>
-        <a href="./shows.html" aria-current="page">Shows</a>
+        <a href="./shows.html">Shows</a>
       </nav>
-  </header>
+    </header>
 
-  <main class="page-shell category-page">
-    <section class="category-hero category-hero--shows hero-text-template" aria-labelledby="shows-page-title">
-      <div class="category-hero-media" aria-hidden="true">
-        <img src="./assets/shows/ploughing-shows.jpg" alt="" loading="eager" decoding="sync" width="1200" height="640" />
+      <!-- LOCKED HERO STRUCTURE - ONLY REPLACE TEXT PLACEHOLDERS -->
+  <main class="page-shell category-page charities-page-main">
+    <section class="charities-page-wrap" aria-labelledby="charities-page-title">
+      <div class="charities-intro-card">
+        <p class="charities-kicker">Giving back</p>
+        <h1 id="charities-page-title">Charities</h1>
+        <p>At Clippers Ireland, we believe in supporting the people and organisations who care for animals every day.</p>
+        <p>Over the years, we have donated clippers and equipment to animal charities, rescue centres and welfare organisations. Many of these groups work with limited resources, so practical equipment can make a real difference when caring for horses, dogs, farm animals and other animals in need.</p>
+        <p>We also try to support local communities where we can, including charity events, fundraisers and local causes.</p>
+        <p>Below are some of the charities and organisations we have supported.</p>
       </div>
-      <div class="category-hero-copy">
-        <nav class="category-breadcrumb" aria-label="Breadcrumb">
-          <a href="./index.html">Home</a>
-          <span aria-hidden="true">/</span>
-          <span>Shows</span>
-        </nav>
-        <h1 id="shows-page-title">Shows 2026</h1>
-        <p class="category-hero-description">
-          Find us at agricultural shows and events across Ireland.<br />
-          See equipment in action, ask questions and get practical advice.
-        </p>
-      </div>
-    </section>
 
-    <section class="shows-page-section" aria-labelledby="shows-list-title">
-      <h2 class="section-title" id="shows-list-title">Upcoming Shows and Events</h2>
-      <div class="shows-list-grid">
-        <article class="shows-card">
-          <div class="shows-card-logo">
-            <img src="./assets/shows/tullamorelogo.png" alt="Tullamore Show" loading="lazy" decoding="async" />
+      <div class="charities-logo-grid" aria-label="Charities and organisations supported by Clippers Ireland">
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/childvision.png" alt="ChildVision logo" loading="lazy">
           </div>
-          <h3>Tullamore Show</h3>
-          <dl class="shows-detail-list">
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Date</dt>
-              <dd class="shows-detail-value">Sunday 9 August 2026</dd>
-            </div>
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Website</dt>
-              <dd><a class="shows-detail-link" href="https://www.tullamoreshow.com/" target="_blank" rel="noopener noreferrer">tullamoreshow.com</a></dd>
-            </div>
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Address</dt>
-              <dd class="shows-detail-value">Tullamore, Co Offaly</dd>
-            </div>
-          </dl>
+          <p class="charity-name"><a href="https://www.childvision.ie/" target="_blank" rel="noopener">ChildVision</a></p>
         </article>
-        <article class="shows-card">
-          <div class="shows-card-logo">
-            <img src="./assets/shows/ploughinglogo.png" alt="National Ploughing Championships" loading="lazy" decoding="async" />
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/dspca.png" alt="DSPCA logo" loading="lazy">
           </div>
-          <h3>National Ploughing Championships</h3>
-          <dl class="shows-detail-list">
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Date</dt>
-              <dd class="shows-detail-value">Tuesday 15 to Thursday 17 September 2026</dd>
-            </div>
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Website</dt>
-              <dd><a class="shows-detail-link" href="https://www.npa.ie/" target="_blank" rel="noopener noreferrer">npa.ie</a></dd>
-            </div>
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Address</dt>
-              <dd class="shows-detail-value">Screggan, Tullamore, Co Offaly</dd>
-            </div>
-          </dl>
+          <p class="charity-name"><a href="https://www.dspca.ie/" target="_blank" rel="noopener">DSPCA</a></p>
         </article>
-        <article class="shows-card">
-          <div class="shows-card-logo">
-            <img src="./assets/shows/dairyshow.png" alt="National Dairy Show" loading="lazy" decoding="async" />
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/ihwt.png" alt="Irish Horse Welfare Trust logo" loading="lazy">
           </div>
-          <h3>National Dairy Show</h3>
-          <dl class="shows-detail-list">
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Date</dt>
-              <dd class="shows-detail-value">Friday 9 and Saturday 10 October 2026</dd>
-            </div>
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Website</dt>
-              <dd><a class="shows-detail-link" href="https://nationaldairyshow.com/" target="_blank" rel="noopener noreferrer">nationaldairyshow.com</a></dd>
-            </div>
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Address</dt>
-              <dd class="shows-detail-value">Green Glens Arena, Millstreet, Co Cork</dd>
-            </div>
-          </dl>
+          <p class="charity-name"><a href="https://www.ihwt.ie/" target="_blank" rel="noopener">Irish Horse Welfare Trust</a></p>
         </article>
-        <article class="shows-card">
-          <div class="shows-card-logo">
-            <img src="./assets/shows/machineryshow.png" alt="FTMTA Farm Machinery Show" loading="lazy" decoding="async" />
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/hollys-horse-haven.png" alt="Holly's Horse Haven logo" loading="lazy">
           </div>
-          <h3>FTMTA Farm Machinery Show</h3>
-          <dl class="shows-detail-list">
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Date</dt>
-              <dd class="shows-detail-value">Tuesday 17 to Thursday 19 November 2026</dd>
-            </div>
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Website</dt>
-              <dd><a class="shows-detail-link" href="https://show.ftmta.ie/" target="_blank" rel="noopener noreferrer">show.ftmta.ie</a></dd>
-            </div>
-            <div class="shows-detail-row">
-              <dt class="shows-detail-label">Address</dt>
-              <dd class="shows-detail-value">Punchestown Event Centre, Naas</dd>
-            </div>
-          </dl>
+          <p class="charity-name"><a href="http://www.hollyshorsehaven.com/" target="_blank" rel="noopener">Holly's Horse Haven</a></p>
         </article>
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/ahar-ireland.png" alt="AHAR Ireland logo" loading="lazy">
+          </div>
+          <p class="charity-name"><a href="https://www.ahar.ie/" target="_blank" rel="noopener">AHAR Ireland</a></p>
+        </article>
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/irish-guide-dogs.png" alt="Irish Guide Dogs for the Blind logo" loading="lazy">
+          </div>
+          <p class="charity-name charity-name--compact"><a href="https://www.guidedogs.ie/" target="_blank" rel="noopener">Irish Guide Dogs for the Blind</a></p>
+        </article>
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/limerick-animal-welfare.png" alt="Limerick Animal Welfare logo" loading="lazy">
+          </div>
+          <p class="charity-name"><a href="https://www.limerickanimalwelfare.ie/" target="_blank" rel="noopener">Limerick Animal Welfare</a></p>
+        </article>
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/dogs-aid.png" alt="Dogs Aid logo" loading="lazy">
+          </div>
+          <p class="charity-name"><a href="https://dogsaid.ie/" target="_blank" rel="noopener">Dogs Aid</a></p>
+        </article>
+        <article class="charity-card">
+          <div class="charity-logo-frame">
+            <img src="./assets/charities/paws-animal-rescue.png" alt="PAWS Animal Rescue logo" loading="lazy">
+          </div>
+          <p class="charity-name"><a href="https://www.paws.ie/" target="_blank" rel="noopener">PAWS Animal Rescue</a></p>
+        </article>
+      </div>
+
+      <div class="charities-support-card">
+        <h2>Animal welfare &amp; community support</h2>
+        <p>If you are involved with an animal charity, welfare organisation, local fundraiser or community event and think we may be able to help, please feel free to <a href="./contact-us.html">contact us</a>.</p>
+        <p>We are always happy to hear from genuine organisations and local groups. While we cannot support every request, we do our best to help where we can.</p>
       </div>
     </section>
   </main>
-
-      <!-- Mobile-only approved Clippers footer -->
+  <!-- LOCKED FOOTER - DO NOT EDIT -->
+        <!-- Mobile-only approved Clippers footer -->
 <footer class="site-footer site-footer--mobile-approved" aria-label="Mobile footer">
       <div class="footer-main">
         <div class="footer-brand">
@@ -974,30 +946,30 @@
       </div>
     </footer>
 
-  <aside class="chat-widget" aria-label="Chat support preview">
-    <div class="chat-widget-card">
-      <div class="chat-widget-header">
-        <span class="chat-widget-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
-        </span>
-        <span>
-          <strong>Need help?</strong>
-          <small>Chat with Clippers Ireland</small>
-        </span>
+    <aside class="chat-widget" aria-label="Chat support preview">
+      <div class="chat-widget-card">
+        <div class="chat-widget-header">
+          <span class="chat-widget-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+          </span>
+          <span>
+            <strong>Need help?</strong>
+            <small>Chat with Clippers Ireland</small>
+          </span>
+        </div>
+        <p>Questions about clippers, parts or servicing? We are here to help.</p>
+        <div class="chat-widget-input">
+          <span>Type your message...</span>
+          <button type="button" aria-label="Send preview message">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-5 16-3-7z" /></svg>
+          </button>
+        </div>
       </div>
-      <p>Questions about clippers, parts or servicing? We are here to help.</p>
-      <div class="chat-widget-input">
-        <span>Type your message...</span>
-        <button type="button" aria-label="Send preview message">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-5 16-3-7z" /></svg>
-        </button>
-      </div>
-    </div>
-    <button class="chat-widget-button" type="button" aria-label="Open chat preview">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
-    </button>
-  </aside>
+      <button class="chat-widget-button" type="button" aria-label="Open chat preview">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+      </button>
+    </aside>
 
-  <script src="./script.js?v=final-polish-pass-9"></script>
-</body>
+    <script src="./script.js?v=final-polish-pass-9"></script>
+  </body>
 </html>

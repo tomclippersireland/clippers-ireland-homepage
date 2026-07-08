@@ -3,151 +3,147 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <title>Shop By Sheep | Clippers Ireland
-  </title>
-  <link rel="stylesheet" href="./styles.css" />
+  <title>Clippers Ireland</title>
+  <link rel="stylesheet" href="./styles.css?v=final-polish-pass-26" />
   <style>
-    .category-hero--all-farming {
-      position: relative !important;
-      overflow: hidden !important;
-      background: none !important;
-      min-height: clamp(230px, 20vw, 330px) !important;
-      padding: clamp(30px, 3.2vw, 56px) clamp(18px, 2.6vw, 54px) !important;
-    }
-
-    .category-hero--all-farming::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(90deg, rgba(12, 24, 16, 0.52) 0%, rgba(12, 24, 16, 0.34) 48%, rgba(12, 24, 16, 0.13) 100%);
-    }
-
-    .category-hero--all-farming .category-hero-media {
-      display: block !important;
-      position: absolute !important;
-      inset: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      margin: 0 !important;
-      z-index: 0 !important;
-      pointer-events: none !important;
-    }
-
-    .category-hero--all-farming .category-hero-media img {
-      position: static !important;
-      width: 100% !important;
-      height: 100% !important;
-      display: block !important;
-      object-fit: cover !important;
-      object-position: center 58% !important;
-    }
-
-    .category-hero--all-farming .category-hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .all-farming-section {
-      width: min(100%, 2020px);
-      margin: 0 auto;
-      padding: clamp(24px, 2.6vw, 54px);
-    }
-
-    .all-farming-grid {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .all-farming-card {
-      display: grid;
-      align-content: start;
-      gap: 10px;
-      border: 1px solid var(--border-soft);
-      border-radius: 10px;
-      background: var(--surface);
-      padding: 18px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .all-farming-card h3 {
-      margin: 0;
-      font-size: clamp(16px, 1vw, 22px);
-      line-height: 1.1;
-    }
-
-    .all-farming-card p {
-      margin: 0;
-      color: #2f3a34;
-      font-size: clamp(13px, 0.84vw, 15px);
-      line-height: 1.45;
-    }
-
-    .all-farming-overview p {
-      margin-top: 0;
-      color: #2f3a34;
-      font-size: clamp(15px, 1vw, 18px);
-      line-height: 1.45;
-      max-width: 73ch;
-    }
-
-    .all-farming-overview strong {
-      color: var(--text);
-      font-size: clamp(26px, 2vw, 36px);
-      line-height: 1.1;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .all-farming-points {
-      margin: 12px 0 0;
-      display: grid;
-      gap: 8px;
-      padding-left: 20px;
-    }
-
-    .all-farming-points li {
-      position: relative;
-      color: #2f3a34;
-      line-height: 1.4;
-      font-weight: 600;
-    }
-
-    .all-farming-points li::before {
-      content: "✓";
-      position: absolute;
-      left: -20px;
-      color: var(--green);
-      top: 0.04em;
-    }
-
-    @media (max-width: 950px) {
-      .all-farming-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 620px) {
-      .all-farming-section {
-        padding-inline: 14px;
+      #clipper-parts .category-bucket-image--contain,
+      #clipper-blades .category-bucket-image--contain {
+        display: block !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        border-radius: 0 !important;
+        position: relative !important;
+        overflow: hidden !important;
       }
 
-      .all-farming-grid {
-        grid-template-columns: 1fr;
+      #clipper-parts .category-bucket-image--contain img,
+      #clipper-blades .category-bucket-image--contain img,
+      #clipper-blades .blade-graphic-item {
+        position: static !important;
+        inset: auto !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: cover !important;
+        object-position: 50% 72% !important;
+        transform: none !important;
+        filter: none !important;
+        image-rendering: auto !important;
       }
-    }
+
+      #clipper-blades .blade-graphic-combo {
+        height: 100% !important;
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+      }
+
+      #clipper-sheep-cattle .category-bucket-image img {
+        object-fit: cover !important;
+        object-position: 50% 38% !important;
+      }
+
+      #clipper-parts.category-bucket:hover .category-bucket-image img,
+      #clipper-parts.category-bucket:focus-visible .category-bucket-image img,
+      #clipper-blades.category-bucket:hover .category-bucket-image img,
+      #clipper-blades.category-bucket:focus-visible .category-bucket-image img {
+        transform: none !important;
+      }
+
+      #clipper-parts .category-bucket-image--contain img {
+        object-position: 50% 70% !important;
+      }
+
+      @media (max-width: 760px) {
+        .clippers-page .category-hero.hero-text-template .category-hero-copy {
+          gap: 3px;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-breadcrumb {
+          margin: 0 0 4px;
+        }
+
+        .clippers-page .category-hero.hero-text-template h1 {
+          margin: 0 0 4px !important;
+          line-height: 1.02;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description {
+          gap: 0;
+          line-height: 1.28;
+          max-width: none;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description span:first-child,
+        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+          white-space: nowrap;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+          margin-top: 4px;
+        }
+
+        .clippers-page .trust-strip {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px 18px;
+        }
+
+        .clippers-page .trust-strip .about-stat {
+          display: grid;
+          grid-template-columns: 36px minmax(0, 1fr);
+          column-gap: 10px;
+          align-items: start;
+        }
+
+        .clippers-page .trust-strip .about-stat svg {
+          margin: 0;
+          justify-self: start;
+          align-self: start;
+        }
+
+        .clippers-page .trust-strip .about-stat > span {
+          margin: 0;
+          transform: none;
+          min-width: 0;
+        }
+
+        .clippers-page .clippers-trust-strip-inner {
+          display: contents;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat {
+          grid-template-columns: 36px minmax(0, 1fr);
+          column-gap: 10px;
+          align-items: center;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat svg {
+          width: 36px;
+          height: 36px;
+          justify-self: start;
+          align-self: center;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat strong {
+          font-size: clamp(16px, 4vw, 17px);
+          line-height: 1.12;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat small {
+          font-size: clamp(13px, 3.2vw, 14px);
+          line-height: 1.25;
+        }
+      }
 
       .milking-why-choose-section {
         width: min(1440px, calc(100% - 4px));
-        margin: 0 auto 24px;
-      }
-
-      .milking-why-choose-section + .featured-products {
-        padding-top: 16px;
+        margin: 0 auto 40px;
       }
 
       .milking-why-choose-shell {
@@ -206,357 +202,129 @@
           grid-template-columns: 1fr;
         }
       }
-  </style>
-    <style>
-      .category-hero--shop-by-sheep {
-        position: relative !important;
-        overflow: hidden !important;
-        background: none !important;
-        min-height: clamp(230px, 20vw, 330px) !important;
-        padding: clamp(30px, 3.2vw, 56px) clamp(18px, 2.6vw, 54px) !important;
-      }
-
-      .category-hero--shop-by-sheep::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        background: linear-gradient(90deg, rgba(12, 24, 16, 0.74) 0%, rgba(12, 24, 16, 0.54) 46%, rgba(12, 24, 16, 0.28) 100%);
-      }
-
-      .category-hero--shop-by-sheep .category-hero-media {
-        display: block !important;
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        margin: 0 !important;
-        z-index: 0 !important;
-        pointer-events: none !important;
-      }
-
-      .category-hero--shop-by-sheep .category-hero-media img {
-        position: static !important;
-        width: 100% !important;
-        height: 100% !important;
-        display: block !important;
-        object-fit: cover !important;
-        object-position: center 38% !important;
-      }
-
-      .category-hero--shop-by-sheep .category-hero-copy {
-        position: relative;
-        transform: translateY(calc(-50% - 20px)) !important;
-        z-index: 2;
-        display: grid;
-        gap: 10px;
-        max-width: min(650px, 88vw);
-      }
-
-      .category-hero--shop-by-sheep .category-hero-copy h1 {
-        margin: 0 0 12px !important;
-        font-weight: 350 !important;
-      }
-
-      .category-hero--shop-by-sheep .category-hero-description {
-        gap: 3px;
-      }
-
-      .category-hero--shop-by-sheep .category-hero-description span:first-child {
-        margin-bottom: 12px;
-      }
-
-      .category-hero--shop-by-sheep .category-breadcrumb,
-      .category-hero--shop-by-sheep .category-breadcrumb a,
-      .category-hero--shop-by-sheep .category-breadcrumb span {
-        font-weight: 400 !important;
-      }
-
-      .category-hero--shop-by-sheep .category-breadcrumb > a:first-child {
-        font-weight: 700 !important;
-      }
 
       @media (min-width: 1024px) {
-        .shop-by-sheep-page .category-hero--shop-by-sheep .category-hero-copy {
-          transform: translateY(calc(-50% - 20px)) !important;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip {
-          display: block !important;
-          width: 100%;
-          max-width: none;
-          margin: 0 auto 8px;
-          padding: 14px 0;
-          border-radius: 0;
-          background: var(--surface);
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip-inner {
+        .category-buckets .category-bucket-grid {
           width: min(100%, calc(83.3333% - 3px));
           margin-inline: auto;
-          display: flex;
-          justify-content: space-evenly;
-          align-items: flex-start;
-          gap: 0;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip-inner .about-stat {
-          flex: 0 1 auto;
-          transform: translateX(45px);
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip-inner .about-stat svg {
-          display: block;
-          margin: 0;
-          align-self: center;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip-inner .about-stat:first-child {
-          gap: 8px;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
         }
       }
 
-      .shop-by-sheep-intro {
-        width: min(100%, 1180px);
-        margin: clamp(18px, 2.4vw, 38px) auto 0;
-        padding-inline: clamp(18px, 2.6vw, 54px);
-        color: #2f3a34;
-      }
-
-      .shop-by-sheep-intro p {
-        margin: 0;
-        max-width: 78ch;
-        color: #2f3a34;
-        font-size: clamp(14px, 0.98vw, 18px);
-        line-height: 1.56;
-      }
-
-      .shop-by-sheep-intro .section-title {
-        margin-bottom: 12px;
-      }
-
-      .shop-by-sheep-buckets {
-        width: min(100%, 2020px);
-        margin: 0 auto;
-        padding: clamp(24px, 2.5vw, 44px) clamp(18px, 2.6vw, 54px);
-      }
-
-      .shop-by-sheep-buckets .section-title {
-        margin: 0 0 12px;
-      }
-
-      .shop-by-sheep-buckets .category-bucket-copy {
-        min-height: 78px;
-      }
-
-      @media (max-width: 620px) {
-        .shop-by-sheep-buckets {
-          padding-inline: 14px;
-        }
-
-        .shop-by-sheep-page .category-buckets .category-bucket {
-          display: grid;
-          grid-template-rows: auto 1fr;
-          overflow: hidden;
-        }
-
-        .shop-by-sheep-page .category-buckets .category-bucket-image {
-          width: 100%;
-          aspect-ratio: 1.12 / 1;
-          min-height: 0;
-        }
-
-        .shop-by-sheep-page .category-buckets .category-bucket-image img {
-          width: 100%;
-          height: 100%;
-          max-width: none;
-          max-height: none;
-          object-fit: cover;
-        }
-
-        .shop-by-sheep-intro {
-          padding-inline: 14px;
-        }
-
-        .repairs-band-inner {
-          grid-template-columns: 1fr;
-        }
-
-        .repairs-band-media {
-          min-width: 0;
-        }
-      }
-
-      @media (max-width: 760px) {
-        .shop-by-sheep-page .category-hero--shop-by-sheep {
-          display: flex;
-          flex-direction: column-reverse;
-          min-height: auto !important;
-          padding: 0 !important;
-          background: var(--nav-charcoal);
-        }
-
-        .shop-by-sheep-page .category-hero--shop-by-sheep::before {
-          display: none;
-        }
-
-        .shop-by-sheep-page .category-hero--shop-by-sheep .category-hero-copy {
-          position: static !important;
-          top: auto !important;
-          left: auto !important;
-          width: auto !important;
-          max-width: none !important;
-          gap: 6px !important;
-          padding: 10px 18px 22px;
-          transform: none !important;
-          background: var(--nav-charcoal);
-        }
-
-        .shop-by-sheep-page .category-hero--shop-by-sheep .category-breadcrumb {
-          margin: 0 0 8px !important;
-        }
-
-        .shop-by-sheep-page .category-hero--shop-by-sheep .category-hero-copy h1 {
-          margin: 0 0 8px !important;
-        }
-
-        .shop-by-sheep-page .category-hero--shop-by-sheep .category-hero-media {
-          position: relative !important;
-          inset: auto !important;
-          width: 100% !important;
-          height: clamp(230px, 62vw, 330px) !important;
-          overflow: hidden !important;
-          background: #eef3ee;
-        }
-
-        .shop-by-sheep-page .category-hero--shop-by-sheep .category-hero-media img {
-          height: 100% !important;
-          object-position: center 38% !important;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 16px 18px;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip .about-stat {
-          display: grid;
-          grid-template-columns: 36px minmax(0, 1fr);
-          column-gap: 10px;
-          align-items: start;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip .about-stat svg {
-          margin: 0;
-          justify-self: start;
-          align-self: start;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip .about-stat > span {
-          margin: 0;
-          transform: none;
-          min-width: 0;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip-inner {
-          display: contents;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip .about-stat {
-          grid-template-columns: 36px minmax(0, 1fr);
-          column-gap: 10px;
-          align-items: center;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip .about-stat svg {
-          width: 36px;
-          height: 36px;
-          justify-self: start;
-          align-self: center;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip .about-stat strong {
-          font-size: clamp(16px, 4vw, 17px);
-          line-height: 1.12;
-        }
-
-        .shop-by-sheep-page .shop-by-sheep-trust-strip .about-stat small {
-          font-size: clamp(13px, 3.2vw, 14px);
-          line-height: 1.25;
-        }
-      }
     </style>
+  
+<style>
+@media (min-width: 1024px) {
+  .clippers-page .clippers-trust-strip {
+    display: block !important;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto 8px;
+    padding: 14px 0;
+    border-radius: 0;
+    background: var(--surface);
+  }
 
-  <style>
-    @media (min-width: 1024px) {
-      .shop-by-sheep-page .category-buckets .category-bucket-grid {
-        width: min(100%, calc(83.3333% - 3px)) !important;
-        margin-inline: auto !important;
-        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-      }
+  .clippers-page .clippers-trust-strip-inner {
+    width: min(100%, calc(83.3333% - 3px));
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .clippers-page .clippers-trust-strip-inner .about-stat {
+    flex: 0 1 auto;
+    transform: translateX(45px);
+  }
+
+  .clippers-page .clippers-trust-strip-inner .about-stat svg {
+    display: block;
+    margin: 0;
+    align-self: center;
+  }
+
+  .clippers-page .clippers-trust-strip-inner .about-stat:first-child {
+    gap: 8px;
+  }
+}
+</style>
+<style>
+  @media (max-width: 760px) {
+    .clippers-page .category-hero.hero-text-template {
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 0 !important;
+      min-height: 0 !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      overflow: hidden !important;
     }
-  </style>
 
-  <style>
-    /* shop-by-sheep copied clipper blades parts styles */
+    .clippers-page .category-hero.hero-text-template::before {
+      display: none !important;
+    }
 
-      #clipper-parts .category-bucket-image--contain,
-      #clipper-blades .category-bucket-image--contain {
-        display: block !important;
-        padding: 0 !important;
-        background: #ffffff !important;
-        border-radius: 0 !important;
-        position: relative !important;
-        overflow: hidden !important;
-      }
+    .clippers-page .category-hero.hero-text-template .category-hero-copy {
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+      order: 1;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      padding: 10px 18px 22px !important;
+      gap: 6px !important;
+      margin: 0 !important;
+      background: var(--nav-charcoal) !important;
+    }
 
+    .clippers-page .category-hero.hero-text-template .category-breadcrumb {
+      margin: 0 0 8px !important;
+      max-width: 100% !important;
+    }
 
+    .clippers-page .category-hero.hero-text-template h1 {
+      margin: 0 0 8px !important;
+      max-width: 100% !important;
+    }
 
-      #clipper-parts .category-bucket-image--contain img,
-      #clipper-blades .category-bucket-image--contain img,
-      #clipper-blades .blade-graphic-item {
-        position: static !important;
-        inset: auto !important;
-        top: auto !important;
-        left: auto !important;
-        width: 100% !important;
-        height: 100% !important;
-        max-width: none !important;
-        max-height: none !important;
-        object-fit: cover !important;
-        object-position: 50% 72% !important;
-        transform: none !important;
-        filter: none !important;
-        image-rendering: auto !important;
-      }
+    .clippers-page .category-hero.hero-text-template .category-hero-description {
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      line-height: 1.28 !important;
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+    }
 
+    .clippers-page .category-hero.hero-text-template .category-hero-description span,
+    .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+    }
 
-
-      #clipper-blades .blade-graphic-combo {
-        height: 100% !important;
-        width: 100% !important;
-        display: block !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: #ffffff !important;
-      }
-
-
-
-      #clipper-parts.category-bucket:hover .category-bucket-image img,
-      #clipper-parts.category-bucket:focus-visible .category-bucket-image img,
-      #clipper-blades.category-bucket:hover .category-bucket-image img,
-      #clipper-blades.category-bucket:focus-visible .category-bucket-image img {
-        transform: none !important;
-      }
-
-
-
-      #clipper-parts .category-bucket-image--contain img {
-        object-position: 50% 70% !important;
-      }
-  </style>
+    .clippers-page .category-hero.hero-text-template .category-hero-media.hero-mobile-visual {
+      order: 2;
+      display: block !important;
+      width: 100% !important;
+      height: clamp(230px, 62vw, 330px) !important;
+      min-height: clamp(230px, 62vw, 330px) !important;
+      flex: 0 0 auto !important;
+      margin: 0 !important;
+      background-image: url("./assets/blades.png") !important;
+      background-size: cover !important;
+      background-position: 58% 64% !important;
+      background-repeat: no-repeat !important;
+    }
+  }
+</style>
     <style>
       .site-footer--mobile-approved {
         display: none;
@@ -573,70 +341,70 @@
       }
     </style>
 </head>
-<body class="home-page">
-  <header class="site-header">
-    <div class="main-header">
-      <div class="brand-lockup">
-        <a class="brand" href="./index.html" aria-label="Clippers Ireland home">
-          <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
-        </a>
-        <span class="brand-divider" aria-hidden="true"></span>
-        <span class="ergopro-lockup">
-          <span>home of</span>
-          <img src="./assets/logo.png" alt="ErgoPro" />
-        </span>
-      </div>
-
-      <form class="search" role="search">
-        <label class="sr-only" for="site-search">Search products</label>
-        <input id="site-search" name="q" type="search" placeholder="Search the store" />
-        <button type="submit" aria-label="Search">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" />
-            <path d="M16.5 16.5L21 21" />
-          </svg>
-        </button>
-      </form>
-
-      <div class="header-actions" aria-label="Header actions">
-        <a class="phone-link" href="tel:+353214874441">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" />
-          </svg>
-          <span>
-            <small>Need help? Call us</small>
-            <strong>021 487 4441</strong>
+  <body class="home-page clippers-page">
+    <header class="site-header">
+      <div class="main-header">
+        <div class="brand-lockup">
+          <a class="brand" href="./index.html" aria-label="Clippers Ireland home">
+            <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+          </a>
+          <span class="brand-divider" aria-hidden="true"></span>
+          <span class="ergopro-lockup">
+            <span>home of</span>
+            <img src="./assets/logo.png" alt="ErgoPro" />
           </span>
-        </a>
+        </div>
 
-        <a class="icon-link" href="./my-account.html" aria-label="Account">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="8" r="4" />
-            <path d="M4 21c1.1-4.2 4-6.4 8-6.4s6.9 2.2 8 6.4" />
-          </svg>
-          <span>Account</span>
-        </a>
+        <form class="search" role="search">
+          <label class="sr-only" for="site-search">Search products</label>
+          <input id="site-search" name="q" type="search" placeholder="Search the store" />
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M16.5 16.5L21 21" />
+            </svg>
+          </button>
+        </form>
 
-        <a class="cart-link" href="#" aria-label="Cart with 0 items">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H7" />
-            <circle cx="10" cy="21" r="1.5" />
-            <circle cx="18" cy="21" r="1.5" />
-          </svg>
-          <span class="cart-count">0</span>
-        </a>
+        <div class="header-actions" aria-label="Header actions">
+          <a class="phone-link" href="tel:+353214874441">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" />
+            </svg>
+            <span>
+              <small>Need help? Call us</small>
+              <strong>021 487 4441</strong>
+            </span>
+          </a>
 
-        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="category-nav">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <a class="icon-link" href="./my-account.html" aria-label="Account">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c1.1-4.2 4-6.4 8-6.4s6.9 2.2 8 6.4" />
+            </svg>
+            <span>Account</span>
+          </a>
+
+          <a class="cart-link" href="#" aria-label="Cart with 0 items">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="category-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <nav class="category-nav" id="category-nav" aria-label="Product categories">
+      <nav class="category-nav" id="category-nav" aria-label="Product categories">
         <div class="category-item category-item--clippers">
-          <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
+          <a data-category-link="clippers" href="./clippers.html" aria-current="page">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
             <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
             <a href="./clippers.html#clipper-horse">Horse Clippers</a>
@@ -691,60 +459,74 @@
         <a href="./tips-guides.html">Tips &amp; Guides</a>
         <a href="./shows.html">Shows</a>
       </nav>
-  </header>
+    </header>
 
-  <main class="page-shell category-page shop-by-sheep-page">
-    <section class="category-hero category-hero--shop-by-sheep hero-text-template" aria-labelledby="shop-by-sheep-title">
-      <div class="category-hero-media" aria-hidden="true">
-        <img src="./assets/shop/animal-sheep.jpg" alt="" loading="eager" decoding="sync" width="1508" height="1200" />
-      </div>
-      <div class="category-hero-copy">
-        <nav class="category-breadcrumb" aria-label="Breadcrumb">
-          <a href="./index.html">Home</a>
-          <span aria-hidden="true">/</span>
-          <span>Shop by Sheep</span>
-        </nav>
-        <h1 id="shop-by-sheep-title">Shop by Sheep</h1>
+    <main class="page-shell category-page">
+  <section class="category-hero hero-text-template" aria-labelledby="category-title" style="background: linear-gradient(90deg, rgba(12, 24, 16, 0.76) 0%, rgba(12, 24, 16, 0.56) 42%, rgba(12, 24, 16, 0.18) 100%), url(&quot;./assets/blades.png&quot;) 58% 66% / cover no-repeat !important;">
+    <div class="category-hero-media hero-mobile-visual" aria-hidden="true" style="background-image: url(&quot;./assets/blades.png&quot;) !important;"></div>
+    <div class="category-hero-copy">
+      <nav class="category-breadcrumb" aria-label="Breadcrumb">
+        <a href="./index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <span>Clipper Blades</span>
+      </nav>
+      <h1 id="category-title">Clipper Blades</h1>
         <p class="category-hero-description">
-          Shop sheep equipment in one place, from sheep clippers and blades to milking machines, parts and farm essentials.
-        </p>
+        <span>Our ErgoPro range includes powerful cordless and mains-powered clippers. For farmers, vets, groomers, competition yards and home users, we have the right clipper for you.</span>
+      </p>
+    </div>
+  </section>
+
+  <div class="about-stats trust-strip clippers-trust-strip" aria-label="Clippers Ireland trust highlights">
+    <div class="clippers-trust-strip-inner">
+      <div class="about-stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" stroke-width="1.8" />
+          <circle cx="12" cy="10" r="2.2" stroke-width="1.8" />
+        </svg>
+        <span><strong>Irish Company</strong><small><span class="desktop-line">Based in Cork</span><span class="mobile-line">Based in Cork</span></small></span>
       </div>
-    </section>
+      <div class="about-stat">
+        <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 27px; height: 27px;"><image href="./assets/icons/cog1.png" x="0" y="0" width="24" height="24" preserveAspectRatio="xMidYMid meet" /></svg>
+        <span><strong>Parts Available</strong><small><span class="desktop-line">All spares in stock</span><span class="mobile-line">All spares in stock</span></small></span>
+      </div>
+      <div class="about-stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="width: 32px; height: 32px;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>
+        <span><strong>Service &amp; Repairs</strong><small><span class="desktop-line">In-house workshop</span><span class="mobile-line">In-house workshop</span></small></span>
+      </div>
+      <div class="about-stat">
+        <svg class="delivery-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.8h11.2v8H3.5z" /><path d="M14.7 10.6h3.1l2.7 3.1v2.1h-5.8z" /><path d="M6 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /><path d="M15.5 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /></svg>
+        <span><strong>Free Delivery</strong><small><span class="desktop-line">Orders over &euro;100</span><span class="mobile-line">Orders over &euro;100</span></small></span>
+      </div>
+    </div>
+  </div>
 
-        <div class="about-stats trust-strip shop-by-sheep-trust-strip" aria-label="Clippers Ireland trust highlights">
-          <div class="shop-by-sheep-trust-strip-inner">
-            <div class="about-stat">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                <path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" stroke-width="1.8" />
-                <circle cx="12" cy="10" r="2.2" stroke-width="1.8" />
-              </svg>
-              <span><strong>Irish Company</strong><small><span class="desktop-line">Based in Cork</span><span class="mobile-line">Based in Cork</span></small></span>
-            </div>
-            <div class="about-stat">
-              <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 27px; height: 27px;"><image href="./assets/icons/cog1.png" x="0" y="0" width="24" height="24" preserveAspectRatio="xMidYMid meet" /></svg>
-              <span><strong>Parts Available</strong><small><span class="desktop-line">All spares in stock</span><span class="mobile-line">All spares in stock</span></small></span>
-            </div>
-            <div class="about-stat">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" style="width: 32px; height: 32px;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>
-              <span><strong>Service &amp; Repairs</strong><small><span class="desktop-line">In-house workshop</span><span class="mobile-line">In-house workshop</span></small></span>
-            </div>
-            <div class="about-stat">
-              <svg class="delivery-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.8h11.2v8H3.5z" /><path d="M14.7 10.6h3.1l2.7 3.1v2.1h-5.8z" /><path d="M6 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /><path d="M15.5 17.8a1.7 1.7 0 1 0 3.4 0 1.7 1.7 0 0 0-3.4 0z" /></svg>
-              <span><strong>Free Delivery</strong><small><span class="desktop-line">Orders over &euro;100</span><span class="mobile-line">Orders over &euro;100</span></small></span>
-            </div>
-          </div>
-        </div>
-
-    <section class="category-buckets" aria-label="All farming categories">
-      <div class="category-bucket-grid">
-        <a class="category-bucket" href="./clippers.html">
-          <span class="category-bucket-image">
-            <img src="./assets/shop/sheep-clipper-category-pic.jpg" alt="Clippers" />
-          </span>
-          <span class="category-bucket-copy">
-            <strong>Sheep & Cattle Clippers</strong>
-          </span>
-        </a>
+  <section class="category-buckets" aria-label="Clipper category shortcuts">
+    <div class="category-bucket-grid">
+      <a id="clipper-sheep-cattle" class="category-bucket" href="#">
+        <span class="category-bucket-image">
+          <img src="./assets/shop/cattleclipper.png" alt="Sheep and cattle clipping" />
+        </span>
+        <span class="category-bucket-copy">
+          <strong>Sheep &amp; Cattle Clippers</strong>
+        </span>
+      </a>
+      <a id="clipper-horse" class="category-bucket" href="#">
+        <span class="category-bucket-image">
+          <img src="./assets/shop/animal-horse-clipping-jacket.png" alt="Horse being clipped" />
+        </span>
+        <span class="category-bucket-copy">
+          <strong>Horse Clippers</strong>
+        </span>
+      </a>
+      <a id="clipper-dog" class="category-bucket" href="#">
+        <span class="category-bucket-image">
+          <img src="./assets/shop/animal-dog-clipping.png" alt="Dog being clipped" />
+        </span>
+        <span class="category-bucket-copy">
+          <strong>Dog Clippers</strong>
+        </span>
+      </a>
         <a id="clipper-blades" class="category-bucket" href="#" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
         <span class="category-bucket-image category-bucket-image--contain category-blade-bucket">
           <span class="blade-graphic-combo" aria-hidden="true">
@@ -777,26 +559,10 @@
           <strong>Clipper Parts</strong>
         </span>
       </a>
-        <a class="category-bucket" href="./milking-machines.html">
-          <span class="category-bucket-image">
-            <img src="./assets/shop/sezer-sheep-milking-machines-card-crop-left-side-zoomout10.png" alt="Milking machines" />
-          </span>
-          <span class="category-bucket-copy">
-            <strong>Milking Machines</strong>
-          </span>
-        </a>
-        <a class="category-bucket" href="./electric-fencing.html">
-          <span class="category-bucket-image">
-            <img src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
-          </span>
-          <span class="category-bucket-copy">
-            <strong>Electric Fencing</strong>
-          </span>
-        </a>
-      </div>
-    </section>
+    </div>
+  </section>
 
-  <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
+    <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
       <div class="milking-why-choose-shell">
         <h2 class="milking-why-choose-title" id="milking-why-choose-title">Why Choose Clippers Ireland for Clippers?</h2>
         <div class="milking-why-choose-grid">
@@ -819,6 +585,7 @@
         </div>
       </div>
     </section>
+
 
   <section class="featured-products" aria-labelledby="featured-products-title">
     <div class="featured-products-header">
@@ -951,9 +718,45 @@
     </div>
   </section>
 
+  <section class="related-categories" aria-labelledby="related-clippers-title">
+    <h2 class="section-title" id="related-clippers-title">Browse related categories</h2>
+    <div class="category-tile-grid">
+      <a class="category-card" href="./cattle-weighing.html">
+        <img src="./assets/shop/newweighingpic.png" alt="Cattle weighing equipment" />
+        <strong>Cattle Weighing</strong>
+        <small>Shop now -></small>
+      </a>
+      <a class="category-card" href="#">
+        <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
+        <strong>Milking Machines</strong>
+        <small>Shop now -></small>
+      </a>
+      <a class="category-card" href="#">
+        <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
+        <strong>Electric Fencing</strong>
+        <small>Shop now -></small>
+      </a>
+      <a class="category-card" href="./all-farming.html">
+        <img src="./assets/shop/category-all-farming.jpg" alt="All farming tools" />
+        <strong>All Farming</strong>
+        <small>Shop now -></small>
+      </a>
+      <a class="category-card" href="./apparel.html">
+        <img src="./assets/shop/category-apparel-bobble-dog.jpg" alt="Workwear and apparel" />
+        <strong>Apparel</strong>
+        <small>Shop now -></small>
+      </a>
+    </div>
+  </section>
+
 </main>
 
-      <!-- Mobile-only approved Clippers footer -->
+
+
+
+
+
+        <!-- Mobile-only approved Clippers footer -->
 <footer class="site-footer site-footer--mobile-approved" aria-label="Mobile footer">
       <div class="footer-main">
         <div class="footer-brand">
@@ -1212,30 +1015,30 @@
       </div>
     </footer>
 
-  <aside class="chat-widget" aria-label="Chat support preview">
-    <div class="chat-widget-card">
-      <div class="chat-widget-header">
-        <span class="chat-widget-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
-        </span>
-        <span>
-          <strong>Need help?</strong>
-          <small>Chat with Clippers Ireland</small>
-        </span>
+    <aside class="chat-widget" aria-label="Chat support preview">
+      <div class="chat-widget-card">
+        <div class="chat-widget-header">
+          <span class="chat-widget-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+          </span>
+          <span>
+            <strong>Need help?</strong>
+            <small>Chat with Clippers Ireland</small>
+          </span>
+        </div>
+        <p>Questions about clippers, parts or servicing? We are here to help.</p>
+        <div class="chat-widget-input">
+          <span>Type your message...</span>
+          <button type="button" aria-label="Send preview message">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-5 16-3-7z" /></svg>
+          </button>
+        </div>
       </div>
-      <p>Questions about clippers, parts or servicing? We are here to help.</p>
-      <div class="chat-widget-input">
-        <span>Type your message...</span>
-        <button type="button" aria-label="Send preview message">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-5 16-3-7z" /></svg>
-        </button>
-      </div>
-    </div>
-    <button class="chat-widget-button" type="button" aria-label="Open chat preview">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
-    </button>
-  </aside>
+      <button class="chat-widget-button" type="button" aria-label="Open chat preview">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+      </button>
+    </aside>
 
-  <script src="./script.js?v=final-polish-pass-9"></script>
-</body>
+    <script src="./script.js?v=final-polish-pass-9"></script>
+  </body>
 </html>
