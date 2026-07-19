@@ -8,6 +8,66 @@
   <title>Accessories | Clippers Ireland</title>
   <link rel="stylesheet" href="./styles.css" />
   <style>
+      /* Approved featured product card template from homepage */
+      .featured-products .product-image {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2) {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-info,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-info {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2),
+      .featured-products .product-card.clippers-hero {
+        overflow: hidden !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image,
+      .featured-products .product-card.clippers-hero .product-image {
+        background: var(--surface) !important;
+        padding: 8px 10px 6px !important;
+        overflow: visible !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img,
+      .featured-products .product-card.clippers-hero .product-image img {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        transform: scale(1) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img {
+        transform: scale(0.78) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img {
+        transform: scale(0.86) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(3) .product-image img {
+        transform: translateY(-10px) scale(1.22) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(4) .product-image img {
+        transform: rotate(-24deg) translateY(18px) scale(2.31) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(5) .product-image img {
+        transform: translateY(8px) scale(1.2) !important;
+      }
+
     .category-hero--electric-fencing {
       position: relative !important;
       overflow: hidden !important;
@@ -396,7 +456,70 @@
         min-height: auto;
       }
     }
-  </style>
+        .milking-why-choose-section {
+        width: min(1440px, calc(100% - 4px));
+        margin: 0 auto 40px;
+      }
+
+      .milking-why-choose-shell {
+        border: 1px solid var(--border-soft);
+        border-radius: 10px;
+        background: var(--surface);
+        box-shadow: var(--shadow-card);
+        padding: 14px 16px 16px;
+      }
+
+      .milking-why-choose-title {
+        margin: 0;
+        color: var(--text);
+        font-size: clamp(18px, 1.28vw, 24px);
+        line-height: 1.15;
+      }
+
+      .milking-why-choose-grid {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .milking-why-choose-card {
+        min-height: 100%;
+        border: 1px solid #d9e4d8;
+        border-radius: 9px;
+        background: #f2f8f2;
+        padding: 12px 12px 13px;
+        box-sizing: border-box;
+      }
+
+      .milking-why-choose-card h3 {
+        margin: 0 0 6px;
+        color: var(--text);
+        font-size: clamp(14px, 0.95vw, 16px);
+        line-height: 1.15;
+      }
+
+      .milking-why-choose-card p {
+        margin: 0;
+        color: #2f3a34;
+        font-size: clamp(13px, 0.85vw, 15px);
+        line-height: 1.45;
+      }
+
+      @media (max-width: 1024px) {
+        .milking-why-choose-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .milking-why-choose-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+</style>
   
 <style>
 @media (min-width: 1024px) {
@@ -600,6 +723,27 @@
         }
       }
     </style>
+  <style>
+    @media (max-width: 760px) {
+      .featured-products .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        overflow: visible !important;
+        overflow-x: visible !important;
+        white-space: normal !important;
+        scroll-snap-type: none !important;
+      }
+
+      .featured-products .product-grid > article.product-card {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        flex: none !important;
+      }
+    }
+  </style>
 </head>
   <body class="home-page">
     <header class="site-header">
@@ -666,11 +810,11 @@
         <div class="category-item category-item--clippers">
           <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
-            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
-            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
-            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
-            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
-            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+            <a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
+            <a href="./horse-clippers.html">Horse Clippers</a>
+            <a href="./dog-clippers.html">Dog Clippers</a>
+            <a href="./clipper-blades.html">Clipper Blades</a>
+            <a href="./clipper-parts.html">Clipper Parts</a>
           </div>
         </div>
         <div class="category-item category-item--cattle-weighing">
@@ -679,9 +823,9 @@
         <div class="category-item category-item--milking-machines">
           <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Milking Machines links">
-            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
-            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
-            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+            <a href="./cow-milking-machines.html">Cow Milkers</a>
+            <a href="./goat-milking-machines.html">Goat Milkers</a>
+            <a href="./sheep-milking-machines.html">Sheep Milkers</a>
           
           </div>
 
@@ -689,10 +833,10 @@
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html" aria-current="page">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
-            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+            <a href="./electric-fencing-mains.html">Mains Fencers</a>
+            <a href="./electric-fencing-battery.html">Battery Fencers</a>
+            <a href="./electric-fencing-solar.html">Solar Fencers</a>
+            <a href="./electric-fencing-accessories.html">Accessories</a>
           </div>
 
 
@@ -703,11 +847,11 @@
             <a href="./clippers.html">Clippers</a>
             <a href="./cattle-weighing.html">Cattle Weighing</a>
             <a href="./milking-machines.html">Milking Machines</a>
-            <a href="./parts-repairs.html">Dairy Products</a>
-            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./dairy-products.html">Dairy Products</a>
+            <a href="./brushes.html">Brushes</a>
             <a href="./electric-fencing.html">Electric Fencing</a>
-            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-            <a href="./electric-fencing.html">Blowers</a>
+            <a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
+            <a href="./blowers.html">Blowers</a>
           </div>
 
 
@@ -736,7 +880,7 @@
       </nav>
       <h1 id="category-title">Accessories</h1>
       <p class="category-hero-description">
-        <span>Gallagher, and Cheetah electric fencing equipment,<br>from mains, battery and solar energisers to posts, reels, tape,<br>wire and accessories.</span>
+        <span>Gallagher, and Cheetah electric fencing&nbsp;equipment. <br>Posts, reels, tape, wire, insulators and connectors<br>to complete or repair your fence.</span>
       </p>
     </div>
   </section>
@@ -765,186 +909,125 @@
     </div>
   </div>
 
-  <section class="category-buckets" aria-label="Electric fencing category shortcuts">
-    <div class="category-bucket-grid">
-        <a id="electric-fencing-mains" class="category-bucket" href="./electric-fencing.html#electric-fencing-mains">
-          <span class="category-bucket-image">
-            <picture>
-            <source media="(min-width: 1024px)" srcset="./assets/shop/gallaghermainsenergiser.png" />
-            <img src="./assets/shop/gallaghermainsenergiser.png" alt="Mains fencers" />
-          </picture>
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Mains Fencers</strong>
-        </span>
-      </a>
-      <a id="electric-fencing-battery" class="category-bucket" href="./electric-fencing.html#electric-fencing-battery">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/batteryfencerfrs.png" alt="Battery Fencers" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Battery Fencers</strong>
-        </span>
-      </a>
-      <a id="electric-fencing-solar" class="category-bucket" href="./electric-fencing.html#electric-fencing-solar">
-        <span class="category-bucket-image">
-          <picture>
-            <source media="(min-width: 1024px)" srcset="./assets/shop/solarfencer.png" />
-            <img src="./assets/shop/solarfencer.png" alt="Solar Fencers" />
-          </picture>
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Solar Fencers</strong>
-        </span>
-      </a>
-      <a id="electric-fencing-accessories" class="category-bucket" href="./electric-fencing.html#electric-fencing-accessories" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
-        <span class="category-bucket-image category-bucket-image--contain">
-          <img
-            src="./assets/shop/electricfence.png"
-            alt="Fencing accessories"
-            loading="eager"
-            decoding="sync"
-            width="1600"
-            height="635"
-          />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Accessories</strong>
-        </span>
-      </a>
-    </div>
-  </section>
-
   <section class="featured-products" aria-labelledby="featured-products-title">
-    <div class="featured-products-header">
-      <h2 class="section-title" id="featured-products-title">Featured Products</h2>
-    </div>
+        <div class="product-grid">
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-image" href="./ovis-clipper.html">
+              <img class="product-image--featured-blade" src="./assets/products/ovis.png" alt="ErgoPro Ovis Sheep Clipper" />
+            </a>
+            <div class="product-info">
+              <h3><a href="./ovis-clipper.html">ErgoPro Ovis Sheep Clipper<br />(External Battery 300w)</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;729.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-    <div class="product-grid">
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/ovis.png"
-            alt="ErgoPro Ovis Sheep Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Ovis Sheep Clipper (External Battery 300w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.9 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;729.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-image" href="#">
+              <img class="product-image--featured-blade" src="./assets/products/hush-horse.png" alt="ErgoPro Hush Horse Clipper" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;220.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/hush-horse.png"
-            alt="ErgoPro Hush Horse Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(23 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;220.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;899.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;899.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img class="product-image--handy-trimmer" src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;69.99</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.7 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(18 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;69.99</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;1,250.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
         </div>
-      </article>
+      </section>
 
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(16 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;1,250.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <section class="related-categories" aria-labelledby="related-clippers-title">
     <h2 class="section-title" id="related-clippers-title">Browse related categories</h2>
@@ -954,12 +1037,12 @@
         <strong>Cattle Weighing</strong>
         <small>Shop now -></small>
       </a>
-      <a class="category-card" href="#">
+      <a class="category-card" href="./milking-machines.html">
         <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
         <strong>Milking Machines</strong>
         <small>Shop now -></small>
       </a>
-      <a class="category-card" href="#">
+      <a class="category-card" href="./electric-fencing.html">
         <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
         <strong>Electric Fencing</strong>
         <small>Shop now -></small>
@@ -974,99 +1057,6 @@
         <strong>Apparel</strong>
         <small>Shop now -></small>
       </a>
-    </div>
-  </section>
-
-  <section class="fencing-advice-section fencing-advice-section--coming-soon" aria-labelledby="fencing-advice-title">
-    <div class="fencing-advice-coming-soon-label" role="note" aria-label="Advice section status">
-      <strong>Coming Soon</strong>
-      <span>We&rsquo;re preparing helpful fencing guides, troubleshooting tips and setup advice.</span>
-    </div>
-    <div class="fencing-advice-heading">
-      <p class="advice-kicker">Electric Fencing Advice &amp; Help</p>
-      <h2 id="fencing-advice-title">Electric Fencing Advice &amp; Help</h2>
-      <p>Choosing the right electric fencing setup depends on your animals, fence length, power source, earthing and how permanent the fence needs to be. Our practical guides help you choose the right energiser, set up your fence correctly and solve common problems like weak voltage or poor earthing.</p>
-    </div>
-    <div class="fencing-advice-grid">
-      <article class="fencing-advice-card">
-        <span class="advice-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M13 2L11 8H14L12 16L16 22" />
-            <path d="M8 2H4C5 6.3 7 9 9 10" />
-          </svg>
-        </span>
-        <strong>Choose the Right Energiser</strong>
-        <p>Learn what size and type of energiser you need based on fence length, livestock type, vegetation and available power supply.</p>
-        <a class="fencing-advice-cta coming-soon-cta" href="#choose-energiser" aria-disabled="true" tabindex="-1" role="link">Read Guide</a>
-      </article>
-      <article class="fencing-advice-card">
-        <span class="advice-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M6 4h8v4h4V4h2a2 2 0 0 1 0 4h-2" />
-            <path d="M4 16h3m3 0h7m3 0h3" />
-            <path d="M5 16l1.2-7.5M11 8.5L13 16M17 16l1-7.5" />
-          </svg>
-        </span>
-        <strong>Mains, Battery or Solar?</strong>
-        <p>Compare mains, battery and solar fencers and see which option suits your farm, out-farm or temporary grazing setup best.</p>
-        <a class="fencing-advice-cta coming-soon-cta" href="#compare-fencer-types" aria-disabled="true" tabindex="-1" role="link">Compare Options</a>
-      </article>
-      <article class="fencing-advice-card">
-        <span class="advice-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 22a4 4 0 0 1-4-4V8" />
-            <path d="M12 3l2 3h-4l2-3zM6.5 8h11M7 8l.7 5m9.3 0L17 8M4 14h16M5 14V12" />
-            <path d="M5 14v4h14v-4" />
-          </svg>
-        </span>
-        <strong>Electric Fence Earthing Explained</strong>
-        <p>Poor earthing is one of the most common reasons an electric fence feels weak. Learn where to place earth stakes and why good grounding matters.</p>
-        <a class="fencing-advice-cta coming-soon-cta" href="#electric-fence-earthing" aria-disabled="true" tabindex="-1" role="link">Earthing Tips</a>
-      </article>
-      <article class="fencing-advice-card">
-        <span class="advice-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 9h3m10 0h3" />
-            <path d="M7 2v7M17 2v7M7 22v-9M17 22v-9" />
-            <path d="M12 4v16M10 2h4" />
-            <path d="M12 20h1" />
-          </svg>
-        </span>
-        <strong>Troubleshooting a Weak Fence</strong>
-        <p>Simple checks for poor earthing, low battery, damaged insulators, bad joins, broken wire and grass touching the fence line.</p>
-        <a class="fencing-advice-cta coming-soon-cta" href="#troubleshooting-electric-fence" aria-disabled="true" tabindex="-1" role="link">Fix Fence Problems</a>
-      </article>
-      <article class="fencing-advice-card">
-        <span class="advice-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <circle cx="11" cy="12" r="4" />
-            <path d="M15 8h2.5M15 12h2.5M15 16h2.5" />
-            <path d="M4 20h11v-2H4zM7 18V8a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v10" />
-          </svg>
-        </span>
-        <strong>Solar Fencer Setup Tips</strong>
-        <p>Practical advice on positioning the solar panel, choosing the right battery and keeping the system working reliably through the season.</p>
-        <a class="fencing-advice-cta coming-soon-cta" href="#solar-fencer-setup" aria-disabled="true" tabindex="-1" role="link">View Solar Tips</a>
-      </article>
-      <article class="fencing-advice-card">
-        <span class="advice-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 18l16-7.8L4 2.4V12" />
-            <rect x="8" y="11" width="8" height="5" rx="0.6" />
-            <path d="M8 14h8" />
-            <path d="M9.4 4.5a.6.6 0 0 1 .6-.6h3.5a.6.6 0 0 1 .6.6 2.2 2.2 0 0 1-4.7 0z" />
-            <path d="M12 14v6" />
-          </svg>
-        </span>
-        <strong>Accessories Checklist</strong>
-        <p>Make sure you have the right posts, insulators, wire, tape, rope, earth stakes, gate handles, connectors, reels and fence tester for your setup.</p>
-        <a class="fencing-advice-cta coming-soon-cta" href="#electric-fence-accessories-checklist" aria-disabled="true" tabindex="-1" role="link">View Checklist</a>
-      </article>
-    </div>
-    <div class="fencing-quick-help">
-      <h3>Quick Buying Help</h3>
-      <p>For a permanent fence near a shed or yard, a mains energiser is usually the strongest and most reliable option. For out-farms, temporary grazing or areas without power, a battery or solar energiser may be more suitable. If you are unsure, contact us and we can help you choose the right fencer and accessories for your setup.</p>
-      <a class="repairs-band-cta coming-soon-cta" href="#contact-advice" aria-disabled="true" tabindex="-1" role="link">Ask Us for Advice</a>
     </div>
   </section>
 
@@ -1104,7 +1094,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
               <span>Clippers Ireland, The Little Farm,<br>
               Knockananig, Fermoy,<br>
-              Co Cork, P61EP80</span>
+              Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -1233,7 +1223,7 @@
             </span>
             <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
-              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>

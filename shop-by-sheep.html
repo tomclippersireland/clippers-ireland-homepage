@@ -9,6 +9,66 @@
   </title>
   <link rel="stylesheet" href="./styles.css" />
   <style>
+      /* Approved featured product card template from homepage */
+      .featured-products .product-image {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2) {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-info,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-info {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2),
+      .featured-products .product-card.clippers-hero {
+        overflow: hidden !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image,
+      .featured-products .product-card.clippers-hero .product-image {
+        background: var(--surface) !important;
+        padding: 8px 10px 6px !important;
+        overflow: visible !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img,
+      .featured-products .product-card.clippers-hero .product-image img {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        transform: scale(1) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img {
+        transform: scale(0.78) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img {
+        transform: scale(0.86) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(3) .product-image img {
+        transform: translateY(-10px) scale(1.22) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(4) .product-image img {
+        transform: rotate(-24deg) translateY(18px) scale(2.31) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(5) .product-image img {
+        transform: translateY(8px) scale(1.2) !important;
+      }
+
     .category-hero--all-farming {
       position: relative !important;
       overflow: hidden !important;
@@ -572,6 +632,27 @@
         }
       }
     </style>
+  <style>
+    @media (max-width: 760px) {
+      .featured-products .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        overflow: visible !important;
+        overflow-x: visible !important;
+        white-space: normal !important;
+        scroll-snap-type: none !important;
+      }
+
+      .featured-products .product-grid > article.product-card {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        flex: none !important;
+      }
+    }
+  </style>
 </head>
 <body class="home-page">
   <header class="site-header">
@@ -638,11 +719,11 @@
         <div class="category-item category-item--clippers">
           <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
-            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
-            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
-            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
-            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
-            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+            <a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
+            <a href="./horse-clippers.html">Horse Clippers</a>
+            <a href="./dog-clippers.html">Dog Clippers</a>
+            <a href="./clipper-blades.html">Clipper Blades</a>
+            <a href="./clipper-parts.html">Clipper Parts</a>
           </div>
         </div>
         <div class="category-item category-item--cattle-weighing">
@@ -651,9 +732,9 @@
         <div class="category-item category-item--milking-machines">
           <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Milking Machines links">
-            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
-            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
-            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+            <a href="./cow-milking-machines.html">Cow Milkers</a>
+            <a href="./goat-milking-machines.html">Goat Milkers</a>
+            <a href="./sheep-milking-machines.html">Sheep Milkers</a>
           
           </div>
 
@@ -661,10 +742,10 @@
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
-            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+            <a href="./electric-fencing-mains.html">Mains Fencers</a>
+            <a href="./electric-fencing-battery.html">Battery Fencers</a>
+            <a href="./electric-fencing-solar.html">Solar Fencers</a>
+            <a href="./electric-fencing-accessories.html">Accessories</a>
           </div>
 
 
@@ -675,11 +756,11 @@
             <a href="./clippers.html">Clippers</a>
             <a href="./cattle-weighing.html">Cattle Weighing</a>
             <a href="./milking-machines.html">Milking Machines</a>
-            <a href="./parts-repairs.html">Dairy Products</a>
-            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./dairy-products.html">Dairy Products</a>
+            <a href="./brushes.html">Brushes</a>
             <a href="./electric-fencing.html">Electric Fencing</a>
-            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-            <a href="./electric-fencing.html">Blowers</a>
+            <a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
+            <a href="./blowers.html">Blowers</a>
           </div>
 
 
@@ -737,7 +818,7 @@
 
     <section class="category-buckets" aria-label="All farming categories">
       <div class="category-bucket-grid">
-        <a class="category-bucket" href="./clippers.html">
+        <a class="category-bucket" href="./sheep-cattle-clippers.html">
           <span class="category-bucket-image">
             <img src="./assets/shop/sheep-clipper-category-pic.jpg" alt="Clippers" />
           </span>
@@ -745,7 +826,7 @@
             <strong>Sheep & Cattle Clippers</strong>
           </span>
         </a>
-        <a id="clipper-blades" class="category-bucket" href="#" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
+        <a id="clipper-blades" class="category-bucket" href="./clipper-blades.html" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
         <span class="category-bucket-image category-bucket-image--contain category-blade-bucket">
           <span class="blade-graphic-combo" aria-hidden="true">
             <img class="blade-graphic-item blade-graphic-desktop"
@@ -762,7 +843,7 @@
           <strong>Clipper Blades</strong>
         </span>
       </a>
-      <a id="clipper-parts" class="category-bucket" href="#">
+      <a id="clipper-parts" class="category-bucket" href="./clipper-parts.html">
         <span class="category-bucket-image category-bucket-image--contain">
           <img
             src="./assets/parts5-hires-v3.png?v=parts5-direct-4"
@@ -820,136 +901,129 @@
       </div>
     </section>
 
-  <section class="featured-products" aria-labelledby="featured-products-title">
-    <div class="featured-products-header">
-      <h2 class="section-title" id="featured-products-title">Featured Products</h2>
-    </div>
-
-    <div class="product-grid">
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/ovis.png"
-            alt="ErgoPro Ovis Sheep Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Ovis Sheep Clipper (External Battery 300w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.9 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;729.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
+      <section class="featured-products" aria-labelledby="featured-products-title">
+        <div class="featured-products-header">
+          <h2 class="section-title" id="featured-products-title">Featured Products</h2>
         </div>
-      </article>
 
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/hush-horse.png"
-            alt="ErgoPro Hush Horse Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(23 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;220.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
+        <div class="product-grid">
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-image" href="./ovis-clipper.html">
+              <img class="product-image--featured-blade" src="./assets/products/ovis.png" alt="ErgoPro Ovis Sheep Clipper" />
+            </a>
+            <div class="product-info">
+              <h3><a href="./ovis-clipper.html">ErgoPro Ovis Sheep Clipper<br />(External Battery 300w)</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;729.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;899.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-image" href="#">
+              <img class="product-image--featured-blade" src="./assets/products/hush-horse.png" alt="ErgoPro Hush Horse Clipper" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;220.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.7 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(18 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;69.99</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;899.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(16 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;1,250.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img class="product-image--handy-trimmer" src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;69.99</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;1,250.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
-  </section>
+      </section>
+
 
 </main>
 
@@ -980,7 +1054,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
               <span>Clippers Ireland, The Little Farm,<br>
               Knockananig, Fermoy,<br>
-              Co Cork, P61EP80</span>
+              Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -1109,7 +1183,7 @@
             </span>
             <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
-              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>

@@ -12,8 +12,6 @@
       position: relative !important;
       overflow: hidden !important;
       background: none !important;
-      min-height: clamp(230px, 20vw, 330px) !important;
-      padding: clamp(30px, 3.2vw, 56px) clamp(18px, 2.6vw, 54px) !important;
     }
 
     .category-hero--cattle-weighing::before {
@@ -21,6 +19,7 @@
       position: absolute;
       inset: 0;
       z-index: 1;
+      pointer-events: none;
       background: linear-gradient(90deg, rgba(12, 24, 16, 0.78) 0%, rgba(12, 24, 16, 0.58) 48%, rgba(12, 24, 16, 0.24) 100%);
     }
 
@@ -44,52 +43,21 @@
       object-position: center 58% !important;
     }
 
-    .category-hero--cattle-weighing .category-hero-copy {
-      position: relative;
-      z-index: 2;
-    }
-
     .category-hero--cattle-weighing.hero-text-template .category-hero-copy {
-      position: absolute !important;
-      left: clamp(24px, 4vw, 78px) !important;
-      top: 50% !important;
-      transform: translateY(calc(-50% - 6px)) !important;
-      width: min(42vw, 650px) !important;
-      max-width: 650px !important;
-      display: grid !important;
-      gap: 10px !important;
-      margin: 0 !important;
+      z-index: 2 !important;
     }
 
-    .category-hero--cattle-weighing.hero-text-template h1 {
-      margin: 0 0 12px !important;
-      font-size: clamp(30px, 3.2vw, 66px) !important;
-      line-height: 1.03 !important;
-      font-weight: 350 !important;
-      letter-spacing: 0 !important;
-      color: #fff !important;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28) !important;
+    @media (min-width: 761px) {
+      .category-hero--cattle-weighing.hero-text-template #wr-title {
+        white-space: nowrap !important;
+      }
     }
 
-    .category-hero--cattle-weighing.hero-text-template .category-hero-description {
-      display: block !important;
-      margin: 0 !important;
-      max-width: 650px !important;
-      color: rgba(255, 253, 248, 0.9) !important;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22) !important;
-      font-size: clamp(14px, 1.1vw, 22px) !important;
-      line-height: 1.36 !important;
-      font-weight: 400 !important;
-    }
 
-    .category-hero--cattle-weighing.hero-text-template .category-hero-description span {
-      display: block !important;
-      margin: 0 !important;
-      font-weight: inherit !important;
-    }
-
-    .category-hero--cattle-weighing .hero-break--mobile-advanced {
-      display: none;
+    @media (min-width: 761px) {
+      .category-hero--cattle-weighing.hero-text-template .category-hero-copy {
+        transform: translateY(calc(-50% - 20.2px)) !important;
+      }
     }
 
     .cattle-page-section,
@@ -850,7 +818,98 @@
         content: "Smart Mobile System: ";
       }
     }
-  </style>
+        /* Approved featured product card template from homepage - scoped product row */
+      .approved-product-row .product-image {
+        background: var(--surface) !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:first-child,
+      .approved-product-row .product-grid > article.product-card:nth-child(2),
+      .approved-product-row .product-grid > article.product-card:nth-child(6),
+      .approved-product-row .product-grid > article.product-card:nth-child(7) {
+        background: var(--surface) !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:first-child .product-info,
+      .approved-product-row .product-grid > article.product-card:nth-child(2) .product-info,
+      .approved-product-row .product-grid > article.product-card:nth-child(6) .product-info,
+      .approved-product-row .product-grid > article.product-card:nth-child(7) .product-info {
+        background: var(--surface) !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:first-child,
+      .approved-product-row .product-grid > article.product-card:nth-child(2),
+      .approved-product-row .product-card.clippers-hero {
+        overflow: hidden !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:first-child .product-image,
+      .approved-product-row .product-grid > article.product-card:nth-child(2) .product-image,
+      .approved-product-row .product-card.clippers-hero .product-image {
+        background: var(--surface) !important;
+        padding: 8px 10px 6px !important;
+        overflow: visible !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:first-child .product-image img,
+      .approved-product-row .product-grid > article.product-card:nth-child(2) .product-image img,
+      .approved-product-row .product-card.clippers-hero .product-image img {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        transform: scale(1) !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:first-child .product-image img,
+      .approved-product-row .product-grid > article.product-card:nth-child(6) .product-image img {
+        transform: scale(0.78) !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:nth-child(2) .product-image img,
+      .approved-product-row .product-grid > article.product-card:nth-child(7) .product-image img {
+        transform: scale(0.86) !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:nth-child(3) .product-image img,
+      .approved-product-row .product-grid > article.product-card:nth-child(8) .product-image img {
+        transform: translateY(-10px) scale(1.22) !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:nth-child(4) .product-image img,
+      .approved-product-row .product-grid > article.product-card:nth-child(9) .product-image img {
+        transform: rotate(-24deg) translateY(18px) scale(2.31) !important;
+      }
+
+      .approved-product-row .product-grid > article.product-card:nth-child(5) .product-image img,
+      .approved-product-row .product-grid > article.product-card:nth-child(10) .product-image img {
+        transform: translateY(8px) scale(1.2) !important;
+      }
+
+
+
+
+      @media (min-width: 761px) {
+        .weighrite-detail-page .category-hero.hero-text-template h1,
+        .weighrite-detail-page .category-hero.hero-text-template #wr-title,
+        .weighrite-detail-page .category-hero.hero-text-template #category-title {
+          white-space: nowrap;
+        }
+      }
+
+
+    /* Page-only hero image swap: WeighRite Smart Weighing System. */
+    @media (min-width: 761px) {
+      .clippers-page .category-hero.hero-text-template {
+        background-color: #050706 !important;
+        background-image: linear-gradient(90deg, rgba(2, 17, 18, 0.82) 0%, rgba(2, 17, 18, 0.52) 34%, rgba(2, 17, 18, 0.18) 64%, rgba(2, 17, 18, 0.08) 100%), url("./assets/hero-weighrite-smart-weighing-system-wide.png") !important;
+        background-size: 100% 100%, auto 100% !important;
+        background-position: center center, center center !important;
+        background-repeat: no-repeat, no-repeat !important;
+      }
+    }
+</style>
   
 <style>
 @media (min-width: 1024px) {
@@ -978,6 +1037,7 @@
     display: block;
   }
 }
+
 </style>
 <style>
   @media (max-width: 760px) {
@@ -1102,6 +1162,14 @@
         background: transparent;
         padding: 0;
       }
+
+      .weighrite-detail-page .approved-product-row {
+        width: min(100%, 2020px);
+        margin: 0 auto;
+        padding: 30px clamp(18px, 2.6vw, 54px) 46px;
+        background: var(--page);
+      }
+
 
       .weighrite-detail-page .wr-page-main {
         display: grid;
@@ -1383,7 +1451,694 @@
           font-size: 1.6rem;
         }
       }
-    </style>
+
+      .weighrite-detail-page .wr-product-usp {
+        width: min(100%, 2020px);
+        margin: 0 auto;
+        padding: clamp(24px, 3.4vw, 38px) clamp(18px, 2.6vw, 54px) 6px;
+        background: var(--page);
+      }
+
+      .weighrite-detail-page .wr-usp-side {
+        align-self: end;
+      }
+
+      .weighrite-detail-page .featured-products.approved-product-row {
+        margin-top: clamp(8px, 1.3vw, 16px);
+      }
+
+      @media (max-width: 700px) {
+      }
+
+        .weighrite-detail-page .wr-product-usp-shell {
+        width: min(100%, 1190px);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.18fr);
+        column-gap: clamp(20px, 4vw, 46px);
+        row-gap: clamp(20px, 3vw, 32px);
+        align-items: end;
+      }
+
+      .weighrite-detail-page .wr-eyebrow {
+        margin: 0 0 8px;
+        color: #2f7b3d;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .weighrite-detail-page .wr-product-usp .wr-eyebrow,
+      .weighrite-detail-page .wr-video-section .wr-eyebrow,
+      .weighrite-detail-page .wr-components .wr-eyebrow,
+      .weighrite-detail-page .wr-data-intro .wr-data-eyebrow,
+      .weighrite-detail-page .wr-connected-eyebrow {
+        margin-bottom: 6px;
+      }
+
+      .weighrite-detail-page .wr-product-usp h2,
+      .weighrite-detail-page .wr-story h2,
+      .weighrite-detail-page .wr-video-section h2,
+      .weighrite-detail-page .wr-components h2,
+      .weighrite-detail-page .wr-benefits h2,
+      .weighrite-detail-page .wr-connected h2 {
+        margin: 0 0 10px;
+        color: #173222;
+        font-size: clamp(25px, 3vw, 38px);
+        line-height: 1.12;
+      }
+
+      .weighrite-detail-page .wr-product-usp p,
+      .weighrite-detail-page .wr-story p,
+      .weighrite-detail-page .wr-video-section p,
+      .weighrite-detail-page .wr-components p,
+      .weighrite-detail-page .wr-benefits p,
+      .weighrite-detail-page .wr-connected p {
+        margin: 0;
+        color: #30473b;
+        font-size: clamp(15px, 1.6vw, 17px);
+        line-height: 1.55;
+      }
+
+      .weighrite-detail-page .wr-usp-points {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .weighrite-detail-page .wr-usp-points div {
+        border-left: 4px solid #f2a51f;
+        background: #fffdf8;
+        padding: 12px 14px;
+      }
+
+      .weighrite-detail-page .wr-usp-points strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #173222;
+        font-size: 1.04rem;
+      }
+
+      .weighrite-detail-page .wr-usp-points span {
+        color: #426052;
+        font-size: 0.96rem;
+        line-height: 1.36;
+      }
+
+      .weighrite-detail-page .wr-page-main {
+        max-width: 1190px;
+        gap: clamp(34px, 5.6vw, 68px);
+        padding-top: clamp(10px, 2vw, 24px);
+      }
+
+      .weighrite-detail-page .wr-section {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .weighrite-detail-page .wr-story,
+      .weighrite-detail-page .wr-video-section,
+      .weighrite-detail-page .wr-connected {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: clamp(22px, 4vw, 46px);
+        align-items: center;
+      }
+
+      .weighrite-detail-page .wr-intro-copy,
+      .weighrite-detail-page .wr-intro-media {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .weighrite-detail-page .wr-intro-media img {
+        background: #fffdf8;
+        border: 1px solid #dfe7de;
+        border-radius: 10px;
+        padding: clamp(12px, 2vw, 18px);
+        box-sizing: border-box;
+      }
+
+      .weighrite-detail-page .wr-story-visual,
+      .weighrite-detail-page .wr-video-card {
+        margin: 0;
+        background: #fffdf8;
+        border: 1px solid #dfe7de;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .weighrite-detail-page .wr-story-visual img,
+      .weighrite-detail-page .wr-video-card img {
+        width: 100%;
+        display: block;
+      }
+
+      .weighrite-detail-page .wr-story-visual img {
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        padding: clamp(12px, 2vw, 20px);
+        box-sizing: border-box;
+      }
+
+      .weighrite-detail-page .wr-video-card {
+        position: relative;
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        width: min(100%, 840px);
+        aspect-ratio: 16 / 9;
+      }
+
+      .weighrite-detail-page .wr-video-card img {
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        object-position: center 42%;
+      }
+
+      .weighrite-detail-page .wr-video-section {
+        width: min(100%, 900px);
+        margin: clamp(-14px, -1.2vw, -6px) auto clamp(-10px, -0.9vw, -4px);
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 0;
+      }
+
+      .weighrite-detail-page .wr-video-section .wr-eyebrow {
+        margin-bottom: 6px;
+      }
+
+      .weighrite-detail-page .wr-video-section h2 {
+        margin-bottom: 10px;
+      }
+
+      .weighrite-detail-page .wr-product-usp h2,
+      .weighrite-detail-page .wr-components h2,
+      .weighrite-detail-page .wr-data-intro .section-title,
+      .weighrite-detail-page .wr-connected-copy h3 {
+        margin: 0 0 10px;
+      }
+
+      .weighrite-detail-page .wr-video-embed {
+        box-shadow: 0 10px 24px rgba(19, 42, 27, 0.07);
+      }
+
+      .weighrite-detail-page .wr-video-embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .weighrite-detail-page .wr-video-play {
+        position: absolute;
+        right: 18px;
+        bottom: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 13px;
+        border-radius: 999px;
+        color: #ffffff;
+        background: #2f7b3d;
+        font-weight: 700;
+      }
+
+      .weighrite-detail-page .wr-components-grid,
+      .weighrite-detail-page .wr-benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(26px, 4.4vw, 48px);
+        margin-top: clamp(18px, 3vw, 28px);
+      }
+
+      .weighrite-detail-page .wr-component,
+      .weighrite-detail-page .wr-benefit {
+        position: relative;
+        border-top: 0;
+        padding: 16px clamp(4px, 0.9vw, 12px) 0;
+      }
+
+      .weighrite-detail-page .wr-component::before,
+      .weighrite-detail-page .wr-benefit::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: clamp(4px, 0.9vw, 12px);
+        width: min(calc(100% - clamp(8px, 1.8vw, 24px)), 300px);
+        height: 3px;
+        background: #f2a51f;
+      }
+
+      .weighrite-detail-page .wr-grid-3,
+      .weighrite-detail-page .wr-decision-grid {
+        margin-top: 18px;
+      }
+
+      .weighrite-detail-page .wr-grid-3 > div,
+      .weighrite-detail-page .wr-decision-card {
+        background: transparent;
+        border: 0;
+        border-top: 3px solid #dfe7de;
+        border-radius: 0;
+        padding: 14px 0 0;
+      }
+
+      .weighrite-detail-page .wr-steps li {
+        background: transparent;
+        border-color: #dfe7de;
+        border-radius: 8px;
+      }
+
+      .weighrite-detail-page .wr-trust {
+        background: #fffdf8;
+        border-radius: 8px;
+      }
+
+      .weighrite-detail-page .wr-proof-strip {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(18px, 3vw, 34px);
+        align-items: center;
+        margin-top: clamp(4px, 1vw, 12px);
+        background: rgba(255, 255, 255, 0.34);
+        border: 1px solid #c9dfcd;
+        border-top: 4px solid #78b184;
+        border-radius: 16px;
+        padding: clamp(18px, 2.7vw, 28px) clamp(18px, 3.2vw, 34px);
+      }
+
+      .weighrite-detail-page .wr-proof-logo {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .weighrite-detail-page .wr-proof-logo img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .weighrite-detail-page .wr-proof-logo--irish img {
+        width: min(100%, 336px);
+      }
+
+      .weighrite-detail-page .wr-proof-copy {
+        display: grid;
+        gap: 10px;
+        justify-items: center;
+        justify-self: center;
+      }
+
+      .weighrite-detail-page .wr-proof-logo--grant img {
+        width: min(100%, 520px);
+      }
+
+      .weighrite-detail-page .wr-grant-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: #f2a51f;
+      }
+
+      .weighrite-detail-page .wr-grant-badge svg {
+        width: clamp(78px, 7.2vw, 106px);
+        height: auto;
+        flex: 0 0 auto;
+      }
+
+      .weighrite-detail-page .wr-grant-badge-text {
+        display: grid;
+        gap: 3px;
+      }
+
+      .weighrite-detail-page .wr-grant-badge .wr-grant-badge-line {
+        color: #5b6762;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: clamp(1.12rem, 1.9vw, 1.45rem);
+        font-style: italic;
+        font-weight: 900 !important;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+
+      .weighrite-detail-page .wr-proof-copy p {
+        margin: 0;
+      }
+
+      .weighrite-detail-page .wr-data-section {
+        display: grid;
+        gap: clamp(18px, 3vw, 30px);
+        margin-top: clamp(4px, 1vw, 14px);
+      }
+
+      .weighrite-detail-page .wr-data-feature {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
+        gap: clamp(24px, 4.2vw, 54px);
+        align-items: center;
+      }
+
+      .weighrite-detail-page .wr-data-copy {
+        display: grid;
+        gap: clamp(20px, 3vw, 30px);
+      }
+
+      .weighrite-detail-page .wr-data-phone {
+        margin: 0;
+        justify-self: center;
+        transform: translateX(-14px);
+      }
+
+      .weighrite-detail-page .wr-data-phone img {
+        display: block;
+        width: min(100%, 365px);
+        height: auto;
+        filter: none;
+      }
+
+      .weighrite-detail-page .wr-data-intro {
+        text-align: left;
+        max-width: 74ch;
+        margin: 0;
+      }
+
+      .weighrite-detail-page .wr-data-eyebrow {
+        font-weight: 800;
+      }
+
+      .weighrite-detail-page .wr-data-intro::after {
+        content: "";
+        display: none;
+        width: min(100%, 760px);
+        height: 2px;
+        margin: 18px auto 0;
+        background: linear-gradient(90deg, transparent, #78b184 12%, #78b184 88%, transparent);
+      }
+
+      .weighrite-detail-page .wr-data-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(26px, 4.4vw, 48px);
+      }
+
+      .weighrite-detail-page .wr-data-item {
+        position: relative;
+        border-top: 0;
+        padding: 16px clamp(4px, 0.9vw, 12px) 0;
+      }
+
+      .weighrite-detail-page .wr-data-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: clamp(4px, 0.9vw, 12px);
+        width: min(calc(100% - clamp(8px, 1.8vw, 24px)), 300px);
+        height: 3px;
+        background: #f2a51f;
+      }
+
+      .weighrite-detail-page .wr-data-item h3 {
+        margin: 0 0 8px;
+        color: #173222;
+        font-size: 1.12rem;
+      }
+
+      .weighrite-detail-page .wr-data-item p {
+        margin: 0;
+      }
+
+      .weighrite-detail-page .wr-connected-row {
+        margin-top: -4px;
+        border-top: 1px solid #d8e5d7;
+        border-bottom: 1px solid #d8e5d7;
+        border-radius: 0;
+        background: transparent;
+        padding: clamp(14px, 2.4vw, 22px) 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(220px, 0.64fr);
+        gap: clamp(16px, 3vw, 30px);
+        align-items: center;
+      }
+
+      .weighrite-detail-page .wr-connected-row p {
+        text-align: left;
+      }
+
+      .weighrite-detail-page .wr-connected-copy {
+        display: grid;
+        gap: 0;
+      }
+
+      .weighrite-detail-page .wr-connected-copy h3 {
+        margin: 0;
+        color: #173222;
+        font-size: 1.16rem;
+      }
+
+      .weighrite-detail-page .wr-connected-logos {
+        margin: 0;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .weighrite-detail-page .wr-connected-logos img {
+        display: block;
+        width: min(100%, 330px);
+        height: auto;
+      }
+
+      .weighrite-detail-page .wr-component img {
+        width: 100%;
+        height: 185px;
+        object-fit: contain;
+        object-position: center;
+        margin-bottom: 12px;
+      }
+
+      .weighrite-detail-page .wr-component-image--weighrite-unit {
+        transform: translateX(-10px) scale(0.9);
+      }
+
+      .weighrite-detail-page .wr-component-image--weighplate {
+        transform: translateX(-8px) scale(1.1);
+      }
+
+      .weighrite-detail-page .wr-component h3,
+      .weighrite-detail-page .wr-benefit h3 {
+        margin: 0 0 8px;
+        color: #173222;
+        font-size: 1.16rem;
+      }
+
+      .weighrite-detail-page .wr-connected-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .weighrite-detail-page .wr-connected-list span {
+        border: 1px solid #d7e4d5;
+        border-radius: 999px;
+        padding: 7px 12px;
+        background: #fffdf8;
+        color: #28533a;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .weighrite-detail-page .wr-cta {
+        background: #fffdf8;
+        border: 1px solid #dfe7de;
+        border-radius: 10px;
+        padding: clamp(18px, 3vw, 30px);
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .weighrite-detail-page .wr-product-usp-shell,
+        .weighrite-detail-page .wr-story,
+        .weighrite-detail-page .wr-video-section,
+        .weighrite-detail-page .wr-connected,
+        .weighrite-detail-page .wr-usp-points,
+        .weighrite-detail-page .wr-proof-strip,
+        .weighrite-detail-page .wr-components-grid,
+        .weighrite-detail-page .wr-benefit-grid,
+        .weighrite-detail-page .wr-data-feature,
+        .weighrite-detail-page .wr-data-grid,
+        .weighrite-detail-page .wr-connected-row {
+          grid-template-columns: 1fr;
+        }
+
+        .weighrite-detail-page .wr-data-intro {
+          text-align: center;
+          margin-inline: auto;
+        }
+
+        .weighrite-detail-page .wr-component img {
+          height: 150px;
+        }
+      }
+      .weighrite-detail-page .wr-connected-logos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 26px;
+        align-items: center;
+        justify-items: center;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .weighrite-detail-page .wr-connected-logo {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 150px;
+        max-height: 42px;
+        object-fit: contain;
+      }
+
+      .weighrite-detail-page .wr-connected-logo-grasslandtools {
+        max-width: 170px;
+      }
+
+      .weighrite-detail-page .wr-connected-logo-icbf {
+        max-height: 44px;
+      }
+
+      .weighrite-detail-page .wr-eyebrow,
+      .weighrite-detail-page .wr-data-eyebrow {
+        color: #087d35;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .weighrite-detail-page .wr-product-usp .wr-eyebrow,
+      .weighrite-detail-page .wr-video-section .wr-eyebrow,
+      .weighrite-detail-page .wr-components .wr-eyebrow {
+        color: #087d35;
+      }
+
+      .weighrite-detail-page .wr-data-intro .section-title {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .weighrite-detail-page .wr-data-intro .section-title::before,
+      .weighrite-detail-page .wr-data-intro .section-title::after {
+        display: none;
+      }
+
+      .weighrite-detail-page .wr-connected-row {
+        margin-top: clamp(10px, 1.8vw, 22px);
+        padding: clamp(18px, 2.7vw, 28px) clamp(18px, 3.2vw, 34px);
+        border: 1px solid #c9dfcd;
+        border-top: 4px solid #78b184;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.34);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.46fr);
+        gap: clamp(22px, 4vw, 42px);
+        align-items: center;
+      }
+
+      .weighrite-detail-page .wr-connected-copy {
+        display: grid;
+        gap: 0;
+      }
+
+      .weighrite-detail-page .wr-connected-eyebrow {
+        margin: 0 0 6px;
+        color: #087d35;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .weighrite-detail-page .wr-connected-copy h3 {
+        margin: 0 0 10px;
+        color: #173222;
+        font-size: clamp(1.18rem, 2vw, 1.45rem);
+      }
+
+      .weighrite-detail-page .wr-connected-copy p {
+        margin: 0;
+      }
+
+      .weighrite-detail-page .wr-connected-copy .wr-connected-eyebrow {
+        margin: 0 0 6px;
+      }
+
+      .weighrite-detail-page .wr-connected-copy p + p {
+        margin-top: 6px;
+      }
+
+      .weighrite-detail-page .wr-connected-row .wr-connected-logos {
+        justify-self: center;
+        width: min(100%, 340px);
+        gap: 16px 28px;
+      }
+
+      .weighrite-detail-page .wr-connected-row .wr-connected-logo {
+        max-width: 158px;
+        max-height: 54px;
+      }
+
+      .weighrite-detail-page .wr-connected-row .wr-connected-logo-grasslandtools {
+        max-width: 178px;
+      }
+
+      .weighrite-detail-page .wr-connected-row .wr-connected-logo-icbf {
+        max-height: 52px;
+      }
+
+      @media (max-width: 700px) {
+        .weighrite-detail-page .wr-connected-logos {
+          gap: 12px 20px;
+          justify-items: start;
+        }
+
+        .weighrite-detail-page .wr-connected-logo {
+          max-width: 135px;
+        }
+
+        .weighrite-detail-page .wr-connected-row {
+          grid-template-columns: 1fr;
+          padding: 18px;
+        }
+
+        .weighrite-detail-page .wr-connected-row .wr-connected-logos {
+          justify-self: stretch;
+          width: 100%;
+          justify-items: center;
+        }
+      }
+</style>
     <style>
       .site-footer--mobile-approved {
         display: none;
@@ -1398,7 +2153,28 @@
           display: block !important;
         }
       }
-    </style>
+</style>
+  <style>
+    @media (max-width: 760px) {
+      .featured-products .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        overflow: visible !important;
+        overflow-x: visible !important;
+        white-space: normal !important;
+        scroll-snap-type: none !important;
+      }
+
+      .featured-products .product-grid > article.product-card {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        flex: none !important;
+      }
+    }
+</style>
 </head>
   <body class="home-page weighrite-detail-page">
     <header class="site-header">
@@ -1465,11 +2241,11 @@
         <div class="category-item category-item--clippers">
           <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
-            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
-            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
-            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
-            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
-            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+            <a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
+            <a href="./horse-clippers.html">Horse Clippers</a>
+            <a href="./dog-clippers.html">Dog Clippers</a>
+            <a href="./clipper-blades.html">Clipper Blades</a>
+            <a href="./clipper-parts.html">Clipper Parts</a>
           </div>
         </div>
         <div class="category-item category-item--cattle-weighing">
@@ -1478,19 +2254,19 @@
         <div class="category-item category-item--milking-machines">
           <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Milking Machines links">
-            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
-            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
-            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+            <a href="./cow-milking-machines.html">Cow Milkers</a>
+            <a href="./goat-milking-machines.html">Goat Milkers</a>
+            <a href="./sheep-milking-machines.html">Sheep Milkers</a>
           
           </div>
         </div>
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
-            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+            <a href="./electric-fencing-mains.html">Mains Fencers</a>
+            <a href="./electric-fencing-battery.html">Battery Fencers</a>
+            <a href="./electric-fencing-solar.html">Solar Fencers</a>
+            <a href="./electric-fencing-accessories.html">Accessories</a>
           </div>
         </div>
         <div class="category-item category-item--all-farming">
@@ -1499,11 +2275,11 @@
             <a href="./clippers.html">Clippers</a>
             <a href="./cattle-weighing.html">Cattle Weighing</a>
             <a href="./milking-machines.html">Milking Machines</a>
-            <a href="./parts-repairs.html">Dairy Products</a>
-            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./dairy-products.html">Dairy Products</a>
+            <a href="./brushes.html">Brushes</a>
             <a href="./electric-fencing.html">Electric Fencing</a>
-            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-            <a href="./electric-fencing.html">Blowers</a>
+            <a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
+            <a href="./blowers.html">Blowers</a>
           </div>
         </div>
         <a class="category-nav-link" href="./apparel.html">Apparel</a>
@@ -1520,7 +2296,7 @@
       <section class="category-hero category-hero--cattle-weighing hero-text-template" aria-labelledby="wr-title">
         <div class="category-hero-media" aria-hidden="true">
           <img
-            src="./assets/weighrite-subpage-hero-banner.png?v=20260629-hero-final"
+            src="./assets/hero-weighrite-smart-weighing-system-wide.png"
             alt="WeighRite Smart Weighing System hero banner"
             loading="eager"
             decoding="sync"
@@ -1536,7 +2312,7 @@
             <span aria-hidden="true">/</span>
             <span>WeighRite Smart Weighing System</span>
           </nav>
-          <h1 id="wr-title">WeighRite Smart Weighing System</h1>
+          <h1 id="wr-title">WeighRite Weighing System</h1>
           <p class="category-hero-description">
             Use your phone as the display, save weights as you work, and turn every weigh-in into useful herd data.
           </p>
@@ -1558,7 +2334,7 @@
           </div>
           <div class="about-stat">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" /></svg>
-            <span><strong>Service &amp; Repairs</strong><small><span class="desktop-line">In-house workshop</span><span class="mobile-line">In-house workshop</span></small></span>
+            <span><strong>Heavy-Duty Build</strong><small><span class="desktop-line">Designed for farm use</span><span class="mobile-line">Designed for farm use</span></small></span>
           </div>
           <div class="about-stat">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 22v-5" /><path d="M15 8V2" /><path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z" /><path d="M9 8V2" /></svg>
@@ -1566,228 +2342,247 @@
           </div>
         </div>
       </div>
+      <section class="wr-product-usp" aria-labelledby="wr-usp-title">
+        <div class="wr-product-usp-shell">
+          <div>
+            <p class="wr-eyebrow">Smart weighing system</p>
+            <h2 id="wr-usp-title">Weigh, save and manage herd data from your phone.</h2>
+            <p>WeighRite combines weigh bars, platform, smart unit and app-based records so you can capture live weights, reduce paperwork and make better decisions while you are still working cattle.</p>
+          </div>
+          <div class="wr-usp-side">
+            <div class="wr-usp-points" aria-label="WeighRite key benefits">
+              <div>
+                <strong>Save Time</strong>
+                <span>No paperwork, no double entry and live weights captured as you weigh.</span>
+              </div>
+              <div>
+                <strong>Save Money</strong>
+                <span>Use fresh weights for dosing, feeding, finishing and breeding decisions.</span>
+              </div>
+              <div>
+                <strong>Better Management</strong>
+                <span>Build useful herd records with weight history, gain tracking and notes.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  <section class="featured-products approved-product-row" aria-labelledby="featured-products-title">
+        <div class="product-grid">
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-image" href="./ovis-clipper.html">
+              <img class="product-image--featured-blade" src="./assets/products/ovis.png" alt="ErgoPro Ovis Sheep Clipper" />
+            </a>
+            <div class="product-info">
+              <h3><a href="./ovis-clipper.html">ErgoPro Ovis Sheep Clipper<br />(External Battery 300w)</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;729.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-image" href="#">
+              <img class="product-image--featured-blade" src="./assets/products/hush-horse.png" alt="ErgoPro Hush Horse Clipper" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;220.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;899.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img class="product-image--handy-trimmer" src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;69.99</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;1,250.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <div class="wr-page-main">
-        <section class="featured-products weighrite-product-section" aria-labelledby="wr-buy-title">
-          <div class="product-grid">
-            <article class="product-card">
-              <a class="product-image" href="#" aria-label="View or buy WeighRite Smart Weighing System">
-                <img src="./assets/weighrite-bundle-product-card.png" alt="WeighRite bundle with platform and weigh bars" loading="lazy" />
-              </a>
-              <div class="product-info">
-                <h3><a href="#">Kit - WeighRite + LB6-1500 + Standard Platform</a></h3>
-                <div class="product-meta">
-                  <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-                  <span>(29 reviews)</span>
-                  <span class="product-stock-text">In stock</span>
-                </div>
-                <p class="product-price">€1,950.00</p>
-                <button class="add-cart" type="button" aria-label="View or buy WeighRite Smart Weighing System">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-                    <circle cx="10" cy="21" r="1.5" />
-                    <circle cx="18" cy="21" r="1.5" />
-                  </svg>
-                  View / Buy Option
-                </button>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <a class="product-image" href="#" aria-label="View or buy WeighRite Smart System with Weigh Bars">
-                <img src="./assets/weighrite-product-card.jpg" alt="WeighRite smart weighing unit" loading="lazy" />
-              </a>
-              <div class="product-info">
-                <h3><a href="#">WeighRite Livestock Weighing Management</a></h3>
-                <div class="product-meta">
-                  <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-                  <span>(29 reviews)</span>
-                  <span class="product-stock-text">In stock</span>
-                </div>
-                <p class="product-price">€859.00</p>
-                <button class="add-cart" type="button" aria-label="View or buy WeighRite Smart System with Weigh Bars">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-                    <circle cx="10" cy="21" r="1.5" />
-                    <circle cx="18" cy="21" r="1.5" />
-                  </svg>
-                  View / Buy Option
-                </button>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <a class="product-image" href="#" aria-label="View or buy WeighRite Smart System with Platform">
-                <img src="./assets/weigh-bars-x-2.png" alt="ErgoPro LB6-1500 blue weigh bars" loading="lazy" />
-              </a>
-              <div class="product-info">
-                <h3><a href="#">ErgoPro LB6-1500 Weigh Bars 600mm - 3 Ton</a></h3>
-                <div class="product-meta">
-                  <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-                  <span>(29 reviews)</span>
-                  <span class="product-stock-text">In stock</span>
-                </div>
-                <p class="product-price">€736.00</p>
-                <button class="add-cart" type="button" aria-label="View or buy WeighRite Smart System with Platform">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-                    <circle cx="10" cy="21" r="1.5" />
-                    <circle cx="18" cy="21" r="1.5" />
-                  </svg>
-                  View / Buy Option
-                </button>
-              </div>
-            </article>
-
-            <article class="product-card">
-              <a class="product-image" href="#" aria-label="View or buy ErgoPro LB6-1500 Single Weigh Bar 600mm - 1.5 Ton">
-                <img src="./assets/weigh-bar-x-1.png" alt="ErgoPro LB6-1500 single blue weigh bar" loading="lazy" />
-              </a>
-              <div class="product-info">
-                <h3><a href="#">ErgoPro LB6-1500 Single Weigh Bar 600mm - 1.5 Ton</a></h3>
-                <div class="product-meta">
-                  <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-                  <span>(29 reviews)</span>
-                  <span class="product-stock-text">In stock</span>
-                </div>
-                <p class="product-price">€400.00</p>
-                <button class="add-cart" type="button" aria-label="View or buy ErgoPro LB6-1500 Single Weigh Bar 600mm - 1.5 Ton">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-                    <circle cx="10" cy="21" r="1.5" />
-                    <circle cx="18" cy="21" r="1.5" />
-                  </svg>
-                  View / Buy Option
-                </button>
-              </div>
-            </article>
-
+        <section class="wr-video-section" aria-labelledby="wr-video-title">
+          <p class="wr-eyebrow">Testimonial video</p>
+          <h2 id="wr-video-title">WeighRite Livestock Weighing System Testimonial</h2>
+          <div class="wr-video-card wr-video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/BMv20EofXVM"
+              title="WeighRite Livestock Weighing System Testimonial"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
           </div>
         </section>
-        <section class="wr-intro" aria-labelledby="wr-intro-title">
-          <h2 class="section-title" id="wr-intro-title">What is WeighRite?</h2>
-          <div class="wr-intro-shell">
-            <div class="wr-intro-copy">
-              <p class="section-subtitle">Weigh Bars + Platform + WeighRite Unit + App</p>
-              <p>
-                This is the smart livestock weighing option for farmers who want more than a kilo reading. You get the proven weigh bars and platform, plus the yellow WeighRite unit mounted to the crush and a phone-based app display.</p>
-              <p>
-                The phone becomes the display. As animals are weighed, live weights are captured in real time and saved automatically so your records are always up to date while you are still moving down the rows.
-              </p>
+
+        <section class="wr-components" aria-labelledby="wr-components-title">
+          <p class="wr-eyebrow">What´s included</p>
+          <h2 id="wr-components-title">A complete weighing bundle, with smart records built in.</h2>
+          <div class="wr-components-grid">
+            <article class="wr-component">
+              <img class="wr-component-image--weighrite-unit" src="./assets/weighrite-unit-app-transparent-2026-07-19.png" alt="WeighRite smart weighing unit" loading="lazy" />
+              <h3>WeighRite Unit + App</h3>
+              <p>WeighRite unit with crush mount, app and software for recording weights and managing animal data.</p>
+            </article>
+            <article class="wr-component">
+              <img src="./assets/weigh-bars-x-2.png" alt="ErgoPro blue weigh bars" loading="lazy" />
+              <h3>ErgoPro Weigh Bars</h3>
+              <p>Heavy-duty IP67 weighbars with anti-shock build and anti-slip rubber feet for a secure crush setup.</p>
+            </article>
+            <article class="wr-component">
+              <img class="wr-component-image--weighplate" src="./assets/weighplate-product-photo-2026-07-19.png" alt="Weighing platform with WeighRite unit and weigh bars" loading="lazy" />
+              <h3>ErgoPro Weighing Platform</h3>
+              <p>Chequered aluminium platform, 2200mm long, designed for quick entry and reduced livestock slippage.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="wr-proof-strip" aria-label="Irish manufacture and grant eligibility">
+          <figure class="wr-proof-logo wr-proof-logo--irish">
+            <img src="./assets/cattle-weighing/guaranteed-irish-logo-clippers-green.png" alt="Guaranteed Irish" loading="lazy" />
+          </figure>
+          <div class="wr-proof-copy">
+            <div class="wr-grant-badge" aria-label="TAMS Eligible and BEEP Approved">
+              <svg viewBox="0 0 118 70" aria-hidden="true">
+                <path d="M4 36c17 2.1 31.3 8.8 43.1 20.3C61.8 29.9 83.9 11.5 114 3 86.9 18.4 65.2 40 49 68 37.5 51.7 22.5 41 4 36z" fill="currentColor" />
+              </svg>
+              <span class="wr-grant-badge-text">
+                <span class="wr-grant-badge-line">TAMS Eligible</span>
+                <span class="wr-grant-badge-line">BEEP Approved</span>
+              </span>
             </div>
-            <figure class="wr-intro-media">
-              <img src="./assets/cardweighrite.png" alt="WeighRite unit on a cattle weighing crush" loading="lazy" />
+          </div>
+        </section>
+
+        <section class="wr-section wr-data-section" aria-labelledby="wr-data-title">
+          <div class="wr-data-feature">
+            <div class="wr-data-copy">
+              <div class="wr-data-intro">
+                <p class="wr-eyebrow wr-data-eyebrow">Farm data and decisions</p>
+                <h2 class="section-title" id="wr-data-title">Turn weights into better farm decisions</h2>
+                <p>WeighRite saves live weights as you work, helping you reduce paperwork, compare progress and use real herd data for dosing, feeding, finishing and replacement decisions.</p>
+              </div>
+              <div class="wr-data-grid">
+                <article class="wr-data-item">
+                  <h3>Save records and history</h3>
+                  <p>Store weigh-ins by animal so you can check previous weights and reduce manual note-taking at the gate.</p>
+                </article>
+                <article class="wr-data-item">
+                  <h3>Track gain and performance</h3>
+                  <p>Use weight history to spot progress, review daily gain and make quicker feeding or finishing decisions.</p>
+                </article>
+                <article class="wr-data-item">
+                  <h3>Dose, feed and breed with confidence</h3>
+                  <p>Use fresh weight data for safer dosing, better feed plans and clearer replacement choices.</p>
+                </article>
+              </div>
+            </div>
+            <figure class="wr-data-phone">
+              <img src="./assets/weighrite-two-phones-web-flat-transparent-2026-07-19.png" alt="WeighRite app shown on two phone displays" loading="lazy" />
+            </figure>
+          </div>
+          <div class="wr-connected-row">
+            <div class="wr-connected-copy">
+              <p class="wr-connected-eyebrow">Works with farm software</p>
+              <h3>Connected and future ready</h3>
+              <p>EID/tag reader ready and built to work with farm software.</p>
+              <p>Use WeighRite alongside existing record systems so weights and herd information stay useful after the cattle leave the crush.</p>
+            </div>
+            <figure class="wr-connected-logos" aria-label="Compatible farm software logos">
+              <img class="wr-connected-logo wr-connected-logo-herdwatch" src="./assets/weighrite-logo-herdwatch-transparent.png" alt="Herdwatch logo" loading="lazy" />
+              <img class="wr-connected-logo wr-connected-logo-agrinet" src="./assets/weighrite-logo-agrinet-transparent.png" alt="AgriNet logo" loading="lazy" />
+              <img class="wr-connected-logo wr-connected-logo-grasslandtools" src="./assets/weighrite-logo-grasslandtools-transparent.png" alt="GrasslandTools logo" loading="lazy" />
+              <img class="wr-connected-logo wr-connected-logo-icbf" src="./assets/weighrite-logo-icbf-transparent.png" alt="ICBF logo" loading="lazy" />
             </figure>
           </div>
         </section>
 
-        <section class="wr-section" aria-labelledby="wr-records-title">
-          <h2 class="section-title" id="wr-records-title">More than a number on a screen</h2>
-          <p class="section-subtitle">
-            Turn every weigh-in into usable herd data for day-to-day decisions.
-          </p>
-          <div class="wr-grid-3">
-            <div>
-              <h3>Saved records and history</h3>
-              <p>
-                Weighings are stored by animal, giving instant checks of last weigh-ins as you load each animal. This removes guesswork at feeding time.
-              </p>
-            </div>
-            <div>
-              <h3>Daily gain tracking</h3>
-              <p>
-                Use trend data to spot whether a steer is progressing at the right pace and adjust feed or health plans quickly.
-              </p>
-            </div>
-            <div>
-              <h3>Less paperwork</h3>
-              <p>
-                Reduce your admin with direct record capture and less double entry between notebook, phone and spreadsheets.
-              </p>
-            </div>
-          </div>
-          <ul class="wr-ticks">
-            <li>Save time by replacing manual note-taking at the gate.</li>
-            <li>Save money through better feeding and dosing decisions.</li>
-            <li>Better management with live weight and trend visibility.</li>
-          </ul>
-        </section>
-
-        <section class="wr-section" aria-labelledby="wr-how-title">
-          <h2 class="section-title" id="wr-how-title">How it works</h2>
-          <p class="section-subtitle">Simple steps, no complicated setup required.</p>
-          <ol class="wr-steps">
-            <li>Mount the yellow WeighRite unit to the crush in the position you already use on cattle.</li>
-            <li>Place your phone in or with the unit, where it is protected and easy to read.</li>
-            <li>Weigh cattle as normal while the app captures each live weight immediately.</li>
-            <li>Save records, compare history, and review weights as part of feeding, dosing, and breeding decisions.</li>
-          </ol>
-        </section>
-
-        <section class="wr-section" aria-labelledby="wr-decisions-title">
-          <h2 class="section-title" id="wr-decisions-title">Useful data for real farm decisions</h2>
-          <div class="wr-decision-grid">
-            <article class="wr-decision-card">
-              <h3>Dosing and health</h3>
-              <p>
-                Correct dosing from fresh weight means safer medicine and fewer re-checks.</p>
-            </article>
-            <article class="wr-decision-card">
-              <h3>Feeding and finishing</h3>
-              <p>
-                Compare gain and set feed plans to hit target finishes with less waste.</p>
-            </article>
-            <article class="wr-decision-card">
-              <h3>Breeding and replacement
-              </h3>
-              <p>
-                Keep replacement candidates with better growth profiles and fewer surprises in batch joins.</p>
-            </article>
-            <article class="wr-decision-card">
-              <h3>Daily weights and scores</h3>
-              <p>
-                Keep daily movement and trend notes in one place so you can review performance quickly.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="wr-section" aria-labelledby="wr-connected-title">
-          <h2 class="section-title" id="wr-connected-title">Connected and future ready</h2>
-          <p>
-            WeighRite is EID/tag reader ready and built to connect with systems you already use, helping your weighing workflow stay practical and flexible on the farm.
-          </p>
-          <div class="wr-grid-badges" aria-label="Supported integrations">
-            <span class="wr-badge">EID / Tag Reader Ready</span>
-            <span class="wr-badge">Herdwatch</span>
-            <span class="wr-badge">AgriNet</span>
-            <span class="wr-badge">GrasslandTools</span>
-            <span class="wr-badge">ICBF</span>
-          </div>
-          <div class="wr-trust">
-            <p><strong>Drafting ready.</strong> Keep up with records and checks without extra admin.</p>
-            <p><strong>Irish made.</strong> WeighRite is manufactured in Ireland for dependable service and local support.</p>
-          </div>
-        </section>
-
-        <section class="wr-section" aria-labelledby="wr-support-title">
-          <h2 class="section-title" id="wr-support-title">Irish support for your crush and herd</h2>
-          <p>
-            Not sure what setup suits your crush or herd? Call us and we’ll help you choose the right WeighRite setup for your farm.
-          </p>
-          <p>
-            We can also help with app set-up and training so your team can use it quickly.
-          </p>
-        </section>
-
-        <section class="wr-section wr-cta" aria-labelledby="wr-cta-title">
-          <h2 class="section-title" id="wr-cta-title">Want to get started with WeighRite?</h2>
-          <p>
-            Use your phone as the display, keep records as you weigh, and spend less time on paperwork.
-          </p>
-          <div class="wr-cta-actions">
-            <a class="wr-btn" href="tel:+353214874441">Call 021 487 4441</a>
-            <a class="wr-btn secondary" href="./cattle-weighing.html#weighing-video-title">View WeighRite option</a>
-          </div>
-        </section>
       </div>
 </main>
 
@@ -1823,7 +2618,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
               <span>Clippers Ireland, The Little Farm,<br>
               Knockananig, Fermoy,<br>
-              Co Cork, P61EP80</span>
+              Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -1952,7 +2747,7 @@
             </span>
             <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
-              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -2088,7 +2883,7 @@
         if (!hero) return;
 
         const heroImage = hero.querySelector(".category-hero-media img");
-        const heroImageSrc = "./assets/weighrite-subpage-hero-banner.png?v=20260629-hero-active-final";
+        const heroImageSrc = "./assets/hero-weighrite-smart-weighing-system-wide.png";
 
         hero.style.background = `linear-gradient(90deg, rgba(12, 24, 16, 0.78) 0%, rgba(12, 24, 16, 0.58) 48%, rgba(12, 24, 16, 0.24) 100%), url('${heroImageSrc}') center 58% / cover no-repeat`;
         hero.style.backgroundAttachment = "scroll";

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
   <meta http-equiv="Pragma" content="no-cache" />
-  <title>Clippers Ireland</title>
+  <title>Cattle Weighing Test | Clippers Ireland</title>
   <link rel="stylesheet" href="./styles.css" />
   <style>
     .category-hero--cattle-weighing {
@@ -1234,8 +1234,470 @@
         }
       }
     </style>
+  <style>
+    @media (min-width: 769px) {
+      .system-choice-grid,
+      .cattle-video-support-layout {
+        column-gap: 36px !important;
+      }
+    }
+  
+
+    .cattle-weighing-test-page .cattle-test-intro {
+      width: min(100%, 2020px);
+      margin: 0 auto;
+      padding: clamp(24px, 3.4vw, 38px) clamp(18px, 2.6vw, 54px) 6px;
+      background: var(--page);
+    }
+
+    .cattle-weighing-test-page .cattle-test-intro-shell,
+    .cattle-weighing-test-page .cattle-test-page-main {
+      width: min(100%, 1190px);
+      margin: 0 auto;
+    }
+
+    .cattle-weighing-test-page .cattle-test-intro-shell {
+      display: block;
+      max-width: 76ch;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .cattle-weighing-test-page .cattle-test-page-main {
+      padding: 0 18px clamp(44px, 6vw, 72px);
+      display: grid;
+      gap: clamp(38px, 5.8vw, 72px);
+      color: #213225;
+    }
+
+    .cattle-weighing-test-page .cattle-test-eyebrow {
+      margin: 0 0 6px;
+      color: #00843d;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .cattle-weighing-test-page .cattle-test-intro p.cattle-test-eyebrow,
+    .cattle-weighing-test-page .cattle-test-page-main p.cattle-test-eyebrow {
+      color: var(--green);
+    }
+
+    .cattle-weighing-test-page .cattle-test-intro h2,
+    .cattle-weighing-test-page .cattle-test-page-main h2 {
+      margin: 0 0 10px;
+      color: #173222;
+      font-size: clamp(24px, 2.55vw, 34px);
+      line-height: 1.12;
+    }
+
+    .cattle-weighing-test-page .cattle-test-intro h2 {
+      white-space: nowrap;
+    }
+
+    .cattle-weighing-test-page .cattle-test-intro p,
+    .cattle-weighing-test-page .cattle-test-page-main p {
+      margin: 0;
+      color: #30473b;
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.55;
+    }
+
+    .cattle-weighing-test-page .cattle-test-decision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .cattle-weighing-test-page .cattle-test-decision-item {
+      border-left: 4px solid #f2a51f;
+      background: #fffdf8;
+      padding: 12px 14px;
+    }
+
+    .cattle-weighing-test-page .cattle-test-decision-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #173222;
+      font-size: 1.04rem;
+    }
+
+    .cattle-weighing-test-page .cattle-test-decision-item span {
+      color: #426052;
+      font-size: 0.96rem;
+      line-height: 1.36;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(28px, 4.8vw, 58px);
+    }
+
+    .cattle-weighing-test-page .cattle-test-system {
+      display: grid;
+      gap: 11px;
+      align-content: start;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-media {
+      margin: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-media img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 7;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-body {
+      position: relative;
+      padding: 18px clamp(4px, 0.9vw, 12px) 0;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-body::before,
+    .cattle-weighing-test-page .cattle-test-components article::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: clamp(4px, 0.9vw, 12px);
+      width: min(calc(100% - clamp(8px, 1.8vw, 24px)), 300px);
+      height: 3px;
+      background: #f2a51f;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-body h3,
+    .cattle-weighing-test-page .cattle-test-components h3 {
+      margin: 0 0 8px;
+      color: #173222;
+      font-size: clamp(1.24rem, 2vw, 1.55rem);
+      line-height: 1.15;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 7px;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-list li {
+      position: relative;
+      padding-left: 22px;
+      color: #2f3a34;
+      font-size: clamp(14px, 0.92vw, 16px);
+      line-height: 1.4;
+    }
+
+    .cattle-weighing-test-page .cattle-test-system-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0.42em;
+      width: 9px;
+      height: 5px;
+      border-left: 2px solid var(--green);
+      border-bottom: 2px solid var(--green);
+      transform: rotate(-45deg);
+    }
+
+    .cattle-weighing-test-page .cattle-test-link {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      max-width: 100%;
+      min-height: 38px;
+      padding: 0 18px;
+      border: 1px solid rgba(18, 130, 54, 0.62);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--green);
+      font-size: clamp(12px, 0.74vw, 14px);
+      line-height: 1;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .cattle-weighing-test-page .cattle-test-link:hover,
+    .cattle-weighing-test-page .cattle-test-link:focus-visible {
+      border-color: var(--green-hover);
+      background: var(--green-hover);
+      color: #fff;
+    }
+
+    .cattle-weighing-test-page .cattle-test-video {
+      width: min(100%, 1040px);
+      margin: clamp(-8px, -0.8vw, -4px) auto;
+      display: grid;
+      grid-template-columns: minmax(250px, 330px) minmax(360px, 460px);
+      align-items: center;
+      justify-content: center;
+      gap: clamp(28px, 3.5vw, 50px);
+      text-align: left;
+      background: rgba(255, 255, 255, 0.34);
+      border: 1px solid #c9dfcd;
+      border-top: 4px solid #78b184;
+      border-radius: 16px;
+      padding: clamp(24px, 3vw, 36px);
+    }
+
+    .cattle-weighing-test-page .cattle-test-video h2 {
+      margin-bottom: 10px;
+    }
+
+    .cattle-weighing-test-page .cattle-test-video-copy > p:not(.cattle-test-eyebrow) {
+      max-width: 72ch;
+      margin-bottom: 18px;
+    }
+
+    .cattle-weighing-test-page .cattle-test-video-copy p:not(.cattle-test-eyebrow) {
+      max-width: 54ch;
+    }
+
+    .cattle-weighing-test-page .cattle-test-video-copy > div:first-child {
+      width: min(100%, 460px);
+    }
+
+    .cattle-weighing-test-page .cattle-test-video-card {
+      position: relative;
+      margin: 0;
+      width: min(100%, 330px);
+      justify-self: end;
+      background: #fffdf8;
+      border: 1px solid #dfe7de;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(19, 42, 27, 0.07);
+    }
+
+    .cattle-weighing-test-page .cattle-test-video-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cattle-weighing-test-page .cattle-test-video-play {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 48px;
+      border-radius: 14px;
+      background: #f2a51f;
+      color: #173222;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 10px 20px rgba(19, 42, 27, 0.12);
+    }
+
+    .cattle-weighing-test-page .cattle-test-proof-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(18px, 3vw, 34px);
+      align-items: center;
+      margin-top: clamp(4px, 1vw, 12px);
+      background: rgba(255, 255, 255, 0.34);
+      border: 1px solid #c9dfcd;
+      border-top: 4px solid #78b184;
+      border-radius: 16px;
+      padding: clamp(18px, 2.7vw, 28px) clamp(18px, 3.2vw, 34px);
+    }
+
+    .cattle-weighing-test-page .cattle-test-proof-logo {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cattle-weighing-test-page .cattle-test-proof-logo img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .cattle-weighing-test-page .cattle-test-proof-logo--irish img {
+      width: min(100%, 336px);
+    }
+
+    .cattle-weighing-test-page .cattle-test-proof-copy {
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+      justify-self: center;
+    }
+
+    .cattle-weighing-test-page .cattle-test-grant-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #f2a51f;
+    }
+
+    .cattle-weighing-test-page .cattle-test-grant-badge svg {
+      width: clamp(78px, 7.2vw, 106px);
+      height: auto;
+      flex: 0 0 auto;
+    }
+
+    .cattle-weighing-test-page .cattle-test-grant-badge-text {
+      display: grid;
+      gap: 3px;
+    }
+
+    .cattle-weighing-test-page .cattle-test-grant-badge-line {
+      color: #5b6762;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(1.12rem, 1.9vw, 1.45rem);
+      font-style: italic;
+      font-weight: 900 !important;
+      letter-spacing: 0.01em;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .cattle-weighing-test-page .cattle-test-video-copy {
+      display: grid;
+      gap: clamp(16px, 2.2vw, 24px);
+      justify-self: start;
+    }
+
+    .cattle-weighing-test-page .cattle-test-choice-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cattle-weighing-test-page .cattle-test-decision-grid {
+      grid-template-columns: 1fr;
+      gap: clamp(16px, 2.2vw, 22px);
+      width: min(100%, 460px);
+      justify-self: start;
+    }
+
+    .cattle-weighing-test-page .cattle-test-choice-title {
+      margin: 0;
+      color: #173222;
+      font-size: clamp(21px, 2vw, 27px);
+      line-height: 1.18;
+      font-weight: 850;
+    }
+
+    .cattle-weighing-test-page .cattle-test-video .cattle-test-decision-item {
+      background: rgba(255, 255, 255, 0.72);
+      border: 0;
+      border-left: 4px solid #f2a51f;
+      border-radius: 0;
+      padding: clamp(17px, 2vw, 22px);
+      box-shadow: none;
+    }
+
+    .cattle-weighing-test-page .cattle-test-decision-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      margin: 12px 0 0;
+      padding: 0;
+      color: #30473b;
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.45;
+    }
+
+    .cattle-weighing-test-page .cattle-test-decision-list li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .cattle-weighing-test-page .cattle-test-decision-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #00843d;
+      font-weight: 900;
+    }
+
+    .cattle-weighing-test-page .cattle-test-support {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+      display: grid;
+      gap: clamp(18px, 2.6vw, 28px);
+    }
+
+    .cattle-weighing-test-page .cattle-test-support-heading {
+      max-width: none;
+    }
+
+    .cattle-weighing-test-page .cattle-test-support-heading h2 {
+      white-space: nowrap;
+    }
+
+    .cattle-weighing-test-page .cattle-test-support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(18px, 2.8vw, 28px);
+    }
+
+    .cattle-weighing-test-page .cattle-test-support-card {
+      background: rgba(255, 255, 255, 0.72);
+      border-left: 4px solid #f2a51f;
+      padding: clamp(18px, 2.2vw, 24px);
+    }
+
+    .cattle-weighing-test-page .cattle-test-support-card h3 {
+      margin: 0 0 8px;
+      color: #173222;
+      font-size: clamp(18px, 1.8vw, 23px);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .cattle-weighing-test-page .cattle-test-support-card p {
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .cattle-weighing-test-page .cattle-test-intro-shell,
+      .cattle-weighing-test-page .cattle-test-system-grid,
+      .cattle-weighing-test-page .cattle-test-video,
+      .cattle-weighing-test-page .cattle-test-proof-strip,
+      .cattle-weighing-test-page .cattle-test-decision-grid,
+      .cattle-weighing-test-page .cattle-test-support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cattle-weighing-test-page .cattle-test-intro h2 {
+        white-space: normal;
+      }
+
+      .cattle-weighing-test-page .cattle-test-support-heading h2 {
+        white-space: normal;
+      }
+
+      .cattle-weighing-test-page .cattle-test-video-card,
+      .cattle-weighing-test-page .cattle-test-video-copy {
+        justify-self: center;
+        transform: none;
+      }
+    }
+</style>
 </head>
-  <body class="home-page">
+  <body class="home-page clippers-page cattle-weighing-test-page">
     <header class="site-header">
       <div class="main-header">
         <div class="brand-lockup">
@@ -1300,11 +1762,11 @@
         <div class="category-item category-item--clippers">
           <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
-            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
-            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
-            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
-            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
-            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+            <a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
+            <a href="./horse-clippers.html">Horse Clippers</a>
+            <a href="./dog-clippers.html">Dog Clippers</a>
+            <a href="./clipper-blades.html">Clipper Blades</a>
+            <a href="./clipper-parts.html">Clipper Parts</a>
           </div>
         </div>
         <div class="category-item category-item--cattle-weighing">
@@ -1313,19 +1775,19 @@
         <div class="category-item category-item--milking-machines">
           <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Milking Machines links">
-            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
-            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
-            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+            <a href="./cow-milking-machines.html">Cow Milkers</a>
+            <a href="./goat-milking-machines.html">Goat Milkers</a>
+            <a href="./sheep-milking-machines.html">Sheep Milkers</a>
           
           </div>
         </div>
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
-            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+            <a href="./electric-fencing-mains.html">Mains Fencers</a>
+            <a href="./electric-fencing-battery.html">Battery Fencers</a>
+            <a href="./electric-fencing-solar.html">Solar Fencers</a>
+            <a href="./electric-fencing-accessories.html">Accessories</a>
           </div>
         </div>
         <div class="category-item category-item--all-farming">
@@ -1334,11 +1796,11 @@
             <a href="./clippers.html">Clippers</a>
             <a href="./cattle-weighing.html">Cattle Weighing</a>
             <a href="./milking-machines.html">Milking Machines</a>
-            <a href="./parts-repairs.html">Dairy Products</a>
-            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./dairy-products.html">Dairy Products</a>
+            <a href="./brushes.html">Brushes</a>
             <a href="./electric-fencing.html">Electric Fencing</a>
-            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-            <a href="./electric-fencing.html">Blowers</a>
+            <a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
+            <a href="./blowers.html">Blowers</a>
           </div>
         </div>
         <a class="category-nav-link" href="./apparel.html">Apparel</a>
@@ -1353,11 +1815,13 @@
     <main class="page-shell category-page">
   <section class="category-hero category-hero--cattle-weighing hero-text-template" aria-labelledby="category-title">
     <div class="category-hero-media" aria-hidden="true">
-      <img src="./assets/shop/cattle-weighing-hero-hires.png" alt="" loading="eager" decoding="sync" width="1508" height="1350" />
+      <img src="./assets/shop/cattle-weighing-hero-new-weighing.png" alt="" loading="eager" decoding="sync" width="1508" height="1350" />
     </div>
     <div class="category-hero-copy">
       <nav class="category-breadcrumb" aria-label="Breadcrumb">
         <a href="./index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="./all-farming.html">All Farming</a>
         <span aria-hidden="true">/</span>
         <span>Cattle Weighing</span>
       </nav>
@@ -1394,181 +1858,127 @@
     </div>
   </div>
 
-  <section class="cattle-page-section system-choice cattle-page-section--compact system-choice--compact" aria-labelledby="system-choice-title">
-    <div class="cattle-content-shell">
-      <h2 class="section-title" id="system-choice-title">Do you just need kilos, or do you want usable data?</h2>
-      <p class="cattle-section-intro" style="text-align:center; max-width:70ch; margin-left:auto; margin-right:auto;">
-        Choose the setup that matches how you farm: a simple kilo display system<br class="system-choice-intro-break"> or a smart weighing system that saves animal records and helps manage herd data.
-      </p>
-
-      <div class="system-choice-grid">
-        <article class="system-choice-card">
-          <div class="system-choice-card-image system-choice-card-image--edgeflush">
-            <img class="system-choice-card-image--cover" src="./assets/cattle-weighing/ergopro-weighing.png" alt="ErgoPro weighing system setup" />
-          </div>
-          <h3>ErgoPro Standard Weighing System</h3>
-          <p class="system-choice-subtitle">Weigh Bars + Platform + Digital Clock</p>
-          <p>
-            A simple cattle weighing system for farmers who just want an accurate kilo reading. Manufactured in Cork, it includes our platform, weigh bars and a straightforward digital clock display<br class="system-choice-intro-break"> — no app or software required.
-          </p>
-          <ul>
-            <li>Accurate kilo display</li>
-            <li>Simple farm weighing</li>
-            <li>No app or software needed</li>
-            <li>Irish-made platform and weigh bars</li>
-            <li>Good value basic setup</li>
-          </ul>
-          <a class="repairs-band-cta" href="./ergopro-standard-weighing-system.html">View Standard System</a>
-        </article>
-
-        <article class="system-choice-card">
-          <div class="system-choice-card-image system-choice-card-image--edgeflush">
-            <picture>
-              <img class="system-choice-card-image--cover" src="./assets/cardweighrite.png" alt="WeighRite weighing setup" />
-            </picture>
-          </div>
-          <h3>WeighRite Smart Weighing System</h3>
-          <p class="system-choice-subtitle">Weigh Bars + Platform + WeighRite Unit + App</p>
-          <p>
-            A smart livestock weighing system for farmers who want more than just a kilo reading. WeighRite is manufactured in Ireland and uses your smartphone as the display, helping save weights, track gain and manage herd data.
-          </p>
-          <ul>
-            <li>Easy to use app and software</li>
-            <li>Saves weights and animal records</li>
-          <li>Tracks weight gain over time</li>
-          <li>Reduces paperwork and double entry</li>
-          <li>EID and drafting ready</li>
-          <li>Connects with Herdwatch, AgriNet and ICBF</li>
-        </ul>
-              <a class="repairs-band-cta" href="./weighrite-smart-weighing-system.html">View Smart System</a>
-        </article>
+  <section class="cattle-test-intro" aria-labelledby="cattle-test-title">
+    <div class="cattle-test-intro-shell">
+      <div>
+        <p class="cattle-test-eyebrow">Choose your weighing system</p>
+        <h2 id="cattle-test-title">Do you just need kilos, or do you want usable data?</h2>
+        <p>Choose the setup that matches how you farm: a simple kilo display system or a smart weighing system that saves animal records and helps manage herd data.</p>
       </div>
+    </div>
+  </section>
+
+  <div class="cattle-test-page-main">
+    <section class="cattle-test-system-grid" aria-label="Cattle weighing system options">
+      <article class="cattle-test-system">
+        <figure class="cattle-test-system-media">
+          <img src="./assets/cattle-weighing/ergopro-weighing-card-nativefinal.png" alt="ErgoPro standard cattle weighing system" loading="lazy" />
+        </figure>
+        <div class="cattle-test-system-body">
+          <p class="cattle-test-eyebrow">Standard weighing system</p>
+          <h3>ErgoPro Standard Weighing System</h3>
+          <p>A simple cattle weighing system for farmers who just want an accurate kilo reading. Manufactured in Cork, it includes our platform, weigh bars and a straightforward digital clock display, with no app or software required.</p>
+          <ul class="cattle-test-system-list">
+            <li>Simple farm weighing</li>
+            <li>Accurate kilo display</li>
+            <li>Irish-made platform and weigh bars</li>
+          </ul>
+          <a class="cattle-test-link" href="./ergopro-standard-weighing-system.html">View Standard System</a>
+        </div>
+      </article>
+
+      <article class="cattle-test-system">
+        <figure class="cattle-test-system-media">
+          <img src="./assets/cattle-weighing/weighrite-smart-card-nativefinal.png" alt="WeighRite smart cattle weighing system" loading="lazy" />
+        </figure>
+        <div class="cattle-test-system-body">
+          <p class="cattle-test-eyebrow">Smart weighing system</p>
+          <h3>WeighRite Smart Weighing System</h3>
+          <p>A smart livestock weighing system for farmers who want more than just a kilo reading. WeighRite is manufactured in Ireland and uses your smartphone as the display, helping save weights, track gain and manage herd data.</p>
+          <ul class="cattle-test-system-list">
+            <li>Saves weights and animal records</li>
+            <li>Tracks weight gain over time</li>
+            <li>Uses your phone as the display</li>
+          </ul>
+          <a class="cattle-test-link" href="./weighrite-smart-weighing-system.html">View Smart System</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="cattle-test-video" aria-labelledby="cattle-test-video-title">
+      <figure class="cattle-test-video-card">
+        <img src="./assets/instagram/con-weighing-equipment.png" alt="Cattle weighing systems shown in warehouse video preview" loading="lazy" />
+        <span class="cattle-test-video-play" aria-hidden="true">Play</span>
+      </figure>
+      <div class="cattle-test-video-copy">
+        <div>
+          <p class="cattle-test-eyebrow">Watch before you choose</p>
+          <h2 id="cattle-test-video-title">Con explains the difference</h2>
+          <p>Con explains the difference between the standard kilo-reading bundle and the WeighRite smart system, so you can choose the setup that suits your farm.</p>
+        </div>
+        <div class="cattle-test-choice-stack">
+          <h3 class="cattle-test-choice-title">Which setup sounds like you?</h3>
+          <div class="cattle-test-decision-grid">
+            <article class="cattle-test-decision-item">
+              <strong>Choose Standard if</strong>
+              <ul class="cattle-test-decision-list">
+                <li>You just want a simple kilo reading</li>
+                <li>You do not need saved herd records</li>
+                <li>You want the simplest, good-value setup</li>
+              </ul>
+            </article>
+            <article class="cattle-test-decision-item">
+              <strong>Choose WeighRite if</strong>
+              <ul class="cattle-test-decision-list">
+                <li>You want saved weights and animal records</li>
+                <li>You want to track weight gain over time</li>
+                <li>You want EID, Herdwatch or ICBF connections</li>
+              </ul>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
-  <section class="cattle-page-section cattle-weighing-video cattle-page-section--compact cattle-video-intro" aria-labelledby="weighing-video-title">
-    <div class="cattle-content-shell">
-      <div class="cattle-video-support-layout">
-        <div class="cattle-video-media">
-          <span class="instagram-thumb" aria-hidden="true">
-            <img src="./assets/instagram/con-weighing-equipment.png" alt="Cattle weighing systems shown in warehouse video preview" />
-            <span class="instagram-play">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-            </span>
+    <section class="cattle-test-support" aria-labelledby="cattle-test-support-title">
+      <div class="cattle-test-support-heading">
+        <p class="cattle-test-eyebrow">Aftercare and support</p>
+        <h2 id="cattle-test-support-title">Built, supplied and supported from Ireland.</h2>
+      </div>
+      <div class="cattle-test-support-grid">
+        <article class="cattle-test-support-card">
+          <h3>Two-Year Warranty</h3>
+          <p>ErgoPro and WeighRite are supplied with a full two-year parts and labour warranty for extra peace of mind.</p>
+        </article>
+        <article class="cattle-test-support-card">
+          <h3>Parts Kept in Stock</h3>
+          <p>We carry genuine spare parts needed to keep your weighing system working properly long after purchase.</p>
+        </article>
+        <article class="cattle-test-support-card">
+          <h3>In-House Workshop Support</h3>
+          <p>Our workshop provides servicing, repairs, spare parts and practical advice whenever needed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cattle-test-proof-strip" aria-label="Irish manufacture and grant eligibility">
+      <figure class="cattle-test-proof-logo cattle-test-proof-logo--irish">
+        <img src="./assets/cattle-weighing/guaranteed-irish-logo-clippers-green.png" alt="Guaranteed Irish" loading="lazy" />
+      </figure>
+      <div class="cattle-test-proof-copy">
+        <div class="cattle-test-grant-badge" aria-label="TAMS Eligible and BEEP Approved">
+          <svg viewBox="0 0 118 70" aria-hidden="true">
+            <path d="M4 36c17 2.1 31.3 8.8 43.1 20.3C61.8 29.9 83.9 11.5 114 3 86.9 18.4 65.2 40 49 68 37.5 51.7 22.5 41 4 36z" fill="currentColor" />
+          </svg>
+          <span class="cattle-test-grant-badge-text">
+            <span class="cattle-test-grant-badge-line">TAMS Eligible</span>
+            <span class="cattle-test-grant-badge-line">BEEP Approved</span>
           </span>
         </div>
-
-          <div class="cattle-video-text">
-            <div class="cattle-video-probe-box">
-              <div class="cattle-video-probe-content" style="position: relative;">
-                <div class="cattle-video-choice-top">
-                  <h2 class="section-title cattle-video-watch-title" id="weighing-video-title">Watch Con explain the difference</h2>
-                  <p class="cattle-section-intro">
-                    Con explains the difference between the standard kilo-reading bundle and the WeighRite smart system, so you can choose the setup that suits your farm.
-                  </p>
-                </div>
-
-                <div class="cattle-video-choice-middle">
-                  <h3 class="cattle-choice-heading">Which Setup Sounds Like You?</h3>
-                  <div class="cattle-choice-block">
-                    <p class="cattle-choice-label">Choose Standard if:</p>
-                    <ul class="cattle-support-list">
-                      <li>You just want a simple kilo reading</li>
-                      <li>You do not need saved herd records</li>
-                      <li>You want the simplest, good-value setup</li>
-                    </ul>
-                  </div>
-
-                  <div class="cattle-choice-block">
-                    <p class="cattle-choice-label">Choose WeighRite if:</p>
-                    <ul class="cattle-support-list">
-                      <li>You want saved weights and animal records</li>
-                      <li>You want to track weight gain over time</li>
-                      <li>You want EID, Herdwatch or ICBF connections</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="cattle-video-choice-bottom">
-                  <h3 class="cattle-choice-heading">Need help choosing?</h3>
-                  <p class="cattle-help-note">
-                    Call us and we’ll help you choose the right setup for your crush, yard and recording needs.
-                  </p>
-                  <a href="tel:+353214874441" style="width: auto; min-width: 0; flex: 0 0 auto;">Call us: 021 487 4441</a>
-                </div>
-
-                <img
-                  src="./assets/cattle-weighing/guaranteed-irish-logo-clippers-green.png"
-                  alt="Guaranteed Irish"
-                  loading="lazy"
-                  width="180"
-                  height="180"
-                  class="cattle-guaranteed-irish-badge"
-                  style="position: absolute; right: 16px; bottom: 16px; width: 180px; height: auto; opacity: 0.9; pointer-events: none;"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
-      <div class="milking-why-choose-shell">
-        <h2 class="milking-why-choose-title" id="milking-why-choose-title">Why Choose Clippers Ireland for Livestock Weighing?</h2>
-        <div class="milking-why-choose-grid">
-          <article class="milking-why-choose-card">
-            <h3>ErgoPro and WeighRite</h3>
-            <p>A perfect partnership to provide Irish made Livestock Weighing solutions for the Irish market.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>Two-Year Warranty</h3>
-            <p>ErgoPro and WeighRite are supplied with a full two-year parts & labour warranty for extra peace of mind.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>Parts Kept in Stock</h3>
-            <p>We carry all genuine spare parts needed to keep your machine working properly long after purchase.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>In-House Workshop Support</h3>
-            <p>Our workshop provides servicing, repairs, spare parts and practical advice whenever needed.</p>
-          </article>
-        </div>
       </div>
     </section>
 
-  <section class="related-categories" aria-labelledby="related-clippers-title">
-    <h2 class="section-title" id="related-clippers-title">Browse related categories</h2>
-    <div class="category-tile-grid">
-      <a class="category-card" href="./cattle-weighing.html">
-        <img src="./assets/shop/newweighingpic.png" alt="Cattle weighing equipment" />
-        <strong>Cattle Weighing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
-        <strong>Milking Machines</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
-        <strong>Electric Fencing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./all-farming.html">
-        <img src="./assets/shop/category-all-farming.jpg" alt="All farming tools" />
-        <strong>All Farming</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./apparel.html">
-        <img src="./assets/shop/category-apparel-bobble-dog.jpg" alt="Workwear and apparel" />
-        <strong>Apparel</strong>
-        <small>Shop now -></small>
-      </a>
-    </div>
-  </section>
-
+  </div>
 </main>
 
 
@@ -1603,7 +2013,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
               <span>Clippers Ireland, The Little Farm,<br>
               Knockananig, Fermoy,<br>
-              Co Cork, P61EP80</span>
+              Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -1732,7 +2142,7 @@
             </span>
             <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
-              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>

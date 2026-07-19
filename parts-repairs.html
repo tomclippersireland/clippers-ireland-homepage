@@ -59,6 +59,27 @@
         object-position: 50% 70% !important;
       }
 
+      .parts-machine-card--link {
+        position: relative;
+      }
+
+      .parts-machine-card--link .parts-machine-card-overlay-link {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        border-radius: inherit;
+      }
+
+      .parts-machine-card--link .parts-machine-card-overlay-link:focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: 3px;
+      }
+
+      .parts-machine-card--link > *:not(.parts-machine-card-overlay-link) {
+        position: relative;
+        z-index: 2;
+      }
+
       @media (min-width: 1024px) {
         .category-buckets .category-bucket-grid {
           width: min(100%, calc(83.3333% - 3px));
@@ -277,7 +298,26 @@
   .parts-machine-row--clippers-offwhite .parts-machine-card {
     background: linear-gradient(180deg, #fffdf8 0%, #fffdf8 calc(100% - 46px), #f6f6f2 calc(100% - 46px), #f6f6f2 100%) !important;
   }
-</style>
+
+        .parts-machine-card--link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .parts-machine-card--link:hover,
+        .parts-machine-card--link:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .parts-machine-card--link:focus-visible {
+            outline: 2px solid #2f8f4e;
+            outline-offset: 3px;
+        }
+
+        </style>
   
 <style>
 @media (min-width: 1024px) {
@@ -1102,6 +1142,11 @@
     color: #445047;
   }
 
+  .parts-machine-row--clippers .parts-machine-card--coming-soon-banner-deor .parts-machine-cta,
+  .parts-machine-row--clippers .parts-machine-card--coming-soon-banner-madra .parts-machine-cta {
+    color: #2f6a3c;
+  }
+
   .parts-machine-row--clippers .parts-machine-card--coming-soon-banner {
     position: relative;
     overflow: hidden;
@@ -1123,6 +1168,7 @@
     border-radius: 0;
     background: #dde3dc;
     border: 1px solid #c5cdc5;
+    z-index: 6;
     font-weight: 700;
     letter-spacing: 0.08em;
     box-shadow: 0 1px 2px rgba(20, 42, 31, 0.15);
@@ -1223,11 +1269,11 @@
         <div class="category-item category-item--clippers">
           <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
-            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
-            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
-            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
-            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
-            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+            <a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
+            <a href="./horse-clippers.html">Horse Clippers</a>
+            <a href="./dog-clippers.html">Dog Clippers</a>
+            <a href="./clipper-blades.html">Clipper Blades</a>
+            <a href="./clipper-parts.html">Clipper Parts</a>
           </div>
         </div>
         <div class="category-item category-item--cattle-weighing">
@@ -1236,19 +1282,19 @@
         <div class="category-item category-item--milking-machines">
           <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Milking Machines links">
-            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
-            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
-            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+            <a href="./cow-milking-machines.html">Cow Milkers</a>
+            <a href="./goat-milking-machines.html">Goat Milkers</a>
+            <a href="./sheep-milking-machines.html">Sheep Milkers</a>
           
           </div>
         </div>
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
-            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+            <a href="./electric-fencing-mains.html">Mains Fencers</a>
+            <a href="./electric-fencing-battery.html">Battery Fencers</a>
+            <a href="./electric-fencing-solar.html">Solar Fencers</a>
+            <a href="./electric-fencing-accessories.html">Accessories</a>
           </div>
         </div>
         <div class="category-item category-item--all-farming">
@@ -1257,11 +1303,11 @@
             <a href="./clippers.html">Clippers</a>
             <a href="./cattle-weighing.html">Cattle Weighing</a>
             <a href="./milking-machines.html">Milking Machines</a>
-            <a href="./parts-repairs.html">Dairy Products</a>
-            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./dairy-products.html">Dairy Products</a>
+            <a href="./brushes.html">Brushes</a>
             <a href="./electric-fencing.html">Electric Fencing</a>
-            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-            <a href="./electric-fencing.html">Blowers</a>
+            <a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
+            <a href="./blowers.html">Blowers</a>
           </div>
         </div>
         <a class="category-nav-link" href="./apparel.html">Apparel</a>
@@ -1327,71 +1373,71 @@
           <h3 id="parts-clippers-title">ErgoPro Clippers</h3>
         </div>
         <div class="parts-machine-row parts-machine-row--clippers parts-machine-row--clippers-offwhite">
-          <article class="parts-machine-card">
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-cara-parts.html" aria-label="View parts for Cara">
             <span class="parts-machine-card-media">
               <img src="./assets/products/cara-parts-card.png?v=cara-smaller-1" alt="ErgoPro Cara clipper" loading="lazy" decoding="async" />
             </span>
             <h4>Cara</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-master-parts.html" aria-label="View parts for Master">
             <span class="parts-machine-card-media">
               <img src="./assets/products/master.png?v=master-smaller-1" alt="ErgoPro Master clipper" loading="lazy" decoding="async" />
             </span>
             <h4>Master</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
-            <span class="parts-machine-card-media">
-              <img src="./assets/products/hush-parts-card.png?v=hush-inline-scale-1" alt="ErgoPro Hush clipper" loading="lazy" decoding="async" style="transform: scale(1.16); transform-origin: center;" />
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-hush-parts.html" aria-label="View parts for Hush">
+<span class="parts-machine-card-media">
+              <img src="./assets/products/hush-horse.png" alt="ErgoPro Hush clipper" loading="lazy" decoding="async" />
             </span>
             <h4>Hush</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
-            <span class="parts-machine-card-media">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-ovis-parts.html" aria-label="View parts for Ovis">
+<span class="parts-machine-card-media">
               <img src="./assets/products/ovis.png?v=ovis-hand-piece-1" alt="ErgoPro Ovis clipper" loading="lazy" decoding="async" style="transform: scale(0.90); transform-origin: center;" />
             </span>
             <h4>Ovis</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
-            <span class="parts-machine-card-media">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-handy-ii-parts.html" aria-label="View parts for Handy II">
+<span class="parts-machine-card-media">
               <img src="./assets/products/handy.png?v=handy-20-bigger-1" alt="ErgoPro Handy clipper" loading="lazy" decoding="async" style="transform: scale(1.20); transform-origin: center;" />
             </span>
             <h4>Handy II</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
-            <span class="parts-machine-card-media">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-aer-parts.html" aria-label="View parts for Aer">
+<span class="parts-machine-card-media">
               <img src="./assets/products/aer.png?v=aer-slightly-smaller-1" alt="ErgoPro Aer clipper" loading="lazy" decoding="async" />
             </span>
             <h4>Aer</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card parts-machine-card--coming-soon parts-machine-card--coming-soon-banner parts-machine-card--coming-soon-banner-deor">
-            <span class="parts-machine-card-media">
-              <img src="./assets/products/deor.png?v=deor-slightly-smaller-1" alt="ErgoPro Deor clipper" loading="lazy" decoding="async" />
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--coming-soon parts-machine-card--coming-soon-banner parts-machine-card--coming-soon-banner-deor parts-machine-card--link" href="./ergopro-deor-parts.html" aria-label="View parts for Deor">
+<span class="parts-machine-card-media">
+              <img src="./assets/products/deor-horse-hero-transparent.png" alt="ErgoPro Deor clipper" loading="lazy" decoding="async" />
             </span>
             <span class="parts-machine-badge">Coming soon</span>
             <h4>Deor</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card parts-machine-card--coming-soon parts-machine-card--coming-soon-banner parts-machine-card--coming-soon-banner-madra">
-            <span class="parts-machine-card-media">
-              <img src="./assets/products/madra.png?v=madra-10-bigger-1" alt="ErgoPro Madra clipper" loading="lazy" decoding="async" style="transform: scale(1.10); transform-origin: center;" />
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--coming-soon parts-machine-card--coming-soon-banner parts-machine-card--coming-soon-banner-madra parts-machine-card--link" href="./ergopro-madra-parts.html" aria-label="View parts for Madra">
+<span class="parts-machine-card-media">
+              <img src="./assets/products/madra-hero-transparent-cutout.png" alt="ErgoPro Madra clipper" loading="lazy" decoding="async" style="transform: rotate(-140deg) scaleX(-1) scale(1.10); transform-origin: center;" />
             </span>
             <span class="parts-machine-badge">Coming soon</span>
             <h4>Madra</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
-            <span class="parts-machine-card-media">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-older-models-parts.html" aria-label="View parts for Older Models">
+<span class="parts-machine-card-media">
               <img src="./assets/products/older-models.png?v=older-models-inline-10-smaller-1" alt="Older clipper model outline" loading="lazy" decoding="async" style="transform: scale(0.90); transform-origin: center;" />
             </span>
             <h4>Older Models</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
         </div>
       </section>
 
@@ -1400,27 +1446,27 @@
           <h3 id="parts-weighing-title">ErgoPro &amp; WeighRite Livestock Weighing</h3>
         </div>
         <div class="parts-machine-row">
-          <article class="parts-machine-card">
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-display-parts.html" aria-label="View parts for ErgoPro Display">
             <span class="parts-machine-card-media">
               <img src="./assets/products/ergopro-display.png" alt="ErgoPro livestock weighing display" loading="lazy" decoding="async" style="transform: scale(0.86); transform-origin: center;" />
             </span>
             <h4>ErgoPro Display</h4>
-            <a href="#" class="parts-machine-cta">Ask about parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./weighrite-parts.html" aria-label="View parts for WeighRite">
             <span class="parts-machine-card-media">
               <img src="./assets/products/weighrite-smart-port.jpg" alt="WeighRite livestock weighing system" loading="lazy" decoding="async" style="transform: scale(1.10); transform-origin: center;" />
             </span>
             <h4>WeighRite</h4>
-            <a href="#" class="parts-machine-cta">Ask about parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-weighbars-parts.html" aria-label="View parts for ErgoPro Weighbars">
             <span class="parts-machine-card-media">
               <img src="./assets/products/ergopro-weighbars.png" alt="ErgoPro livestock weighbars" loading="lazy" decoding="async" />
             </span>
             <h4>ErgoPro Weighbars</h4>
-            <a href="#" class="parts-machine-cta">Ask about parts -&gt;</a>
-          </article>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
         </div>
       </section>
 
@@ -1429,27 +1475,27 @@
           <h3 id="parts-blowers-title">ErgoPro Blowers</h3>
         </div>
         <div class="parts-machine-row">
-          <article class="parts-machine-card">
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-single-blower-parts.html" aria-label="View parts for Single Blower">
             <span class="parts-machine-card-media">
               <img src="./assets/products/single-blower.jpg" alt="ErgoPro single blower" loading="lazy" decoding="async" />
             </span>
             <h4>Single Blower</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-dual-blower-parts.html" aria-label="View parts for Dual Blower">
             <span class="parts-machine-card-media">
               <img src="./assets/products/dual-blower.jpg" alt="ErgoPro dual blower" loading="lazy" decoding="async" />
             </span>
             <h4>Dual Blower</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-dual-blower-pro-parts.html" aria-label="View parts for Dual Blower Pro">
             <span class="parts-machine-card-media">
               <img src="./assets/products/dual-blower-pro.jpg" alt="ErgoPro dual blower pro" loading="lazy" decoding="async" />
             </span>
             <h4>Dual Blower Pro</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
         </div>
       </section>
 
@@ -1458,48 +1504,48 @@
           <h3 id="parts-milking-title">Sezer Milking Machines</h3>
         </div>
         <div class="parts-machine-row">
-          <article class="parts-machine-card">
+          <a class="parts-machine-card parts-machine-card--link" href="./sezer-mini-milking-machine-parts.html" aria-label="View parts for Mini">
             <span class="parts-machine-card-media">
               <img src="./assets/products/sezer-mini.png" alt="Sezer milking machine" loading="lazy" decoding="async" style="transform: scale(1.22); transform-origin: center;" />
             </span>
             <h4>Mini</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./sezer-pls-1-milking-machine-parts.html" aria-label="View parts for PLS 1">
             <span class="parts-machine-card-media">
               <img src="./assets/products/pls-1.png" alt="Sezer PLS 1 milking machine" loading="lazy" decoding="async" />
             </span>
             <h4>PLS 1</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./sezer-pls-2-1-milking-machine-parts.html" aria-label="View parts for PLS 2/1">
             <span class="parts-machine-card-media">
               <img src="./assets/products/pls-2-1.png" alt="Sezer PLS 2/1 milking machine" loading="lazy" decoding="async" />
             </span>
             <h4>PLS 2/1</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./sezer-pls-2-milking-machine-parts.html" aria-label="View parts for PLS 2">
             <span class="parts-machine-card-media">
               <img src="./assets/products/pls-2.png" alt="Sezer PLS 2 milking machine" loading="lazy" decoding="async" />
             </span>
             <h4>PLS 2</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./sezer-pls-1-w-petrol-milking-machine-parts.html" aria-label="View parts for PLS 1/W Petrol">
             <span class="parts-machine-card-media">
               <img src="./assets/products/pls-1-w-petrol.png" alt="Sezer PLS 1/W Petrol milking machine" loading="lazy" decoding="async" style="transform: scale(1.10); transform-origin: center;" />
             </span>
             <h4>PLS 1/W Petrol</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./sezer-dumpline-milking-machine-parts.html" aria-label="View parts for Dumpline">
             <span class="parts-machine-card-media">
               <img src="./assets/products/dumpline.png" alt="Sezer Dumpline milking machine" loading="lazy" decoding="async" />
             </span>
             <h4>Dumpline</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
         </div>
       </section>
 <section class="parts-machine-shelf" aria-labelledby="parts-brushes-title">
@@ -1507,20 +1553,20 @@
           <h3 id="parts-brushes-title">Sezer Brushes</h3>
         </div>
         <div class="parts-machine-row">
-          <article class="parts-machine-card">
+          <a class="parts-machine-card parts-machine-card--link" href="./sezer-motorised-brush-parts.html" aria-label="View parts for Motorised Brush">
             <span class="parts-machine-card-media">
               <img src="./assets/products/automatic-brush.png" alt="Automatic cattle brush" loading="lazy" decoding="async" />
             </span>
             <h4>Motorised Brush</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
-          <article class="parts-machine-card">
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./sezer-fixed-brush-parts.html" aria-label="View parts for Fixed Brush">
             <span class="parts-machine-card-media">
               <img src="./assets/products/fixed-brush.jpg" alt="Sezer fixed cattle brush" loading="lazy" decoding="async" />
             </span>
             <h4>Fixed Brush</h4>
-            <a href="#" class="parts-machine-cta">View parts -&gt;</a>
-          </article>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
         </div>
       </section>
 
@@ -1622,7 +1668,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
               <span>Clippers Ireland, The Little Farm,<br>
               Knockananig, Fermoy,<br>
-              Co Cork, P61EP80</span>
+              Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -1751,7 +1797,7 @@
             </span>
             <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
-              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>

@@ -1,1126 +1,942 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clippers Ireland - Family Tree Site Map</title>
-  <style>
-    :root {
-      --done: #1b8b57;
-      --done-bg: #e8f6ee;
-      --done-border: #a8d8bd;
-      --planned: #dc2626;
-      --planned-bg: #fee2e2;
-      --planned-border: #fca5a5;
-      --work: #d38a00;
-      --bucket-bg: #fff3d6;
-      --bucket-border: #f2b84b;
-      --note: #64748b;
-      --border: #d1d5db;
-      --bg: #f8fafc;
-      --text: #0f172a;
-      --card: #ffffff;
-      --line: #c3cedb;
-      --tree-bg: #f8fafc;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.4;
-    }
-
-    .page-wrap {
-      max-width: calc(297mm + 32px);
-      margin: 24px auto;
-      padding: 0 16px 28px;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0 0 12px;
-    }
-
-    .topline {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .toolbar .btn {
-      border: 1px solid var(--border);
-      background: white;
-      padding: 8px 12px;
-      border-radius: 8px;
-      color: #111827;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-bottom: 18px;
-      border: 0;
-      background: transparent;
-      border-radius: 0;
-      padding: 0;
-    }
-
-    .legend-box {
-      display: inline-flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 8px;
-      min-width: 0;
-      padding: 4px 0;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.2;
-      text-align: left;
-      color: #1f2937;
-    }
-
-    .legend-swatch {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      flex: 0 0 18px;
-      display: inline-block;
-    }
-
-    .legend-swatch--done {
-      background: var(--done-bg);
-      border: 1px solid var(--done-border);
-    }
-
-    .legend-swatch--bucket {
-      background: var(--bucket-bg);
-      border: 1px solid var(--bucket-border);
-    }
-
-    .legend-swatch--planned {
-      background: var(--planned-bg);
-      border: 1px solid var(--planned-border);
-    }
-
-    .map-key {
-      border: 1px solid var(--border);
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 10px 12px;
-      margin-bottom: 14px;
-      color: #334155;
-      font-size: 14px;
-    }
-
-    .map-key p {
-      margin: 0 0 4px;
-    }
-
-    .map-key p:last-child {
-      margin-bottom: 0;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      border: 1px solid #111;
-      border-radius: 50%;
-      flex: 0 0 12px;
-      display: inline-block;
-    }
-
-    .done-dot {
-      background: var(--done);
-    }
-
-    .work-dot {
-      background: var(--work);
-    }
-
-    .planned-dot {
-      background: var(--planned);
-    }
-
-    .note-dot {
-      background: #ffffff;
-    }
-
-    .tree-shell {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px;
-      overflow-x: auto;
-    }
-
-    .print-sheet {
-      width: min(100%, 210mm);
-      aspect-ratio: 210 / 297;
-      min-height: 0;
-      margin: 0 auto 12mm;
-      padding: 8mm;
-      overflow: hidden;
-      break-after: page;
-      page-break-after: always;
-    }
-
-    .print-sheet .tree-section {
-      zoom: 0.84;
-    }
-
-    .top-menu-sheet .tree-section {
-      margin-left: -26px;
-    }
-
-    .top-menu-sheet .home-branch {
-      grid-template-columns: 128px max-content;
-      column-gap: 0;
-    }
-
-    .top-menu-sheet .home-branch > .node-row {
-      justify-content: center;
-      justify-self: start;
-      min-width: 112px;
-      padding-left: 9px;
-      padding-right: 9px;
-      font-size: 13px;
-      text-align: center;
-      gap: 0;
-    }
-
-    .top-menu-sheet .home-branch > .node-row::after {
-      width: 44px;
-    }
-
-    .top-menu-sheet .home-branch > .node-row .status {
-      display: none;
-    }
-
-    .top-menu-sheet .home-branch > .node-row .node-label {
-      width: 100%;
-      text-align: center;
-    }
-
-    .top-menu-sheet .home-branch > .node-row .stacked-label span {
-      white-space: nowrap;
-    }
-
-    .top-menu-sheet .tree li:has(> ul > li > .bucket-grid) {
-      grid-template-columns: 170px max-content;
-      column-gap: 10px;
-    }
-
-    .top-menu-sheet .tree li:has(> ul > li > .bucket-grid) > .node-row::after {
-      width: calc(180px - 100%);
-    }
-
-    .top-menu-sheet .tree li:has(> ul > li > .bucket-grid .node-row:nth-child(3):nth-last-child(3)) > .node-row::after,
-    .top-menu-sheet .tree li:has(> ul > li > .bucket-grid .node-row:nth-child(2):nth-last-child(2)) > .node-row::after {
-      width: calc(210px - 100%);
-    }
-
-    .tree-title {
-      margin-bottom: 10px;
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    .sheet-header {
-      margin-bottom: 18px;
-    }
-
-    .note {
-      color: var(--note);
-      font-size: 13px;
-      margin-bottom: 16px;
-    }
-
-    .tree {
-      --left: 14px;
-      --pad-x: 54px;
-      --pad-y: 8px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .tree ul {
-      margin: 0;
-      padding: 0 0 0 var(--pad-x);
-      list-style: none;
-      position: relative;
-    }
-
-    .tree li {
-      position: relative;
-      padding: var(--pad-y) 0 var(--pad-y) 24px;
-      min-height: 28px;
-    }
-
-    .tree li::before {
-      content: "";
-      position: absolute;
-      left: 2px;
-      top: 0;
-      bottom: 0;
-      border-left: 1px solid var(--line);
-    }
-
-    .tree li:last-child::before {
-      bottom: 50%;
-    }
-
-    .tree li:first-child::before {
-      top: 50%;
-    }
-
-    .tree li::after {
-      content: "";
-      position: absolute;
-      left: 2px;
-      top: 50%;
-      width: 22px;
-      border-top: 1px solid var(--line);
-    }
-
-    .tree .node-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 15px;
-      max-width: 100%;
-      text-decoration: none;
-      color: var(--text);
-      background: var(--tree-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 7px 10px;
-    }
-
-    .tree .node-row:visited {
-      color: var(--text);
-    }
-
-    .tree .node-row:has(.status.done) {
-      background: var(--done-bg);
-      border-color: var(--done-border);
-      justify-content: center;
-      text-align: center;
-      gap: 0;
-    }
-
-    .tree .node-row:has(.status.planned) {
-      background: var(--planned-bg);
-      border-color: var(--planned-border);
-    }
-
-    .tree .node-label {
-      display: inline-block;
-      line-height: 1.2;
-    }
-
-    .tree .node-label.stacked-label {
-      text-align: center;
-    }
-
-    .tree .node-label.stacked-label span {
-      display: block;
-    }
-
-    .tree .node-row.leaf {
-      border-style: solid;
-      background: var(--bucket-bg);
-      border-color: var(--bucket-border);
-    }
-
-    .tree .node-row.planned-node {
-      background: var(--planned-bg);
-      border-color: var(--planned-border);
-      color: var(--text);
-    }
-
-    .tree .node-row.done-node {
-      background: var(--done-bg);
-      border-color: var(--done-border);
-      color: var(--text);
-      justify-content: center;
-      text-align: center;
-    }
-
-    .tree .node-row:has(.status.done) .status.done {
-      display: none;
-    }
-
-    .tree .node-row:has(.status.done) .node-label {
-      width: 100%;
-      text-align: center;
-    }
-
-    .home-branch {
-      display: grid;
-      grid-template-columns: max-content max-content;
-      column-gap: 32px;
-      align-items: center;
-      padding-left: 0;
-    }
-
-    .home-branch::before,
-    .home-branch::after {
-      display: none;
-    }
-
-    .home-branch > .node-row {
-      grid-column: 1;
-      grid-row: 1;
-      position: relative;
-    }
-
-    .home-branch > .node-row::after {
-      content: "";
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      width: 62px;
-      border-top: 1px solid var(--line);
-    }
-
-    .home-branch > ul {
-      grid-column: 2;
-      grid-row: 1;
-      margin: 0;
-      padding-left: 24px;
-    }
-
-    .home-branch > ul > li:first-child::before {
-      top: 50%;
-    }
-
-    .menu-branch {
-      display: grid;
-      grid-template-columns: max-content max-content;
-      column-gap: 44px;
-      align-items: center;
-    }
-
-    .menu-branch > .node-row {
-      grid-column: 1;
-      grid-row: 1;
-      position: relative;
-    }
-
-    .menu-branch > .node-row::after {
-      content: "";
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      width: 70px;
-      border-top: 1px solid var(--line);
-    }
-
-    .menu-branch > ul {
-      grid-column: 2;
-      grid-row: 1;
-      margin: 0;
-      padding-left: 24px;
-    }
-
-    .menu-branch > ul > li:first-child::before {
-      top: 50%;
-    }
-
-    .tree li:has(> ul > li > .bucket-grid) {
-      display: grid;
-      grid-template-columns: 170px max-content;
-      column-gap: 22px;
-      align-items: center;
-    }
-
-    .tree li:has(> ul > li > .bucket-grid)::after {
-      top: 50%;
-    }
-
-    .tree li:has(> ul > li > .bucket-grid) > .node-row {
-      grid-column: 1;
-      grid-row: 1;
-      position: relative;
-      width: max-content;
-      min-width: 0;
-    }
-
-    .tree li:has(> ul > li > .bucket-grid) > .node-row::after {
-      content: "";
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      width: calc(192px - 100%);
-      border-top: 1px solid var(--line);
-    }
-
-    .tree li:has(> ul > li > .bucket-grid) > ul {
-      grid-column: 2;
-      grid-row: 1;
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
-
-    .tree li:has(> ul > li > .bucket-grid) > ul > li {
-      padding: 0;
-    }
-
-    .tree li:has(> ul > li > .bucket-grid) > ul > li::before,
-    .tree li:has(> ul > li > .bucket-grid) > ul > li::after {
-      display: none;
-    }
-
-    .status {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1px solid #111;
-      flex: 0 0 10px;
-      margin-left: 2px;
-      display: inline-block;
-    }
-
-    .status.done {
-      background: transparent;
-      border-color: transparent;
-      width: 0;
-      height: 0;
-      margin: 0;
-      flex-basis: 0;
-    }
-
-    .status.work {
-      background: var(--work);
-    }
-
-    .status.planned {
-      background: transparent;
-      border-color: transparent;
-      width: 0;
-      height: 0;
-      margin: 0;
-      flex-basis: 0;
-    }
-
-    .status.note {
-      background: transparent;
-    }
-
-    .bucket-note {
-      color: var(--note);
-      margin-left: 4px;
-      font-size: 12px;
-    }
-
-    .tree-section {
-      margin-bottom: 18px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .tree-section:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .group-title {
-      font-size: 15px;
-      letter-spacing: 0.02em;
-      color: #334155;
-      text-transform: uppercase;
-      margin: 0 0 8px;
-      font-weight: 700;
-    }
-
-    .tree-note-caption {
-      font-size: 12px;
-      color: #64748b;
-      margin-top: 0;
-      margin-bottom: 6px;
-    }
-
-    .bucket-grid {
-      display: grid;
-      grid-template-columns: max-content;
-      gap: 6px;
-      margin-top: 4px;
-      margin-left: 0;
-      justify-content: start;
-      position: relative;
-      padding-left: 30px;
-    }
-
-    .leaf-small {
-      font-size: 14px;
-    }
-
-    .bucket-grid::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 16px;
-      bottom: 16px;
-      width: 1px;
-      background: var(--line);
-    }
-
-    .bucket-grid .node-row {
-      font-size: 13px;
-      padding: 6px 8px;
-      width: max-content;
-      max-width: 100%;
-      justify-self: start;
-      position: relative;
-    }
-
-    .bucket-grid > .node-row::before {
-      content: "";
-      position: absolute;
-      left: -30px;
-      top: calc(50% - 0.5px);
-      width: 30px;
-      height: 1px;
-      background: var(--line);
-    }
-
-    .tree li:has(> ul > li > .bucket-grid .node-row:nth-child(3):nth-last-child(3)) > .node-row::after {
-      width: calc(222px - 100%);
-    }
-
-    .tree li:has(> ul > li > .bucket-grid .node-row:nth-child(2):nth-last-child(2)) > .node-row::after {
-      width: calc(222px - 100%);
-    }
-
-    .bucket-grid > .node-row:nth-child(3):nth-last-child(3)::before {
-      display: none;
-    }
-
-    .bucket-grid > .node-row:nth-child(2):nth-last-child(2)::before {
-      display: none;
-    }
-
-    .bucket-grid--cattle-weighing::before {
-      bottom: 15px;
-    }
-
-    .bucket-grid--milking-machines::before {
-      top: 17px;
-    }
-
-    .bucket-branch-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 0;
-      width: max-content;
-    }
-
-    .bucket-branch-row > .node-row::before {
-      content: "";
-      position: absolute;
-      left: -30px;
-      top: calc(50% - 0.5px);
-      width: 30px;
-      height: 1px;
-      background: var(--line);
-    }
-
-    .sub-sub-list {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-left: 28px;
-      position: relative;
-    }
-
-    .sub-sub-list::before {
-      content: "";
-      position: absolute;
-      left: -28px;
-      top: 50%;
-      width: 28px;
-      border-top: 1px solid var(--line);
-    }
-
-    .sub-sub-list .node-row {
-      font-size: 12px;
-      padding: 5px 7px;
-    }
-
-    @page {
-      size: A4 portrait;
-      margin: 0;
-    }
-
-    @media print {
-      * {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Map | Clippers Ireland</title>
+  <link rel="stylesheet" href="./styles.css?v=final-polish-pass-26" />
+<style>
+      #clipper-parts .category-bucket-image--contain,
+      #clipper-blades .category-bucket-image--contain {
+        display: block !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        border-radius: 0 !important;
+        position: relative !important;
+        overflow: hidden !important;
       }
 
-      body {
-        background: white;
+      #clipper-parts .category-bucket-image--contain img,
+      #clipper-blades .category-bucket-image--contain img,
+      #clipper-blades .blade-graphic-item {
+        position: static !important;
+        inset: auto !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: cover !important;
+        object-position: 50% 72% !important;
+        transform: none !important;
+        filter: none !important;
+        image-rendering: auto !important;
       }
 
-      .page-wrap {
-        max-width: none;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+      #clipper-blades .blade-graphic-combo {
+        height: 100% !important;
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
       }
 
-      .topline,
-      .toolbar,
-      .note {
+      #clipper-sheep-cattle .category-bucket-image img {
+        object-fit: cover !important;
+        object-position: 50% 38% !important;
+      }
+
+      #clipper-parts.category-bucket:hover .category-bucket-image img,
+      #clipper-parts.category-bucket:focus-visible .category-bucket-image img,
+      #clipper-blades.category-bucket:hover .category-bucket-image img,
+      #clipper-blades.category-bucket:focus-visible .category-bucket-image img {
+        transform: none !important;
+      }
+
+      #clipper-parts .category-bucket-image--contain img {
+        object-position: 50% 70% !important;
+      }
+
+      @media (max-width: 760px) {
+        .clippers-page .category-hero.hero-text-template .category-hero-copy {
+          gap: 3px;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-breadcrumb {
+          margin: 0 0 4px;
+        }
+
+        .clippers-page .category-hero.hero-text-template h1 {
+          margin: 0 0 4px !important;
+          line-height: 1.02;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description {
+          gap: 0;
+          line-height: 1.28;
+          max-width: none;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description span:first-child,
+        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+          white-space: nowrap;
+        }
+
+        .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+          margin-top: 4px;
+        }
+
+        .clippers-page .trust-strip {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px 18px;
+        }
+
+        .clippers-page .trust-strip .about-stat {
+          display: grid;
+          grid-template-columns: 36px minmax(0, 1fr);
+          column-gap: 10px;
+          align-items: start;
+        }
+
+        .clippers-page .trust-strip .about-stat svg {
+          margin: 0;
+          justify-self: start;
+          align-self: start;
+        }
+
+        .clippers-page .trust-strip .about-stat > span {
+          margin: 0;
+          transform: none;
+          min-width: 0;
+        }
+
+        .clippers-page .clippers-trust-strip-inner {
+          display: contents;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat {
+          grid-template-columns: 36px minmax(0, 1fr);
+          column-gap: 10px;
+          align-items: center;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat svg {
+          width: 36px;
+          height: 36px;
+          justify-self: start;
+          align-self: center;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat strong {
+          font-size: clamp(16px, 4vw, 17px);
+          line-height: 1.12;
+        }
+
+        .clippers-page .clippers-trust-strip .about-stat small {
+          font-size: clamp(13px, 3.2vw, 14px);
+          line-height: 1.25;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .category-buckets .category-bucket-grid {
+          width: min(100%, calc(83.3333% - 3px));
+          margin-inline: auto;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+      }
+
+    </style>
+  
+<style>
+@media (min-width: 1024px) {
+  .clippers-page .clippers-trust-strip {
+    display: block !important;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto 8px;
+    padding: 14px 0;
+    border-radius: 0;
+    background: var(--surface);
+  }
+
+  .clippers-page .clippers-trust-strip-inner {
+    width: min(100%, calc(83.3333% - 3px));
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .clippers-page .clippers-trust-strip-inner .about-stat {
+    flex: 0 1 auto;
+    transform: translateX(45px);
+  }
+
+  .clippers-page .clippers-trust-strip-inner .about-stat svg {
+    display: block;
+    margin: 0;
+    align-self: center;
+  }
+
+  .clippers-page .clippers-trust-strip-inner .about-stat:first-child {
+    gap: 8px;
+  }
+}
+</style>
+<style>
+  @media (max-width: 760px) {
+    .clippers-page .category-hero.hero-text-template {
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 0 !important;
+      min-height: 0 !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      overflow: hidden !important;
+    }
+
+    .clippers-page .category-hero.hero-text-template::before {
+      display: none !important;
+    }
+
+    .clippers-page .category-hero.hero-text-template .category-hero-copy {
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+      order: 1;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      padding: 10px 18px 22px !important;
+      gap: 6px !important;
+      margin: 0 !important;
+      background: var(--nav-charcoal) !important;
+    }
+
+    .clippers-page .category-hero.hero-text-template .category-breadcrumb {
+      margin: 0 0 8px !important;
+      max-width: 100% !important;
+    }
+
+    .clippers-page .category-hero.hero-text-template h1 {
+      margin: 0 0 8px !important;
+      max-width: 100% !important;
+    }
+
+    .clippers-page .category-hero.hero-text-template .category-hero-description {
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      line-height: 1.28 !important;
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+    }
+
+    .clippers-page .category-hero.hero-text-template .category-hero-description span,
+    .clippers-page .category-hero.hero-text-template .category-hero-description .category-hero-description-accent {
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: normal !important;
+    }
+
+    .clippers-page .category-hero.hero-text-template .category-hero-media.hero-mobile-visual {
+      order: 2;
+      display: block !important;
+      width: 100% !important;
+      height: clamp(230px, 62vw, 330px) !important;
+      min-height: clamp(230px, 62vw, 330px) !important;
+      flex: 0 0 auto !important;
+      margin: 0 !important;
+      background-image: url("./assets/hero-kevin-bohan-clipping.jpg") !important;
+      background-size: cover !important;
+      background-position: 58% 64% !important;
+      background-repeat: no-repeat !important;
+    }
+
+    .template-shell-hero-copy-up {
+      transform: translateY(-28px);
+    }
+  }
+</style>
+    <style>
+      .site-footer--mobile-approved {
         display: none;
       }
 
-      .tree-shell.print-sheet {
-        width: 210mm;
-        height: 297mm;
-        min-height: 0;
-        margin: 0;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 8mm;
-        overflow: hidden;
-        break-after: page;
-        page-break-after: always;
+      @media (max-width: 760px) {
+        .site-footer--desktop-good {
+          display: none !important;
+        }
+
+        .site-footer--mobile-approved {
+          display: block !important;
+        }
+      }
+    </style>
+
+<style>
+    .customer-sitemap-page {
+      background: var(--page);
+      color: #1f3025;
+    }
+
+    .customer-sitemap-main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 56px;
+    }
+
+    .customer-sitemap-hero {
+      margin-bottom: 26px;
+      padding: 26px 28px;
+      background: var(--surface);
+      border: 1px solid rgba(31, 48, 37, 0.12);
+      border-radius: 18px;
+      box-shadow: none;
+    }
+
+    .customer-sitemap-breadcrumb {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #5e6c60;
+    }
+
+    .customer-sitemap-breadcrumb a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .customer-sitemap-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .customer-sitemap-hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.05;
+      color: #173f26;
+    }
+
+    .customer-sitemap-hero p {
+      margin: 0;
+      max-width: 70ch;
+      font-size: 17px;
+      line-height: 1.55;
+      color: #344238;
+    }
+
+    .customer-sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: 18px;
+    }
+
+    .customer-sitemap-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .customer-sitemap-card {
+      background: var(--surface);
+      border: 1px solid rgba(31, 48, 37, 0.12);
+      border-radius: 18px;
+      padding: 22px 20px 18px 34px;
+      box-shadow: none;
+    }
+
+    .customer-sitemap-card h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.15;
+      color: #173f26;
+    }
+
+    .customer-sitemap-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .customer-sitemap-card li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .customer-sitemap-card a {
+      color: #214a2f;
+      text-decoration: none;
+      line-height: 1.45;
+    }
+
+    .customer-sitemap-card a:hover {
+      text-decoration: underline;
+    }
+
+    .customer-sitemap-sublist {
+      margin-top: 8px !important;
+      margin-left: 16px !important;
+      padding-left: 14px !important;
+      border-left: 1px solid rgba(33, 74, 47, 0.14);
+      gap: 8px !important;
+    }
+
+    .customer-sitemap-sublist a {
+      color: #47614e;
+      font-size: 15px;
+    }
+
+    @media (max-width: 860px) {
+      .customer-sitemap-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .customer-sitemap-main {
+        width: min(100%, calc(100% - 24px));
+        padding: 20px 0 40px;
       }
 
-      .sheet-header {
-        margin-bottom: 6mm;
+      .customer-sitemap-hero,
+      .customer-sitemap-card {
+        border-radius: 14px;
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
-      .tree-title {
-        margin-bottom: 5mm;
-        font-size: 18pt;
+      .customer-sitemap-hero h1 {
+        font-size: clamp(28px, 8vw, 38px);
       }
 
-      .legend {
-        gap: 14mm;
-        margin-bottom: 6mm;
+      .customer-sitemap-hero p {
+        font-size: 16px;
       }
 
-      .legend-box {
-        font-size: 10pt;
-      }
-
-      .tree-section {
-        zoom: 0.84;
-      }
-
-      .tree-shell,
-      .tree li {
-        page-break-inside: avoid;
-      }
-
-      .node-row {
-        box-shadow: none;
+      .customer-sitemap-card h2 {
+        font-size: 20px;
       }
     }
   </style>
 </head>
-<body>
-  <div class="page-wrap">
-    <div class="topline">
-      <div>
-        <h1>Clippers Ireland - Visual Family Tree Map</h1>
-        <p>Green = Completed pages, Orange = Buckets/sections, Red = Planned pages</p>
-      </div>
-      <div class="toolbar">
-        <a class="btn" href="./index.html">Open Home</a>
-        <a class="btn" href="#" onclick="window.print();return false;">Print Site Map</a>
-      </div>
-    </div>
-
-    <div class="tree-shell print-sheet top-menu-sheet">
-      <div class="sheet-header">
-        <h2 class="tree-title">Site Tree / Top Menu Bar</h2>
-
-        <div class="legend">
-          <div class="legend-box"><span class="legend-swatch legend-swatch--done"></span>Completed</div>
-          <div class="legend-box"><span class="legend-swatch legend-swatch--bucket"></span>Category made, page not created yet</div>
-          <div class="legend-box"><span class="legend-swatch legend-swatch--planned"></span>Category / page not created yet</div>
+  <body class="home-page clippers-page customer-sitemap-page">
+  <!-- LOCKED HEADER/MENU - DO NOT EDIT -->
+  <header class="site-header">
+      <div class="main-header">
+        <div class="brand-lockup">
+          <a class="brand" href="./index.html" aria-label="Clippers Ireland home">
+            <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+          </a>
+          <span class="brand-divider" aria-hidden="true"></span>
+          <span class="ergopro-lockup">
+            <span>home of</span>
+            <img src="./assets/logo.png" alt="ErgoPro" />
+          </span>
         </div>
-      </div>
 
-      <div class="tree-section">
-        <ul class="tree">
-          <li class="home-branch">
-            <a class="node-row" href="./index.html">
-              <span class="status done" aria-hidden="true"></span>
-              <span class="node-label stacked-label"><span>Home Page</span><span>Top Menu Bar</span></span>
-            </a>
-            <ul>
-                  <li>
-                    <a class="node-row" href="./clippers.html">
-                      <span class="status done"></span>
-                      <span class="node-label">Clippers</span>
-                    </a>
-                    <ul class="tree">
-                      <li>
-                        <div class="bucket-grid">
-                          <a class="node-row leaf leaf-small done-node" href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
-                          <a class="node-row leaf leaf-small done-node" href="./horse-clippers.html">Horse Clippers</a>
-                          <a class="node-row leaf leaf-small done-node" href="./dog-clippers.html">Dog Clippers</a>
-                          <a class="node-row leaf leaf-small done-node" href="./clipper-blades.html">Clipper Blades</a>
-                          <div class="bucket-branch-row">
-                            <a class="node-row leaf leaf-small done-node" href="./clipper-parts.html">Clipper Parts</a>
-                            <span class="sub-sub-list" aria-label="Planned Clipper Parts pages">
-                              <span class="node-row leaf leaf-small planned-node">Cara</span>
-                              <span class="node-row leaf leaf-small planned-node">Master</span>
-                              <span class="node-row leaf leaf-small planned-node">Hush</span>
-                              <span class="node-row leaf leaf-small planned-node">Ovis</span>
-                              <span class="node-row leaf leaf-small planned-node">Handy II</span>
-                              <span class="node-row leaf leaf-small planned-node">Older Models</span>
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="node-row" href="./cattle-weighing.html">
-                      <span class="status done"></span>
-                      <span class="node-label">Cattle Weighing</span>
-                    </a>
-                    <ul class="tree">
-                      <li>
-                        <div class="bucket-grid bucket-grid--cattle-weighing">
-                          <a class="node-row leaf leaf-small done-node" href="./ergopro-standard-weighing-system.html">Standard</a>
-                          <a class="node-row leaf leaf-small done-node" href="./weighrite-smart-weighing-system.html">WeighRite</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="node-row" href="./milking-machines.html">
-                      <span class="status done"></span>
-                      <span class="node-label">Milking Machines</span>
-                    </a>
-                    <ul class="tree">
-                      <li>
-                        <div class="bucket-grid bucket-grid--milking-machines">
-                          <a class="node-row leaf leaf-small done-node" href="./cow-milking-machines.html">Cow Milking Machines</a>
-                          <a class="node-row leaf leaf-small done-node" href="./goat-milking-machines.html">Goat Milking Machines</a>
-                          <a class="node-row leaf leaf-small done-node" href="./sheep-milking-machines.html">Sheep Milking Machines</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="node-row" href="./electric-fencing.html">
-                      <span class="status done"></span>
-                      <span class="node-label">Electric Fencing</span>
-                    </a>
-                    <ul class="tree">
-                      <li>
-                        <div class="bucket-grid">
-                          <a class="node-row leaf leaf-small done-node" href="./electric-fencing-mains.html">Mains Fencers</a>
-                          <a class="node-row leaf leaf-small done-node" href="./electric-fencing-battery.html">Battery Fencers</a>
-                          <a class="node-row leaf leaf-small done-node" href="./electric-fencing-solar.html">Solar Fencers</a>
-                          <a class="node-row leaf leaf-small done-node" href="./electric-fencing-accessories.html">Accessories</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="node-row" href="./all-farming.html">
-                      <span class="status done"></span>
-                      <span class="node-label">All Farming</span>
-                    </a>
-                    <ul class="tree">
-                      <li>
-                        <div class="bucket-grid">
-                          <a class="node-row leaf leaf-small done-node" href="./clippers.html">Clippers</a>
-                          <a class="node-row leaf leaf-small done-node" href="./cattle-weighing.html">Cattle Weighing</a>
-                          <a class="node-row leaf leaf-small done-node" href="./milking-machines.html">Milking Machines</a>
-                          <a class="node-row leaf leaf-small done-node" href="./dairy-products.html">Dairy Products</a>
-                          <a class="node-row leaf leaf-small done-node" href="./brushes.html">Brushes</a>
-                          <a class="node-row leaf leaf-small done-node" href="./electric-fencing.html">Electric Fencing</a>
-                          <a class="node-row leaf leaf-small done-node" href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
-                          <a class="node-row leaf leaf-small done-node" href="./blowers.html">Blowers</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="node-row" href="./apparel.html">
-                      <span class="status done"></span>
-                      <span class="node-label">Apparel</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="node-row" href="./parts-repairs.html">
-                      <span class="status done"></span>
-                      <span class="node-label">Parts &amp; Repairs</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="node-row" href="./tips-guides.html">
-                      <span class="status done"></span>
-                      <span class="node-label">Tips &amp; Guides</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="node-row" href="./shows.html">
-                      <span class="status done"></span>
-                      <span class="node-label">Shows</span>
-                    </a>
-                  </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
+        <form class="search" role="search">
+          <label class="sr-only" for="site-search">Search products</label>
+          <input id="site-search" name="q" type="search" placeholder="Search the store" />
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M16.5 16.5L21 21" />
+            </svg>
+          </button>
+        </form>
 
-    <div class="tree-shell print-sheet">
-      <div class="sheet-header">
-        <h2 class="tree-title">Site Tree / Shop by Animal Categories</h2>
-
-        <div class="legend">
-          <div class="legend-box"><span class="legend-swatch legend-swatch--done"></span>Completed</div>
-          <div class="legend-box"><span class="legend-swatch legend-swatch--bucket"></span>Category made, page not created yet</div>
-          <div class="legend-box"><span class="legend-swatch legend-swatch--planned"></span>Category / page not created yet</div>
-        </div>
-      </div>
-
-      <div class="tree-section">
-        <h3 class="group-title">Shop by Animal Categories</h3>
-        <ul class="tree">
-          <li>
-            <span class="node-row">Shop-by category pages</span>
-            <ul>
-              <li>
-                <a class="node-row" href="./shop-by-cattle.html">
-                  <span class="status done"></span>
-                  <span class="node-label">Shop by Cattle</span>
-                  <span class="bucket-note">(all-farming style buckets)</span>
-                </a>
-                <ul class="tree">
-                  <li>
-                    <div class="bucket-grid">
-                      <a class="node-row leaf leaf-small" href="./clippers.html">Clippers</a>
-                      <a class="node-row leaf leaf-small" href="./cattle-weighing.html">Cattle Weighing</a>
-                      <a class="node-row leaf leaf-small" href="./milking-machines.html">Milking Machines</a>
-                      <a class="node-row leaf leaf-small" href="./parts-repairs.html">Dairy Products</a>
-                      <a class="node-row leaf leaf-small" href="./all-farming.html#all-farming-featured-title">Brushes</a>
-                      <a class="node-row leaf leaf-small" href="./electric-fencing.html">Electric Fencing</a>
-                      <a class="node-row leaf leaf-small" href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-                      <a class="node-row leaf leaf-small" href="./electric-fencing.html">Blowers</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="node-row" href="./shop-by-horse.html">
-                  <span class="status done"></span>
-                  <span class="node-label">Shop by Horse</span>
-                </a>
-                <ul class="tree">
-                  <li>
-                    <div class="bucket-grid">
-                      <span class="node-row leaf leaf-small">Horse Clippers</span>
-                      <span class="node-row leaf leaf-small">Clipper Blades</span>
-                      <span class="node-row leaf leaf-small">Clipper Parts</span>
-                      <span class="node-row leaf leaf-small">Electric Fencing</span>
-                      <span class="node-row leaf leaf-small">Blowers</span>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="node-row" href="./shop-by-sheep.html">
-                  <span class="status done"></span>
-                  <span class="node-label">Shop by Sheep</span>
-                </a>
-                <ul class="tree">
-                  <li>
-                    <div class="bucket-grid">
-                      <span class="node-row leaf leaf-small">Sheep &amp; Cattle Clippers</span>
-                      <span class="node-row leaf leaf-small">Clipper Blades</span>
-                      <span class="node-row leaf leaf-small">Clipper Parts</span>
-                      <span class="node-row leaf leaf-small">Milking Machines</span>
-                      <span class="node-row leaf leaf-small">Electric Fencing</span>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="node-row" href="./shop-by-dog.html">
-                  <span class="status done"></span>
-                  <span class="node-label">Shop by Dog</span>
-                </a>
-                <ul class="tree">
-                  <li>
-                    <div class="bucket-grid">
-                      <span class="node-row leaf leaf-small">Dog Clippers</span>
-                      <span class="node-row leaf leaf-small">Clipper Blades</span>
-                      <span class="node-row leaf leaf-small">Clipper Parts</span>
-                      <span class="node-row leaf leaf-small">Blowers</span>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tree-shell print-sheet">
-      <div class="sheet-header">
-        <h2 class="tree-title">Site Tree / Support &amp; Reference</h2>
-
-        <div class="legend">
-          <div class="legend-box"><span class="legend-swatch legend-swatch--done"></span>Completed</div>
-          <div class="legend-box"><span class="legend-swatch legend-swatch--bucket"></span>Category made, page not created yet</div>
-          <div class="legend-box"><span class="legend-swatch legend-swatch--planned"></span>Category / page not created yet</div>
-        </div>
-      </div>
-
-      <div class="tree-section">
-        <h3 class="group-title">Support / Reference</h3>
-        <ul class="tree">
-          <li>
-            <a class="node-row" href="./apparel.html">
-              <span class="status done"></span>
-              <span class="node-label">Apparel</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./tips-guides.html">
-              <span class="status done"></span>
-              <span class="node-label">Tips &amp; Guides</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./shows.html">
-              <span class="status done"></span>
-              <span class="node-label">Shows</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./about-us.html">
-              <span class="status done"></span>
-              <span class="node-label">About Us</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./endorsers.html">
-              <span class="status done"></span>
-              <span class="node-label">Endorsers</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./charities.html">
-              <span class="status done"></span>
-              <span class="node-label">Charities</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./delivery-and-returns.html">
-              <span class="status done"></span>
-              <span class="node-label">Delivery &amp; Returns</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./privacy-policy.html">
-              <span class="status done"></span>
-              <span class="node-label">Privacy Policy</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./terms-and-conditions.html">
-              <span class="status done"></span>
-              <span class="node-label">Terms &amp; Conditions</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./contact-us.html">
-              <span class="status done"></span>
-              <span class="node-label">Contact Us</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./weee-recycling.html">
-              <span class="status done"></span>
-              <span class="node-label">WEEE Recycling</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./my-account.html">
-              <span class="status done"></span>
-              <span class="node-label">My Account</span>
-            </a>
-            <ul class="tree">
-              <li>
-                <a class="node-row leaf" href="./create-account.html">
-                  <span class="status done"></span>
-                  <span class="node-label">Create Account</span>
-                </a>
-              </li>
-              <li>
-                <a class="node-row leaf" href="./account-dashboard.html">
-                  <span class="status done"></span>
-                  <span class="node-label">Account Dashboard</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="node-row" href="./weighrite-smart-weighing-system.html">
-              <span class="status done"></span>
-              <span class="node-label">WeighRite Smart Weighing System</span>
-            </a>
-          </li>
-          <li>
-            <a class="node-row" href="./ergopro-standard-weighing-system.html">
-              <span class="status done"></span>
-              <span class="node-label">ErgoPro Standard Weighing System</span>
-            </a>
-          </li>
-          <li>
-            <span class="node-row" style="border-style: dashed; background: #fbfdfb;">
-              <span class="status work"></span>
-              <span class="node-label">Clippers Latest</span>
-              <span class="bucket-note">(under construction)</span>
+        <div class="header-actions" aria-label="Header actions">
+          <a class="phone-link" href="tel:+353214874441">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" />
+            </svg>
+            <span>
+              <small>Need help? Call us</small>
+              <strong>021 487 4441</strong>
             </span>
+          </a>
+
+          <a class="icon-link" href="./my-account.html" aria-label="Account">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c1.1-4.2 4-6.4 8-6.4s6.9 2.2 8 6.4" />
+            </svg>
+            <span>Account</span>
+          </a>
+
+          <a class="cart-link" href="#" aria-label="Cart with 0 items">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H7" />
+              <circle cx="10" cy="21" r="1.5" />
+              <circle cx="18" cy="21" r="1.5" />
+            </svg>
+            <span class="cart-count">0</span>
+          </a>
+
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="category-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="category-nav" id="category-nav" aria-label="Product categories">
+        <div class="category-item category-item--clippers">
+          <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Clippers subcategories">
+            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
+            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
+            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
+            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
+            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+          </div>
+        </div>
+        <div class="category-item category-item--cattle-weighing">
+          <a href="./cattle-weighing.html">Cattle Weighing</a>
+</div>
+        <div class="category-item category-item--milking-machines">
+          <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Milking Machines links">
+            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
+            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
+            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+          
+          </div>
+
+        </div>
+        <div class="category-item category-item--electric-fencing">
+          <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
+          <div class="category-dropdown" aria-label="Electric Fencing links">
+            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
+            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+          </div>
+
+
+        </div>
+        <div class="category-item category-item--all-farming">
+          <a href="./all-farming.html">All Farming <span aria-hidden="true">⌄</span></a>
+                    <div class="category-dropdown" aria-label="All Farming links">
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="./milking-machines.html">Milking Machines</a>
+            <a href="./parts-repairs.html">Dairy Products</a>
+            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
+            <a href="./electric-fencing.html">Blowers</a>
+          </div>
+
+
+        </div>
+        <a class="category-nav-link" href="./apparel.html">Apparel</a>
+        <div class="category-item category-item--parts-repairs">
+          <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+</div>
+        <a href="./tips-guides.html">Tips &amp; Guides</a>
+        <a href="./shows.html">Shows</a>
+      </nav>
+    </header>
+
+      <!-- LOCKED HERO STRUCTURE - ONLY REPLACE TEXT PLACEHOLDERS -->
+  <main class="customer-sitemap-main">
+    <section class="customer-sitemap-hero" aria-labelledby="site-map-title">
+      <p class="customer-sitemap-breadcrumb"><a href="./index.html">Home</a> / <span>Site Map</span></p>
+      <h1 id="site-map-title">Site Map</h1>
+      <p>Browse the main sections of Clippers Ireland and jump directly to the page you need.</p>
+    </section>
+
+    <section class="customer-sitemap-grid" aria-label="Site sections">
+      <article class="customer-sitemap-card">
+        <h2>Shop Categories</h2>
+        <ul>
+          <li>
+            <a href="./clippers.html">Clippers</a>
+            <ul class="customer-sitemap-sublist">
+              <li><a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a></li>
+              <li><a href="./horse-clippers.html">Horse Clippers</a></li>
+              <li><a href="./dog-clippers.html">Dog Clippers</a></li>
+              <li><a href="./clipper-blades.html">Clipper Blades</a></li>
+              <li><a href="./clipper-parts.html">Clipper Parts</a></li>
+            </ul>
           </li>
           <li>
-            <a class="node-row" href="./TEMPLATE-approved-subpage-shell.html">
-              <span class="status note"></span>
-              <span class="node-label">Template Approved Subpage Shell</span>
-            </a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <ul class="customer-sitemap-sublist">
+              <li><a href="./ergopro-standard-weighing-system.html">Standard</a></li>
+              <li><a href="./weighrite-smart-weighing-system.html">WeighRite</a></li>
+            </ul>
           </li>
+          <li>
+            <a href="./milking-machines.html">Milking Machines</a>
+            <ul class="customer-sitemap-sublist">
+              <li><a href="./cow-milking-machines.html">Cow Milking Machines</a></li>
+              <li><a href="./goat-milking-machines.html">Goat Milking Machines</a></li>
+              <li><a href="./sheep-milking-machines.html">Sheep Milking Machines</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <ul class="customer-sitemap-sublist">
+              <li><a href="./electric-fencing-mains.html">Mains Fencers</a></li>
+              <li><a href="./electric-fencing-battery.html">Battery Fencers</a></li>
+              <li><a href="./electric-fencing-solar.html">Solar Fencers</a></li>
+              <li><a href="./electric-fencing-accessories.html">Accessories</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./all-farming.html">All Farming</a>
+            <ul class="customer-sitemap-sublist">
+              <li><a href="./clippers.html">Clippers</a></li>
+              <li><a href="./cattle-weighing.html">Cattle Weighing</a></li>
+              <li><a href="./milking-machines.html">Milking Machines</a></li>
+              <li><a href="./dairy-products.html">Dairy Products</a></li>
+              <li><a href="./brushes.html">Brushes</a></li>
+              <li><a href="./electric-fencing.html">Electric Fencing</a></li>
+              <li><a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a></li>
+              <li><a href="./blowers.html">Blowers</a></li>
+            </ul>
+          </li>
+          <li><a href="./apparel.html">Apparel</a></li>
         </ul>
+      </article>
+
+      <div class="customer-sitemap-stack">
+      <article class="customer-sitemap-card">
+        <h2>Shop by Animal</h2>
+        <ul>
+          <li><a href="./shop-by-cattle.html">Shop by Cattle</a></li>
+          <li><a href="./shop-by-horse.html">Shop by Horse</a></li>
+          <li><a href="./shop-by-sheep.html">Shop by Sheep</a></li>
+          <li><a href="./shop-by-dog.html">Shop by Dog</a></li>
+        </ul>
+      </article>
+
+      <article class="customer-sitemap-card">
+        <h2>More from Clippers Ireland</h2>
+        <ul>
+          <li><a href="./parts-repairs.html">Parts &amp; Repairs</a></li>
+          <li><a href="./tips-guides.html">Tips &amp; Guides</a></li>
+          <li><a href="./shows.html">Shows</a></li>
+          <li><a href="./endorsers.html">Endorsers</a></li>
+          <li><a href="./charities.html">Charities</a></li>
+          <li><a href="./my-account.html">My Account</a></li>
+          <li><a href="./create-account.html">Sign in / Create account</a></li>
+          <li><a href="./account-dashboard.html">Account Dashboard</a></li>
+        </ul>
+      </article>
+
+      <article class="customer-sitemap-card">
+        <h2>Customer Information</h2>
+        <ul>
+          <li><a href="./about-us.html">About Us</a></li>
+          <li><a href="./contact-us.html">Contact Us</a></li>
+          <li><a href="./delivery-and-returns.html">Delivery &amp; Returns</a></li>
+          <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="./terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a href="./weee-recycling.html">WEEE Recycling</a></li>
+        </ul>
+      </article>
       </div>
-    </div>
-  </div>
-</body>
+    </section>
+  </main>
+  <!-- LOCKED FOOTER - DO NOT EDIT -->
+        <!-- Mobile-only approved Clippers footer -->
+<footer class="site-footer site-footer--mobile-approved" aria-label="Mobile footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-brand-lockup">
+            <a class="footer-logo" href="./index.html" aria-label="Clippers Ireland home">
+              <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+            </a>
+            <span class="footer-brand-divider" aria-hidden="true"></span>
+            <span class="footer-ergopro-lockup">
+              <span>home of</span>
+              <img src="./assets/logo.png" alt="ErgoPro" />
+            </span>
+          </div>
+          <div class="footer-contact">
+            <a href="tel:+353214874441">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" /></svg>
+              021 487 4441
+            </a>
+            <a href="mailto:sales@clippersireland.ie">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" /><path d="M4 7l8 6 8-6" /></svg>
+              sales@clippersireland.ie
+            </a>
+            <span class="footer-address" style="display: flex; align-items: flex-start; gap: 10px; color: rgba(245, 248, 240, 0.72); font-size: 0.92em; font-weight: inherit; line-height: 1.35;">
+              <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
+              <span>Clippers Ireland, The Little Farm,<br>
+              Knockananig, Fermoy,<br>
+              Co Cork, P61EP80</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="footer-links-row">
+          <nav class="footer-links" aria-label="Shop by animal links">
+            <p class="footer-subheading">Shop by animal</p>
+            <a href="./shop-by-cattle.html">Cattle</a>
+            <a href="./shop-by-sheep.html">Sheep</a>
+            <a href="./shop-by-horse.html">Horse</a>
+            <a href="./shop-by-dog.html">Dog</a>
+          </nav>
+
+          <nav class="footer-links footer-links--browse" aria-label="Browse categories links">
+            <p class="footer-subheading">Browse Categories</p>
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="./milking-machines.html">Milking Machines</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./all-farming.html">All Farming</a>
+            <a href="./apparel.html">Apparel</a>
+          </nav>
+
+          <nav class="footer-links footer-links--read" aria-label="Read links">
+            <p class="footer-subheading">Read</p>
+            <a href="./endorsers.html">Endorsers</a>
+            <a href="./charities.html">Charities</a>
+            <a href="./tips-guides.html">Tip &amp; Guides</a>
+          </nav>
+
+          <nav class="footer-links footer-links--support" aria-label="Support links">
+            <p class="footer-subheading">Support</p>
+            <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+            <a href="./parts-repairs.html#warranty">Warranty</a>
+            <a href="./delivery-and-returns.html">Delivery &amp; Returns</a>
+            <a href="./contact-us.html">Contact us</a>
+          </nav>
+
+          <nav class="footer-links footer-links--pages" aria-label="Pages">
+            <p class="footer-subheading">Pages</p>
+            <a href="./weee-recycling.html">WEEE Recycling</a>
+            <a href="./about-us.html">About us</a>
+            <a href="./shows.html">Shows</a>
+            <a href="./my-account.html">My Account</a>
+            <a href="./site-map.html" aria-current="page">Sitemap</a>
+          </nav>
+        </div>
+
+        <div class="footer-newsletter-wrap">
+          <h2>Stay In The Loop</h2>
+          <div class="footer-newsletter">
+            <p class="footer-newsletter-text">
+              <span class="newsletter-text-desktop">Get product updates and offers from Clippers Ireland.</span>
+              <span class="newsletter-text-mobile">Get updates and offers from Clippers Ireland.</span>
+            </p>
+            <div class="newsletter-signup-row">
+              <div class="newsletter-signup">
+                <h3>Email Newsletter</h3>
+                <form class="footer-form footer-form--compact" data-newsletter-type="email">
+                  <label class="sr-only" for="footer-email-mobile">Email address</label>
+                  <input id="footer-email-mobile" name="email" type="email" autocomplete="email" required placeholder="Email address" />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+              <div class="newsletter-signup">
+                <h3>WhatsApp Offer Mailer</h3>
+                <form class="footer-form footer-form--compact" data-newsletter-type="whatsapp">
+                  <label class="sr-only" for="footer-whatsapp-mobile">Phone number</label>
+                  <input id="footer-whatsapp-mobile" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="Phone number" />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="footer-social" aria-label="Social links">
+            <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z" /></svg>
+            </a>
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1" /></svg>
+            </a>
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9c.1-2 1.5-3.4 3.5-3.5 3.5-.3 7.5-.3 11 0C19.5 5.6 20.9 7 21 9c.2 2 .2 4 0 6-.1 2-1.5 3.4-3.5 3.5-3.5.3-7.5.3-11 0C4.5 18.4 3.1 17 3 15c-.2-2-.2-4 0-6z" /><path d="M10 9l5 3-5 3z" /></svg>
+            </a>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Clippers Ireland. All rights reserved.</p>
+        <div>
+          <a href="./index.html">Privacy Policy</a>
+          <a href="./index.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End mobile-only approved Clippers footer -->
+<footer class="site-footer site-footer--desktop-good">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-brand-lockup">
+            <a class="footer-logo" href="./index.html" aria-label="Clippers Ireland home">
+              <img src="./assets/clippers-ireland-logo.png" alt="Clippers Ireland" />
+            </a>
+            <span class="footer-brand-divider" aria-hidden="true"></span>
+            <span class="footer-ergopro-lockup">
+              <span>home of</span>
+              <img src="./assets/logo.png" alt="ErgoPro" />
+            </span>
+          </div>
+          <div class="footer-contact">
+            <span style="display: flex; align-items: center; gap: 18px; flex-wrap: nowrap;">
+              <a href="tel:+353214874441" style="font-size: 16px;">
+                <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px;"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.1 19.1 0 0 1-5.9-5.9 19.7 19.7 0 0 1-3.1-8.6A2 2 0 0 1 4.2 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.2 9.9a16 16 0 0 0 5.9 5.9l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2.1z" /></svg>
+                021 487 4441
+              </a>
+              <a href="mailto:sales@clippersireland.ie" style="font-size: 16px;">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" /><path d="M4 7l8 6 8-6" /></svg>
+                sales@clippersireland.ie
+              </a>
+            </span>
+            <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
+              <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="footer-links-row" style="display: grid; grid-template-columns: repeat(5, max-content); justify-content: space-between; column-gap: 34px; min-width: 720px; transform: translateX(24px);">
+          <nav class="footer-links" aria-label="Shop by animal links">
+            <p class="footer-subheading">Shop by animal</p>
+            <a href="./shop-by-cattle.html">Cattle</a>
+            <a href="./shop-by-sheep.html">Sheep</a>
+            <a href="./shop-by-horse.html">Horse</a>
+            <a href="./shop-by-dog.html">Dog</a>
+          </nav>
+
+          <nav class="footer-links footer-links--browse" aria-label="Browse categories links">
+            <p class="footer-subheading">Browse Categories</p>
+            <a href="./clippers.html">Clippers</a>
+            <a href="./cattle-weighing.html">Cattle Weighing</a>
+            <a href="./milking-machines.html">Milking Machines</a>
+            <a href="./electric-fencing.html">Electric Fencing</a>
+            <a href="./all-farming.html">All Farming</a>
+            <a href="./apparel.html">Apparel</a>
+          </nav>
+
+          <nav class="footer-links footer-links--read" aria-label="Read links" style="transform: translateX(-22px);">
+            <p class="footer-subheading">Read</p>
+            <a href="./endorsers.html">Endorsers</a>
+            <a href="./charities.html">Charities</a>
+            <a href="./tips-guides.html">Tip &amp; Guides</a>
+          </nav>
+
+          <nav class="footer-links footer-links--support" aria-label="Support links" style="transform: translateX(-40px);">
+            <p class="footer-subheading">Support</p>
+            <a href="./parts-repairs.html">Parts &amp; Repairs</a>
+            <a href="./parts-repairs.html#warranty">Warranty</a>
+            <a href="./delivery-and-returns.html">Delivery &amp; Returns</a>
+            <a href="./contact-us.html">Contact us</a>
+          </nav>
+
+          <nav class="footer-links footer-links--pages" aria-label="Pages" style="transform: translateX(-52px);">
+            <p class="footer-subheading">Pages</p>
+            <a href="./weee-recycling.html">WEEE Recycling</a>
+            <a href="./about-us.html">About us</a>
+            <a href="./shows.html">Shows</a>
+            <a href="./my-account.html">My Account</a>
+            <a href="./site-map.html">Sitemap</a>
+          </nav>
+        </div>
+
+        <div class="footer-newsletter-wrap">
+          <h2>Stay In The Loop</h2>
+          <div class="footer-newsletter">
+            <p class="footer-newsletter-text">
+              <span class="newsletter-text-desktop">Get product updates and offers from Clippers Ireland.</span>
+              <span class="newsletter-text-mobile">Get updates and offers from Clippers Ireland.</span>
+            </p>
+            <div class="newsletter-signup-row">
+              <div class="newsletter-signup">
+                <h3>Email Newsletter</h3>
+                <form class="footer-form footer-form--compact" data-newsletter-type="email">
+                  <label class="sr-only" for="footer-email">Email address</label>
+                  <input id="footer-email" name="email" type="email" autocomplete="email" required placeholder="Email address" />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+              <div class="newsletter-signup">
+                <h3>WhatsApp Offer Mailer</h3>
+                <form class="footer-form footer-form--compact" data-newsletter-type="whatsapp">
+                  <label class="sr-only" for="footer-whatsapp">Phone number</label>
+                  <input id="footer-whatsapp" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="Phone number" />
+                  <button type="submit">Sign Up</button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="footer-social" aria-label="Social links">
+            <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1z" /></svg>
+            </a>
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1" /></svg>
+            </a>
+            <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9c.1-2 1.5-3.4 3.5-3.5 3.5-.3 7.5-.3 11 0C19.5 5.6 20.9 7 21 9c.2 2 .2 4 0 6-.1 2-1.5 3.4-3.5 3.5-3.5.3-7.5.3-11 0C4.5 18.4 3.1 17 3 15c-.2-2-.2-4 0-6z" /><path d="M10 9l5 3-5 3z" /></svg>
+            </a>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Clippers Ireland. All rights reserved.</p>
+        <div>
+          <a href="./index.html">Privacy Policy</a>
+          <a href="./index.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <aside class="chat-widget" aria-label="Chat support preview">
+      <div class="chat-widget-card">
+        <div class="chat-widget-header">
+          <span class="chat-widget-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+          </span>
+          <span>
+            <strong>Need help?</strong>
+            <small>Chat with Clippers Ireland</small>
+          </span>
+        </div>
+        <p>Questions about clippers, parts or servicing? We are here to help.</p>
+        <div class="chat-widget-input">
+          <span>Type your message...</span>
+          <button type="button" aria-label="Send preview message">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-5 16-3-7z" /></svg>
+          </button>
+        </div>
+      </div>
+      <button class="chat-widget-button" type="button" aria-label="Open chat preview">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /></svg>
+      </button>
+    </aside>
+
+    <script src="./script.js?v=final-polish-pass-9"></script>
+  </body>
 </html>

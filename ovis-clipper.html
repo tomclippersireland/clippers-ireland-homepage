@@ -277,7 +277,7 @@
     }
 
     .product-template-shell .product-section {
-      border-top: 1px solid #dbe6d9;
+      border-top: 1px solid #e2ebe0;
       margin-top: 30px;
       padding-top: 24px;
     }
@@ -295,36 +295,29 @@
       align-items: start;
     }
 
-    .product-buying-media {
-      border: 1px solid #d9e4d8;
-      border-radius: 14px;
-      background: #f5f9f4;
-      padding: 18px;
-      box-sizing: border-box;
+    .product-buying-left {
+      display: grid;
+      gap: 10px;
     }
 
-    .product-main-badge {
-      display: inline-block;
-      margin-bottom: 12px;
-      background: #234a26;
-      color: #fff;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      text-transform: uppercase;
+    .product-buying-media {
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+      padding: 0;
+      box-sizing: border-box;
+      overflow: visible;
     }
 
     .product-main-image-wrap {
       border-radius: 12px;
       background: #fff;
-      border: 1px solid #dce7dd;
-      min-height: 286px;
+      border: 1px solid #e1ebdf;
+      min-height: 272px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 18px;
+      padding: 14px;
     }
 
     .product-main-image-wrap img {
@@ -336,44 +329,214 @@
 
     .product-gallery-thumbs {
       margin-top: 12px;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
       gap: 10px;
+      padding-bottom: 4px;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+      scrollbar-color: #c7d3c8 transparent;
     }
 
     .product-thumb {
-      min-height: 58px;
+      flex: 0 0 25%;
+      aspect-ratio: 1 / 1;
       border-radius: 10px;
-      border: 1px solid #d9e4d8;
+      border: 1px solid #e1ebdf;
       background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px;
-      font-size: 11px;
-      color: #65746a;
-      text-align: center;
+      overflow: hidden;
+      box-sizing: border-box;
+      scroll-snap-align: start;
+    }
+
+    .product-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-thumb--video {
+      position: relative;
+    }
+
+    .product-thumb--video::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 26px;
+      height: 26px;
+      margin-left: -13px;
+      margin-top: -13px;
+      border-radius: 50%;
+      background: rgba(30, 35, 33, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .product-thumb--video::before {
+      content: "▶";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-38%, -50%);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 600;
+      z-index: 3;
+      pointer-events: none;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    }
+
+    .product-thumb--contain img {
+      object-fit: contain;
+      padding: 8px;
       box-sizing: border-box;
     }
 
     .product-payment-note {
-      margin: 12px 0 0;
-      border: 1px solid #d9e4d8;
+      width: min(100%, 390px);
+      margin: 0;
+      border: 0;
       border-radius: 10px;
-      background: #fffdf8;
-      padding: 10px 12px;
+      background: transparent;
+      padding: 4px 0;
       color: #3e4c43;
       font-size: 13px;
       line-height: 1.42;
+      box-sizing: border-box;
     }
 
-    .product-info h2 {
-      margin: 0 0 10px;
+    .product-payment-note strong {
+      display: block;
       color: #1f2f24;
-      font-size: clamp(26px, 2.2vw, 34px);
+      font-size: 13px;
+      line-height: 1.2;
+      margin-bottom: 3px;
+      padding-left: 20px;
+      font-weight: 400;
+    }
+
+    @media (min-width: 961px) {
+      .product-purchase-row .product-payment-note strong {
+        transform: translateY(3px);
+      }
+    }
+
+    .payment-methods-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    }
+
+    .product-info .product-payment-note {
+      margin-top: 8px;
+      margin-bottom: 14px;
+    }
+
+    .product-purchase-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 14px;
+    }
+
+    .product-purchase-row .product-cta-row {
+      margin: 0;
+      flex: 0 0 auto;
+    }
+
+    .product-purchase-row .product-payment-note {
+      margin: 0;
+      flex: 0 1 390px;
+      transform: translate(14px, 3px);
+    }
+
+    .product-buying-footer {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .product-side-actions {
+      display: grid;
+      gap: 10px;
+      box-sizing: border-box;
+      align-content: center;
+      border: 1px solid #e1ebdf;
+      border-radius: 12px;
+      background: #fbfaf7;
+      padding: 12px;
+    }
+
+    .product-buying-footer .product-side-actions {
+      padding-right: 0;
+    }
+
+    .product-side-actions span {
+      color: #1f2f24;
+      font-size: 14px;
+      line-height: 1.22;
+      font-weight: 500;
+      padding-left: 12px;
+      box-sizing: border-box;
+    }
+
+    .product-side-actions-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .product-side-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: center;
+      width: calc(100% - 24px);
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(18, 130, 54, 0.62);
+      background: transparent;
+      color: var(--green);
+      text-decoration: none;
+      font-size: clamp(12px, 0.74vw, 14px);
+      line-height: 1;
+      font-weight: 400;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .product-side-action:hover,
+    .product-side-action:focus-visible {
+      border-color: var(--green-hover);
+      background: var(--green-hover);
+      color: #fff;
+    }
+
+    .product-title-row {
+      display: block;
+      margin: 0 0 6px;
+    }
+
+    .product-title-row h2 {
+      margin: 0 0 2px;
+      color: #1f2f24;
+      font-size: clamp(24px, 2vw, 32px);
       line-height: 1.12;
       letter-spacing: -0.01em;
-      font-weight: 550;
+      font-weight: 500 !important;
     }
 
     .product-short-subtitle {
@@ -383,12 +546,54 @@
       line-height: 1.42;
     }
 
+    .product-buy-info-block {
+      position: relative;
+      top: 8px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
     .product-price {
-      margin: 0 0 10px;
+      margin: -8px 0 16px -8px;
       color: #1f2f24;
-      font-size: clamp(22px, 1.8vw, 28px);
+      font-size: clamp(21px, 1.7vw, 26px);
       line-height: 1.1;
-      font-weight: 650;
+      font-weight: 600;
+      text-align: left;
+      justify-self: start;
+    }
+
+    .product-review-snippet {
+      margin: 0;
+      white-space: nowrap;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.34;
+      font-weight: 500 !important;
+    }
+
+    .product-title-row .product-review-snippet {
+      margin: 5px 0 0;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.34;
+      font-weight: 500 !important;
+    }
+
+    .product-review-snippet .product-stars {
+      color: var(--star-gold);
+      letter-spacing: 0;
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+
+    .star-outline {
+      color: var(--star-gold);
+      font-weight: 600;
+      opacity: 1;
+      vertical-align: baseline;
+      -webkit-text-stroke: 0.2px var(--star-gold);
     }
 
     .product-vat-note {
@@ -396,6 +601,62 @@
       color: #556359;
       font-size: 13px;
       line-height: 1.36;
+    }
+
+    .product-stock-note {
+      display: grid;
+      gap: 6px;
+      margin: -8px 0 18px;
+      max-width: 460px;
+    }
+
+    .product-stock-note span {
+      display: block;
+    }
+
+    .product-stock-note strong {
+      color: #1f2f24;
+      font-weight: 600;
+    }
+
+    .product-stock-status,
+    .product-stock-note strong.product-stock-status {
+      color: var(--green);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.1;
+      position: relative;
+      top: -2px;
+    }
+
+    .product-stock-shipping {
+      color: #3f4f44;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.35;
+      position: relative;
+      top: 2px;
+    }
+
+    .product-stock-delivery {
+      color: #3f4f44;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.35;
+      position: relative;
+      top: 2px;
+    }
+
+    .product-stock-collection {
+      display: grid;
+      gap: 4px;
+      margin-top: 4px;
+      color: #3f4f44;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.35;
+      position: relative;
+      top: 2px;
     }
 
     .product-cta-row {
@@ -409,88 +670,127 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 16px;
+      padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid transparent;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
+      font-weight: 550;
+      font-size: 13.5px;
       line-height: 1.2;
-      min-width: 170px;
+      min-width: 162px;
       box-sizing: border-box;
     }
 
     .product-cta-row .btn-primary {
-      background: #1f5f2f;
+      width: auto;
+      min-width: 186px;
+      min-height: 44px;
+      border: 1px solid var(--green);
+      border-radius: 5px;
+      background: var(--green);
       color: #fff;
-      border-color: #1f5f2f;
+      font-size: clamp(13px, 0.78vw, 15px);
+      font-weight: 500 !important;
+      cursor: pointer;
+    }
+
+    .product-cta-row .btn-primary:hover,
+    .product-cta-row .btn-primary:focus-visible {
+      border-color: var(--green-hover);
+      background: var(--green-hover);
+      color: #fff;
     }
 
     .product-cta-row .btn-secondary {
-      background: #f3f8f1;
+      background: #f6f9f4;
       color: #1f2f24;
-      border-color: #b9cdb5;
+      border-color: #c6d7c6;
     }
 
     .product-qty {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 14px;
+      margin: -12px 0 4px;
       color: #334138;
       font-size: 14px;
     }
 
-    .product-qty input {
-      width: 72px;
-      padding: 8px 10px;
-      border-radius: 8px;
+    .product-qty-control {
+      display: inline-grid;
+      grid-template-columns: 24px 32px 24px;
+      align-items: stretch;
       border: 1px solid #c9d5c9;
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .product-qty input {
+      width: 32px;
+      padding: 6px 0;
+      border: 0;
+      border-left: 1px solid #d9e3d7;
+      border-right: 1px solid #d9e3d7;
       background: #fff;
       color: #1f2f24;
-      font-size: 14px;
+      font-size: 12px;
+      font-weight: 500;
       text-align: center;
       box-sizing: border-box;
     }
 
-    .product-trust-list {
-      margin: 0 0 6px;
+    .product-qty-control button {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      background: #f8faf6;
+      color: #314335;
+      width: 24px;
+      min-height: 30px;
       padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 6px;
-      color: #2c3d33;
-      font-size: 14px;
-      line-height: 1.45;
-    }
-
-    .product-trust-list li {
       display: flex;
-      align-items: start;
-      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .product-trust-list li::before {
-      content: "✓";
-      color: #215d2e;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-top: 2px;
+    .product-qty-control button:hover,
+    .product-qty-control button:focus-visible {
+      background: #edf4ea;
+      color: #1f2f24;
     }
 
     .product-inline-trust {
-      margin-top: 18px;
+      margin-top: 0;
+      margin-left: 0;
+      width: auto;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      border: 1px solid #e1ebdf;
+      border-radius: 12px;
+      background: #fbfaf7;
+      padding: 12px;
+    }
+
+    @media (min-width: 961px) {
+      .product-buying-footer .product-inline-trust {
+        margin-left: 34px;
+        width: calc(100% - 34px);
+      }
     }
 
     .product-inline-trust-item {
-      border: 1px solid #dbe6d9;
+      border: 1px solid #e2ebdf;
       border-radius: 10px;
-      background: #fffdf8;
-      padding: 12px;
-      min-height: 78px;
+      background: #f9fbf7;
+      padding: 9px;
+      min-height: 68px;
       box-sizing: border-box;
     }
 
@@ -500,7 +800,7 @@
       font-size: 14px;
       line-height: 1.22;
       margin-bottom: 4px;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .product-inline-trust-item span {
@@ -510,11 +810,29 @@
       line-height: 1.34;
     }
 
-    .section-title {
+    @media (min-width: 761px) {
+      .product-inline-trust {
+        width: calc(100% - 52px);
+        margin-left: 52px;
+        justify-self: start;
+      }
+    }
+
+    .product-buying-footer + .product-section {
+      border-top: 0;
+      margin-top: 20px;
+      padding-top: 10px;
+    }
+
+    .product-template-shell .section-title,
+    .product-section .section-title,
+    .product-template-shell .endorsement-heading h2,
+    .product-template-shell .endorsement-heading h2 span {
       margin: 0 0 10px;
       color: #1f2f24;
-      font-size: clamp(22px, 1.9vw, 30px);
-      line-height: 1.16;
+      font-size: clamp(18px, 1.45vw, 24px);
+      line-height: 1.22;
+      font-weight: 500 !important;
     }
 
     .section-copy {
@@ -526,8 +844,8 @@
     }
 
     .compact-spec-table {
-      border: 1px solid #dbe6d9;
-      border-radius: 12px;
+      border: 1px solid #e2ebdf;
+      border-radius: 10px;
       background: #fff;
       overflow: hidden;
     }
@@ -536,8 +854,8 @@
       display: grid;
       grid-template-columns: minmax(175px, 225px) minmax(0, 1fr);
       gap: 20px;
-      padding: 11px 14px;
-      border-top: 1px solid #dce7dc;
+      padding: 10px 12px;
+      border-top: 1px solid #e3ebe0;
       align-items: start;
     }
 
@@ -548,14 +866,14 @@
     .compact-spec-table dt {
       margin: 0;
       color: #334138;
-      font-weight: 600;
-      font-size: 14px;
+      font-weight: 500;
+      font-size: 13.5px;
     }
 
     .compact-spec-table dd {
       margin: 0;
       color: #26362d;
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.44;
     }
 
@@ -566,17 +884,17 @@
     }
 
     .details-stack details {
-      border: 1px solid #dbe6d9;
+      border: 1px solid #e2ebdf;
       border-radius: 10px;
-      background: #fff;
+      background: #fbfaf7;
       padding: 10px 12px;
     }
 
     .details-stack summary {
       cursor: pointer;
       color: #1f2f24;
-      font-weight: 600;
-      font-size: 15px;
+      font-weight: 500;
+      font-size: 14.5px;
       line-height: 1.35;
       list-style: none;
       display: flex;
@@ -592,7 +910,7 @@
     .details-stack summary::after {
       content: "＋";
       color: #3f5b49;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1;
       flex: 0 0 auto;
       margin-top: -1px;
@@ -613,7 +931,7 @@
       margin: 0;
       color: #3a4d41;
       line-height: 1.5;
-      font-size: 14px;
+      font-size: 13.5px;
     }
 
     .details-content ul {
@@ -621,6 +939,129 @@
       display: grid;
       gap: 7px;
       margin-top: 7px;
+    }
+
+    .product-spec-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      width: min(80%, 980px);
+      margin-inline: auto;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .product-info-media {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: start;
+      background: transparent;
+    }
+
+    .product-info-media img {
+      width: 100%;
+      display: block;
+      height: 180px;
+      object-fit: cover;
+      background: transparent;
+    }
+
+    .product-info-media .product-info-media--ovis {
+      height: 150px;
+      object-fit: contain;
+      align-self: center;
+    }
+
+    .product-info-media .product-info-media--wide {
+      grid-column: 1 / -1;
+      height: 220px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .product-info-media--endorsement {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      justify-self: end;
+      margin-top: 2px;
+      margin-left: 0;
+    }
+
+    .product-template-shell .endorsement-section {
+      width: min(100%, 1220px);
+      margin-inline: auto;
+      padding-inline: 0;
+    }
+
+    .product-template-shell .endorsement-heading {
+      margin-bottom: 8px !important;
+    }
+
+    .product-template-shell .endorsement-heading h2,
+    .product-template-shell .endorsement-heading h2 span {
+      margin-bottom: 0 !important;
+    }
+
+    .product-template-shell .endorsement-carousel {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .product-template-shell .endorsement-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      overflow: visible;
+      padding-bottom: 6px;
+    }
+
+    .product-template-shell .endorsement-card {
+      width: 100%;
+      flex: 0 0 auto;
+      max-width: none;
+    }
+
+    .product-endorser-title {
+      margin-bottom: 8px;
+    }
+
+    .product-endorser-scroller {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+      scrollbar-color: #c7d3c8 transparent;
+    }
+
+    .product-endorser-scroller .endorsement-card {
+      flex: 0 0 286px;
+      scroll-snap-align: start;
+    }
+
+    .product-info-media--endorsement .endorsement-card {
+      width: 100%;
+    }
+
+    .product-info-media--endorsement .endorsement-photo {
+      height: auto;
+      aspect-ratio: 1.42 / 1;
+      object-fit: cover;
+      background: var(--surface-soft);
+    }
+
+    .product-info-media--endorsement .endorsement-body {
+      background: #fbfaf7;
+    }
+
+    .product-template-shell .endorsement-heading h2,
+    .product-template-shell .endorsement-heading h2 span,
+    .product-template-shell .endorsement-cta {
+      font-weight: 500;
     }
 
     .related-quick-grid {
@@ -631,10 +1072,10 @@
     }
 
     .support-card {
-      border: 1px solid #dbe6d9;
+      border: 1px solid #e2ebdf;
       border-radius: 12px;
-      background: #fff;
-      padding: 14px;
+      background: #fbfdfa;
+      padding: 12px;
       display: block;
       text-decoration: none;
       color: inherit;
@@ -644,21 +1085,163 @@
     .support-card h3 {
       margin: 0 0 6px;
       color: #1f2f24;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.25;
       letter-spacing: -0.01em;
+      font-weight: 500;
     }
 
     .support-card p {
       margin: 0;
       color: #425149;
       line-height: 1.4;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .support-card:hover {
-      border-color: #c3d8be;
-      background: #fbfef9;
+      border-color: #d3e0d1;
+      background: #f7faf4;
+    }
+
+    .product-template-shell .section-title,
+    .product-template-shell .section-copy,
+    .product-template-shell .section-title + p {
+      font-weight: 500;
+    }
+
+    .product-template-shell .customer-reviews {
+      width: min(100%, 1220px);
+      margin-inline: auto;
+      margin-top: -40px;
+      margin-bottom: 4px;
+      padding-inline: 0;
+      padding-bottom: 0;
+      background: var(--page);
+    }
+
+    .product-template-shell .customer-reviews .reviews-heading {
+      margin-bottom: 8px;
+    }
+
+    .product-template-shell .customer-reviews .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      width: 100%;
+      padding-bottom: 0;
+      overflow: visible;
+      scrollbar-width: thin;
+      scrollbar-color: #c7d3c8 transparent;
+    }
+
+    .product-template-shell .customer-reviews .review-card {
+      width: 100%;
+      flex: 0 1 auto;
+      max-width: none;
+      border: 1px solid #e2ebdf;
+      border-radius: 10px;
+      background: #fbfaf7;
+      padding: 10px 12px;
+      display: grid;
+      box-sizing: border-box;
+      gap: 6px;
+    }
+
+    .product-template-shell .customer-reviews .review-topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      color: #283f31;
+      line-height: 1.1;
+      font-size: 14px;
+      padding-top: 3px;
+    }
+
+    .product-template-shell .customer-reviews .review-stars {
+      letter-spacing: 0;
+      color: var(--star-gold);
+      transform: translateY(1px);
+    }
+
+    .product-template-shell .customer-reviews .quote-mark {
+      color: #a9c0ab;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .product-template-shell .customer-reviews .review-card blockquote,
+    .product-template-shell .customer-reviews .review-card p {
+      margin: 0;
+      color: #3c4d43;
+      line-height: 1.32;
+      font-size: 13.5px;
+    }
+
+    .customer-reviews {
+      margin-bottom: 4px !important;
+    }
+
+    .customer-reviews + .site-footer--mobile-approved,
+    .customer-reviews + .site-footer--desktop-good {
+      margin-top: 0 !important;
+    }
+
+    .product-template-shell .customer-reviews .review-person {
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .product-template-shell .customer-reviews .review-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .product-template-shell .customer-reviews .review-person strong,
+    .product-template-shell .customer-reviews .review-person small {
+      display: block;
+    }
+
+    .product-template-shell .customer-reviews .review-person small {
+      color: #5e6b62;
+      font-size: 12px;
+    }
+
+    .customer-reviews-stars {
+      color: #345e3a;
+      font-size: 14px;
+      letter-spacing: 2px;
+      line-height: 1.1;
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+
+    .customer-reviews-card p {
+      margin: 0;
+      color: #3c4d43;
+      line-height: 1.32;
+      font-size: 13.5px;
+    }
+
+    .customer-reviews-link {
+      display: inline-flex;
+      width: fit-content;
+      text-decoration: none;
+      color: #28533a;
+      font-size: 13px;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 160ms ease;
+    }
+
+    .customer-reviews-link:hover {
+      border-color: #28533a;
     }
 
     @media (max-width: 960px) {
@@ -672,12 +1255,49 @@
         gap: 16px;
       }
 
+      .product-buying-footer {
+        grid-template-columns: 1fr;
+      }
+
+      .product-buying-footer .product-side-actions {
+        border-right: 0;
+        border-bottom: 1px solid #e3ebe0;
+        padding-right: 0;
+        padding-bottom: 12px;
+      }
+
       .product-inline-trust {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .product-cta-row a {
         width: 100%;
+      }
+
+      .product-purchase-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+        align-items: start;
+      }
+
+      .product-purchase-row .product-payment-note {
+        justify-self: start;
+        width: 100%;
+        transform: none;
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      .product-purchase-row .product-payment-note strong {
+        padding-left: 0;
+      }
+
+      .product-purchase-row .payment-methods-image {
+        width: auto;
+        max-width: 100%;
+        margin-left: -16px;
+        transform: none;
       }
     }
 
@@ -692,6 +1312,41 @@
         grid-template-columns: 1fr;
       }
 
+      .product-template-shell .endorsement-grid,
+      .product-template-shell .customer-reviews .reviews-grid {
+        display: flex;
+        grid-template-columns: none;
+        gap: 14px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        scrollbar-width: thin;
+        scrollbar-color: #c7d3c8 transparent;
+      }
+
+      .product-template-shell .endorsement-card,
+      .product-template-shell .customer-reviews .review-card {
+        flex: 0 0 min(78vw, 280px);
+        width: min(78vw, 280px);
+        max-width: min(78vw, 280px);
+        scroll-snap-align: start;
+      }
+
+      .product-template-shell .endorsement-cta {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        box-sizing: border-box;
+        overflow: visible;
+      }
+
+      .product-spec-layout {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+
       .compact-spec-table .spec-row {
         grid-template-columns: 1fr;
         gap: 4px;
@@ -702,7 +1357,30 @@
       }
 
       .product-template-shell {
+        display: flex;
+        flex-direction: column;
         padding-bottom: 26px;
+      }
+
+      .product-template-shell > .product-buying-area {
+        order: 1;
+      }
+
+      .product-template-shell > .product-section:not(.product-buying-area) {
+        order: 2;
+      }
+
+      .product-template-shell > .product-buying-footer {
+        order: 3;
+        margin-top: 12px;
+      }
+
+      .product-template-shell > .endorsement-section {
+        order: 4;
+      }
+
+      .product-template-shell > .customer-reviews {
+        order: 5;
       }
     }
   </style>
@@ -788,11 +1466,11 @@
         <div class="category-item category-item--clippers">
           <a data-category-link="clippers" href="./clippers.html" aria-current="page">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
-            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
-            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
-            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
-            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
-            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+            <a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
+            <a href="./horse-clippers.html">Horse Clippers</a>
+            <a href="./dog-clippers.html">Dog Clippers</a>
+            <a href="./clipper-blades.html">Clipper Blades</a>
+            <a href="./clipper-parts.html">Clipper Parts</a>
           </div>
         </div>
         <div class="category-item category-item--cattle-weighing">
@@ -801,9 +1479,9 @@
         <div class="category-item category-item--milking-machines">
           <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Milking Machines links">
-            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
-            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
-            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+            <a href="./cow-milking-machines.html">Cow Milkers</a>
+            <a href="./goat-milking-machines.html">Goat Milkers</a>
+            <a href="./sheep-milking-machines.html">Sheep Milkers</a>
           
           </div>
 
@@ -811,10 +1489,10 @@
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
-            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+            <a href="./electric-fencing-mains.html">Mains Fencers</a>
+            <a href="./electric-fencing-battery.html">Battery Fencers</a>
+            <a href="./electric-fencing-solar.html">Solar Fencers</a>
+            <a href="./electric-fencing-accessories.html">Accessories</a>
           </div>
 
 
@@ -825,11 +1503,11 @@
             <a href="./clippers.html">Clippers</a>
             <a href="./cattle-weighing.html">Cattle Weighing</a>
             <a href="./milking-machines.html">Milking Machines</a>
-            <a href="./parts-repairs.html">Dairy Products</a>
-            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./dairy-products.html">Dairy Products</a>
+            <a href="./brushes.html">Brushes</a>
             <a href="./electric-fencing.html">Electric Fencing</a>
-            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-            <a href="./electric-fencing.html">Blowers</a>
+            <a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
+            <a href="./blowers.html">Blowers</a>
           </div>
 
 
@@ -845,169 +1523,306 @@
 
   <main class="page-shell product-page">
   <section class="product-template-shell">
+    <!-- LOCKED PRODUCT TOP SECTION - DO NOT EDIT WHEN WORKING ON LOWER SECTIONS -->
     <section class="product-buying-area product-section">
-      <article class="product-buying-media">
-        <div class="product-main-badge">Featured Product</div>
-        <div class="product-main-image-wrap">
-          <img src="./assets/products/ovis.png" alt="ErgoPro Ovis Clipper" />
-        </div>
-        <div class="product-gallery-thumbs" aria-label="Product image gallery">
-          <div class="product-thumb" aria-hidden="true">Main image</div>
-          <div class="product-thumb" aria-hidden="true">Blade detail</div>
-          <div class="product-thumb" aria-hidden="true">Battery</div>
-          <div class="product-thumb" aria-hidden="true">In use</div>
-        </div>
-        <p class="product-payment-note">Secure checkout placeholder. Final payment and stock data can be connected through the store feed.</p>
-      </article>
-
-      <article class="product-info">
-        <h2>ErgoPro Ovis Clipper</h2>
-        <p class="product-price">&euro;000.00</p>
-        <p class="product-short-subtitle">External-battery sheep clipper with powerful cutting performance, practical field servicing and local Irish aftercare support.</p>
-        <p class="product-vat-note">Price placeholder for product template. VAT, stock and delivery details can be connected through the live store feed.</p>
-
-        <div class="product-qty">
-          <label for="ovis-qty">Quantity</label>
-          <input id="ovis-qty" type="number" min="1" value="1" />
-        </div>
-
-        <div class="product-cta-row">
-          <a href="#" class="btn-primary">Add to Cart</a>
-          <a href="#" class="btn-secondary">Ask a Question</a>
-          <a href="./parts-repairs.html" class="btn-secondary">Spare Parts &amp; Support</a>
-        </div>
-
-        <ul class="product-trust-list">
-          <li>Local servicing and workshop support from Cork</li>
-          <li>Replacement parts and accessories available</li>
-          <li>Practical help before and after ordering</li>
-          <li>Free delivery on orders over &euro;100</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="product-inline-trust" aria-label="Product support highlights">
-      <div class="product-inline-trust-item">
-        <strong>Irish Company</strong>
-        <span>Based in Cork</span>
-      </div>
-      <div class="product-inline-trust-item">
-        <strong>Parts Available</strong>
-        <span>Spares and accessories available</span>
-      </div>
-      <div class="product-inline-trust-item">
-        <strong>Service &amp; Repairs</strong>
-        <span>In-house workshop support</span>
-      </div>
-      <div class="product-inline-trust-item">
-        <strong>Free Delivery</strong>
-        <span>Orders over &euro;100</span>
-      </div>
-    </section>
-
-    <section class="product-section">
-      <h2 class="section-title">Product information</h2>
-      <div class="details-stack">
-        <details open>
-          <summary>Description</summary>
-          <div class="details-content">
-            <p>The Ovis is designed for efficient sheep clipping in farming and animal-care settings where reliability, comfort and quick service support matter most.</p>
+      <div class="product-buying-left">
+        <article class="product-buying-media">
+          <div class="product-main-image-wrap">
+            <img src="./assets/products/ovis.png" alt="ErgoPro Ovis Clipper" />
           </div>
-        </details>
-        <details>
-          <summary>Specifications</summary>
-          <div class="details-content">
-            <div class="compact-spec-table">
-              <dl class="spec-row">
-                <dt>Product type</dt>
-                <dd>ErgoPro Ovis sheep clipper</dd>
-              </dl>
-              <dl class="spec-row">
-                <dt>Power type</dt>
-                <dd>Battery powered (model-specific options)</dd>
-              </dl>
-              <dl class="spec-row">
-                <dt>Main use</dt>
-                <dd>Sheep clipping for farm, livestock and service operations</dd>
-              </dl>
-              <dl class="spec-row">
-                <dt>Service status</dt>
-                <dd>Supported with parts, servicing and repair options</dd>
-              </dl>
+          <div class="product-gallery-thumbs" aria-label="Product image gallery">
+            <div class="product-thumb product-thumb--contain" aria-label="Main product image">
+              <img src="./assets/products/ovis.png" alt="">
+            </div>
+            <div class="product-thumb product-thumb--contain" aria-label="Clipper detail image">
+              <img src="./assets/products/ovis.png" alt="">
+            </div>
+            <div class="product-thumb product-thumb--contain" aria-label="Battery pack image">
+              <img src="./assets/products/ovis-belt-pack.png" alt="">
+            </div>
+            <div class="product-thumb product-thumb--video" aria-label="In-use video">
+              <img src="./assets/instagram/glyn-egan-cara-ovis.png" alt="">
+            </div>
+            <div class="product-thumb product-thumb--contain" aria-label="Additional detail image">
+              <img src="./assets/products/ovis.png" alt="">
             </div>
           </div>
-        </details>
-        <details>
-          <summary>What&rsquo;s included</summary>
-          <div class="details-content">
-            <ul>
-              <li>Main Ovis unit</li>
-              <li>Lead and power support package</li>
-              <li>Basic consumables reference pack</li>
-              <li>User guidance and care notes</li>
-            </ul>
+        </article>
+      </div>
+
+      <article class="product-info">
+        <div class="product-title-row">
+          <h2>ErgoPro Ovis Clipper</h2>
+          <p class="product-review-snippet"><span class="product-stars" aria-hidden="true">&#9733; &#9733; &#9733; &#9733; &#9733;</span> (29 reviews)</p>
+        </div>
+        <div class="product-buy-info-block">
+          <p class="product-short-subtitle">External-battery sheep clipper with powerful cutting performance, practical field servicing and local Irish aftercare support.</p>
+          <p class="product-price">&euro;729.00</p>
+          <div class="product-qty">
+            <label for="ovis-qty">Quantity</label>
+            <div class="product-qty-control" role="group" aria-label="Quantity selector">
+              <button type="button" class="qty-step-down" data-step="-1" aria-label="Decrease quantity">-</button>
+              <input id="ovis-qty" type="text" inputmode="numeric" value="1" readonly />
+              <button type="button" class="qty-step-up" data-step="+1" aria-label="Increase quantity">+</button>
+            </div>
           </div>
-        </details>
-        <details>
-          <summary>Suitable for</summary>
-          <div class="details-content">
-            <ul>
-              <li>Sheep flock work and regular clipping rounds</li>
-              <li>Farm-side trimming and preparation jobs</li>
-              <li>Independent users and workshop maintenance teams</li>
-            </ul>
+
+          <div class="product-purchase-row">
+            <div class="product-cta-row">
+              <a href="#" class="btn-primary">Add to Cart</a>
+            </div>
+            <div class="product-payment-note" aria-label="Payment options">
+              <strong>Secure checkout</strong>
+              <img class="payment-methods-image" src="./assets/products/payment-methods-strip.png" alt="Apple Pay, Google Pay, Mastercard, PayPal, Shop Pay, UnionPay and Visa">
+            </div>
           </div>
-        </details>
-        <details>
-          <summary>Video / see it in use</summary>
-          <div class="details-content">
-            <p>Video placeholder for product demonstration, field use or setup guidance.</p>
+
+          <div class="product-vat-note product-stock-note">
+            <strong class="product-stock-status">In Stock</strong>
+            <span class="product-stock-shipping">Shipping: Free Shipping</span>
+            <span class="product-stock-delivery">Order before 1PM for next day delivery.</span>
+            <div class="product-stock-collection">
+              <span>Collection available from Knockananig, Fermoy, Co. Cork.</span>
+              <span>Monday to Thursday: 9:00AM - 4:30PM</span>
+              <span>Friday: 9:00AM - 3:30PM</span>
+            </div>
           </div>
-        </details>
-        <details>
-          <summary>Warranty &amp; aftercare</summary>
-          <div class="details-content">
-            <p>Most Ovis products carry the standard Clippers Ireland warranty support terms, with workshop inspection and repair pathways available for genuine faults.</p>
+        </div>
+
+      </article>
+    </section>
+
+    <section class="product-buying-footer" aria-label="Product support and related links">
+      <div class="product-side-actions" aria-label="Related product links">
+        <span>Need blades or spare parts?</span>
+        <div class="product-side-actions-row">
+          <a href="#" class="product-side-action">Blades</a>
+          <a href="./parts-repairs.html" class="product-side-action">Parts</a>
+        </div>
+      </div>
+
+      <section class="product-inline-trust" aria-label="Product support highlights">
+        <div class="product-inline-trust-item">
+          <strong>All Parts Available</strong>
+          <span>Spares and accessories available from stock</span>
+        </div>
+        <div class="product-inline-trust-item">
+          <strong>Service &amp; Repairs</strong>
+      <span>In-house workshop support<br>if anything goes wrong</span>
+        </div>
+        <div class="product-inline-trust-item">
+          <strong>Free Delivery</strong>
+          <span>On orders over &euro;100</span>
+        </div>
+      </section>
+    </section>
+    <!-- END LOCKED PRODUCT TOP SECTION -->
+
+    <section class="product-section">
+      <div class="product-spec-layout">
+        <div class="product-spec-main">
+          <h2 class="section-title">Product information</h2>
+          <div class="details-stack">
+            <details open>
+              <summary>Description</summary>
+              <div class="details-content">
+                <p>The Ovis is designed for efficient sheep clipping in farming and animal-care settings where reliability, comfort and quick service support matter most.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Specifications</summary>
+              <div class="details-content">
+                <div class="compact-spec-table">
+                  <dl class="spec-row">
+                    <dt>Product type</dt>
+                    <dd>ErgoPro Ovis sheep clipper</dd>
+                  </dl>
+                  <dl class="spec-row">
+                    <dt>Power type</dt>
+                    <dd>Battery powered (model-specific options)</dd>
+                  </dl>
+                  <dl class="spec-row">
+                    <dt>Main use</dt>
+                    <dd>Sheep clipping for farm, livestock and service operations</dd>
+                  </dl>
+                  <dl class="spec-row">
+                    <dt>Service status</dt>
+                    <dd>Supported with parts, servicing and repair options</dd>
+                  </dl>
+                </div>
+              </div>
+            </details>
+            <details>
+              <summary>What&rsquo;s included</summary>
+              <div class="details-content">
+                <ul>
+                  <li>Main Ovis unit</li>
+                  <li>Lead and power support package</li>
+                  <li>Basic consumables reference pack</li>
+                  <li>User guidance and care notes</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Suitable for</summary>
+              <div class="details-content">
+                <ul>
+                  <li>Sheep flock work and regular clipping rounds</li>
+                  <li>Farm-side trimming and preparation jobs</li>
+                  <li>Independent users and workshop maintenance teams</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Warranty</summary>
+              <div class="details-content">
+                <p>Most Ovis products carry the standard Clippers Ireland warranty support terms, with workshop inspection and repair pathways available for genuine faults.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Delivery &amp; returns</summary>
+              <div class="details-content">
+                <p>Standard delivery and return flow is available from Clippers Ireland. If you are not sure about fit or compatibility, our team can help match the right part before you order.</p>
+              </div>
+            </details>
           </div>
-        </details>
-        <details>
-          <summary>Delivery &amp; returns</summary>
-          <div class="details-content">
-            <p>Standard delivery and return flow is available from Clippers Ireland. If you are not sure about fit or compatibility, our team can help match the right part before you order.</p>
-          </div>
-        </details>
-        <details>
-          <summary>FAQ</summary>
-          <div class="details-content">
-            <ul>
-              <li>Can I buy spare parts? Yes, common parts and accessories are available.</li>
-              <li>Can I ask before ordering? Yes, send us the model details or a photo and we can help match the right item.</li>
-              <li>Is delivery available? Yes, with free delivery on orders over &euro;100.</li>
-            </ul>
-          </div>
-        </details>
+        </div>
       </div>
     </section>
 
-    <section class="product-section">
-      <h2 class="section-title">More like this</h2>
-      <div class="related-quick-grid">
-        <article class="support-card">
-          <h3>Spare blades</h3>
-          <p>Placeholder card for compatible clipper blades and cutting sets.</p>
+    <section class="endorsement-section" aria-labelledby="endorsement-title">
+      <div class="endorsement-heading">
+        <h2 id="endorsement-title"><span>Endorsed by Professionals</span></h2>
+      </div>
+
+      <div class="endorsement-carousel">
+        <button class="endorsement-arrow endorsement-arrow--prev" type="button" aria-label="Previous endorser">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <div class="endorsement-grid">
+          <article class="endorsement-card">
+            <img class="endorsement-photo" src="./assets/endorsers/sheep-shearer.jpg" alt="Sheep shearer using clippers in a shed" />
+            <div class="endorsement-body">
+              <h3>Glyn Egan <span aria-hidden="true"></span></h3>
+              <p class="endorsement-role">The Sheep Shepherd</p>
+              <blockquote>"The ErgoPro Cara and ErgoPro Ovis have been a game changer here at the farm."</blockquote>
+            </div>
+          </article>
+
+          <article class="endorsement-card">
+            <img class="endorsement-photo" src="./assets/endorsers/joseph-murphy.jpg" alt="Joseph Murphy eventing on horseback" />
+            <div class="endorsement-body">
+              <h3>Joseph Murphy <span aria-hidden="true"></span></h3>
+              <p class="endorsement-role">Joseph Murphy Eventing</p>
+              <blockquote>"Delighted with the clippers, great quality product and super value for money."</blockquote>
+            </div>
+          </article>
+
+          <article class="endorsement-card">
+            <img class="endorsement-photo endorsement-photo--peter" src="./assets/endorsers/peterhynesmilking2.jpg" alt="Peter Hynes with a portable milking machine" />
+            <div class="endorsement-body">
+              <h3>Peter Hynes <span aria-hidden="true"></span></h3>
+              <p class="endorsement-role">Rathard Holsteins</p>
+              <blockquote>"I use a Sezer milking machine from Clippers Ireland, to milk the cows and give the calves colostrum"</blockquote>
+            </div>
+          </article>
+
+          <article class="endorsement-card">
+            <img class="endorsement-photo endorsement-photo--cathal" src="./assets/endorsers/cathaldaniels.jpg" alt="Cathal Daniels show jumping" />
+            <div class="endorsement-body">
+              <h3>Cathal Daniels <span aria-hidden="true"></span></h3>
+              <p class="endorsement-role">Cathal Daniels Sport Horses</p>
+              <blockquote>"We use ErgoPro clippers from Clippers Ireland, they give my horses a great clip"</blockquote>
+            </div>
+          </article>
+
+          <article class="endorsement-card">
+            <img class="endorsement-photo endorsement-photo--tullyear" src="./assets/endorsers/tullyear.jpg" alt="Rachel Mayne clipping a horse at Tullyear Equine Grooming" />
+            <div class="endorsement-body">
+              <h3>Rachel Mayne <span aria-hidden="true"></span></h3>
+              <p class="endorsement-role">Tullyear Equine Grooming</p>
+              <blockquote>"These clippers are perfect in so many ways, they help me achieve a dreamy finish"</blockquote>
+            </div>
+          </article>
+
+        </div>
+
+        <button class="endorsement-arrow endorsement-arrow--next" type="button" aria-label="Next endorser">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <a class="endorsement-cta" href="#">View All Endorsers &amp; Sponsored Riders -></a>
+    </section>
+
+    <section class="customer-reviews" aria-labelledby="customer-reviews-title">
+      <div class="reviews-heading">
+        <h2 class="section-title" id="customer-reviews-title">What Our Customers Say</h2>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div class="review-topline">
+            <span class="review-stars product-stars" aria-label="5 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span class="quote-mark" aria-hidden="true">”</span>
+          </div>
+          <blockquote>"I absolutely LOVE my Clippers-Ireland ergo pro clippers. This is Sika who was clipped with them ready for this show.. they do a great job and don't upset the horses. Highly recommend them!!!!"</blockquote>
+          <div class="review-person">
+            <img class="review-avatar" src="./assets/reviews/kim-jackman-horse.png" alt="Kim Jackman" />
+            <span>
+              <strong>Kim Jackman</strong>
+            </span>
+          </div>
         </article>
-        <article class="support-card">
-          <h3>Batteries &amp; chargers</h3>
-          <p>Placeholder card for power accessories and replacement charging items.</p>
+
+        <article class="review-card">
+          <div class="review-topline">
+            <span class="review-stars product-stars" aria-label="5 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span class="quote-mark" aria-hidden="true">”</span>
+          </div>
+          <blockquote>"Very impressed with the clippers. Great value for money!"</blockquote>
+          <div class="review-person">
+            <img class="review-avatar" src="./assets/reviews/clive-knox.png" alt="Clive Knox" />
+            <span>
+              <strong>Clive Knox</strong>
+              <small>Beachmount Limousins</small>
+            </span>
+          </div>
         </article>
-        <article class="support-card">
-          <h3>Clipper oil</h3>
-          <p>Placeholder card for maintenance oil and care items.</p>
+
+        <article class="review-card">
+          <div class="review-topline">
+            <span class="review-stars product-stars" aria-label="5 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span class="quote-mark" aria-hidden="true">”</span>
+          </div>
+          <blockquote>"The clippers are quiet and don't heat up like others so suit those first timers and horses with nervous disposition. The finish is also second to none. The have made my job of turning horses out to a high standard so much easier"</blockquote>
+          <div class="review-person">
+            <img class="review-avatar" src="./assets/reviews/mark-o-regan-hunt.png" alt="Mark O Regan" />
+            <span>
+              <strong>Mark O Regan</strong>
+              <small>Ward Union Hunt</small>
+            </span>
+          </div>
         </article>
-        <a href="./parts-repairs.html" class="support-card">
-          <h3>Parts &amp; repairs</h3>
-          <p>Browse blades, batteries, leads and accessories that match this model.</p>
-        </a>
+
+        <article class="review-card">
+          <div class="review-topline">
+            <span class="review-stars product-stars" aria-label="5 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+            <span class="quote-mark" aria-hidden="true">”</span>
+          </div>
+          <blockquote>"That time again! Another easy job courtesy of the fantastic clippers I bought last yr. Thanks Clippers Ireland!"</blockquote>
+          <div class="review-person">
+            <img class="review-avatar" src="./assets/reviews/cass-foley-horse.png" alt="Cass Foley" />
+            <span>
+              <strong>Cass Foley</strong>
+            </span>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1042,7 +1857,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
               <span>Clippers Ireland, The Little Farm,<br>
               Knockananig, Fermoy,<br>
-              Co Cork, P61EP80</span>
+              Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -1171,7 +1986,7 @@
             </span>
             <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
-              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -1299,5 +2114,30 @@
     </aside>
 
     <script src="./script.js?v=final-polish-pass-9"></script>
+    <script>
+      (function() {
+        const qtyInput = document.getElementById("ovis-qty");
+        if (!qtyInput) return;
+        const stepUp = document.querySelector(".qty-step-up");
+        const stepDown = document.querySelector(".qty-step-down");
+        const min = parseInt(qtyInput.min || "1", 10) || 1;
+        const max = qtyInput.max ? parseInt(qtyInput.max, 10) : null;
+        const step = parseInt(qtyInput.step || "1", 10) || 1;
+
+        const setQuantity = (delta) => {
+          const current = parseInt(qtyInput.value, 10) || min;
+          const next = current + delta * step;
+          if (Number.isFinite(max) && next > max) {
+            qtyInput.value = String(max);
+            return;
+          }
+          qtyInput.value = String(Math.max(min, next));
+        };
+
+        stepUp?.addEventListener("click", () => setQuantity(1));
+        stepDown?.addEventListener("click", () => setQuantity(-1));
+
+      })();
+    </script>
   </body>
 </html>

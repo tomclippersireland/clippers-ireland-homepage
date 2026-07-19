@@ -6,6 +6,66 @@
   <title>Clippers Ireland</title>
   <link rel="stylesheet" href="./styles.css?v=final-polish-pass-26" />
   <style>
+      /* Approved featured product card template from homepage */
+      .featured-products .product-image {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2) {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-info,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-info {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2),
+      .featured-products .product-card.clippers-hero {
+        overflow: hidden !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image,
+      .featured-products .product-card.clippers-hero .product-image {
+        background: var(--surface) !important;
+        padding: 8px 10px 6px !important;
+        overflow: visible !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img,
+      .featured-products .product-card.clippers-hero .product-image img {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        transform: scale(1) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img {
+        transform: scale(0.78) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img {
+        transform: scale(0.86) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(3) .product-image img {
+        transform: translateY(-10px) scale(1.22) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(4) .product-image img {
+        transform: rotate(-24deg) translateY(18px) scale(2.31) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(5) .product-image img {
+        transform: translateY(8px) scale(1.2) !important;
+      }
+
       #clipper-parts .category-bucket-image--contain,
       #clipper-blades .category-bucket-image--contain {
         display: block !important;
@@ -197,9 +257,13 @@
         }
       }
 
-      @media (max-width: 640px) {
+       (max-width: 640px) {
         .milking-why-choose-grid {
           grid-template-columns: 1fr;
+        }
+
+        .clipper-parts-mobile-keep {
+          white-space: nowrap;
         }
       }
 
@@ -208,6 +272,179 @@
           width: min(100%, calc(83.3333% - 3px));
           margin-inline: auto;
           grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+      }
+
+      .parts-workshop {
+        width: min(calc(100vw - 20px), 1480px);
+        margin: 24px auto 40px;
+        padding: 28px clamp(28px, 3vw, 42px) 22px;
+        display: grid;
+        grid-template-columns: minmax(280px, 0.85fr) minmax(620px, 1.15fr);
+        gap: 18px 30px;
+        align-items: start;
+        background: #f6f9f2;
+        border: 1px solid rgba(28, 42, 32, 0.13);
+        border-radius: 12px;
+      }
+
+      .parts-workshop-heading {
+        grid-column: 1 / -1;
+        padding-bottom: 0;
+      }
+
+      .parts-workshop-heading h2 {
+        margin: 0;
+      }
+
+      .parts-workshop-intro p {
+        margin-top: 0;
+      }
+
+      .parts-workshop .repairs-band-list {
+        margin-top: 10px;
+        display: grid;
+        gap: 4px;
+      }
+
+      .parts-workshop .repairs-band-list li {
+        margin: 0;
+      }
+
+      .parts-process {
+        margin: 44px 0 0;
+        padding: 2px 0 0 20px;
+      }
+
+      .parts-process h3 {
+        margin: 0 0 10px;
+        color: #314234;
+        font-size: 1rem;
+        font-weight: 650;
+        line-height: 1.25;
+        letter-spacing: 0;
+      }
+
+      .parts-process-list {
+        margin: 10px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .parts-process-list li {
+        background: #eff4ea;
+        border: 1px solid rgba(29, 44, 33, 0.15);
+        border-radius: 10px;
+        padding: 10px 12px;
+        min-height: 100%;
+      }
+
+      .parts-process-list p {
+        margin: 6px 0 0;
+        color: #47514a;
+        font-size: 14px;
+        line-height: 1.34;
+      }
+
+      .parts-aftercare-grid {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        border: 1px solid rgba(28, 42, 32, 0.16);
+        border-radius: 12px;
+        padding: 10px;
+        background: #fbfdf8;
+      }
+
+      .parts-workshop .parts-aftercare-grid {
+        margin-top: 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .parts-workshop-support {
+        grid-column: 1 / -1;
+        display: grid;
+        gap: 10px;
+        margin-top: -24px;
+        padding-top: 0;
+      }
+
+      .parts-workshop-support h3 {
+        margin: 0;
+        color: #2d3d31;
+        font-size: 0.95rem;
+        font-weight: 650;
+        line-height: 1.25;
+        padding-left: 12px;
+      }
+
+      .parts-aftercare-card {
+        padding: 12px;
+        border: 1px solid rgba(28, 42, 32, 0.15);
+        background: #ffffff;
+        border-radius: 12px;
+        color: #232a25;
+        box-shadow: 0 1px 0 rgba(28, 42, 32, 0.08);
+      }
+
+      .parts-workshop .parts-aftercare-card,
+      .parts-workshop .parts-aftercare-card h3,
+      .parts-workshop .parts-aftercare-card p {
+        text-align: left;
+      }
+
+      .parts-workshop .parts-aftercare-card {
+        background: #eff4ea;
+      }
+
+      .parts-workshop .parts-aftercare-card h3 {
+        padding-left: 0;
+      }
+
+      .parts-aftercare-card p {
+        margin: 8px 0 0;
+        color: #4b544b;
+        line-height: 1.32;
+      }
+
+      @media (max-width: 760px) {
+        .parts-workshop {
+          grid-template-columns: 1fr;
+          margin-top: 12px;
+          padding-inline: 14px;
+        }
+
+        .parts-process {
+          margin-top: -14px;
+          padding-left: 0;
+        }
+
+        .parts-workshop-support {
+          margin-top: 8px;
+          gap: 12px;
+        }
+
+        .parts-workshop-support h3 {
+          padding-left: 0;
+        }
+
+        .parts-process-list {
+          grid-template-columns: 1fr;
+        }
+
+        .parts-aftercare-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .parts-process h3 {
+          font-size: 1.2rem;
         }
       }
 
@@ -310,6 +547,10 @@
       word-break: normal !important;
     }
 
+    .clipper-parts-mobile-hidden-break {
+      display: none;
+    }
+
     .clippers-page .category-hero.hero-text-template .category-hero-media.hero-mobile-visual {
       order: 2;
       display: block !important;
@@ -318,7 +559,7 @@
       min-height: clamp(230px, 62vw, 330px) !important;
       flex: 0 0 auto !important;
       margin: 0 !important;
-      background-image: url("./assets/clipperparts.png") !important;
+      background-image: url("./assets/parts5-hires-v3.png?v=parts5-direct-4") !important;
       background-size: cover !important;
       background-position: 58% 64% !important;
       background-repeat: no-repeat !important;
@@ -340,6 +581,277 @@
         }
       }
     </style>
+  <style>
+    @media (max-width: 760px) {
+      .featured-products .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        overflow: visible !important;
+        overflow-x: visible !important;
+        white-space: normal !important;
+        scroll-snap-type: none !important;
+      }
+
+      .featured-products .product-grid > article.product-card {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        flex: none !important;
+      }
+    }
+  </style>
+<style id="clipper-parts-transplanted-finder">
+  .parts-finder {
+    width: min(calc(100vw - 20px), 1480px);
+    margin: 0 auto;
+    padding: 8px clamp(4px, 0.7vw, 8px) 38px;
+  }
+
+  .parts-finder .section-head p {
+    color: #344238;
+    max-width: 70ch;
+    margin-top: 0;
+    margin-bottom: 2px;
+  }
+
+  .parts-finder .section-head h2 {
+    margin-bottom: 4px;
+  }
+
+  .parts-finder > .section-head {
+    position: relative;
+    top: -8px;
+  }
+
+  .parts-machine-shelves {
+    margin-top: 32px;
+    display: grid;
+    gap: 32px;
+  }
+
+  .parts-machine-shelf {
+    display: grid;
+    gap: 10px;
+  }
+
+  .parts-machine-shelf-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 0;
+  }
+
+  .parts-machine-shelf-head h3 {
+    margin: 0;
+    color: #1f3025;
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .parts-machine-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 156px));
+    gap: 9px;
+    align-items: stretch;
+    justify-content: start;
+  }
+
+  .parts-machine-row--clippers {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .parts-machine-card {
+    background: linear-gradient(180deg, #fffdf8 0%, #fffdf8 calc(100% - 46px), #f6f6f2 calc(100% - 46px), #f6f6f2 100%) !important;
+    border: 1px solid rgba(28, 42, 32, 0.14);
+    border-radius: 10px;
+    padding: 8px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 6px;
+    min-height: 0;
+    color: #1f251f;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .parts-machine-card h4 {
+    margin: 0;
+    color: #1d2b21;
+    font-size: 0.9rem;
+    line-height: 1.18;
+    font-weight: 400 !important;
+  }
+
+  .parts-machine-card-media {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 3.2;
+    overflow: visible;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .parts-machine-card-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .parts-machine-cta {
+    margin-top: 0;
+    justify-self: center;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #2f6a3c;
+  }
+
+  .parts-machine-card--link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .parts-machine-card--link:hover,
+  .parts-machine-card--link:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .parts-machine-card--link:focus-visible {
+    outline: 2px solid #2f8f4e;
+    outline-offset: 3px;
+  }
+
+  .parts-machine-row--clippers .parts-machine-card--coming-soon .parts-machine-card-media {
+    position: relative;
+  }
+
+  .parts-machine-row--clippers .parts-machine-card--coming-soon .parts-machine-card-media img {
+    filter: grayscale(1) saturate(0.12) contrast(0.68) brightness(1.08);
+    opacity: 0.7;
+  }
+
+  .parts-machine-row--clippers .parts-machine-card--coming-soon .parts-machine-card-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.24));
+    pointer-events: none;
+  }
+
+  .parts-machine-row--clippers .parts-machine-card--coming-soon h4 {
+    color: #4f5b52;
+  }
+
+  .parts-machine-row--clippers .parts-machine-card--coming-soon .parts-machine-cta {
+    color: #445047;
+  }
+
+  .parts-machine-row--clippers .parts-machine-card--coming-soon-banner-deor .parts-machine-cta,
+  .parts-machine-row--clippers .parts-machine-card--coming-soon-banner-madra .parts-machine-cta {
+    color: #2f6a3c;
+  }
+
+  .parts-machine-row--clippers .parts-machine-card--coming-soon-banner {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .parts-machine-row--clippers .parts-machine-card--coming-soon-banner .parts-machine-badge {
+    position: absolute;
+    top: 20px;
+    right: -44px;
+    left: auto;
+    width: 168px;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 4px;
+    line-height: 1;
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-radius: 0;
+    background: #dde3dc;
+    border: 1px solid #c5cdc5;
+    z-index: 6;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #4a544d;
+    box-shadow: 0 1px 2px rgba(20, 42, 31, 0.15);
+  }
+
+  @media (max-width: 760px) {
+    .parts-finder {
+      padding-inline: 14px;
+      padding-bottom: 8px;
+    }
+
+    .parts-machine-shelves {
+      margin-top: 18px;
+      gap: 30px;
+    }
+
+    .parts-machine-shelf-head {
+      align-items: start;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .parts-machine-row {
+      display: flex;
+      gap: 10px;
+      margin-inline: -14px;
+      overflow-x: auto;
+      padding: 0 14px 8px;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .parts-machine-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .parts-machine-card {
+      flex: 0 0 clamp(124px, calc((100vw - 96px) / 2), 150px);
+      scroll-snap-align: start;
+    }
+
+    .parts-machine-row--clippers {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-inline: 0;
+      overflow: visible;
+      padding: 0;
+      scroll-snap-type: none;
+      -webkit-overflow-scrolling: auto;
+      scrollbar-width: auto;
+    }
+
+    .parts-machine-row--clippers .parts-machine-card {
+      flex: initial;
+      width: 100%;
+      min-width: 0;
+      scroll-snap-align: unset;
+    }
+  }
+</style>
 </head>
   <body class="home-page clippers-page">
     <header class="site-header">
@@ -406,11 +918,11 @@
         <div class="category-item category-item--clippers">
           <a data-category-link="clippers" href="./clippers.html" aria-current="page">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
-            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
-            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
-            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
-            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
-            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+            <a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
+            <a href="./horse-clippers.html">Horse Clippers</a>
+            <a href="./dog-clippers.html">Dog Clippers</a>
+            <a href="./clipper-blades.html">Clipper Blades</a>
+            <a href="./clipper-parts.html">Clipper Parts</a>
           </div>
         </div>
         <div class="category-item category-item--cattle-weighing">
@@ -419,9 +931,9 @@
         <div class="category-item category-item--milking-machines">
           <a href="./milking-machines.html">Milking Machines <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Milking Machines links">
-            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
-            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
-            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+            <a href="./cow-milking-machines.html">Cow Milkers</a>
+            <a href="./goat-milking-machines.html">Goat Milkers</a>
+            <a href="./sheep-milking-machines.html">Sheep Milkers</a>
           
           </div>
 
@@ -429,10 +941,10 @@
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
-            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+            <a href="./electric-fencing-mains.html">Mains Fencers</a>
+            <a href="./electric-fencing-battery.html">Battery Fencers</a>
+            <a href="./electric-fencing-solar.html">Solar Fencers</a>
+            <a href="./electric-fencing-accessories.html">Accessories</a>
           </div>
 
 
@@ -443,11 +955,11 @@
             <a href="./clippers.html">Clippers</a>
             <a href="./cattle-weighing.html">Cattle Weighing</a>
             <a href="./milking-machines.html">Milking Machines</a>
-            <a href="./parts-repairs.html">Dairy Products</a>
-            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./dairy-products.html">Dairy Products</a>
+            <a href="./brushes.html">Brushes</a>
             <a href="./electric-fencing.html">Electric Fencing</a>
-            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-            <a href="./electric-fencing.html">Blowers</a>
+            <a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
+            <a href="./blowers.html">Blowers</a>
           </div>
 
 
@@ -463,16 +975,18 @@
 
     <main class="page-shell category-page">
   <section class="category-hero hero-text-template" aria-labelledby="category-title" style="background: linear-gradient(90deg, rgba(12, 24, 16, 0.76) 0%, rgba(12, 24, 16, 0.56) 42%, rgba(12, 24, 16, 0.18) 100%), url(&quot;./assets/clipperparts.png&quot;) 58% 66% / cover no-repeat !important;">
-    <div class="category-hero-media hero-mobile-visual" aria-hidden="true" style="background-image: url(&quot;./assets/clipperparts.png&quot;) !important;"></div>
+    <div class="category-hero-media hero-mobile-visual" aria-hidden="true" style="display:none;"></div>
     <div class="category-hero-copy">
       <nav class="category-breadcrumb" aria-label="Breadcrumb">
         <a href="./index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="./clippers.html">Clippers</a>
         <span aria-hidden="true">/</span>
         <span>Clipper Parts</span>
       </nav>
       <h1 id="category-title">Clipper Parts</h1>
         <p class="category-hero-description">
-        <span>Our ErgoPro range includes powerful cordless and mains-powered clippers. For farmers, vets, groomers, competition yards and home users, we have the right clipper for you.</span>
+        <span>Here you will find spare parts for our full range of clippers. <br class="clipper-parts-mobile-hidden-break">If you need repairs, our in-house workshop will keep your clipper working properly.</span>
       </p>
     </div>
   </section>
@@ -501,251 +1015,134 @@
     </div>
   </div>
 
-  <section class="category-buckets" aria-label="Clipper category shortcuts">
-    <div class="category-bucket-grid">
-      <a id="clipper-sheep-cattle" class="category-bucket" href="#">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/cattleclipper.png" alt="Sheep and cattle clipping" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Sheep &amp; Cattle Clippers</strong>
-        </span>
-      </a>
-      <a id="clipper-horse" class="category-bucket" href="#">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-horse-clipping-jacket.png" alt="Horse being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Horse Clippers</strong>
-        </span>
-      </a>
-      <a id="clipper-dog" class="category-bucket" href="#">
-        <span class="category-bucket-image">
-          <img src="./assets/shop/animal-dog-clipping.png" alt="Dog being clipped" />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Dog Clippers</strong>
-        </span>
-      </a>
-        <a id="clipper-blades" class="category-bucket" href="#" style="background: #ffffff !important; border-color: rgba(19, 35, 23, 0.15) !important;">
-        <span class="category-bucket-image category-bucket-image--contain category-blade-bucket">
-          <span class="blade-graphic-combo" aria-hidden="true">
-            <img class="blade-graphic-item blade-graphic-desktop"
-              src="./assets/bladebucketpic-hires-v3.png?v=bladebucket-hires-direct-4"
-              alt=""
-              loading="eager"
-              decoding="sync"
-              width="1254"
-              height="1254"
-            />
-          </span>
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Blades</strong>
-        </span>
-      </a>
-      <a id="clipper-parts" class="category-bucket" href="#">
-        <span class="category-bucket-image category-bucket-image--contain">
-          <img
-            src="./assets/parts5-hires-v3.png?v=parts5-direct-4"
-            alt="ErgoPro clipper parts and servicing"
-            loading="eager"
-            decoding="sync"
-            width="1658"
-            height="1654"
-          />
-        </span>
-        <span class="category-bucket-copy">
-          <strong>Clipper Parts</strong>
-        </span>
-      </a>
+  <section class="parts-finder" aria-labelledby="find-parts-title">
+    <div class="section-head">
+      <h2 id="find-parts-title">Find Parts for Your Clipper</h2>
+      <p>Choose your clipper model to find your part. If you are not sure which part you need, send us a photo before ordering and we&rsquo;ll help match it.</p>
+    </div>
+    <div class="parts-machine-shelves">
+      <section class="parts-machine-shelf" aria-labelledby="parts-clippers-title">
+        <div class="parts-machine-shelf-head">
+          <h3 id="parts-clippers-title">ErgoPro Clippers</h3>
+        </div>
+        <div class="parts-machine-row parts-machine-row--clippers parts-machine-row--clippers-offwhite">
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-cara-parts.html" aria-label="View parts for Cara">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/cara-parts-card.png?v=cara-smaller-1" alt="ErgoPro Cara clipper" loading="lazy" decoding="async" />
+            </span>
+            <h4>Cara</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-master-parts.html" aria-label="View parts for Master">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/master.png?v=master-smaller-1" alt="ErgoPro Master clipper" loading="lazy" decoding="async" />
+            </span>
+            <h4>Master</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-hush-parts.html" aria-label="View parts for Hush">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/hush-horse.png" alt="ErgoPro Hush clipper" loading="lazy" decoding="async" />
+            </span>
+            <h4>Hush</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-ovis-parts.html" aria-label="View parts for Ovis">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/ovis.png?v=ovis-hand-piece-1" alt="ErgoPro Ovis clipper" loading="lazy" decoding="async" style="transform: scale(0.90); transform-origin: center;" />
+            </span>
+            <h4>Ovis</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-handy-ii-parts.html" aria-label="View parts for Handy II">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/handy.png?v=handy-20-bigger-1" alt="ErgoPro Handy clipper" loading="lazy" decoding="async" style="transform: scale(1.20); transform-origin: center;" />
+            </span>
+            <h4>Handy II</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-aer-parts.html" aria-label="View parts for Aer">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/aer.png?v=aer-slightly-smaller-1" alt="ErgoPro Aer clipper" loading="lazy" decoding="async" />
+            </span>
+            <h4>Aer</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--coming-soon parts-machine-card--coming-soon-banner parts-machine-card--coming-soon-banner-deor parts-machine-card--link" href="./ergopro-deor-parts.html" aria-label="View parts for Deor">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/deor-horse-hero-transparent.png" alt="ErgoPro Deor clipper" loading="lazy" decoding="async" />
+            </span>
+            <span class="parts-machine-badge">Coming soon</span>
+            <h4>Deor</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--coming-soon parts-machine-card--coming-soon-banner parts-machine-card--coming-soon-banner-madra parts-machine-card--link" href="./ergopro-madra-parts.html" aria-label="View parts for Madra">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/madra-hero-transparent-cutout.png" alt="ErgoPro Madra clipper" loading="lazy" decoding="async" style="transform: rotate(-140deg) scaleX(-1) scale(1.10); transform-origin: center;" />
+            </span>
+            <span class="parts-machine-badge">Coming soon</span>
+            <h4>Madra</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+          <a class="parts-machine-card parts-machine-card--link" href="./ergopro-older-models-parts.html" aria-label="View parts for Older Models">
+            <span class="parts-machine-card-media">
+              <img src="./assets/products/older-models.png?v=older-models-inline-10-smaller-1" alt="Older clipper model outline" loading="lazy" decoding="async" style="transform: scale(0.90); transform-origin: center;" />
+            </span>
+            <h4>Older Models</h4>
+            <span class="parts-machine-cta">View parts -&gt;</span>
+          </a>
+        </div>
+      </section>
     </div>
   </section>
 
-    <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
-      <div class="milking-why-choose-shell">
-        <h2 class="milking-why-choose-title" id="milking-why-choose-title">Why Choose Clippers Ireland for Clippers?</h2>
-        <div class="milking-why-choose-grid">
-          <article class="milking-why-choose-card">
-            <h3>ErgoPro Clippers</h3>
-            <p>Whether you're an occasional home user<br> or a professional clipping all day, every day, ErgoPro clippers have stood the test of time.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>One-Year Warranty</h3>
-            <p>Our ErgoPro Clippers are supplied with a<br> one-year parts &amp; labour warranty for extra peace of mind.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>Parts Kept in Stock</h3>
-            <p>We carry all genuine spare parts needed to keep your machine working properly long after purchase.</p>
-          </article>
-          <article class="milking-why-choose-card">
-            <h3>In-House Workshop Support</h3>
-            <p>Our workshop provides servicing, repairs, spare parts and practical advice whenever needed.</p>
-          </article>
-        </div>
+
+  <section class="parts-workshop" aria-labelledby="repair-overview-title">
+    <div class="parts-workshop-heading section-head">
+      <h2 id="repair-overview-title">Workshop Repairs</h2>
+    </div>
+    <div class="parts-workshop-intro">
+      <p>From simple servicing to fault checks and repairs, our in-house workshop helps keep clippers, trimmers and selected farming equipment working properly.<br>We can advise before you send a machine in, so you do not waste time or money on the wrong part.</p>
+      <ul class="repairs-band-list">
+        <li>Clipper and trimmer servicing</li>
+        <li>Blade, lead, battery and charger checks</li>
+        <li>Fault diagnosis before repair work starts</li>
+        <li>Honest advice if a repair is not worthwhile</li>
+      </ul>
+    </div>
+    <aside class="parts-process" aria-label="repair process">
+      <h3>Fast, Clear Repair Process</h3>
+      <ol class="parts-process-list">
+        <li>
+          <strong>1. Tell us what’s wrong</strong>
+          <p>Send the model, issue and usage details. Photos or a short video can help.</p>
+        </li>
+        <li>
+          <strong>2. We diagnose and quote</strong>
+          <p>We check the machine and confirm the likely repair cost before work begins.</p>
+        </li>
+        <li>
+          <strong>3. Repair and return</strong>
+          <p>Once approved, we repair, test and return the machine as quickly as possible.</p>
+        </li>
+      </ol>
+    </aside>
+    <div class="parts-workshop-support" aria-labelledby="workshop-support-title">
+      <h3 id="workshop-support-title">Before You Send It In</h3>
+      <div class="parts-aftercare-grid">
+        <article class="parts-aftercare-card">
+          <h3>Bought from Clippers Ireland?</h3>
+          <p>We can check order history and advise on warranty or service options.</p>
+        </article>
+        <article class="parts-aftercare-card">
+          <h3>Not sure if it’s a part or repair?</h3>
+          <p>Ask us first and we’ll help avoid ordering the wrong item.</p>
+        </article>
+        <article class="parts-aftercare-card">
+          <h3>Keep machines working longer</h3>
+          <p>Many machines can be repaired or refreshed instead of replaced too soon.</p>
+        </article>
       </div>
-    </section>
-
-
-  <section class="featured-products" aria-labelledby="featured-products-title">
-    <div class="featured-products-header">
-      <h2 class="section-title" id="featured-products-title">Featured Products</h2>
-    </div>
-
-    <div class="product-grid">
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/ovis.png"
-            alt="ErgoPro Ovis Sheep Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Ovis Sheep Clipper (External Battery 300w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.9 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;729.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card clippers-hero clippers-white-bucket">
-        <a class="product-image" href="#">
-          <img
-            class="product-image--featured-blade"
-            src="./assets/products/hush-horse.png"
-            alt="ErgoPro Hush Horse Clipper"
-          />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(23 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;220.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(29 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;899.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.7 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(18 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;69.99</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <a class="product-image" href="#">
-          <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
-        </a>
-        <div class="product-info">
-          <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
-          <div class="product-meta">
-            <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
-            <span>(16 reviews)</span>
-            <span class="product-stock-text">In stock</span>
-          </div>
-          <p class="product-price">&euro;1,250.00</p>
-          <button class="add-cart" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
-              <circle cx="10" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-            </svg>
-            Add to Cart
-          </button>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="related-categories" aria-labelledby="related-clippers-title">
-    <h2 class="section-title" id="related-clippers-title">Browse related categories</h2>
-    <div class="category-tile-grid">
-      <a class="category-card" href="./cattle-weighing.html">
-        <img src="./assets/shop/newweighingpic.png" alt="Cattle weighing equipment" />
-        <strong>Cattle Weighing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
-        <strong>Milking Machines</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="#">
-        <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
-        <strong>Electric Fencing</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./all-farming.html">
-        <img src="./assets/shop/category-all-farming.jpg" alt="All farming tools" />
-        <strong>All Farming</strong>
-        <small>Shop now -></small>
-      </a>
-      <a class="category-card" href="./apparel.html">
-        <img src="./assets/shop/category-apparel-bobble-dog.jpg" alt="Workwear and apparel" />
-        <strong>Apparel</strong>
-        <small>Shop now -></small>
-      </a>
     </div>
   </section>
 
@@ -783,7 +1180,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
               <span>Clippers Ireland, The Little Farm,<br>
               Knockananig, Fermoy,<br>
-              Co Cork, P61EP80</span>
+              Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -912,7 +1309,7 @@
             </span>
             <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
-              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>

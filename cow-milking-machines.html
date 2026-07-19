@@ -74,7 +74,77 @@
       margin: 0.75rem 0 0;
       font-weight: 600;
     }
-  </style>
+        /* Approved featured product card template from homepage */
+      .featured-products .product-image {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2),
+      .featured-products .product-grid > article.product-card:nth-child(6),
+      .featured-products .product-grid > article.product-card:nth-child(7) {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-info,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-info,
+      .featured-products .product-grid > article.product-card:nth-child(6) .product-info,
+      .featured-products .product-grid > article.product-card:nth-child(7) .product-info {
+        background: var(--surface) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child,
+      .featured-products .product-grid > article.product-card:nth-child(2),
+      .featured-products .product-card.clippers-hero {
+        overflow: hidden !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image,
+      .featured-products .product-card.clippers-hero .product-image {
+        background: var(--surface) !important;
+        padding: 8px 10px 6px !important;
+        overflow: visible !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img,
+      .featured-products .product-card.clippers-hero .product-image img {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        transform: scale(1) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:first-child .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(6) .product-image img {
+        transform: scale(0.78) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(2) .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(7) .product-image img {
+        transform: scale(0.86) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(3) .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(8) .product-image img {
+        transform: translateY(-10px) scale(1.22) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(4) .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(9) .product-image img {
+        transform: rotate(-24deg) translateY(18px) scale(2.31) !important;
+      }
+
+      .featured-products .product-grid > article.product-card:nth-child(5) .product-image img,
+      .featured-products .product-grid > article.product-card:nth-child(10) .product-image img {
+        transform: translateY(8px) scale(1.2) !important;
+      }
+
+
+</style>
 
   <style>
       #milking-parts .category-bucket-image--contain,
@@ -151,8 +221,8 @@
 
       @media (min-width: 1024px) {
         .milking-machines-page .category-hero.hero-text-template .category-hero-copy {
-          top: 54.3% !important;
-          transform: translateY(calc(-50% - 14px)) !important;
+          top: 50% !important;
+          transform: translateY(calc(-50% - 14.23px)) !important;
         }
 
         .milking-machines-page .category-hero .category-hero-description span:nth-child(2) {
@@ -774,6 +844,27 @@
         }
       }
     </style>
+  <style>
+    @media (max-width: 760px) {
+      .featured-products .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+        overflow: visible !important;
+        overflow-x: visible !important;
+        white-space: normal !important;
+        scroll-snap-type: none !important;
+      }
+
+      .featured-products .product-grid > article.product-card {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        flex: none !important;
+      }
+    }
+  </style>
 </head>
   <body class="home-page milking-machines-page">
     <header class="site-header">
@@ -840,11 +931,11 @@
         <div class="category-item category-item--clippers">
           <a data-category-link="clippers" href="./clippers.html">Clippers <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Clippers subcategories">
-            <a href="./clippers.html#clipper-sheep-cattle">Sheep &amp; Cattle Clippers</a>
-            <a href="./clippers.html#clipper-horse">Horse Clippers</a>
-            <a href="./clippers.html#clipper-dog">Dog Clippers</a>
-            <a href="./clippers.html#clipper-blades">Clipper Blades</a>
-            <a href="./clippers.html#clipper-parts">Clipper Parts</a>
+            <a href="./sheep-cattle-clippers.html">Sheep &amp; Cattle Clippers</a>
+            <a href="./horse-clippers.html">Horse Clippers</a>
+            <a href="./dog-clippers.html">Dog Clippers</a>
+            <a href="./clipper-blades.html">Clipper Blades</a>
+            <a href="./clipper-parts.html">Clipper Parts</a>
           </div>
         </div>
         <div class="category-item category-item--cattle-weighing">
@@ -853,9 +944,9 @@
         <div class="category-item category-item--milking-machines">
           <a href="./milking-machines.html" aria-current="page">Milking Machines <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Milking Machines links">
-            <a href="./milking-machines.html#cow-milkers">Cow Milkers</a>
-            <a href="./milking-machines.html#goat-milkers">Goat Milkers</a>
-            <a href="./milking-machines.html#sheep-milkers">Sheep Milkers</a>
+            <a href="./cow-milking-machines.html">Cow Milkers</a>
+            <a href="./goat-milking-machines.html">Goat Milkers</a>
+            <a href="./sheep-milking-machines.html">Sheep Milkers</a>
           
           </div>
 
@@ -863,10 +954,10 @@
         <div class="category-item category-item--electric-fencing">
           <a href="./electric-fencing.html">Electric Fencing <span aria-hidden="true">⌄</span></a>
           <div class="category-dropdown" aria-label="Electric Fencing links">
-            <a href="./electric-fencing.html#electric-fencing-mains">Mains Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-battery">Battery Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-solar">Solar Fencers</a>
-            <a href="./electric-fencing.html#electric-fencing-accessories">Accessories</a>
+            <a href="./electric-fencing-mains.html">Mains Fencers</a>
+            <a href="./electric-fencing-battery.html">Battery Fencers</a>
+            <a href="./electric-fencing-solar.html">Solar Fencers</a>
+            <a href="./electric-fencing-accessories.html">Accessories</a>
           </div>
 
 
@@ -877,11 +968,11 @@
             <a href="./clippers.html">Clippers</a>
             <a href="./cattle-weighing.html">Cattle Weighing</a>
             <a href="./milking-machines.html">Milking Machines</a>
-            <a href="./parts-repairs.html">Dairy Products</a>
-            <a href="./all-farming.html#all-farming-featured-title">Brushes</a>
+            <a href="./dairy-products.html">Dairy Products</a>
+            <a href="./brushes.html">Brushes</a>
             <a href="./electric-fencing.html">Electric Fencing</a>
-            <a href="./electric-fencing.html">Bull Rings &amp; Leaders</a>
-            <a href="./electric-fencing.html">Blowers</a>
+            <a href="./bull-rings-and-leaders.html">Bull Rings &amp; Leaders</a>
+            <a href="./blowers.html">Blowers</a>
           </div>
 
 
@@ -900,7 +991,6 @@
     class="category-hero hero-text-template"
     aria-labelledby="category-title"
     style="background: linear-gradient(90deg, rgba(12, 24, 16, 0.76) 0%, rgba(12, 24, 16, 0.56) 42%, rgba(12, 24, 16, 0.18) 100%), url(&quot;./assets/sezer-card-cow.png&quot;) 58% 66% / cover no-repeat !important;">
-    <div class="category-hero-media hero-mobile-visual" aria-hidden="true" style="background-image: url(&quot;./assets/sezer-card-cow.png&quot;) !important;"></div>
     <div class="category-hero-copy">
       <nav class="category-breadcrumb" aria-label="Breadcrumb">
         <a href="./index.html">Home</a>
@@ -911,7 +1001,7 @@
       </nav>
       <h1 id="category-title">Cow Milking Machines</h1>
       <p class="category-hero-description">
-        <span>We carry a wide range of Sezer milkers for cows, sheep and goats. Ideal for calving, sick animals or when you simply don't want to pool the milk.</span>
+        <span>Portable cow milking machines for calving, colostrum collection, sick cows, foster calves and backup milking away from the main parlour.</span>
       </p>
     </div>
   </section>
@@ -939,73 +1029,125 @@
       </div>
     </div>
   </div>
-  <section class="cattle-page-section system-choice cattle-page-section--compact system-choice--compact" aria-labelledby="system-choice-title">
-      <div class="cattle-content-shell">
-      <h2 class="section-title" id="system-choice-title">Portable Milking Machines for Cows, Goats &amp; Sheep</h2>
-      <p class="cattle-section-intro" style="text-align:center; max-width:70ch; margin-left:auto; margin-right:auto;">
-        Choose a portable milking machine for cows, goats or sheep. These machines are useful for calving, lambing,<br />
-        kidding, colostrum, sick animals, foster animals, smallholders and backup milking away from the main parlour.
-      </p>
-      <p class="cattle-section-intro" style="text-align:center; max-width:70ch; margin-left:auto; margin-right:auto;">
-        We carry a wider range than many suppliers, so you can choose a setup that better suits your animals and your routine.
-      </p>
+  <section class="featured-products" aria-labelledby="featured-products-title">
+        <div class="product-grid">
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-image" href="./ovis-clipper.html">
+              <img class="product-image--featured-blade" src="./assets/products/ovis.png" alt="ErgoPro Ovis Sheep Clipper" />
+            </a>
+            <div class="product-info">
+              <h3><a href="./ovis-clipper.html">ErgoPro Ovis Sheep Clipper<br />(External Battery 300w)</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;729.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-      <div class="system-choice-grid">
-        <article class="system-choice-card">
-          <div class="system-choice-card-image system-choice-card-image--edgeflush">
-            <img class="system-choice-card-image--cover" src="./assets/sezer-card-cow.png" alt="Cow milking machines" />
-          </div>
-          <h3>Cow Milking Machines</h3>
-          <p>
-            Portable milkers for calving, sick cows, foster calves and backup milking away from the main parlour.
-          </p>
-          <ul>
-            <li>Calving and colostrum support</li>
-            <li>Sick cows and foster calves</li>
-            <li>Backup milking away from the parlour</li>
-            <li>Simple portable setup</li>
-          </ul>
-          <a class="repairs-band-cta" href="./milking-machines.html">View Cow Milkers</a>
-        </article>
+          <article class="product-card clippers-hero clippers-white-bucket">
+            <a class="product-image" href="#">
+              <img class="product-image--featured-blade" src="./assets/products/hush-horse.png" alt="ErgoPro Hush Horse Clipper" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">ErgoPro Hush Horse Clipper (Mains 200w)</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;220.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-        <article class="system-choice-card">
-          <div class="system-choice-card-image system-choice-card-image--edgeflush">
-            <picture>
-              <img class="system-choice-card-image--cover" src="./assets/sezer-card-goat.png" alt="Goat milking machines" />
-            </picture>
-          </div>
-          <h3>Goat Milking Machines</h3>
-          <p>
-            Portable milkers for goat keepers and smallholders, ideal for regular or occasional goat milking.
-          </p>
-          <ul>
-            <li>Regular or occasional goat milking</li>
-            <li>Smallholder-friendly setup</li>
-            <li>Simple to move and use</li>
-            <li>Useful for mixed farm routines</li>
-          </ul>
-              <a class="repairs-band-cta" href="./milking-machines.html">View Goat Milkers</a>
-        </article>
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img class="product-image--milking-machine" src="./assets/products/sezer-mini.png" alt="Sezer Portable Mini Milking Machine" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">Sezer Mini Milking Machine - Single cluster for Cows</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;899.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
 
-        <article class="system-choice-card">
-          <div class="system-choice-card-image system-choice-card-image--edgeflush">
-            <img class="system-choice-card-image--cover" src="./assets/sezer-card-sheep.png" alt="Sheep milking machines" />
-          </div>
-          <h3>Sheep Milking Machines</h3>
-          <p>
-            Portable milkers for lambing, foster lambs, colostrum, small flocks and sheep dairy use.
-          </p>
-          <ul>
-            <li>Lambing and flock support</li>
-            <li>Foster lambs and colostrum</li>
-            <li>Small flock and dairy use</li>
-            <li>Portable day-to-day handling</li>
-          </ul>
-          <a class="repairs-band-cta" href="./milking-machines.html">View Sheep Milkers</a>
-        </article>
-      </div>
-      </div>
-    </section>
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img class="product-image--handy-trimmer" src="./assets/products/handy.png" alt="ErgoPro Handy II Trimmer" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">ErgoPro Handy II Trimmer</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;69.99</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <a class="product-image" href="#">
+              <img src="./assets/products/automatic-brush.png" alt="Sezer Premium Cattle Brush" />
+            </a>
+            <div class="product-info">
+              <h3><a href="#">Sezer Premium Cattle Brush</a></h3>
+              <div class="product-meta">
+                <span class="product-stars" aria-label="4.8 out of 5 stars">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                <span>(29 reviews)</span>
+                <span class="product-stock-text">In stock</span>
+              </div>
+              <p class="product-price">&euro;1,250.00</p>
+              <button class="add-cart" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 4h2l2.2 10.8a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L21 8H7" />
+                  <circle cx="10" cy="21" r="1.5" />
+                  <circle cx="18" cy="21" r="1.5" />
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
     <section class="milking-why-choose-section" aria-labelledby="milking-why-choose-title">
       <div class="milking-why-choose-shell">
         <h2 class="milking-why-choose-title" id="milking-why-choose-title">Why Choose Clippers Ireland for Milking Machines?</h2>
@@ -1061,12 +1203,12 @@
         <strong>Cattle Weighing</strong>
         <small>Shop now -></small>
       </a>
-      <a class="category-card" href="#">
+      <a class="category-card" href="./milking-machines.html">
         <img src="./assets/shop/category-milking-machines.jpg" alt="Milking machines" />
         <strong>Milking Machines</strong>
         <small>Shop now -></small>
       </a>
-      <a class="category-card" href="#">
+      <a class="category-card" href="./electric-fencing.html">
         <img class="category-card-image--electric" src="./assets/shop/category-electric-fencing.jpg" alt="Electric fencing" />
         <strong>Electric Fencing</strong>
         <small>Shop now -></small>
@@ -1118,7 +1260,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 1em; height: 1em; flex: 0 0 1em; margin-top: .18em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
               <span>Clippers Ireland, The Little Farm,<br>
               Knockananig, Fermoy,<br>
-              Co Cork, P61EP80</span>
+              Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>
@@ -1247,7 +1389,7 @@
             </span>
             <span style="display: inline-flex; align-items: flex-start; gap: 8px; color: rgba(245, 248, 240, 0.78); font-size: 16px; line-height: 1.45; font-weight: 400; max-width: 360px;">
               <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 15.3px; height: 15.3px; flex: 0 0 15.3px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 21s-6-5.2-6-11a6 6 0 1 1 12 0c0 5.8-6 11-6 11z" /><circle cx="12" cy="10" r="2.2" /></svg>
-              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61EP80</span>
+              <span>Clippers Ireland, The Little Farm,<br>Knockananig, Fermoy,<br>Co Cork, P61 EP80</span>
             </span>
           </div>
         </div>

@@ -5494,3 +5494,44 @@ input {
     gap: 16px;
   }
 }
+
+/* APPROVED FLAT BACKGROUND / NO-SHADOW ROLLOUT - 2026-07-10
+   Visual-only: keeps text, spacing, dimensions, images, heroes, header and footer unchanged. */
+:root {
+  --shadow-card: none;
+  --shadow-card-hover: none;
+}
+
+body,
+.page-shell,
+.category-page {
+  background: var(--page);
+}
+
+.about-stats.trust-strip,
+.trust-strip.about-stats,
+.category-trust-strip {
+  box-shadow: none !important;
+}
+
+.about-stats.trust-strip {
+  border-bottom: 1px solid rgba(19, 35, 23, 0.08);
+}
+
+main.page-shell :where(
+  [class*="card"],
+  [class*="Card"],
+  .support-band-inner,
+  .service-guide-media,
+  .shows-media,
+  .about-image,
+  .about-stats,
+  .trust-strip,
+  .category-trust-strip,
+  .system-choice-card,
+  .product-card,
+  .review-card,
+  .endorsement-card
+) {
+  box-shadow: none !important;
+}
